@@ -864,7 +864,19 @@ const materials = [
 
   @media (max-width: 768px) {
     .materials-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .material-btn {
+      padding: 12px 6px;
+      font-size: 0.7rem;
+      gap: 6px;
+    }
+
+    .material-dot {
+      width: 24px;
+      height: 24px;
     }
 
     .dimension-inputs {
@@ -877,6 +889,17 @@ const materials = [
 
     .calc-section {
       padding: 20px 15px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .materials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .material-btn {
+      padding: 14px 8px;
+      font-size: 0.8rem;
     }
   }
 </style>

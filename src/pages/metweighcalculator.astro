@@ -1,0 +1,407 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const materials = [
+  { name: 'Aluminum', density: 2.71, color: '#C0C0C0' },
+  { name: 'Stainless Steel', density: 7.93, color: '#808090' },
+  { name: 'Copper', density: 8.96, color: '#E07020' },
+  { name: 'Brass', density: 8.55, color: '#C8A820' },
+  { name: 'Zinc', density: 7.13, color: '#7088A0' },
+  { name: 'Titanium', density: 4.51, color: '#989088' },
+  { name: 'Nickel', density: 8.90, color: '#A8A8A0' },
+  { name: 'Magnesium', density: 1.74, color: '#B8B8B0' },
+];
+---
+
+<Layout title="Metal Weight Calculator | Far East Metals">
+  <section class="calculator-page">
+    <div class="calc-title-bar">
+      <h2>Metal Weight Calculator</h2>
+    </div>
+
+    <div class="content-card calc-card">
+      <div class="calc-section content-card-inner">
+        <h3 class="section-title">Select Material</h3>
+        <div class="materials-grid">
+          {materials.map((mat) => (
+            <button
+              class="material-btn"
+              data-density={mat.density}
+              data-name={mat.name}
+              type="button"
+            >
+              <span class="material-dot" style={`background: ${mat.color};`}></span>
+              <span class="material-name">{mat.name}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="calc-section content-card-inner">
+        <h3 class="section-title">Select Shape</h3>
+        <select id="shape-select">
+          <option value="cylinder">Solid Cylinder</option>
+          <option value="hollow-cylinder">Hollow Cylinder</option>
+          <option value="rectangular">Rectangular Bar</option>
+          <option value="sheet">Sheet / Plate</option>
+          <option value="hex">Hexagonal Bar</option>
+        </select>
+      </div>
+
+      <div class="calc-section content-card-inner">
+        <div class="unit-row">
+          <select id="unit-select">
+            <option value="mm">Millimeters (mm)</option>
+            <option value="cm">Centimeters (cm)</option>
+            <option value="in">Inches (in)</option>
+          </select>
+        </div>
+        <div id="dimension-inputs" class="dimension-inputs">
+          <!-- Dynamically filled -->
+        </div>
+      </div>
+
+      <div class="calc-section content-card-inner results-section">
+        <h3 class="section-title">Results</h3>
+        <div class="results-grid">
+          <div class="result-box">
+            <span class="result-label">Volume</span>
+            <select id="volume-unit">
+              <option value="mm3">Cubic Millimeters (mm&sup3;)</option>
+              <option value="cm3">Cubic Centimeters (cm&sup3;)</option>
+              <option value="in3">Cubic Inches (in&sup3;)</option>
+            </select>
+            <div class="result-value" id="volume-result">0</div>
+          </div>
+          <div class="result-box">
+            <span class="result-label">Weight</span>
+            <select id="weight-unit">
+              <option value="g">Grams (g)</option>
+              <option value="kg">Kilograms (kg)</option>
+              <option value="lb">Pounds (lb)</option>
+            </select>
+            <div class="result-value" id="weight-result">0.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const PI = Math.PI;
+  let selectedDensity = 2.71; // default Aluminum
+
+  // Material selection
+  document.querySelectorAll('.material-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedDensity = parseFloat(btn.getAttribute('data-density')!);
+      calculate();
+    });
+  });
+  // Select first material by default
+  document.querySelector('.material-btn')?.classList.add('selected');
+
+  const shapeSelect = document.getElementById('shape-select') as HTMLSelectElement;
+  const unitSelect = document.getElementById('unit-select') as HTMLSelectElement;
+  const dimInputs = document.getElementById('dimension-inputs')!;
+
+  const shapeFields: Record<string, { label: string; id: string }[]> = {
+    'cylinder': [
+      { label: 'Diameter', id: 'diameter' },
+      { label: 'Length', id: 'length' },
+    ],
+    'hollow-cylinder': [
+      { label: 'Outer Diameter', id: 'outer-diameter' },
+      { label: 'Inner Diameter', id: 'inner-diameter' },
+      { label: 'Length', id: 'length' },
+    ],
+    'rectangular': [
+      { label: 'Width', id: 'width' },
+      { label: 'Height', id: 'height' },
+      { label: 'Length', id: 'length' },
+    ],
+    'sheet': [
+      { label: 'Width', id: 'width' },
+      { label: 'Length', id: 'length' },
+      { label: 'Thickness', id: 'thickness' },
+    ],
+    'hex': [
+      { label: 'Across Flats', id: 'across-flats' },
+      { label: 'Length', id: 'length' },
+    ],
+  };
+
+  function getUnitLabel() {
+    const u = unitSelect.value;
+    return u === 'mm' ? 'Mm' : u === 'cm' ? 'Cm' : 'In';
+  }
+
+  function renderFields() {
+    const fields = shapeFields[shapeSelect.value];
+    const unit = getUnitLabel();
+    dimInputs.innerHTML = fields.map(f =>
+      `<div class="dim-field">
+        <label>${f.label} (${unit})</label>
+        <input type="number" id="${f.id}" placeholder="Enter ${f.label.toLowerCase()}" min="0" step="any" />
+      </div>`
+    ).join('');
+    dimInputs.querySelectorAll('input').forEach(input => {
+      input.addEventListener('input', calculate);
+    });
+  }
+
+  function getVal(id: string): number {
+    const el = document.getElementById(id) as HTMLInputElement | null;
+    return el ? parseFloat(el.value) || 0 : 0;
+  }
+
+  function toMm(val: number): number {
+    const unit = unitSelect.value;
+    if (unit === 'cm') return val * 10;
+    if (unit === 'in') return val * 25.4;
+    return val;
+  }
+
+  function calculate() {
+    const shape = shapeSelect.value;
+    let volumeMm3 = 0;
+
+    switch (shape) {
+      case 'cylinder': {
+        const d = toMm(getVal('diameter'));
+        const l = toMm(getVal('length'));
+        volumeMm3 = PI * (d / 2) ** 2 * l;
+        break;
+      }
+      case 'hollow-cylinder': {
+        const od = toMm(getVal('outer-diameter'));
+        const id = toMm(getVal('inner-diameter'));
+        const l = toMm(getVal('length'));
+        volumeMm3 = PI * ((od / 2) ** 2 - (id / 2) ** 2) * l;
+        break;
+      }
+      case 'rectangular': {
+        const w = toMm(getVal('width'));
+        const h = toMm(getVal('height'));
+        const l = toMm(getVal('length'));
+        volumeMm3 = w * h * l;
+        break;
+      }
+      case 'sheet': {
+        const w = toMm(getVal('width'));
+        const l = toMm(getVal('length'));
+        const t = toMm(getVal('thickness'));
+        volumeMm3 = w * l * t;
+        break;
+      }
+      case 'hex': {
+        const af = toMm(getVal('across-flats'));
+        const l = toMm(getVal('length'));
+        volumeMm3 = (3 * Math.sqrt(3) / 2) * (af / 2) ** 2 * l;
+        break;
+      }
+    }
+
+    // density is g/cm³, 1 cm³ = 1000 mm³
+    const weightG = volumeMm3 * selectedDensity / 1000;
+
+    // Display volume
+    const volUnit = (document.getElementById('volume-unit') as HTMLSelectElement).value;
+    let displayVol = volumeMm3;
+    if (volUnit === 'cm3') displayVol = volumeMm3 / 1000;
+    if (volUnit === 'in3') displayVol = volumeMm3 / 16387.064;
+    document.getElementById('volume-result')!.textContent =
+      displayVol < 0.01 && displayVol > 0 ? displayVol.toExponential(2) : displayVol.toLocaleString('en', { maximumFractionDigits: 2 });
+
+    // Display weight
+    const wtUnit = (document.getElementById('weight-unit') as HTMLSelectElement).value;
+    let displayWt = weightG;
+    if (wtUnit === 'kg') displayWt = weightG / 1000;
+    if (wtUnit === 'lb') displayWt = weightG / 453.592;
+    document.getElementById('weight-result')!.textContent =
+      displayWt.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  shapeSelect.addEventListener('change', () => { renderFields(); calculate(); });
+  unitSelect.addEventListener('change', () => { renderFields(); calculate(); });
+  document.getElementById('volume-unit')!.addEventListener('change', calculate);
+  document.getElementById('weight-unit')!.addEventListener('change', calculate);
+
+  renderFields();
+</script>
+
+<style>
+  .calculator-page {
+    padding: 100px 20px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .calc-title-bar {
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    padding: 18px 30px;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 2px;
+  }
+
+  .calc-title-bar h2 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  .calc-card {
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .calc-section {
+    padding: 25px 30px;
+  }
+
+  .section-title {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .materials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .material-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .material-btn:hover,
+  .material-btn.selected {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(245, 166, 35, 0.2);
+  }
+
+  .material-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: block;
+  }
+
+  select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    background: white;
+    color: var(--color-text);
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    cursor: pointer;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .dimension-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .dim-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 6px;
+  }
+
+  .dim-field input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+
+  .dim-field input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .results-section {
+    background: rgba(255, 248, 230, 0.6);
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .result-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .result-label {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .result-box select {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  .result-value {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text);
+    padding: 5px 0;
+  }
+
+  @media (max-width: 768px) {
+    .materials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dimension-inputs {
+      grid-template-columns: 1fr;
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

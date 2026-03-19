@@ -1,0 +1,98 @@
+---
+const rawPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Calculator', path: '/metweighcalculator' },
+  { name: 'Contact', path: '/contact' },
+];
+
+function isActive(itemPath: string): boolean {
+  if (itemPath === '/') return rawPath === '/';
+  return rawPath === itemPath || rawPath.startsWith(itemPath + '/');
+}
+---
+
+<header class="navbar">
+  <nav aria-label="Site">
+    <ul class="nav-list">
+      {navItems.map((item) => (
+        <li class="nav-item">
+          <a
+            href={item.path}
+            class:list={['nav-link', { active: isActive(item.path) }]}
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 25px 0 0;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    display: block;
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    padding: 8px 20px;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease;
+  }
+
+  .nav-link.active::before {
+    background: var(--color-accent);
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-link:hover::before {
+    background: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .nav-link {
+      font-size: 0.85rem;
+      padding: 8px 12px;
+    }
+  }
+</style>

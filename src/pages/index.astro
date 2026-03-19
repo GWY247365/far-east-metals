@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Far East Metals Development Ltd. | Aluminum Profile | Forging | Ingot | Hong Kong">
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Far East Metals Development</h1>
+      <div class="hero-subtitle">
+        <span class="hero-aluminum">Aluminum</span>
+        <span class="hero-services">Extrusion | Forging | Ingot</span>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 300;
+    color: var(--color-white);
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-subtitle {
+    text-align: right;
+    margin-right: 5%;
+  }
+
+  .hero-aluminum {
+    display: block;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 2px;
+  }
+
+  .hero-services {
+    display: block;
+    font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 3px;
+    margin-top: 2px;
+  }
+</style>

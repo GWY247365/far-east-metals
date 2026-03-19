@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | Far East Metals">
+  <section class="contact-page">
+    <div class="content-card">
+      <div class="contact-header">
+        <h2>Contact</h2>
+        <a href="mailto:info@fareastmetals.com.hk" class="email-link">info@fareastmetals.com.hk</a>
+      </div>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="E-mail" required />
+        </div>
+        <div class="form-row">
+          <input type="tel" name="tel" placeholder="Tel" />
+          <select name="service" required>
+            <option value="" disabled selected>Service type</option>
+            <option value="Forging">Forging</option>
+            <option value="Stamping">Stamping</option>
+            <option value="Extruding">Extruding</option>
+            <option value="Flat rolling">Flat rolling</option>
+            <option value="Die casting">Die casting</option>
+            <option value="Deep processing">Deep processing</option>
+            <option value="Surface treatment">Surface treatment</option>
+            <option value="Heat Treatment">Heat Treatment</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <textarea name="message" placeholder="Message" rows="6"></textarea>
+        <label class="subscribe-label">
+          <input type="checkbox" name="subscribe" checked />
+          Subscribe for more information
+        </label>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+
+      <div id="form-success" class="form-success" hidden>
+        Thanks for your message.
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const success = document.getElementById('form-success')!;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        form.hidden = true;
+        success.hidden = false;
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+    } catch {
+      alert('Network error. Please try again.');
+    }
+  });
+</script>
+
+<style>
+  .contact-page {
+    padding: 120px 20px 60px;
+  }
+
+  .contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .contact-header h2 {
+    margin: 0;
+  }
+
+  .email-link {
+    color: var(--color-text);
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    background: var(--color-white);
+    color: var(--color-text);
+    transition: border-color 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .subscribe-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+  }
+
+  .subscribe-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-text);
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+    letter-spacing: 0.5px;
+  }
+
+  .submit-btn:hover {
+    background: #e0951f;
+  }
+
+  .form-success {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+</style>

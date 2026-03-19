@@ -41,6 +41,11 @@ function isActive(itemPath: string): boolean {
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar.hidden {
+    transform: translateY(-100%);
   }
 
   .navbar nav {
@@ -109,3 +114,22 @@ function isActive(itemPath: string): boolean {
     }
   }
 </style>
+
+<script>
+  const navbar = document.querySelector('.navbar');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      // Scrolling down & past 80px — hide
+      navbar?.classList.add('hidden');
+    } else {
+      // Scrolling up — show
+      navbar?.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+</script>

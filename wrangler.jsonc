@@ -7,5 +7,11 @@
   "assets": {
     "binding": "ASSETS",
     "directory": "dist"
-  }
+  },
+  "kv_namespaces": [
+    {
+      "binding": "CONTACTS",
+      "id": "da02357327024f5ba2a70d17f6f25c63"
+    }
+  ]
 }

@@ -15,18 +15,25 @@ function isActive(itemPath: string): boolean {
 
 <header class="navbar">
   <nav aria-label="Site">
-    <ul class="nav-list">
-      {navItems.map((item) => (
-        <li class="nav-item">
-          <a
-            href={item.path}
-            class:list={['nav-link', { active: isActive(item.path) }]}
-          >
-            {item.name}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div class="nav-inner">
+      <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-list">
+        {navItems.map((item) => (
+          <li class="nav-item">
+            <a
+              href={item.path}
+              class:list={['nav-link', { active: isActive(item.path) }]}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </nav>
 </header>
 
@@ -52,6 +59,45 @@ function isActive(itemPath: string): boolean {
   .navbar nav {
     max-width: var(--max-width);
     margin: 0 auto;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 101;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Hamburger animation when open */
+  .hamburger.open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .nav-list {
@@ -106,31 +152,84 @@ function isActive(itemPath: string): boolean {
 
   @media (max-width: 768px) {
     .navbar {
-      padding: 15px 0 0;
+      padding: 0;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-list {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 0 10px;
+    }
+
+    .nav-list.open {
+      display: flex;
+    }
+
+    .nav-inner {
+      flex-wrap: wrap;
+    }
+
+    .nav-item {
+      width: 100%;
     }
 
     .nav-link {
-      font-size: 14px;
-      padding: 10px 15px;
+      font-size: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link::before {
+      display: none;
+    }
+
+    .nav-link.active {
+      color: var(--color-accent);
     }
   }
 </style>
 
 <script>
   const navbar = document.querySelector('.navbar');
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav-list');
   let lastScrollY = window.scrollY;
 
+  // Scroll hide/show
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > lastScrollY && currentScrollY > 80) {
-      // Scrolling down & past 80px — hide
       navbar?.classList.add('hidden');
+      // Close menu on scroll hide
+      hamburger?.classList.remove('open');
+      navList?.classList.remove('open');
+      hamburger?.setAttribute('aria-expanded', 'false');
     } else {
-      // Scrolling up — show
       navbar?.classList.remove('hidden');
     }
 
     lastScrollY = currentScrollY;
+  });
+
+  // Hamburger toggle
+  hamburger?.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    navList?.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close menu when a link is clicked
+  navList?.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger?.classList.remove('open');
+      navList?.classList.remove('open');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    });
   });
 </script>

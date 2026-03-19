@@ -48,6 +48,7 @@ const materials = [
       </div>
 
       <div class="calc-section content-card-inner">
+        <h3 class="section-title">Dimensions</h3>
         <div class="unit-row">
           <select id="unit-select">
             <option value="mm">Millimeters (mm)</option>
@@ -303,9 +304,9 @@ const materials = [
 
   select {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 16px;
     border: 1px solid #e0e0e0;
-    border-radius: 6px;
+    border-radius: 10px;
     font-family: var(--font-main);
     font-size: 0.9rem;
     background: white;
@@ -330,22 +331,28 @@ const materials = [
     margin-top: 15px;
   }
 
+  .dim-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
   .dim-field label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 700;
     color: var(--color-text);
-    margin-bottom: 6px;
   }
 
   .dim-field input {
     width: 100%;
-    padding: 10px 14px;
+    padding: 14px 16px;
     border: 1px solid #e0e0e0;
-    border-radius: 6px;
+    border-radius: 10px;
     font-family: var(--font-main);
     font-size: 0.9rem;
     color: var(--color-text);
+    background: white;
   }
 
   .dim-field input:focus {

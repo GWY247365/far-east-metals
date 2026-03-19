@@ -13,5 +13,11 @@
       "binding": "CONTACTS",
       "id": "da02357327024f5ba2a70d17f6f25c63"
     }
+  ],
+  "send_email": [
+    {
+      "name": "SEND_EMAIL",
+      "destination_address": "info@fareastmetals.com.hk"
+    }
   ]
 }

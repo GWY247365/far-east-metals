@@ -1,3 +1,47 @@
+import { EmailMessage } from 'cloudflare:email';
+import { createMimeMessage } from 'mimetext';
+
+function buildEmailHtml({ name, email, tel, service, message, subscribe }) {
+  return `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #F5A623; border-bottom: 2px solid #F5A623; padding-bottom: 10px;">
+        New Contact Form Submission
+      </h2>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+        <tr>
+          <td style="padding: 10px 0; font-weight: bold; color: #333; width: 120px; vertical-align: top;">Name</td>
+          <td style="padding: 10px 0; color: #555;">${name}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Email</td>
+          <td style="padding: 10px 0; color: #555;">
+            <a href="mailto:${email}" style="color: #F5A623;">${email}</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Tel</td>
+          <td style="padding: 10px 0; color: #555;">${tel || 'Not provided'}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Service</td>
+          <td style="padding: 10px 0; color: #555;">${service}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Message</td>
+          <td style="padding: 10px 0; color: #555; white-space: pre-wrap;">${message || 'No message'}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Subscribe</td>
+          <td style="padding: 10px 0; color: #555;">${subscribe ? 'Yes' : 'No'}</td>
+        </tr>
+      </table>
+      <p style="margin-top: 20px; font-size: 12px; color: #999;">
+        Sent from fareastmetals.com.hk contact form
+      </p>
+    </div>
+  `;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -51,61 +95,26 @@ export default {
           }));
         }
 
-        // Send email notification via Resend
-        if (env.RESEND_API_KEY) {
+        // Send email via Cloudflare Email Workers
+        if (env.SEND_EMAIL) {
           try {
-            await fetch('https://api.resend.com/emails', {
-              method: 'POST',
-              headers: {
-                'Authorization': `Bearer ${env.RESEND_API_KEY}`,
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                from: 'Far East Metals <noreply@fareastmetals.com.hk>',
-                to: ['info@fareastmetals.com.hk'],
-                subject: `New Inquiry: ${service} - from ${name}`,
-                html: `
-                  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                    <h2 style="color: #F5A623; border-bottom: 2px solid #F5A623; padding-bottom: 10px;">
-                      New Contact Form Submission
-                    </h2>
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
-                      <tr>
-                        <td style="padding: 10px 0; font-weight: bold; color: #333; width: 120px; vertical-align: top;">Name</td>
-                        <td style="padding: 10px 0; color: #555;">${name}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Email</td>
-                        <td style="padding: 10px 0; color: #555;">
-                          <a href="mailto:${email}" style="color: #F5A623;">${email}</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Tel</td>
-                        <td style="padding: 10px 0; color: #555;">${tel || 'Not provided'}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Service</td>
-                        <td style="padding: 10px 0; color: #555;">${service}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Message</td>
-                        <td style="padding: 10px 0; color: #555;">${message || 'No message'}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Subscribe</td>
-                        <td style="padding: 10px 0; color: #555;">${subscribe ? 'Yes' : 'No'}</td>
-                      </tr>
-                    </table>
-                    <p style="margin-top: 20px; font-size: 12px; color: #999;">
-                      Sent from fareastmetals.com.hk contact form
-                    </p>
-                  </div>
-                `,
-              }),
+            const msg = createMimeMessage();
+            msg.setSender({ name: 'Far East Metals Website', addr: 'noreply@fareastmetals.com.hk' });
+            msg.setRecipient('info@fareastmetals.com.hk');
+            msg.setSubject(`New Inquiry: ${service} - from ${name}`);
+            msg.addMessage({
+              contentType: 'text/html',
+              data: buildEmailHtml({ name, email, tel, service, message, subscribe }),
             });
+
+            const emailMessage = new EmailMessage(
+              'noreply@fareastmetals.com.hk',
+              'info@fareastmetals.com.hk',
+              msg.asRaw()
+            );
+            await env.SEND_EMAIL.send(emailMessage);
           } catch (emailErr) {
-            // Email sending failed, but form data is saved in KV
+            // Email failed but form data saved in KV
             console.error('Email send failed:', emailErr);
           }
         }

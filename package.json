@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.7.0",
+    "mimetext": "^3.0.28",
     "wrangler": "^4.75.0"
   }
 }

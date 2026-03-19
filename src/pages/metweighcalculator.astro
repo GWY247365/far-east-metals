@@ -37,6 +37,23 @@ const materials = [
       </div>
 
       <div class="calc-section content-card-inner">
+        <h3 class="section-title">Select Grade</h3>
+        <div class="grade-dropdown" id="grade-dropdown">
+          <button type="button" class="grade-trigger" id="grade-trigger">
+            <span id="grade-trigger-text">Select a grade...</span>
+            <svg class="grade-arrow" width="12" height="12" viewBox="0 0 12 12"><path fill="#666" d="M6 8L1 3h10z"/></svg>
+          </button>
+          <div class="grade-panel" id="grade-panel">
+            <div class="grade-search-wrap">
+              <svg class="grade-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" class="grade-search" id="grade-search" placeholder="Search grades by name, description, or properties..." />
+            </div>
+            <div class="grade-list" id="grade-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-section content-card-inner">
         <h3 class="section-title">Select Shape</h3>
         <select id="shape-select">
           <option value="cylinder">Solid Cylinder</option>
@@ -92,12 +109,176 @@ const materials = [
   const PI = Math.PI;
   let selectedDensity = 2.71; // default Aluminum
 
+  // Grade data by material
+  const gradeData: Record<string, { category: string; grades: { name: string; desc: string; density: number; tags: string[] }[] }[]> = {
+    'Aluminum': [
+      { category: 'Pure Aluminum', grades: [
+        { name: '1100', desc: 'Commercially pure aluminum with excellent formability', density: 2.71, tags: ['Excellent Formability', 'Good Corrosion Resistance', 'Non-Heat Treatable'] },
+      ]},
+      { category: 'Aluminum-Copper', grades: [
+        { name: '2011', desc: 'Free-machining alloy with good strength', density: 2.83, tags: ['Free Machining', 'Good Strength', 'Heat Treatable'] },
+        { name: '2024', desc: 'High-strength alloy with good fatigue resistance', density: 2.78, tags: ['High Strength', 'Good Fatigue Resistance', 'Heat Treatable'] },
+      ]},
+      { category: 'Aluminum-Manganese', grades: [
+        { name: '3003', desc: 'General-purpose alloy with good workability', density: 2.73, tags: ['Good Workability', 'Moderate Strength', 'Non-Heat Treatable'] },
+      ]},
+      { category: 'Aluminum-Silicon', grades: [
+        { name: '4043', desc: 'Welding filler alloy', density: 2.69, tags: ['Welding', 'Good Fluidity', 'Non-Heat Treatable'] },
+      ]},
+      { category: 'Aluminum-Magnesium', grades: [
+        { name: '5052', desc: 'Good workability and corrosion resistance', density: 2.68, tags: ['Marine Grade', 'Good Weldability', 'Non-Heat Treatable'] },
+        { name: '5083', desc: 'Highest strength non-heat treatable alloy', density: 2.66, tags: ['High Strength', 'Marine Grade', 'Non-Heat Treatable'] },
+      ]},
+      { category: 'Aluminum-Magnesium-Silicon', grades: [
+        { name: '6061', desc: 'Versatile alloy with good mechanical properties', density: 2.70, tags: ['Versatile', 'Good Weldability', 'Heat Treatable'] },
+        { name: '6063', desc: 'Architectural alloy with good surface finish', density: 2.70, tags: ['Extrusion Alloy', 'Good Surface Finish', 'Heat Treatable'] },
+        { name: '6082', desc: 'Medium-strength structural alloy', density: 2.71, tags: ['Structural', 'Good Machinability', 'Heat Treatable'] },
+      ]},
+      { category: 'Aluminum-Zinc', grades: [
+        { name: '7075', desc: 'Very high strength aerospace alloy', density: 2.81, tags: ['Aerospace Grade', 'Very High Strength', 'Heat Treatable'] },
+      ]},
+    ],
+    'Stainless Steel': [
+      { category: 'Austenitic', grades: [
+        { name: '304', desc: 'Most common stainless steel grade', density: 7.93, tags: ['Corrosion Resistant', 'Non-Magnetic', 'Weldable'] },
+        { name: '316', desc: 'Marine grade with molybdenum for pitting resistance', density: 7.99, tags: ['Marine Grade', 'Chemical Resistant', 'Non-Magnetic'] },
+      ]},
+      { category: 'Ferritic', grades: [
+        { name: '430', desc: 'General purpose ferritic stainless steel', density: 7.74, tags: ['Magnetic', 'Good Formability', 'Lower Cost'] },
+      ]},
+      { category: 'Martensitic', grades: [
+        { name: '410', desc: 'Heat treatable with moderate corrosion resistance', density: 7.74, tags: ['Heat Treatable', 'Magnetic', 'Hardenable'] },
+      ]},
+    ],
+    'Copper': [
+      { category: 'Pure Copper', grades: [
+        { name: 'C110', desc: 'Electrolytic tough pitch copper', density: 8.94, tags: ['High Conductivity', 'Excellent Ductility'] },
+      ]},
+      { category: 'Beryllium Copper', grades: [
+        { name: 'C172', desc: 'High-strength beryllium copper alloy', density: 8.26, tags: ['High Strength', 'Non-Sparking', 'Spring Quality'] },
+      ]},
+    ],
+    'Brass': [
+      { category: 'Common Brass', grades: [
+        { name: 'C260', desc: 'Cartridge brass, 70/30', density: 8.53, tags: ['Good Formability', 'Cold Working'] },
+        { name: 'C360', desc: 'Free-cutting brass', density: 8.49, tags: ['Free Machining', 'Leaded', 'High Speed Machining'] },
+      ]},
+    ],
+    'Zinc': [
+      { category: 'Zinc Alloys', grades: [
+        { name: 'Zamak 3', desc: 'Most widely used zinc die casting alloy', density: 6.60, tags: ['Die Casting', 'Good Stability', 'Platable'] },
+        { name: 'Zamak 5', desc: 'Higher strength zinc die casting alloy', density: 6.60, tags: ['Die Casting', 'Higher Strength', 'Good Creep Resistance'] },
+      ]},
+    ],
+    'Titanium': [
+      { category: 'Commercially Pure', grades: [
+        { name: 'Grade 2', desc: 'Most common commercially pure titanium', density: 4.51, tags: ['Corrosion Resistant', 'Biocompatible', 'Weldable'] },
+      ]},
+      { category: 'Titanium Alloys', grades: [
+        { name: 'Ti-6Al-4V (Grade 5)', desc: 'Most common titanium alloy', density: 4.43, tags: ['Aerospace Grade', 'High Strength', 'Heat Treatable'] },
+      ]},
+    ],
+    'Nickel': [
+      { category: 'Nickel Alloys', grades: [
+        { name: 'Inconel 625', desc: 'Nickel-chromium alloy with excellent corrosion resistance', density: 8.44, tags: ['High Temperature', 'Corrosion Resistant', 'Weldable'] },
+        { name: 'Monel 400', desc: 'Nickel-copper alloy with high strength', density: 8.80, tags: ['Marine Grade', 'Acid Resistant', 'High Strength'] },
+      ]},
+    ],
+    'Magnesium': [
+      { category: 'Magnesium Alloys', grades: [
+        { name: 'AZ31B', desc: 'General-purpose wrought magnesium alloy', density: 1.77, tags: ['Lightweight', 'Good Strength', 'Weldable'] },
+        { name: 'AZ91D', desc: 'Most common magnesium die casting alloy', density: 1.81, tags: ['Die Casting', 'Good Castability', 'Corrosion Resistant'] },
+      ]},
+    ],
+  };
+
+  let currentMaterial = 'Aluminum';
+
+  // Grade dropdown elements
+  const gradeDropdown = document.getElementById('grade-dropdown')!;
+  const gradeTrigger = document.getElementById('grade-trigger')!;
+  const gradeTriggerText = document.getElementById('grade-trigger-text')!;
+  const gradePanel = document.getElementById('grade-panel')!;
+  const gradeSearch = document.getElementById('grade-search') as HTMLInputElement;
+  const gradeList = document.getElementById('grade-list')!;
+
+  function renderGrades(filter = '') {
+    const data = gradeData[currentMaterial] || [];
+    const lowerFilter = filter.toLowerCase();
+    let html = '';
+
+    for (const cat of data) {
+      const filtered = cat.grades.filter(g =>
+        !filter ||
+        g.name.toLowerCase().includes(lowerFilter) ||
+        g.desc.toLowerCase().includes(lowerFilter) ||
+        g.tags.some(t => t.toLowerCase().includes(lowerFilter))
+      );
+      if (filtered.length === 0) continue;
+
+      html += `<div class="grade-category">${cat.category}</div>`;
+      for (const g of filtered) {
+        html += `<button type="button" class="grade-option" data-density="${g.density}" data-name="${g.name}">
+          <div class="grade-name">${g.name}</div>
+          <div class="grade-desc">${g.desc}</div>
+          <div class="grade-tags">${g.tags.map(t => `<span class="grade-tag">${t}</span>`).join('')}</div>
+        </button>`;
+      }
+    }
+
+    if (!html) {
+      html = '<div class="grade-empty">No grades found</div>';
+    }
+
+    gradeList.innerHTML = html;
+
+    // Bind click events
+    gradeList.querySelectorAll('.grade-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const density = parseFloat(btn.getAttribute('data-density')!);
+        const name = btn.getAttribute('data-name')!;
+        selectedDensity = density;
+        gradeTriggerText.textContent = name;
+        gradeDropdown.classList.remove('open');
+        calculate();
+      });
+    });
+  }
+
+  function updateGradesForMaterial() {
+    gradeTriggerText.textContent = 'Select a grade...';
+    gradeSearch.value = '';
+    renderGrades();
+  }
+
+  // Toggle dropdown
+  gradeTrigger.addEventListener('click', () => {
+    gradeDropdown.classList.toggle('open');
+    if (gradeDropdown.classList.contains('open')) {
+      gradeSearch.focus();
+    }
+  });
+
+  // Search
+  gradeSearch.addEventListener('input', () => {
+    renderGrades(gradeSearch.value);
+  });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (!gradeDropdown.contains(e.target as Node)) {
+      gradeDropdown.classList.remove('open');
+    }
+  });
+
   // Material selection
   document.querySelectorAll('.material-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
       selectedDensity = parseFloat(btn.getAttribute('data-density')!);
+      currentMaterial = btn.getAttribute('data-name')!;
+      updateGradesForMaterial();
       calculate();
     });
   });
@@ -231,6 +412,7 @@ const materials = [
   document.getElementById('weight-unit')!.addEventListener('change', calculate);
 
   renderFields();
+  renderGrades();
 </script>
 
 <style>
@@ -302,6 +484,158 @@ const materials = [
     display: block;
   }
 
+  /* Grade Dropdown */
+  .grade-dropdown {
+    position: relative;
+  }
+
+  .grade-trigger {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    background: white;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    transition: border-color 0.2s;
+  }
+
+  .grade-trigger:hover,
+  .grade-dropdown.open .grade-trigger {
+    border-color: #4a7dff;
+  }
+
+  .grade-arrow {
+    transition: transform 0.2s;
+  }
+
+  .grade-dropdown.open .grade-arrow {
+    transform: rotate(180deg);
+  }
+
+  .grade-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 50;
+    max-height: 380px;
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  .grade-dropdown.open .grade-panel {
+    display: flex;
+  }
+
+  .grade-search-wrap {
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .grade-search-icon {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .grade-search {
+    width: 100%;
+    padding: 12px 14px 12px 38px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: var(--color-text);
+    outline: none;
+  }
+
+  .grade-search:focus {
+    border-color: #4a7dff;
+  }
+
+  .grade-list {
+    overflow-y: auto;
+    max-height: 310px;
+  }
+
+  .grade-category {
+    padding: 10px 16px 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+    background: #f7f7f7;
+    border-top: 1px solid #eee;
+    position: sticky;
+    top: 0;
+  }
+
+  .grade-list :global(.grade-option) {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-main);
+    transition: background 0.15s;
+  }
+
+  .grade-list :global(.grade-option:hover) {
+    background: #f5f7ff;
+  }
+
+  .grade-list :global(.grade-name) {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 2px;
+  }
+
+  .grade-list :global(.grade-desc) {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin-bottom: 6px;
+  }
+
+  .grade-list :global(.grade-tags) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .grade-list :global(.grade-tag) {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    background: #e8eeff;
+    color: #3b5fcc;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .grade-list :global(.grade-empty) {
+    padding: 20px;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.85rem;
+  }
+
+  /* Standard selects */
   select {
     width: 100%;
     padding: 14px 16px;
@@ -404,6 +738,10 @@ const materials = [
 
     .results-grid {
       grid-template-columns: 1fr;
+    }
+
+    .calc-section {
+      padding: 20px 15px;
     }
   }
 </style>

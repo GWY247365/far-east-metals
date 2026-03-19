@@ -1,45 +1,38 @@
 import { EmailMessage } from 'cloudflare:email';
-import { createMimeMessage } from 'mimetext';
+
+function buildMimeEmail({ from, to, subject, htmlBody }) {
+  const boundary = '----=_Part_' + Date.now();
+  const lines = [
+    `From: ${from}`,
+    `To: ${to}`,
+    `Subject: ${subject}`,
+    'MIME-Version: 1.0',
+    `Content-Type: multipart/alternative; boundary="${boundary}"`,
+    '',
+    `--${boundary}`,
+    'Content-Type: text/html; charset=UTF-8',
+    'Content-Transfer-Encoding: 7bit',
+    '',
+    htmlBody,
+    '',
+    `--${boundary}--`,
+  ];
+  return lines.join('\r\n');
+}
 
 function buildEmailHtml({ name, email, tel, service, message, subscribe }) {
-  return `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #F5A623; border-bottom: 2px solid #F5A623; padding-bottom: 10px;">
-        New Contact Form Submission
-      </h2>
-      <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
-        <tr>
-          <td style="padding: 10px 0; font-weight: bold; color: #333; width: 120px; vertical-align: top;">Name</td>
-          <td style="padding: 10px 0; color: #555;">${name}</td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Email</td>
-          <td style="padding: 10px 0; color: #555;">
-            <a href="mailto:${email}" style="color: #F5A623;">${email}</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Tel</td>
-          <td style="padding: 10px 0; color: #555;">${tel || 'Not provided'}</td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Service</td>
-          <td style="padding: 10px 0; color: #555;">${service}</td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Message</td>
-          <td style="padding: 10px 0; color: #555; white-space: pre-wrap;">${message || 'No message'}</td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-weight: bold; color: #333; vertical-align: top;">Subscribe</td>
-          <td style="padding: 10px 0; color: #555;">${subscribe ? 'Yes' : 'No'}</td>
-        </tr>
-      </table>
-      <p style="margin-top: 20px; font-size: 12px; color: #999;">
-        Sent from fareastmetals.com.hk contact form
-      </p>
-    </div>
-  `;
+  return `<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto">
+<h2 style="color:#F5A623;border-bottom:2px solid #F5A623;padding-bottom:10px">New Contact Form Submission</h2>
+<table style="width:100%;border-collapse:collapse;margin-top:16px">
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;width:120px;vertical-align:top">Name</td><td style="padding:10px 0;color:#555">${name}</td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Email</td><td style="padding:10px 0;color:#555"><a href="mailto:${email}" style="color:#F5A623">${email}</a></td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Tel</td><td style="padding:10px 0;color:#555">${tel || 'Not provided'}</td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Service</td><td style="padding:10px 0;color:#555">${service}</td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Message</td><td style="padding:10px 0;color:#555;white-space:pre-wrap">${message || 'No message'}</td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Subscribe</td><td style="padding:10px 0;color:#555">${subscribe ? 'Yes' : 'No'}</td></tr>
+</table>
+<p style="margin-top:20px;font-size:12px;color:#999">Sent from fareastmetals.com.hk contact form</p>
+</div>`;
 }
 
 export default {
@@ -83,10 +76,8 @@ export default {
             });
           }
 
-          // Increment rate limit counter (expires in 1 hour)
           await env.CONTACTS.put(rateLimitKey, String(count + 1), { expirationTtl: 3600 });
 
-          // Store submission in KV
           const key = `${Date.now()}-${email}`;
           await env.CONTACTS.put(key, JSON.stringify({
             name, email, tel, service, message, subscribe,
@@ -96,35 +87,40 @@ export default {
         }
 
         // Send email via Cloudflare Email Workers
+        let emailError = null;
         if (env.SEND_EMAIL) {
           try {
-            const msg = createMimeMessage();
-            msg.setSender({ name: 'Far East Metals Website', addr: 'noreply@fareastmetals.com.hk' });
-            msg.setRecipient('info@fareastmetals.com.hk');
-            msg.setSubject(`New Inquiry: ${service} - from ${name}`);
-            msg.addMessage({
-              contentType: 'text/html',
-              data: buildEmailHtml({ name, email, tel, service, message, subscribe }),
+            const rawMime = buildMimeEmail({
+              from: 'Far East Metals <noreply@fareastmetals.com.hk>',
+              to: 'info@fareastmetals.com.hk',
+              subject: `New Inquiry: ${service} - from ${name}`,
+              htmlBody: buildEmailHtml({ name, email, tel, service, message, subscribe }),
             });
 
             const emailMessage = new EmailMessage(
               'noreply@fareastmetals.com.hk',
               'info@fareastmetals.com.hk',
-              msg.asRaw()
+              rawMime
             );
             await env.SEND_EMAIL.send(emailMessage);
           } catch (emailErr) {
-            // Email failed but form data saved in KV
-            console.error('Email send failed:', emailErr);
+            emailError = emailErr.message || String(emailErr);
+            console.error('Email send failed:', emailError);
           }
+        } else {
+          emailError = 'SEND_EMAIL binding not available';
         }
 
-        return new Response(JSON.stringify({ success: true }), {
+        return new Response(JSON.stringify({
+          success: true,
+          emailSent: !emailError,
+          emailError: emailError,
+        }), {
           status: 200,
           headers: { 'Content-Type': 'application/json' },
         });
       } catch (err) {
-        return new Response(JSON.stringify({ error: 'Internal server error' }), {
+        return new Response(JSON.stringify({ error: 'Internal server error', detail: err.message }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' },
         });

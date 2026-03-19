@@ -20,7 +20,11 @@ const { title } = Astro.props;
   <title>{title}</title>
 </head>
 <body>
-  <div class="liquid-bg"></div>
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="https://video.wixstatic.com/video/11062b_3ed986e7d4664b70aa563423352c130f/1080p/mp4/file.mp4" type="video/mp4" />
+    </video>
+  </div>
   <a class="skip-link" href="#main-content">Skip to Main Content</a>
   <Navbar />
   <main id="main-content">

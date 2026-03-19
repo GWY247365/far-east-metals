@@ -6,10 +6,8 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero">
     <div class="hero-content">
       <h1 class="hero-title">Far East Metals Development</h1>
-      <div class="hero-subtitle">
-        <span class="hero-aluminum">Aluminum</span>
-        <span class="hero-services">Extrusion | Forging | Ingot</span>
-      </div>
+      <h2 class="hero-aluminum">Aluminum</h2>
+      <h2 class="hero-services">Extrusion | Forging | Ingot</h2>
     </div>
   </section>
 </Layout>
@@ -17,44 +15,61 @@ import Layout from '../layouts/Layout.astro';
 <style>
   .hero {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
     padding: 0 20px;
+    padding-top: 28vh;
   }
 
   .hero-content {
+    max-width: var(--max-width);
+    width: 100%;
     text-align: center;
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
-    font-weight: 300;
-    color: var(--color-white);
-    letter-spacing: -1px;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero-subtitle {
-    text-align: right;
-    margin-right: 5%;
+    font-size: 87px;
+    font-weight: 400;
+    color: rgb(44, 50, 41);
+    letter-spacing: normal;
+    margin-bottom: 0;
+    text-shadow: none;
   }
 
   .hero-aluminum {
-    display: block;
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.9);
-    letter-spacing: 2px;
+    font-size: 41px;
+    font-weight: 400;
+    color: rgb(39, 43, 49);
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 
   .hero-services {
-    display: block;
-    font-size: clamp(0.8rem, 1.5vw, 1.1rem);
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.75);
-    letter-spacing: 3px;
-    margin-top: 2px;
+    font-size: 23px;
+    font-weight: 400;
+    color: rgb(39, 43, 49);
+    text-align: right;
+    margin-top: -2px;
+    padding-right: 5%;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: 20vh;
+    }
+
+    .hero-title {
+      font-size: 40px;
+    }
+
+    .hero-aluminum {
+      font-size: 24px;
+    }
+
+    .hero-services {
+      font-size: 14px;
+    }
   }
 </style>

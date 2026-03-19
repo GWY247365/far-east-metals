@@ -29,16 +29,17 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .hero-title {
-    font-size: 87px;
+    font-size: clamp(40px, 5.75vw, 87px);
     font-weight: 400;
     color: rgb(44, 50, 41);
     letter-spacing: normal;
     margin-bottom: 0;
     text-shadow: none;
+    white-space: nowrap;
   }
 
   .hero-aluminum {
-    font-size: 41px;
+    font-size: clamp(24px, 2.7vw, 41px);
     font-weight: 400;
     color: rgb(39, 43, 49);
     text-align: center;
@@ -47,12 +48,12 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .hero-services {
-    font-size: 23px;
+    font-size: clamp(13px, 1.52vw, 23px);
     font-weight: 400;
     color: rgb(39, 43, 49);
     text-align: right;
     margin-top: -2px;
-    padding-right: 5%;
+    padding-right: 0;
   }
 
   @media (max-width: 768px) {

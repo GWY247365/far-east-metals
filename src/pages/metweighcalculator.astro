@@ -331,20 +331,20 @@ const materials = [
     margin-top: 15px;
   }
 
-  .dim-field {
+  .dimension-inputs :global(.dim-field) {
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
 
-  .dim-field label {
+  .dimension-inputs :global(.dim-field label) {
     display: block;
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--color-text);
   }
 
-  .dim-field input {
+  .dimension-inputs :global(.dim-field input) {
     width: 100%;
     padding: 14px 16px;
     border: 1px solid #e0e0e0;
@@ -355,7 +355,7 @@ const materials = [
     background: white;
   }
 
-  .dim-field input:focus {
+  .dimension-inputs :global(.dim-field input:focus) {
     outline: none;
     border-color: var(--color-accent);
   }

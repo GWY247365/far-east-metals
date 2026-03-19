@@ -107,7 +107,8 @@ const materials = [
 
 <script>
   const PI = Math.PI;
-  let selectedDensity = 2.71; // default Aluminum
+  let selectedDensity = 0; // no density until grade is selected
+  let gradeSelected = false;
 
   // Grade data by material
   const gradeData: Record<string, { category: string; grades: { name: string; desc: string; density: number; tags: string[] }[] }[]> = {
@@ -351,6 +352,7 @@ const materials = [
         const density = parseFloat(btn.getAttribute('data-density')!);
         const name = btn.getAttribute('data-name')!;
         selectedDensity = density;
+        gradeSelected = true;
         gradeTriggerText.textContent = name;
         gradeDropdown.classList.remove('open');
         calculate();
@@ -359,6 +361,8 @@ const materials = [
   }
 
   function updateGradesForMaterial() {
+    gradeSelected = false;
+    selectedDensity = 0;
     gradeTriggerText.textContent = 'Select a grade...';
     gradeSearch.value = '';
     renderGrades();
@@ -504,7 +508,7 @@ const materials = [
 
     // Show/hide results section
     const resultsSection = document.getElementById('results-section')!;
-    if (volumeMm3 <= 0) {
+    if (volumeMm3 <= 0 || !gradeSelected) {
       resultsSection.hidden = true;
       return;
     }

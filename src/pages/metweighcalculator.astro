@@ -78,7 +78,7 @@ const materials = [
         </div>
       </div>
 
-      <div class="calc-section content-card-inner results-section">
+      <div class="calc-section content-card-inner results-section" id="results-section" hidden>
         <h3 class="section-title">Results</h3>
         <div class="results-grid">
           <div class="result-box">
@@ -501,6 +501,14 @@ const materials = [
 
     // density is g/cm³, 1 cm³ = 1000 mm³
     const weightG = volumeMm3 * selectedDensity / 1000;
+
+    // Show/hide results section
+    const resultsSection = document.getElementById('results-section')!;
+    if (volumeMm3 <= 0) {
+      resultsSection.hidden = true;
+      return;
+    }
+    resultsSection.hidden = false;
 
     // Display volume
     const volUnit = (document.getElementById('volume-unit') as HTMLSelectElement).value;

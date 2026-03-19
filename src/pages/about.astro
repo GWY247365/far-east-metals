@@ -50,7 +50,11 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="brochure-section content-card-inner">
-        <h2><a href="/brochure.pdf" class="brochure-link">Download Our Company Brochure</a></h2>
+        <a href="/brochure.pdf" class="brochure-link" download="Far_East_Metals_Brochure.pdf">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Our Company Brochure</span>
+          <span class="brochure-size">PDF, 3.6 MB</span>
+        </a>
       </div>
     </div>
   </section>
@@ -128,13 +132,29 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .brochure-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     color: var(--color-accent);
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 16px;
+    border: 2px solid var(--color-accent);
+    border-radius: 10px;
+    transition: all 0.3s;
   }
 
   .brochure-link:hover {
-    text-decoration: underline;
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .brochure-size {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.7;
   }
 
   @media (max-width: 768px) {

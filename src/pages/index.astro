@@ -6,8 +6,10 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero">
     <div class="hero-content">
       <h1 class="hero-title">Far East Metals Development</h1>
-      <h2 class="hero-aluminum">Aluminum</h2>
-      <h2 class="hero-services">Extrusion | Forging | Ingot</h2>
+      <div class="hero-right">
+        <h2 class="hero-aluminum">Aluminum</h2>
+        <h2 class="hero-services">Extrusion | Forging | Ingot</h2>
+      </div>
     </div>
   </section>
 </Layout>
@@ -19,58 +21,61 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     min-height: 100vh;
     padding: 0 20px;
-    padding-top: 28vh;
   }
 
   .hero-content {
     max-width: var(--max-width);
     width: 100%;
-    text-align: center;
+    padding-top: 42%;
   }
 
   .hero-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: clamp(40px, 5.75vw, 87px);
-    font-weight: 400;
+    font-weight: 300;
     color: rgb(44, 50, 41);
     letter-spacing: normal;
+    line-height: normal;
     margin-bottom: 0;
-    text-shadow: none;
+    text-align: center;
     white-space: nowrap;
   }
 
-  .hero-aluminum {
-    font-size: clamp(24px, 2.7vw, 41px);
-    font-weight: 400;
-    color: rgb(39, 43, 49);
-    text-align: center;
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-
-  .hero-services {
-    font-size: clamp(13px, 1.52vw, 23px);
-    font-weight: 400;
-    color: rgb(39, 43, 49);
-    text-align: right;
-    margin-top: -2px;
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     padding-right: 0;
   }
 
+  .hero-aluminum {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(24px, 2.7vw, 41px);
+    font-weight: 300;
+    color: rgb(39, 43, 49);
+    letter-spacing: normal;
+    line-height: normal;
+    margin: 0;
+  }
+
+  .hero-services {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(13px, 1.52vw, 23px);
+    font-weight: 300;
+    color: rgb(39, 43, 49);
+    letter-spacing: normal;
+    line-height: normal;
+    margin: 0;
+  }
+
   @media (max-width: 768px) {
-    .hero {
-      padding-top: 20vh;
+    .hero-content {
+      padding-top: 30%;
     }
 
     .hero-title {
-      font-size: 40px;
-    }
-
-    .hero-aluminum {
-      font-size: 24px;
-    }
-
-    .hero-services {
-      font-size: 14px;
+      white-space: normal;
+      text-align: center;
     }
   }
 </style>

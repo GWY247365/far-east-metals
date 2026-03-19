@@ -5,9 +5,11 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = 'Far East Metals Development Limited - Aluminum Extrusion, Forging, and Ingot Production. Hong Kong based industry leader since 2003.' } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, 'https://www.fareastmetals.com.hk').href;
 ---
 
 <!DOCTYPE html>
@@ -15,11 +17,33 @@ const { title } = Astro.props;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Far East Metals Development Limited - Aluminum Extrusion, Forging, and Ingot Production. Hong Kong based industry leader since 2003." />
+  <meta name="description" content={description} />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Far East Metals Development Limited" />
+  <meta property="og:locale" content="en_HK" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500&display=swap" rel="stylesheet" />
+
   <title>{title}</title>
 </head>
 <body>

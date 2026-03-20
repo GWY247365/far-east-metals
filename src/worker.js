@@ -130,18 +130,6 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Debug: check env bindings (temporary)
-    if (url.pathname === '/api/debug-env') {
-      return new Response(JSON.stringify({
-        hasAssets: !!env.ASSETS,
-        hasContacts: !!env.CONTACTS,
-        hasSmtpUser: !!env.SMTP_USER,
-        hasSmtpPass: !!env.SMTP_PASS,
-        smtpUserType: typeof env.SMTP_USER,
-        envKeys: Object.keys(env),
-      }), { headers: { 'Content-Type': 'application/json' } });
-    }
-
     // Handle contact form API
     if (url.pathname === '/api/contact' && request.method === 'POST') {
       try {
@@ -172,7 +160,7 @@ export default {
           const existing = await env.CONTACTS.get(rateLimitKey);
           const count = existing ? parseInt(existing, 10) : 0;
 
-          if (count >= 5) {
+          if (count >= 50) {
             return new Response(JSON.stringify({ error: 'Too many submissions. Please try again later.' }), {
               status: 429,
               headers: { 'Content-Type': 'application/json' },

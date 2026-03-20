@@ -1,24 +1,111 @@
-import { EmailMessage } from 'cloudflare:email';
+/* ──────────────────────────────────────────
+   Far East Metals – Cloudflare Worker
+   • Serves static assets
+   • Handles /api/contact with KV + SMTP email
+   ────────────────────────────────────────── */
 
-function buildMimeEmail({ from, to, subject, htmlBody }) {
-  const boundary = '----=_Part_' + Date.now();
-  const lines = [
-    `From: ${from}`,
-    `To: ${to}`,
-    `Subject: ${subject}`,
-    'MIME-Version: 1.0',
-    `Content-Type: multipart/alternative; boundary="${boundary}"`,
-    '',
-    `--${boundary}`,
-    'Content-Type: text/html; charset=UTF-8',
-    'Content-Transfer-Encoding: 7bit',
-    '',
-    htmlBody,
-    '',
-    `--${boundary}--`,
-  ];
-  return lines.join('\r\n');
+// ── SMTP via TCP connect() ──────────────────
+
+async function smtpSend({ host, port, user, pass, from, to, subject, htmlBody }) {
+  const socket = connect({ hostname: host, port }, { secureTransport: 'on' });
+  const writer = socket.writable.getWriter();
+  const reader = socket.readable.getReader();
+  const decoder = new TextDecoder();
+  const encoder = new TextEncoder();
+
+  // Helper: read SMTP response
+  async function readReply() {
+    const { value } = await reader.read();
+    return value ? decoder.decode(value) : '';
+  }
+
+  // Helper: send SMTP command
+  async function send(cmd) {
+    await writer.write(encoder.encode(cmd + '\r\n'));
+  }
+
+  try {
+    // Greeting
+    await readReply();
+
+    // EHLO
+    await send(`EHLO fareastmetals.com.hk`);
+    await readReply();
+
+    // AUTH LOGIN
+    await send('AUTH LOGIN');
+    await readReply();
+
+    await send(btoa(user));
+    await readReply();
+
+    await send(btoa(pass));
+    const authReply = await readReply();
+    if (!authReply.startsWith('235')) {
+      throw new Error('SMTP auth failed: ' + authReply.trim());
+    }
+
+    // MAIL FROM
+    await send(`MAIL FROM:<${from}>`);
+    const fromReply = await readReply();
+    if (!fromReply.startsWith('250')) {
+      throw new Error('MAIL FROM failed: ' + fromReply.trim());
+    }
+
+    // RCPT TO
+    await send(`RCPT TO:<${to}>`);
+    const toReply = await readReply();
+    if (!toReply.startsWith('250')) {
+      throw new Error('RCPT TO failed: ' + toReply.trim());
+    }
+
+    // DATA
+    await send('DATA');
+    const dataReply = await readReply();
+    if (!dataReply.startsWith('354')) {
+      throw new Error('DATA failed: ' + dataReply.trim());
+    }
+
+    // Build MIME message
+    const boundary = '----=_Part_' + Date.now();
+    const mime = [
+      `From: Far East Metals <${from}>`,
+      `To: ${to}`,
+      `Subject: ${subject}`,
+      'MIME-Version: 1.0',
+      `Content-Type: multipart/alternative; boundary="${boundary}"`,
+      '',
+      `--${boundary}`,
+      'Content-Type: text/html; charset=UTF-8',
+      'Content-Transfer-Encoding: 7bit',
+      '',
+      htmlBody,
+      '',
+      `--${boundary}--`,
+      '',
+      '.',  // End of DATA
+    ].join('\r\n');
+
+    await writer.write(encoder.encode(mime));
+    const sendReply = await readReply();
+    if (!sendReply.startsWith('250')) {
+      throw new Error('Send failed: ' + sendReply.trim());
+    }
+
+    // QUIT
+    await send('QUIT');
+    await readReply();
+
+    return { success: true };
+  } catch (err) {
+    throw err;
+  } finally {
+    try { writer.close(); } catch (_) {}
+    try { reader.cancel(); } catch (_) {}
+  }
 }
+
+// ── Email HTML template ─────────────────────
 
 function buildEmailHtml({ name, email, tel, service, message, subscribe }) {
   return `<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto">
@@ -34,6 +121,8 @@ function buildEmailHtml({ name, email, tel, service, message, subscribe }) {
 <p style="margin-top:20px;font-size:12px;color:#999">Sent from fareastmetals.com.hk contact form</p>
 </div>`;
 }
+
+// ── Main Worker ─────────────────────────────
 
 export default {
   async fetch(request, env) {
@@ -62,7 +151,7 @@ export default {
           });
         }
 
-        // Simple rate limiting by IP (max 5 submissions per hour)
+        // Simple rate limiting by IP
         const clientIP = request.headers.get('CF-Connecting-IP') || 'unknown';
         if (env.CONTACTS) {
           const rateLimitKey = `ratelimit-${clientIP}`;
@@ -86,45 +175,35 @@ export default {
           }));
         }
 
-        // Send email via Cloudflare Email Workers
+        // Send email via SMTP (NetEase)
+        let emailSent = false;
         let emailError = null;
-        if (env.SEND_EMAIL) {
+
+        if (env.SMTP_USER && env.SMTP_PASS) {
           try {
-            const rawMime = buildMimeEmail({
-              from: 'Far East Metals <noreply@fareastmetals.com.hk>',
-              to: 'info@fareastmetals.com.hk',
+            await smtpSend({
+              host: 'smtp.qiye.163.com',
+              port: 465,
+              user: env.SMTP_USER,
+              pass: env.SMTP_PASS,
+              from: env.SMTP_USER,
+              to: env.SMTP_USER,
               subject: `New Inquiry: ${service} - from ${name}`,
               htmlBody: buildEmailHtml({ name, email, tel, service, message, subscribe }),
             });
-
-            // Convert string to ReadableStream as required by EmailMessage
-            const encoder = new TextEncoder();
-            const uint8Array = encoder.encode(rawMime);
-            const stream = new ReadableStream({
-              start(controller) {
-                controller.enqueue(uint8Array);
-                controller.close();
-              },
-            });
-
-            const emailMessage = new EmailMessage(
-              'noreply@fareastmetals.com.hk',
-              'info@fareastmetals.com.hk',
-              stream
-            );
-            await env.SEND_EMAIL.send(emailMessage);
+            emailSent = true;
           } catch (emailErr) {
             emailError = emailErr.message || String(emailErr);
-            console.error('Email send failed:', emailError);
+            console.error('SMTP send failed:', emailError);
           }
         } else {
-          emailError = 'SEND_EMAIL binding not available';
+          emailError = 'SMTP credentials not configured';
         }
 
         return new Response(JSON.stringify({
           success: true,
-          emailSent: !emailError,
-          emailError: emailError,
+          emailSent,
+          emailError,
         }), {
           status: 200,
           headers: { 'Content-Type': 'application/json' },

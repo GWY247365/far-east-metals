@@ -70,12 +70,26 @@ import Layout from '../layouts/Layout.astro';
 
   @media (max-width: 768px) {
     .hero-content {
-      padding-top: 25vh;
+      padding-top: 18vh;
     }
 
     .hero-title {
       white-space: normal;
-      text-align: center;
+      text-align: left;
+      font-size: clamp(32px, 10vw, 50px);
+    }
+
+    .hero-right {
+      align-items: flex-start;
+      margin-top: 8px;
+    }
+
+    .hero-aluminum {
+      font-size: clamp(20px, 6vw, 32px);
+    }
+
+    .hero-services {
+      font-size: clamp(12px, 3.5vw, 18px);
     }
   }
 </style>

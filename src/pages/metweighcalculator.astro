@@ -16,10 +16,10 @@ const materials = [
 <Layout title="Metal Weight Calculator | Far East Metals" description="Free online metal weight calculator. Calculate weight for aluminum, stainless steel, copper, brass, titanium and more. Supports 100+ alloy grades.">
   <section class="calculator-page">
     <div class="content-card calc-card">
-      <div class="calc-title-bar">
+      <div class="calc-title-bar reveal">
         <h2>Metal Weight Calculator</h2>
       </div>
-      <div class="calc-section content-card-inner">
+      <div class="calc-section content-card-inner reveal">
         <h3 class="section-title">Select Material</h3>
         <div class="materials-grid">
           {materials.map((mat) => (
@@ -36,7 +36,7 @@ const materials = [
         </div>
       </div>
 
-      <div class="calc-section content-card-inner">
+      <div class="calc-section content-card-inner reveal">
         <h3 class="section-title">Select Grade</h3>
         <div class="grade-dropdown" id="grade-dropdown">
           <button type="button" class="grade-trigger" id="grade-trigger">
@@ -53,7 +53,7 @@ const materials = [
         </div>
       </div>
 
-      <div class="calc-section content-card-inner">
+      <div class="calc-section content-card-inner reveal">
         <h3 class="section-title">Select Shape</h3>
         <select id="shape-select">
           <option value="cylinder">Solid Cylinder</option>
@@ -64,7 +64,7 @@ const materials = [
         </select>
       </div>
 
-      <div class="calc-section content-card-inner">
+      <div class="calc-section content-card-inner reveal">
         <h3 class="section-title">Dimensions</h3>
         <div class="unit-row">
           <select id="unit-select">

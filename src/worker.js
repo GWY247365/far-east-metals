@@ -97,10 +97,20 @@ export default {
               htmlBody: buildEmailHtml({ name, email, tel, service, message, subscribe }),
             });
 
+            // Convert string to ReadableStream as required by EmailMessage
+            const encoder = new TextEncoder();
+            const uint8Array = encoder.encode(rawMime);
+            const stream = new ReadableStream({
+              start(controller) {
+                controller.enqueue(uint8Array);
+                controller.close();
+              },
+            });
+
             const emailMessage = new EmailMessage(
               'noreply@fareastmetals.com.hk',
               'info@fareastmetals.com.hk',
-              rawMime
+              stream
             );
             await env.SEND_EMAIL.send(emailMessage);
           } catch (emailErr) {

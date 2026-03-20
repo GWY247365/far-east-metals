@@ -519,18 +519,12 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     gap: 20px;
     padding: 10px 20px 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .hp-process-track::-webkit-scrollbar {
-    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .hp-process-card {
-    flex: 0 0 220px;
+    flex: 0 0 180px;
     scroll-snap-align: start;
     background: rgba(255, 255, 255, 0.65);
     border-radius: 16px;
@@ -802,7 +796,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .hp-process-card {
-      flex: 0 0 150px;
+      flex: 0 0 calc(50% - 12px);
       padding: 16px 12px 14px;
     }
 

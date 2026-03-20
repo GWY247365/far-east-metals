@@ -15,7 +15,8 @@
     }
   ],
   "vars": {
-    "SMTP_USER": "info@fareastmetals.com.hk"
+    "SMTP_USER": "felixgwyi@fareastmetals.com.hk",
+    "SMTP_TO": "felixgwyi@fareastmetals.com.hk"
   }
-  // SMTP_PASS stored as Worker Secret (encrypted)
+  // SMTP_PASS is set via GitHub Actions secret → wrangler secret
 }

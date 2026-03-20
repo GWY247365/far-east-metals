@@ -199,7 +199,7 @@ export default {
               user: env.SMTP_USER,
               pass: env.SMTP_PASS,
               from: env.SMTP_USER,
-              to: env.SMTP_USER,
+              to: env.SMTP_TO || env.SMTP_USER,
               subject: `New Inquiry: ${service} - from ${name}`,
               htmlBody: buildEmailHtml({ name, email, tel, service, message, subscribe }),
             });

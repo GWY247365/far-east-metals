@@ -8,38 +8,72 @@ import { connect } from 'cloudflare:sockets';
 
 // ── SMTP via TCP connect() ──────────────────
 
+function withTimeout(promise, ms) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`Timeout after ${ms}ms`)), ms)),
+  ]);
+}
+
 async function smtpSend({ host, port, user, pass, from, to, subject, htmlBody }) {
+  // Try port 465 (implicit TLS) first, fallback info
   const socket = connect({ hostname: host, port }, { secureTransport: 'on' });
   const writer = socket.writable.getWriter();
   const reader = socket.readable.getReader();
   const decoder = new TextDecoder();
   const encoder = new TextEncoder();
 
-  // Helper: read SMTP response
+  let buffer = '';
+
+  // Read until we get a complete SMTP response (ends with \r\n and has 3-digit code)
   async function readReply() {
-    const { value } = await reader.read();
-    return value ? decoder.decode(value) : '';
+    while (true) {
+      // Check if buffer already has a complete response
+      const lines = buffer.split('\r\n');
+      for (let i = 0; i < lines.length - 1; i++) {
+        // SMTP continuation lines have dash after code (250-xxx), final line has space (250 xxx)
+        if (lines[i].length >= 3 && lines[i][3] !== '-') {
+          const result = lines.slice(0, i + 1).join('\r\n');
+          buffer = lines.slice(i + 1).join('\r\n');
+          return result;
+        }
+      }
+      const { value, done } = await withTimeout(reader.read(), 10000);
+      if (done) throw new Error('Connection closed unexpectedly');
+      buffer += decoder.decode(value);
+    }
   }
 
-  // Helper: send SMTP command
   async function send(cmd) {
     await writer.write(encoder.encode(cmd + '\r\n'));
   }
 
   try {
     // Greeting
-    await readReply();
+    const greeting = await readReply();
+    if (!greeting.startsWith('220')) {
+      throw new Error('Bad greeting: ' + greeting.trim());
+    }
 
     // EHLO
-    await send(`EHLO fareastmetals.com.hk`);
-    await readReply();
+    await send('EHLO fareastmetals.com.hk');
+    const ehlo = await readReply();
+    if (!ehlo.startsWith('250')) {
+      throw new Error('EHLO failed: ' + ehlo.trim());
+    }
 
     // AUTH LOGIN
     await send('AUTH LOGIN');
-    await readReply();
+    const authPrompt = await readReply();
+    if (!authPrompt.startsWith('334')) {
+      throw new Error('AUTH failed: ' + authPrompt.trim());
+    }
 
     await send(btoa(user));
-    await readReply();
+    const userReply = await readReply();
+    if (!userReply.startsWith('334')) {
+      throw new Error('AUTH user failed: ' + userReply.trim());
+    }
 
     await send(btoa(pass));
     const authReply = await readReply();
@@ -68,7 +102,7 @@ async function smtpSend({ host, port, user, pass, from, to, subject, htmlBody })
       throw new Error('DATA failed: ' + dataReply.trim());
     }
 
-    // Build MIME message
+    // Build and send MIME message
     const boundary = '----=_Part_' + Date.now();
     const mime = [
       `From: Far East Metals <${from}>`,
@@ -85,7 +119,8 @@ async function smtpSend({ host, port, user, pass, from, to, subject, htmlBody })
       '',
       `--${boundary}--`,
       '',
-      '.',  // End of DATA
+      '.',
+      '',
     ].join('\r\n');
 
     await writer.write(encoder.encode(mime));
@@ -96,11 +131,8 @@ async function smtpSend({ host, port, user, pass, from, to, subject, htmlBody })
 
     // QUIT
     await send('QUIT');
-    await readReply();
 
     return { success: true };
-  } catch (err) {
-    throw err;
   } finally {
     try { writer.close(); } catch (_) {}
     try { reader.cancel(); } catch (_) {}

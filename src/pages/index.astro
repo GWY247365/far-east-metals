@@ -11,10 +11,10 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="hp-hero-aluminum">Aluminum</h2>
         <h2 class="hp-hero-services">Extrusion | Forging | Ingot</h2>
       </div>
-      <div class="hp-hero-cta">
-        <a href="/contact/" class="hp-btn-primary">Get a Quote</a>
-        <a href="/about/" class="hp-btn-secondary">Learn More</a>
-      </div>
+    </div>
+    <div class="hp-hero-cta">
+      <a href="/contact/" class="hp-btn-primary">Get a Quote</a>
+      <a href="/about/" class="hp-btn-secondary">Learn More</a>
     </div>
     <div class="hp-scroll-indicator">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
@@ -296,17 +296,28 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     min-height: 100vh;
     padding: 0 20px;
     position: relative;
   }
 
   .hp-hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: var(--max-width);
     width: 100%;
-    padding-top: 15vh;
     text-align: center;
+  }
+
+  .hp-hero-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding-bottom: 80px;
+    flex-shrink: 0;
   }
 
   .hp-hero-title {
@@ -316,7 +327,6 @@ import Layout from '../layouts/Layout.astro';
     color: #fff;
     line-height: 1.1;
     margin-bottom: 5px;
-    white-space: nowrap;
   }
 
   .hp-hero-sub {
@@ -340,12 +350,6 @@ import Layout from '../layouts/Layout.astro';
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.2;
     margin: 0;
-  }
-
-  .hp-hero-cta {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
   }
 
   /* Buttons */
@@ -769,10 +773,6 @@ import Layout from '../layouts/Layout.astro';
 
   /* ===== Mobile ===== */
   @media (max-width: 768px) {
-    .hp-hero-content {
-      padding-top: 0;
-    }
-
     .hp-hero-title {
       white-space: normal;
       font-size: clamp(32px, 10vw, 50px);
@@ -781,13 +781,17 @@ import Layout from '../layouts/Layout.astro';
     .hp-hero-cta {
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      width: 90%;
+      padding-bottom: 100px;
     }
 
     .hp-hero-cta a {
       width: 100%;
-      max-width: 260px;
+      max-width: 240px;
       justify-content: center;
+      padding: 12px 28px;
+      font-size: 0.9rem;
     }
 
     .hp-process {

@@ -557,7 +557,7 @@ const materials = [
   }
 
   .calc-card {
-    border-radius: 12px;
+    border-radius: 22px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -586,20 +586,27 @@ const materials = [
     align-items: center;
     gap: 10px;
     padding: 18px 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background: white;
+    border: 1px solid rgba(245, 166, 35, 0.12);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.65);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-family: var(--font-main);
     font-size: 0.85rem;
     color: var(--color-text);
   }
 
-  .material-btn:hover,
+  .material-btn:hover {
+    transform: translateY(-3px);
+    border-color: rgba(245, 166, 35, 0.35);
+    box-shadow: 0 8px 25px rgba(245, 166, 35, 0.1);
+    background: rgba(255, 255, 255, 0.85);
+  }
+
   .material-btn.selected {
     border-color: var(--color-accent);
     box-shadow: 0 0 0 2px rgba(245, 166, 35, 0.2);
+    background: rgba(255, 255, 255, 0.9);
   }
 
   .material-dot {
@@ -617,23 +624,24 @@ const materials = [
   .grade-trigger {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    border: 1px solid rgba(245, 166, 35, 0.15);
+    border-radius: 16px;
     font-family: var(--font-main);
     font-size: 0.9rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.65);
     color: var(--color-text);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    transition: border-color 0.2s;
+    transition: border-color 0.3s, box-shadow 0.3s;
   }
 
   .grade-trigger:hover,
   .grade-dropdown.open .grade-trigger {
-    border-color: #4a7dff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
   }
 
   .grade-arrow {
@@ -650,13 +658,15 @@ const materials = [
     top: calc(100% + 4px);
     left: 0;
     right: 0;
-    background: white;
-    border: 1px solid #d0d5dd;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(245, 166, 35, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
     z-index: 50;
     max-height: 420px;
     overflow: hidden;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     flex-direction: column;
   }
 
@@ -681,17 +691,19 @@ const materials = [
   .grade-search {
     width: 100%;
     padding: 12px 14px 12px 40px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border: 1px solid rgba(245, 166, 35, 0.15);
+    border-radius: 12px;
     font-family: var(--font-main);
     font-size: 0.85rem;
     color: var(--color-text);
     outline: none;
     box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
   }
 
   .grade-search:focus {
-    border-color: #4a7dff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
   }
 
   .grade-list {
@@ -709,7 +721,7 @@ const materials = [
     text-transform: uppercase;
     letter-spacing: 0.3px;
     background: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(245, 166, 35, 0.12);
   }
 
   .grade-list :global(.grade-option) {
@@ -727,7 +739,7 @@ const materials = [
   }
 
   .grade-list :global(.grade-option:hover) {
-    background: #f5f7ff;
+    background: rgba(245, 166, 35, 0.06);
   }
 
   .grade-list :global(.grade-header) {
@@ -786,11 +798,11 @@ const materials = [
   select {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    border: 1px solid rgba(245, 166, 35, 0.15);
+    border-radius: 16px;
     font-family: var(--font-main);
     font-size: 0.9rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.65);
     color: var(--color-text);
     appearance: none;
     -webkit-appearance: none;
@@ -798,11 +810,13 @@ const materials = [
     background-repeat: no-repeat;
     background-position: right 16px center;
     cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
   }
 
   select:focus {
     outline: none;
     border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
   }
 
   .dimension-inputs {
@@ -828,21 +842,25 @@ const materials = [
   .dimension-inputs :global(.dim-field input) {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    border: 1px solid rgba(245, 166, 35, 0.15);
+    border-radius: 16px;
     font-family: var(--font-main);
     font-size: 0.9rem;
     color: var(--color-text);
-    background: white;
+    background: rgba(255, 255, 255, 0.65);
+    transition: border-color 0.3s, box-shadow 0.3s;
   }
 
   .dimension-inputs :global(.dim-field input:focus) {
     outline: none;
     border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
   }
 
   .results-section {
-    background: rgba(255, 248, 230, 0.6);
+    background: rgba(245, 166, 35, 0.05);
+    border: 1px solid rgba(245, 166, 35, 0.12);
+    border-radius: 16px;
   }
 
   .results-grid {

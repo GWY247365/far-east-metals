@@ -16,6 +16,9 @@ function isActive(itemPath: string): boolean {
 <header class="navbar">
   <nav aria-label="Site">
     <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Home">
+        <img src="/favicon.svg" alt="Far East Metals" width="36" height="36" />
+      </a>
       <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -64,6 +67,17 @@ function isActive(itemPath: string): boolean {
   .nav-inner {
     display: flex;
     align-items: center;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    padding: 4px 16px 4px 20px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo img {
+    display: block;
   }
 
   .hamburger {
@@ -155,8 +169,18 @@ function isActive(itemPath: string): boolean {
       padding: 0;
     }
 
+    .nav-logo {
+      padding: 8px 0 8px 16px;
+    }
+
+    .nav-logo img {
+      width: 30px;
+      height: 30px;
+    }
+
     .hamburger {
       display: flex;
+      margin-left: auto;
     }
 
     .nav-list {

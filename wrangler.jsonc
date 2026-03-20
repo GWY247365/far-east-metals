@@ -14,7 +14,8 @@
       "id": "da02357327024f5ba2a70d17f6f25c63"
     }
   ],
-  // SMTP credentials stored as Worker Secrets:
-  // SMTP_USER = info@fareastmetals.com.hk
-  // SMTP_PASS = (encrypted via wrangler secret)
+  "vars": {
+    "SMTP_USER": "info@fareastmetals.com.hk"
+  }
+  // SMTP_PASS stored as Worker Secret (encrypted)
 }

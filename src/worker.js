@@ -128,6 +128,18 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // Debug: check env bindings (temporary)
+    if (url.pathname === '/api/debug-env') {
+      return new Response(JSON.stringify({
+        hasAssets: !!env.ASSETS,
+        hasContacts: !!env.CONTACTS,
+        hasSmtpUser: !!env.SMTP_USER,
+        hasSmtpPass: !!env.SMTP_PASS,
+        smtpUserType: typeof env.SMTP_USER,
+        envKeys: Object.keys(env),
+      }), { headers: { 'Content-Type': 'application/json' } });
+    }
+
     // Handle contact form API
     if (url.pathname === '/api/contact' && request.method === 'POST') {
       try {

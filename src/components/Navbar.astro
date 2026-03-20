@@ -17,7 +17,7 @@ function isActive(itemPath: string): boolean {
   <nav aria-label="Site">
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="Home">
-        <img src="/favicon.svg" alt="Far East Metals" width="28" height="28" />
+        <img src="/favicon.svg" alt="Far East Metals" width="52" height="52" />
       </a>
       <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger-line"></span>
@@ -53,6 +53,7 @@ function isActive(itemPath: string): boolean {
     -webkit-backdrop-filter: saturate(200%) blur(40px);
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.4);
     transition: transform 0.3s ease;
+    overflow: visible;
   }
 
   .navbar.hidden {
@@ -72,18 +73,18 @@ function isActive(itemPath: string): boolean {
   .nav-logo {
     display: flex;
     align-items: center;
-    padding: 6px 8px 6px 20px;
+    padding: 0 10px 0 20px;
     flex-shrink: 0;
   }
 
   .nav-logo img {
     display: block;
-    opacity: 0.9;
-    transition: opacity 0.3s;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s;
   }
 
   .nav-logo:hover img {
-    opacity: 1;
+    transform: scale(1.05);
   }
 
   .hamburger {

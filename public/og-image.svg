@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#F5A623"/>
+      <stop offset="85%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="4" fill="#F5A623"/>
+
+  <!-- Decorative corner elements -->
+  <rect x="60" y="60" width="40" height="3" fill="#F5A623"/>
+  <rect x="60" y="60" width="3" height="40" fill="#F5A623"/>
+  <rect x="1100" y="60" width="40" height="3" fill="#F5A623"/>
+  <rect x="1137" y="60" width="3" height="40" fill="#F5A623"/>
+  <rect x="60" y="567" width="40" height="3" fill="#F5A623"/>
+  <rect x="60" y="530" width="3" height="40" fill="#F5A623"/>
+  <rect x="1100" y="567" width="40" height="3" fill="#F5A623"/>
+  <rect x="1137" y="530" width="3" height="40" fill="#F5A623"/>
+
+  <!-- Company name -->
+  <text x="600" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#FFFFFF" letter-spacing="2">FAR EAST METALS</text>
+  <text x="600" y="310" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="300" fill="#FFFFFF" letter-spacing="6">DEVELOPMENT LIMITED</text>
+
+  <!-- Accent divider line -->
+  <rect x="300" y="345" width="600" height="2" fill="url(#accentGrad)"/>
+
+  <!-- Tagline -->
+  <text x="600" y="395" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#999999" letter-spacing="3">
+    <tspan fill="#999999">ALUMINUM</tspan>
+    <tspan fill="#F5A623" dx="14">|</tspan>
+    <tspan fill="#999999" dx="14">EXTRUSION</tspan>
+    <tspan fill="#F5A623" dx="14">|</tspan>
+    <tspan fill="#999999" dx="14">FORGING</tspan>
+    <tspan fill="#F5A623" dx="14">|</tspan>
+    <tspan fill="#999999" dx="14">INGOT</tspan>
+  </text>
+
+  <!-- Website URL -->
+  <text x="600" y="540" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#666666" letter-spacing="3">www.fareastmetals.com.hk</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="626" width="1200" height="4" fill="#F5A623"/>
+</svg>

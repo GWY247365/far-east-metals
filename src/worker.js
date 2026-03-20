@@ -139,17 +139,35 @@ async function smtpSend({ host, port, user, pass, from, to, subject, htmlBody })
   }
 }
 
+// ── HTML escaping ───────────────────────────
+
+function escapeHtml(str) {
+  if (typeof str !== 'string') return str;
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
 // ── Email HTML template ─────────────────────
 
 function buildEmailHtml({ name, email, tel, service, message, subscribe }) {
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
+  const safeTel = escapeHtml(tel);
+  const safeService = escapeHtml(service);
+  const safeMessage = escapeHtml(message);
+
   return `<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto">
 <h2 style="color:#F5A623;border-bottom:2px solid #F5A623;padding-bottom:10px">New Contact Form Submission</h2>
 <table style="width:100%;border-collapse:collapse;margin-top:16px">
-<tr><td style="padding:10px 0;font-weight:bold;color:#333;width:120px;vertical-align:top">Name</td><td style="padding:10px 0;color:#555">${name}</td></tr>
-<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Email</td><td style="padding:10px 0;color:#555"><a href="mailto:${email}" style="color:#F5A623">${email}</a></td></tr>
-<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Tel</td><td style="padding:10px 0;color:#555">${tel || 'Not provided'}</td></tr>
-<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Service</td><td style="padding:10px 0;color:#555">${service}</td></tr>
-<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Message</td><td style="padding:10px 0;color:#555;white-space:pre-wrap">${message || 'No message'}</td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;width:120px;vertical-align:top">Name</td><td style="padding:10px 0;color:#555">${safeName}</td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Email</td><td style="padding:10px 0;color:#555"><a href="mailto:${encodeURI(email)}" style="color:#F5A623">${safeEmail}</a></td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Tel</td><td style="padding:10px 0;color:#555">${safeTel || 'Not provided'}</td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Service</td><td style="padding:10px 0;color:#555">${safeService}</td></tr>
+<tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Message</td><td style="padding:10px 0;color:#555;white-space:pre-wrap">${safeMessage || 'No message'}</td></tr>
 <tr><td style="padding:10px 0;font-weight:bold;color:#333;vertical-align:top">Subscribe</td><td style="padding:10px 0;color:#555">${subscribe ? 'Yes' : 'No'}</td></tr>
 </table>
 <p style="margin-top:20px;font-size:12px;color:#999">Sent from fareastmetals.com.hk contact form</p>

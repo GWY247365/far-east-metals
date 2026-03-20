@@ -21,99 +21,284 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Services Highlights -->
-  <section class="hp-services">
+  <!-- Process Showcase - Horizontal Scroll -->
+  <section class="hp-process">
     <div class="hp-container">
-      <h2 class="hp-section-title reveal">What We Do</h2>
-      <p class="hp-section-sub reveal reveal-delay-1">Comprehensive aluminum solutions from raw material to finished product</p>
-      <div class="hp-services-grid">
-        <div class="hp-svc-card reveal">
-          <div class="hp-svc-icon">
-            <svg viewBox="0 0 64 64" width="48" height="48">
-              <rect x="8" y="28" width="20" height="16" rx="2" fill="var(--color-accent)" opacity="0.2" stroke="var(--color-accent)" stroke-width="1.5"/>
-              <rect x="28" y="24" width="8" height="24" rx="1" fill="none" stroke="var(--color-accent)" stroke-width="1.5"/>
-              <line x1="36" y1="36" x2="58" y2="36" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round">
-                <animate attributeName="x1" values="36;42;36" dur="2s" repeatCount="indefinite"/>
-              </line>
-            </svg>
-          </div>
-          <h3>Aluminum Extrusion</h3>
-          <p>Custom profiles for architecture, electronics, automotive, and industrial applications.</p>
+      <h2 class="hp-section-title reveal">Manufacturing Excellence</h2>
+      <p class="hp-section-sub reveal reveal-delay-1">End-to-end aluminum solutions</p>
+    </div>
+    <div class="hp-process-track">
+      <div class="hp-process-card reveal">
+        <div class="hp-process-visual">
+          <svg viewBox="0 0 200 160" class="hp-process-svg">
+            <!-- Extrusion animation: billet pushed through die -->
+            <rect x="20" y="50" width="60" height="60" rx="4" fill="#F5A623" opacity="0.15" stroke="#F5A623" stroke-width="1.5">
+              <animate attributeName="width" values="60;35;60" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="x" values="20;45;20" dur="3s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="80" y="40" width="12" height="80" rx="2" fill="none" stroke="#F5A623" stroke-width="2"/>
+            <rect x="84" y="60" width="4" height="40" fill="#F5A623" opacity="0.3"/>
+            <line x1="92" y1="78" x2="180" y2="78" stroke="#F5A623" stroke-width="6" stroke-linecap="round" opacity="0.6">
+              <animate attributeName="x2" values="140;180;140" dur="3s" repeatCount="indefinite"/>
+            </line>
+            <line x1="92" y1="82" x2="180" y2="82" stroke="#F5A623" stroke-width="6" stroke-linecap="round" opacity="0.4">
+              <animate attributeName="x2" values="140;180;140" dur="3s" repeatCount="indefinite"/>
+            </line>
+          </svg>
         </div>
-        <div class="hp-svc-card reveal reveal-delay-1">
-          <div class="hp-svc-icon">
-            <svg viewBox="0 0 64 64" width="48" height="48">
-              <path d="M22 48 L32 22 L42 48 Z" fill="var(--color-accent)" opacity="0.2" stroke="var(--color-accent)" stroke-width="1.5" stroke-linejoin="round"/>
-              <line x1="32" y1="12" x2="32" y2="24" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round">
-                <animate attributeName="y2" values="22;26;22" dur="1.2s" repeatCount="indefinite"/>
-              </line>
-              <rect x="28" y="8" width="8" height="6" rx="1" fill="none" stroke="var(--color-accent)" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <h3>Precision Forging</h3>
-          <p>High-strength forged components with superior grain structure for demanding applications.</p>
+        <h3>Extrusion</h3>
+        <p>Custom aluminum profiles</p>
+      </div>
+
+      <div class="hp-process-card reveal reveal-delay-1">
+        <div class="hp-process-visual">
+          <svg viewBox="0 0 200 160" class="hp-process-svg">
+            <!-- Forging animation: hammer striking -->
+            <rect x="70" y="100" width="60" height="20" rx="3" fill="#F5A623" opacity="0.2" stroke="#F5A623" stroke-width="1.5"/>
+            <path d="M85 100 Q100 80 115 100" fill="#F5A623" opacity="0.3" stroke="#F5A623" stroke-width="1.5">
+              <animate attributeName="d" values="M85 100 Q100 80 115 100;M85 100 Q100 88 115 100;M85 100 Q100 80 115 100" dur="1.5s" repeatCount="indefinite"/>
+            </path>
+            <rect x="85" y="30" width="30" height="40" rx="3" fill="none" stroke="#F5A623" stroke-width="2">
+              <animate attributeName="y" values="30;55;30" dur="1.5s" repeatCount="indefinite"/>
+              <animate attributeName="height" values="40;40;40" dur="1.5s" repeatCount="indefinite"/>
+            </rect>
+            <line x1="100" y1="15" x2="100" y2="30" stroke="#F5A623" stroke-width="3" stroke-linecap="round">
+              <animate attributeName="y2" values="30;55;30" dur="1.5s" repeatCount="indefinite"/>
+            </line>
+            <!-- Impact sparks -->
+            <circle cx="75" cy="95" r="2" fill="#F5A623" opacity="0">
+              <animate attributeName="opacity" values="0;0.8;0" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
+              <animate attributeName="cx" values="80;70;80" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
+              <animate attributeName="cy" values="95;85;95" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
+            </circle>
+            <circle cx="125" cy="95" r="2" fill="#F5A623" opacity="0">
+              <animate attributeName="opacity" values="0;0.8;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+              <animate attributeName="cx" values="120;130;120" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+              <animate attributeName="cy" values="95;85;95" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+          </svg>
         </div>
-        <div class="hp-svc-card reveal reveal-delay-2">
-          <div class="hp-svc-icon">
-            <svg viewBox="0 0 64 64" width="48" height="48">
-              <rect x="12" y="28" width="40" height="12" rx="3" fill="var(--color-accent)" opacity="0.2" stroke="var(--color-accent)" stroke-width="1.5"/>
-              <circle cx="22" cy="34" r="4" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                <animateTransform attributeName="transform" type="rotate" from="0 22 34" to="360 22 34" dur="3s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="42" cy="34" r="4" fill="none" stroke="var(--color-accent)" stroke-width="1.5">
-                <animateTransform attributeName="transform" type="rotate" from="360 42 34" to="0 42 34" dur="3s" repeatCount="indefinite"/>
-              </circle>
-            </svg>
-          </div>
-          <h3>Flat Rolling</h3>
-          <p>Aluminum sheets and plates in various alloys and tempers for diverse applications.</p>
+        <h3>Forging</h3>
+        <p>High-strength components</p>
+      </div>
+
+      <div class="hp-process-card reveal reveal-delay-2">
+        <div class="hp-process-visual">
+          <svg viewBox="0 0 200 160" class="hp-process-svg">
+            <!-- Rolling animation: rollers with sheet -->
+            <circle cx="80" cy="65" r="20" fill="none" stroke="#F5A623" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" from="0 80 65" to="360 80 65" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="120" cy="65" r="20" fill="none" stroke="#F5A623" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" from="360 120 65" to="0 120 65" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="80" y1="55" x2="80" y2="75" stroke="#F5A623" stroke-width="1" opacity="0.3"/>
+            <line x1="120" y1="55" x2="120" y2="75" stroke="#F5A623" stroke-width="1" opacity="0.3"/>
+            <!-- Sheet entering -->
+            <rect x="20" y="75" width="60" height="12" rx="2" fill="#F5A623" opacity="0.2" stroke="#F5A623" stroke-width="1">
+              <animate attributeName="x" values="15;25;15" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <!-- Sheet exiting (thinner) -->
+            <rect x="120" y="78" width="65" height="6" rx="1" fill="#F5A623" opacity="0.3" stroke="#F5A623" stroke-width="1">
+              <animate attributeName="width" values="60;70;60" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <circle cx="80" cy="65" r="3" fill="#F5A623" opacity="0.5"/>
+            <circle cx="120" cy="65" r="3" fill="#F5A623" opacity="0.5"/>
+          </svg>
         </div>
-        <div class="hp-svc-card reveal reveal-delay-3">
-          <div class="hp-svc-icon">
-            <svg viewBox="0 0 64 64" width="48" height="48">
-              <rect x="16" y="16" width="32" height="32" rx="3" fill="var(--color-accent)" opacity="0.2" stroke="var(--color-accent)" stroke-width="1.5"/>
-              <path d="M26 38 L32 26 L38 38" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <animate attributeName="d" values="M26 38 L32 26 L38 38;M26 36 L32 28 L38 36;M26 38 L32 26 L38 38" dur="1.5s" repeatCount="indefinite"/>
-              </path>
-            </svg>
-          </div>
-          <h3>Die Casting</h3>
-          <p>Complex aluminum parts with excellent surface finish and dimensional accuracy.</p>
+        <h3>Rolling</h3>
+        <p>Sheets, plates & coils</p>
+      </div>
+
+      <div class="hp-process-card reveal reveal-delay-3">
+        <div class="hp-process-visual">
+          <svg viewBox="0 0 200 160" class="hp-process-svg">
+            <!-- Die casting: molten metal pouring into mold -->
+            <rect x="60" y="70" width="80" height="50" rx="4" fill="none" stroke="#F5A623" stroke-width="2"/>
+            <path d="M75 70 L75 90 Q100 110 125 90 L125 70" fill="#F5A623" opacity="0.15" stroke="none"/>
+            <!-- Mold cavity shape -->
+            <path d="M80 85 L90 75 L110 75 L120 85 L120 105 L80 105 Z" fill="none" stroke="#F5A623" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+            <!-- Pouring stream -->
+            <line x1="100" y1="20" x2="100" y2="70" stroke="#F5A623" stroke-width="4" stroke-linecap="round" opacity="0.5">
+              <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+            </line>
+            <!-- Ladle -->
+            <path d="M85 20 Q100 10 115 20 L112 28 Q100 22 88 28 Z" fill="#F5A623" opacity="0.3" stroke="#F5A623" stroke-width="1.5"/>
+            <!-- Fill level rising -->
+            <rect x="81" y="105" width="38" height="0" fill="#F5A623" opacity="0.2">
+              <animate attributeName="height" values="0;20;0" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="y" values="105;85;105" dur="3s" repeatCount="indefinite"/>
+            </rect>
+          </svg>
+        </div>
+        <h3>Die Casting</h3>
+        <p>Complex precision parts</p>
+      </div>
+
+      <div class="hp-process-card reveal reveal-delay-3">
+        <div class="hp-process-visual">
+          <svg viewBox="0 0 200 160" class="hp-process-svg">
+            <!-- Surface treatment: anodizing tank -->
+            <rect x="40" y="60" width="120" height="70" rx="4" fill="none" stroke="#F5A623" stroke-width="2"/>
+            <!-- Liquid -->
+            <rect x="42" y="80" width="116" height="48" rx="2" fill="#F5A623" opacity="0.1"/>
+            <!-- Workpiece dipping -->
+            <rect x="90" y="40" width="20" height="60" rx="2" fill="none" stroke="#F5A623" stroke-width="2">
+              <animate attributeName="y" values="40;55;40" dur="3s" repeatCount="indefinite"/>
+            </rect>
+            <!-- Bubbles -->
+            <circle cx="65" cy="110" r="3" fill="#F5A623" opacity="0">
+              <animate attributeName="cy" values="120;80;120" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="100" cy="115" r="2" fill="#F5A623" opacity="0">
+              <animate attributeName="cy" values="120;85;120" dur="2.5s" repeatCount="indefinite" begin="0.3s"/>
+              <animate attributeName="opacity" values="0;0.4;0" dur="2.5s" repeatCount="indefinite" begin="0.3s"/>
+            </circle>
+            <circle cx="135" cy="112" r="2.5" fill="#F5A623" opacity="0">
+              <animate attributeName="cy" values="120;82;120" dur="1.8s" repeatCount="indefinite" begin="0.6s"/>
+              <animate attributeName="opacity" values="0;0.5;0" dur="1.8s" repeatCount="indefinite" begin="0.6s"/>
+            </circle>
+            <!-- Wire -->
+            <line x1="100" y1="20" x2="100" y2="40" stroke="#F5A623" stroke-width="1.5">
+              <animate attributeName="y2" values="40;55;40" dur="3s" repeatCount="indefinite"/>
+            </line>
+          </svg>
+        </div>
+        <h3>Surface Treatment</h3>
+        <p>Anodizing & finishing</p>
+      </div>
+
+      <div class="hp-process-card reveal reveal-delay-3">
+        <div class="hp-process-visual">
+          <svg viewBox="0 0 200 160" class="hp-process-svg">
+            <!-- Heat treatment: furnace -->
+            <rect x="40" y="50" width="120" height="80" rx="6" fill="none" stroke="#F5A623" stroke-width="2"/>
+            <rect x="50" y="60" width="100" height="60" rx="3" fill="#F5A623" opacity="0.08"/>
+            <!-- Heat waves -->
+            <path d="M70 100 Q80 90 90 100 Q100 110 110 100 Q120 90 130 100" fill="none" stroke="#F5A623" stroke-width="1.5" opacity="0.4">
+              <animate attributeName="d" values="M70 100 Q80 90 90 100 Q100 110 110 100 Q120 90 130 100;M70 95 Q80 105 90 95 Q100 85 110 95 Q120 105 130 95;M70 100 Q80 90 90 100 Q100 110 110 100 Q120 90 130 100" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M70 85 Q80 75 90 85 Q100 95 110 85 Q120 75 130 85" fill="none" stroke="#F5A623" stroke-width="1.5" opacity="0.3">
+              <animate attributeName="d" values="M70 85 Q80 75 90 85 Q100 95 110 85 Q120 75 130 85;M70 80 Q80 90 90 80 Q100 70 110 80 Q120 90 130 80;M70 85 Q80 75 90 85 Q100 95 110 85 Q120 75 130 85" dur="2.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Temperature glow -->
+            <circle cx="100" cy="90" r="15" fill="#F5A623" opacity="0.1">
+              <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.05;0.15;0.05" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Thermometer -->
+            <rect x="155" y="55" width="6" height="40" rx="3" fill="none" stroke="#F5A623" stroke-width="1.5"/>
+            <rect x="156" y="75" width="4" height="18" rx="2" fill="#F5A623" opacity="0.5">
+              <animate attributeName="height" values="12;20;12" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="y" values="81;73;81" dur="3s" repeatCount="indefinite"/>
+            </rect>
+          </svg>
+        </div>
+        <h3>Heat Treatment</h3>
+        <p>T5, T6 & annealing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Band -->
+  <section class="hp-stats-band">
+    <div class="hp-container">
+      <div class="hp-stats-row">
+        <div class="hp-stat reveal">
+          <span class="hp-stat-num" data-target="20">0</span><span class="hp-stat-plus">+</span>
+          <span class="hp-stat-label">Years</span>
+        </div>
+        <div class="hp-stat-divider"></div>
+        <div class="hp-stat reveal reveal-delay-1">
+          <span class="hp-stat-num" data-target="100">0</span><span class="hp-stat-plus">+</span>
+          <span class="hp-stat-label">Factories</span>
+        </div>
+        <div class="hp-stat-divider"></div>
+        <div class="hp-stat reveal reveal-delay-2">
+          <span class="hp-stat-num" data-target="30">0</span><span class="hp-stat-plus">+</span>
+          <span class="hp-stat-label">Countries</span>
+        </div>
+        <div class="hp-stat-divider"></div>
+        <div class="hp-stat reveal reveal-delay-3">
+          <span class="hp-stat-num" data-target="8">0</span><span class="hp-stat-plus"></span>
+          <span class="hp-stat-label">Processes</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Preview -->
-  <section class="hp-about">
+  <!-- Material Showcase -->
+  <section class="hp-materials">
     <div class="hp-container">
-      <div class="hp-about-grid">
-        <div class="hp-about-text reveal">
-          <h2 class="hp-section-title">Industry Leader Since 2003</h2>
-          <p>Far East Metals Development Limited stands as a prominent industry leader headquartered in Hong Kong, specializing in aluminum extrusion, forging, and ingot production.</p>
-          <p>With a network of <strong>100+ partner factories</strong> and serving <strong>30+ countries</strong>, we bridge Chinese manufacturing excellence with global demand.</p>
-          <a href="/about/" class="hp-link-arrow">
-            Read our story
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
-          </a>
+      <h2 class="hp-section-title reveal">Materials We Work With</h2>
+      <p class="hp-section-sub reveal reveal-delay-1">Premium alloys for every application</p>
+      <div class="hp-materials-grid">
+        <div class="hp-mat-card reveal">
+          <div class="hp-mat-orb hp-mat-al"></div>
+          <h3>Aluminum</h3>
+          <span class="hp-mat-series">1xxx - 7xxx</span>
         </div>
-        <div class="hp-about-stats reveal reveal-delay-1">
-          <div class="hp-stat-card">
-            <span class="hp-stat-num" data-target="20">0</span><span class="hp-stat-plus">+</span>
-            <span class="hp-stat-label">Years Experience</span>
+        <div class="hp-mat-card reveal reveal-delay-1">
+          <div class="hp-mat-orb hp-mat-ss"></div>
+          <h3>Stainless Steel</h3>
+          <span class="hp-mat-series">304 / 316</span>
+        </div>
+        <div class="hp-mat-card reveal reveal-delay-2">
+          <div class="hp-mat-orb hp-mat-cu"></div>
+          <h3>Copper</h3>
+          <span class="hp-mat-series">C110 / C360</span>
+        </div>
+        <div class="hp-mat-card reveal reveal-delay-3">
+          <div class="hp-mat-orb hp-mat-ti"></div>
+          <h3>Titanium</h3>
+          <span class="hp-mat-series">Gr2 / Gr5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="hp-industries">
+    <div class="hp-container">
+      <h2 class="hp-section-title reveal">Industries We Serve</h2>
+      <p class="hp-section-sub reveal reveal-delay-1">Trusted across sectors worldwide</p>
+      <div class="hp-ind-grid">
+        <div class="hp-ind-card reveal">
+          <div class="hp-ind-icon">
+            <svg viewBox="0 0 48 48" width="36" height="36"><path d="M24 4L4 20h6v20h28V20h6L24 4z" fill="none" stroke="currentColor" stroke-width="2"/><rect x="18" y="28" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </div>
-          <div class="hp-stat-card">
-            <span class="hp-stat-num" data-target="100">0</span><span class="hp-stat-plus">+</span>
-            <span class="hp-stat-label">Partner Factories</span>
+          <span>Architecture</span>
+        </div>
+        <div class="hp-ind-card reveal reveal-delay-1">
+          <div class="hp-ind-icon">
+            <svg viewBox="0 0 48 48" width="36" height="36"><rect x="8" y="18" width="32" height="16" rx="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </div>
-          <div class="hp-stat-card">
-            <span class="hp-stat-num" data-target="30">0</span><span class="hp-stat-plus">+</span>
-            <span class="hp-stat-label">Countries Served</span>
+          <span>Automotive</span>
+        </div>
+        <div class="hp-ind-card reveal reveal-delay-2">
+          <div class="hp-ind-icon">
+            <svg viewBox="0 0 48 48" width="36" height="36"><path d="M8 38L20 8h8l12 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="28" x2="36" y2="28" stroke="currentColor" stroke-width="2"/></svg>
           </div>
-          <div class="hp-stat-card">
-            <span class="hp-stat-num" data-target="8">0</span><span class="hp-stat-plus"></span>
-            <span class="hp-stat-label">Core Processes</span>
+          <span>Aerospace</span>
+        </div>
+        <div class="hp-ind-card reveal reveal-delay-3">
+          <div class="hp-ind-icon">
+            <svg viewBox="0 0 48 48" width="36" height="36"><rect x="10" y="6" width="28" height="36" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="10" width="20" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="34" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </div>
+          <span>Electronics</span>
+        </div>
+        <div class="hp-ind-card reveal">
+          <div class="hp-ind-icon">
+            <svg viewBox="0 0 48 48" width="36" height="36"><circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 14V8M24 40v-6M34 24h6M8 24h6" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.3"/></svg>
+          </div>
+          <span>Machinery</span>
+        </div>
+        <div class="hp-ind-card reveal reveal-delay-1">
+          <div class="hp-ind-icon">
+            <svg viewBox="0 0 48 48" width="36" height="36"><path d="M4 40h40M12 40V20l12-8 12 8v20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="20" y="28" width="8" height="12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <span>Construction</span>
         </div>
       </div>
     </div>
@@ -123,7 +308,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="hp-tools">
     <div class="hp-container">
       <h2 class="hp-section-title reveal">Professional Tools</h2>
-      <p class="hp-section-sub reveal reveal-delay-1">Free resources to help you make better decisions</p>
+      <p class="hp-section-sub reveal reveal-delay-1">Free resources at your fingertips</p>
       <a href="/metweighcalculator/" class="hp-tool-card reveal">
         <div class="hp-tool-icon">
           <svg viewBox="0 0 64 64" width="40" height="40">
@@ -139,7 +324,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="hp-tool-content">
           <h3>Metal Weight Calculator</h3>
-          <p>Calculate the weight of aluminum and other metals by shape, dimensions, and alloy grade.</p>
+          <p>Calculate weight by shape, dimensions, and alloy grade.</p>
         </div>
         <svg class="hp-tool-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
       </a>
@@ -151,7 +336,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="hp-container">
       <div class="hp-cta-card reveal">
         <h2>Ready to Start Your Project?</h2>
-        <p>Get in touch with our team for a free consultation and competitive quote.</p>
+        <p>Free consultation. Competitive pricing. Global delivery.</p>
         <div class="hp-cta-buttons">
           <a href="/contact/" class="hp-btn-primary hp-btn-lg">Contact Us</a>
           <a href="/brochure.pdf" class="hp-btn-outline hp-btn-lg" download="Far_East_Metals_Brochure.pdf">
@@ -329,9 +514,9 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 35px;
   }
 
-  /* Services Section */
-  .hp-services {
-    padding: 80px 0;
+  /* ===== Process Showcase ===== */
+  .hp-process {
+    padding: 80px 0 60px;
     background: var(--color-bg-card);
     border-radius: 20px;
     margin: -40px 15px 0;
@@ -340,138 +525,260 @@ import Layout from '../layouts/Layout.astro';
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     text-align: center;
+    overflow: hidden;
   }
 
-  .hp-services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .hp-process-track {
+    display: flex;
     gap: 20px;
+    padding: 0 20px 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  .hp-svc-card {
+  .hp-process-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hp-process-card {
+    flex: 0 0 220px;
+    scroll-snap-align: start;
     background: var(--color-bg-card-inner);
-    border-radius: 12px;
-    padding: 30px 20px;
+    border-radius: 16px;
+    padding: 24px 16px 20px;
     text-align: center;
     border: 1px solid rgba(200, 200, 200, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
-  .hp-svc-card:hover {
+  .hp-process-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
 
-  .hp-svc-icon {
-    margin-bottom: 16px;
+  .hp-process-visual {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
   }
 
-  .hp-svc-card h3 {
+  .hp-process-svg {
+    width: 160px;
+    height: 120px;
+  }
+
+  .hp-process-card h3 {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 8px;
     color: var(--color-text);
+    margin-bottom: 4px;
   }
 
-  .hp-svc-card p {
-    font-size: 0.85rem;
+  .hp-process-card p {
+    font-size: 0.82rem;
     color: var(--color-text-light);
-    line-height: 1.6;
   }
 
-  /* About Preview */
-  .hp-about {
+  /* ===== Stats Band ===== */
+  .hp-stats-band {
+    padding: 50px 0;
+    margin: 20px 15px 0;
+    background: linear-gradient(135deg, var(--color-accent), #d4891a);
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .hp-stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .hp-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hp-stat-num {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+  }
+
+  .hp-stat-plus {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+  }
+
+  .hp-stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 4px;
+  }
+
+  .hp-stat-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* ===== Materials ===== */
+  .hp-materials {
     padding: 80px 0;
     background: var(--color-bg-card);
     border-radius: 20px;
     margin: 20px 15px 0;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    text-align: center;
   }
 
-  .hp-about-grid {
+  .hp-materials-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
   }
 
-  .hp-about-text {
-    background: var(--color-bg-card);
-    padding: 40px;
+  .hp-mat-card {
+    background: var(--color-bg-card-inner);
     border-radius: 16px;
+    padding: 35px 20px 25px;
+    text-align: center;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    transition: transform 0.4s, box-shadow 0.4s;
+    cursor: default;
+  }
+
+  .hp-mat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  }
+
+  .hp-mat-orb {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    position: relative;
+    animation: hp-orb-float 4s ease-in-out infinite;
+  }
+
+  .hp-mat-orb::after {
+    content: '';
+    position: absolute;
+    top: 12%;
+    left: 20%;
+    width: 30%;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    filter: blur(2px);
+  }
+
+  .hp-mat-al {
+    background: radial-gradient(circle at 35% 35%, #e8e8e8, #b0b0b0, #8a8a8a);
+    box-shadow: 0 8px 25px rgba(150, 150, 150, 0.3);
+  }
+
+  .hp-mat-ss {
+    background: radial-gradient(circle at 35% 35%, #d0d0d5, #8a8a90, #606068);
+    box-shadow: 0 8px 25px rgba(100, 100, 110, 0.3);
+  }
+
+  .hp-mat-cu {
+    background: radial-gradient(circle at 35% 35%, #e8a060, #c67030, #a04a10);
+    box-shadow: 0 8px 25px rgba(180, 100, 40, 0.3);
+  }
+
+  .hp-mat-ti {
+    background: radial-gradient(circle at 35% 35%, #c8c8d0, #9898a0, #707078);
+    box-shadow: 0 8px 25px rgba(120, 120, 130, 0.3);
+  }
+
+  @keyframes hp-orb-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .hp-mat-card:nth-child(2) .hp-mat-orb { animation-delay: -1s; }
+  .hp-mat-card:nth-child(3) .hp-mat-orb { animation-delay: -2s; }
+  .hp-mat-card:nth-child(4) .hp-mat-orb { animation-delay: -3s; }
+
+  .hp-mat-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 4px;
+  }
+
+  .hp-mat-series {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  /* ===== Industries ===== */
+  .hp-industries {
+    padding: 80px 0;
+    background: var(--color-bg-card);
+    border-radius: 20px;
+    margin: 20px 15px 0;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    text-align: center;
   }
 
-  .hp-about-text .hp-section-title {
-    text-align: left;
-  }
-
-  .hp-about-text p {
-    margin-bottom: 16px;
-    line-height: 1.7;
-  }
-
-  .hp-about-text strong {
-    color: var(--color-accent);
-    font-weight: 600;
-  }
-
-  .hp-link-arrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: gap 0.3s;
-  }
-
-  .hp-link-arrow:hover {
-    gap: 12px;
-  }
-
-  .hp-about-stats {
+  .hp-ind-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 16px;
   }
 
-  .hp-stat-card {
-    background: var(--color-bg-card);
+  .hp-ind-card {
+    background: var(--color-bg-card-inner);
     border-radius: 14px;
-    padding: 28px 20px;
+    padding: 28px 12px 20px;
     text-align: center;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(200, 200, 200, 0.2);
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    transition: all 0.3s;
+    cursor: default;
   }
 
-  .hp-stat-num {
-    font-family: var(--font-title);
-    font-size: 2.6rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    line-height: 1;
+  .hp-ind-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border-color: var(--color-accent);
   }
 
-  .hp-stat-plus {
-    font-family: var(--font-title);
-    font-size: 2.6rem;
-    font-weight: 600;
+  .hp-ind-card:hover .hp-ind-icon {
     color: var(--color-accent);
   }
 
-  .hp-stat-label {
-    display: block;
-    font-size: 0.82rem;
+  .hp-ind-icon {
     color: var(--color-text-light);
-    margin-top: 6px;
+    margin-bottom: 10px;
+    transition: color 0.3s;
   }
 
-  /* Tools Section */
+  .hp-ind-card span {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  /* ===== Tools ===== */
   .hp-tools {
     padding: 60px 0;
     text-align: center;
@@ -488,12 +795,10 @@ import Layout from '../layouts/Layout.astro';
     gap: 20px;
     max-width: 600px;
     margin: 0 auto;
-    background: var(--color-bg-card);
+    background: var(--color-bg-card-inner);
     border-radius: 14px;
     padding: 24px 30px;
     text-decoration: none;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(200, 200, 200, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
   }
@@ -535,7 +840,7 @@ import Layout from '../layouts/Layout.astro';
     transform: translateX(4px);
   }
 
-  /* CTA Section */
+  /* ===== CTA ===== */
   .hp-cta {
     padding: 40px 15px 80px;
     margin-top: 20px;
@@ -570,7 +875,7 @@ import Layout from '../layouts/Layout.astro';
     flex-wrap: wrap;
   }
 
-  /* Mobile */
+  /* ===== Mobile ===== */
   @media (max-width: 768px) {
     .hp-hero-content {
       padding-top: 18vh;
@@ -593,49 +898,65 @@ import Layout from '../layouts/Layout.astro';
       justify-content: center;
     }
 
-    .hp-services {
+    .hp-process {
       margin: -30px 10px 0;
-      padding: 50px 15px;
+      padding: 50px 0 40px;
     }
 
-    .hp-services-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+    .hp-process-card {
+      flex: 0 0 180px;
     }
 
-    .hp-svc-card {
-      padding: 20px 14px;
+    .hp-process-visual {
+      height: 100px;
     }
 
-    .hp-svc-card h3 {
-      font-size: 0.9rem;
+    .hp-process-svg {
+      width: 130px;
+      height: 100px;
     }
 
-    .hp-svc-card p {
-      font-size: 0.8rem;
-    }
-
-    .hp-about {
-      padding: 50px 15px;
+    .hp-stats-band {
       margin: 15px 10px 0;
+      padding: 35px 10px;
     }
 
-    .hp-about-grid {
-      grid-template-columns: 1fr;
-      gap: 25px;
+    .hp-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px 10px;
     }
 
-    .hp-about-text {
-      padding: 25px;
-    }
-
-    .hp-about-stats {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+    .hp-stat-divider {
+      display: none;
     }
 
     .hp-stat-num, .hp-stat-plus {
-      font-size: 2rem;
+      font-size: 2.2rem;
+    }
+
+    .hp-materials {
+      margin: 15px 10px 0;
+      padding: 50px 15px;
+    }
+
+    .hp-materials-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .hp-industries {
+      margin: 15px 10px 0;
+      padding: 50px 15px;
+    }
+
+    .hp-ind-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .hp-ind-card {
+      padding: 20px 8px 14px;
     }
 
     .hp-tools {
@@ -666,6 +987,12 @@ import Layout from '../layouts/Layout.astro';
       width: 100%;
       max-width: 280px;
       justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hp-ind-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>

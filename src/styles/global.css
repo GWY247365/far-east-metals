@@ -26,6 +26,13 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Unified page section layout */
+.page-section {
+  padding: 100px 20px 60px;
 }
 
 /* Video Background */

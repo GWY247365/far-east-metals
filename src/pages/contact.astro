@@ -15,10 +15,12 @@ import Layout from '../layouts/Layout.astro';
           <div class="form-field">
             <label for="field-name">Name <span class="required">*</span></label>
             <input type="text" id="field-name" name="name" placeholder="Your name" required />
+            <span class="field-hint" id="hint-name"></span>
           </div>
           <div class="form-field">
             <label for="field-email">E-mail <span class="required">*</span></label>
             <input type="email" id="field-email" name="email" placeholder="your@email.com" required />
+            <span class="field-hint" id="hint-email"></span>
           </div>
         </div>
         <div class="form-row">
@@ -40,6 +42,7 @@ import Layout from '../layouts/Layout.astro';
               <option value="Heat Treatment">Heat Treatment</option>
               <option value="Other">Other</option>
             </select>
+            <span class="field-hint" id="hint-service"></span>
           </div>
         </div>
         <div class="form-field">
@@ -69,6 +72,74 @@ import Layout from '../layouts/Layout.astro';
   const errorDiv = document.getElementById('form-error')!;
   const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
 
+  const nameInput = document.getElementById('field-name') as HTMLInputElement;
+  const emailInput = document.getElementById('field-email') as HTMLInputElement;
+  const serviceSelect = document.getElementById('field-service') as HTMLSelectElement;
+
+  const hintName = document.getElementById('hint-name')!;
+  const hintEmail = document.getElementById('hint-email')!;
+  const hintService = document.getElementById('hint-service')!;
+
+  function isValidEmail(email: string): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function setFieldState(input: HTMLElement, hint: HTMLElement, valid: boolean, message: string) {
+    if (valid) {
+      input.classList.remove('field-invalid');
+      input.classList.add('field-valid');
+      hint.textContent = '';
+      hint.classList.remove('hint-error');
+    } else {
+      input.classList.remove('field-valid');
+      input.classList.add('field-invalid');
+      hint.textContent = message;
+      hint.classList.add('hint-error');
+    }
+  }
+
+  function clearFieldState(input: HTMLElement, hint: HTMLElement) {
+    input.classList.remove('field-invalid', 'field-valid');
+    hint.textContent = '';
+    hint.classList.remove('hint-error');
+  }
+
+  // Real-time validation on blur
+  nameInput.addEventListener('blur', () => {
+    if (nameInput.value.trim()) {
+      setFieldState(nameInput, hintName, true, '');
+    } else if (nameInput.value !== '') {
+      setFieldState(nameInput, hintName, false, 'Please enter your name');
+    }
+  });
+
+  nameInput.addEventListener('input', () => {
+    if (nameInput.classList.contains('field-invalid') && nameInput.value.trim()) {
+      setFieldState(nameInput, hintName, true, '');
+    }
+  });
+
+  emailInput.addEventListener('blur', () => {
+    const val = emailInput.value.trim();
+    if (val && isValidEmail(val)) {
+      setFieldState(emailInput, hintEmail, true, '');
+    } else if (val) {
+      setFieldState(emailInput, hintEmail, false, 'Please enter a valid email address');
+    }
+  });
+
+  emailInput.addEventListener('input', () => {
+    if (emailInput.classList.contains('field-invalid') && isValidEmail(emailInput.value.trim())) {
+      setFieldState(emailInput, hintEmail, true, '');
+    }
+  });
+
+  serviceSelect.addEventListener('change', () => {
+    if (serviceSelect.value) {
+      setFieldState(serviceSelect, hintService, true, '');
+    }
+  });
+
   function showError(msg: string) {
     errorDiv.textContent = msg;
     errorDiv.hidden = false;
@@ -78,22 +149,31 @@ import Layout from '../layouts/Layout.astro';
     errorDiv.hidden = true;
   }
 
-  function isValidEmail(email: string): boolean {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  function validateAll(): boolean {
+    let valid = true;
+    if (!nameInput.value.trim()) {
+      setFieldState(nameInput, hintName, false, 'Please enter your name');
+      valid = false;
+    }
+    if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
+      setFieldState(emailInput, hintEmail, false, 'Please enter a valid email address');
+      valid = false;
+    }
+    if (!serviceSelect.value) {
+      setFieldState(serviceSelect, hintService, false, 'Please select a service type');
+      valid = false;
+    }
+    return valid;
   }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     hideError();
 
+    if (!validateAll()) return;
+
     const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
 
-    // Client-side validation
-    if (!data.name?.trim()) { showError('Please enter your name.'); return; }
-    if (!data.email?.trim() || !isValidEmail(data.email)) { showError('Please enter a valid email address.'); return; }
-    if (!data.service) { showError('Please select a service type.'); return; }
-
-    // Disable button
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
 
@@ -202,6 +282,26 @@ import Layout from '../layouts/Layout.astro';
     outline: none;
     border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.1);
+  }
+
+  /* Real-time validation states */
+  .field-invalid {
+    border-color: #e04040 !important;
+    box-shadow: 0 0 0 3px rgba(224, 64, 64, 0.08) !important;
+  }
+
+  .field-valid {
+    border-color: #059669 !important;
+  }
+
+  .field-hint {
+    font-size: 0.78rem;
+    min-height: 18px;
+    transition: all 0.2s;
+  }
+
+  .hint-error {
+    color: #e04040;
   }
 
   textarea {

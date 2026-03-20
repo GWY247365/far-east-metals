@@ -4,6 +4,8 @@
    • Handles /api/contact with KV + SMTP email
    ────────────────────────────────────────── */
 
+import { connect } from 'cloudflare:sockets';
+
 // ── SMTP via TCP connect() ──────────────────
 
 async function smtpSend({ host, port, user, pass, from, to, subject, htmlBody }) {

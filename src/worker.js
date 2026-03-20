@@ -192,7 +192,7 @@ export default {
           const existing = await env.CONTACTS.get(rateLimitKey);
           const count = existing ? parseInt(existing, 10) : 0;
 
-          if (count >= 50) {
+          if (count >= 5) {
             return new Response(JSON.stringify({ error: 'Too many submissions. Please try again later.' }), {
               status: 429,
               headers: { 'Content-Type': 'application/json' },

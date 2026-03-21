@@ -3,7 +3,12 @@ const rawPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { name: 'Calculator', path: '/metweighcalculator' },
+  { name: 'Tools', path: '#', children: [
+    { name: 'Weight Calculator', path: '/metweighcalculator' },
+    { name: 'Alloy Comparison', path: '/alloycompare' },
+    { name: 'Hardness Converter', path: '/hardnessconverter' },
+    { name: 'Temper Guide', path: '/temperguide' },
+  ]},
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -26,13 +31,38 @@ function isActive(itemPath: string): boolean {
       </button>
       <ul class="nav-list">
         {navItems.map((item) => (
-          <li class="nav-item">
-            <a
-              href={item.path}
-              class:list={['nav-link', { active: isActive(item.path) }]}
-            >
-              {item.name}
-            </a>
+          <li class:list={['nav-item', { 'has-dropdown': !!item.children }]}>
+            {item.children ? (
+              <>
+                <button
+                  type="button"
+                  class:list={['nav-link', 'dropdown-toggle', { active: item.children.some(c => isActive(c.path)) }]}
+                  aria-expanded="false"
+                >
+                  {item.name}
+                  <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M2 4l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="dropdown-menu">
+                  {item.children.map((child) => (
+                    <li>
+                      <a
+                        href={child.path}
+                        class:list={['dropdown-link', { active: isActive(child.path) }]}
+                      >
+                        {child.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <a
+                href={item.path}
+                class:list={['nav-link', { active: isActive(item.path) }]}
+              >
+                {item.name}
+              </a>
+            )}
           </li>
         ))}
       </ul>
@@ -171,6 +201,74 @@ function isActive(itemPath: string): boolean {
     background: var(--color-accent);
   }
 
+  /* Dropdown */
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-main);
+    gap: 5px;
+  }
+
+  .dropdown-arrow {
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .has-dropdown:hover .dropdown-arrow,
+  .has-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: saturate(200%) blur(40px);
+    -webkit-backdrop-filter: saturate(200%) blur(40px);
+    border-radius: 12px;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    z-index: 110;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .has-dropdown:hover .dropdown-menu,
+  .has-dropdown.open .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .dropdown-link:hover {
+    background: rgba(245, 166, 35, 0.15);
+    color: var(--color-accent);
+  }
+
+  .dropdown-link.active {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
   @media (max-width: 768px) {
     .navbar {
       padding: 0;
@@ -222,6 +320,44 @@ function isActive(itemPath: string): boolean {
     .nav-link.active {
       color: var(--color-accent);
     }
+
+    .dropdown-menu {
+      position: static;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      display: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .has-dropdown.open .dropdown-menu {
+      display: block;
+    }
+
+    /* Don't show on hover for mobile */
+    .has-dropdown:hover .dropdown-menu {
+      display: none;
+    }
+
+    .has-dropdown.open:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-link {
+      padding: 12px 20px 12px 36px;
+      font-size: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .dropdown-toggle {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 </style>
 
@@ -255,12 +391,20 @@ function isActive(itemPath: string): boolean {
     hamburger.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close menu when a link is clicked
-  navList?.querySelectorAll('.nav-link').forEach(link => {
+  // Close menu when a nav link (not dropdown toggle) is clicked
+  navList?.querySelectorAll('a.nav-link, .dropdown-link').forEach(link => {
     link.addEventListener('click', () => {
       hamburger?.classList.remove('open');
       navList?.classList.remove('open');
       hamburger?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Dropdown toggle for mobile
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const parent = toggle.closest('.has-dropdown');
+      parent?.classList.toggle('open');
     });
   });
 </script>

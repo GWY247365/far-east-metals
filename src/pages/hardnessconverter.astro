@@ -87,10 +87,14 @@ const scales = [
             <input type="number" id="hardness-input" placeholder="Enter value..." step="0.1" />
             <span class="range-hint" id="range-hint">Range: 15 - 650</span>
           </div>
-          <button type="button" class="convert-btn" id="convert-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            Convert
-          </button>
+          <div class="input-group btn-group">
+            <label>&nbsp;</label>
+            <button type="button" class="convert-btn" id="convert-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Convert
+            </button>
+            <span class="range-hint">&nbsp;</span>
+          </div>
         </div>
       </div>
 
@@ -647,9 +651,8 @@ const scales = [
     cursor: pointer;
     transition: background 0.3s, transform 0.15s, box-shadow 0.3s;
     white-space: nowrap;
-    height: 46px;
-    align-self: center;
-    margin-top: 10px;
+    height: 48px;
+    box-sizing: border-box;
   }
 
   .convert-btn:hover {

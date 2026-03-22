@@ -516,6 +516,16 @@ const materials = materialKeys.map(key => {
     position: relative;
   }
 
+  .grade-dropdown.open {
+    z-index: 60;
+  }
+
+  /* Ensure grade section stacks above sibling sections when dropdown is open */
+  .calc-section:has(.grade-dropdown.open) {
+    z-index: 10;
+    position: relative;
+  }
+
   .grade-trigger {
     width: 100%;
     padding: 14px 16px;

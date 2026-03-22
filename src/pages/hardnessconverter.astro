@@ -1,38 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import masterData from '../data/alloys-master.json';
 
-const alloys = [
-  { name: '1100-O', hb: 23, temper: 'Annealed', series: '1xxx' },
-  { name: '1100-H14', hb: 32, temper: 'Strain Hardened', series: '1xxx' },
-  { name: '2011-T3', hb: 95, temper: 'Solution Treated', series: '2xxx' },
-  { name: '2014-T6', hb: 135, temper: 'Aged', series: '2xxx' },
-  { name: '2024-T3', hb: 120, temper: 'Solution Treated', series: '2xxx' },
-  { name: '2024-T4', hb: 120, temper: 'Naturally Aged', series: '2xxx' },
-  { name: '3003-O', hb: 28, temper: 'Annealed', series: '3xxx' },
-  { name: '3003-H14', hb: 40, temper: 'Strain Hardened', series: '3xxx' },
-  { name: '5052-H32', hb: 60, temper: 'Stabilized', series: '5xxx' },
-  { name: '5052-H34', hb: 68, temper: 'Stabilized', series: '5xxx' },
-  { name: '5083-O', hb: 75, temper: 'Annealed', series: '5xxx' },
-  { name: '5086-H32', hb: 73, temper: 'Stabilized', series: '5xxx' },
-  { name: '6061-O', hb: 30, temper: 'Annealed', series: '6xxx' },
-  { name: '6061-T4', hb: 65, temper: 'Naturally Aged', series: '6xxx' },
-  { name: '6061-T6', hb: 95, temper: 'Aged', series: '6xxx' },
-  { name: '6063-T5', hb: 60, temper: 'Artificially Aged', series: '6xxx' },
-  { name: '6063-T6', hb: 73, temper: 'Aged', series: '6xxx' },
-  { name: '6082-T6', hb: 95, temper: 'Aged', series: '6xxx' },
-  { name: '7050-T7451', hb: 140, temper: 'Overaged', series: '7xxx' },
-  { name: '7075-T6', hb: 150, temper: 'Aged', series: '7xxx' },
-  { name: '7075-T73', hb: 135, temper: 'Overaged', series: '7xxx' },
-];
+// Build alloys from master data (only aluminum alloys that have tempers)
+const alloys = [];
+for (const group of masterData.materials.aluminum.groups) {
+  for (const alloy of group.alloys) {
+    if (alloy.tempers) {
+      for (const temper of alloy.tempers) {
+        alloys.push({
+          name: `${alloy.name}-${temper.name}`,
+          hb: temper.hb,
+          temper: temper.type,
+          series: group.standardsCategory?.replace(/\s.*/, '') || group.name.match(/\d+xxx/)?.[0] || ''
+        });
+      }
+    }
+  }
+}
 
-const scales = [
-  { id: 'hb', name: 'Brinell', abbr: 'HB', min: 15, max: 650, unit: 'kgf/mm\u00B2', color: '#F5A623' },
-  { id: 'hrb', name: 'Rockwell B', abbr: 'HRB', min: 20, max: 100, unit: 'Scale', color: '#4A90D9' },
-  { id: 'hrc', name: 'Rockwell C', abbr: 'HRC', min: 20, max: 68, unit: 'Scale', color: '#D94A4A' },
-  { id: 'hv', name: 'Vickers', abbr: 'HV', min: 15, max: 940, unit: 'kgf/mm\u00B2', color: '#50B86C' },
-  { id: 'hk', name: 'Knoop', abbr: 'HK', min: 15, max: 920, unit: 'kgf/mm\u00B2', color: '#9B59B6' },
-  { id: 'shore', name: 'Shore D', abbr: 'Shore D', min: 20, max: 85, unit: 'Scale', color: '#E67E22' },
-];
+const scales = masterData.hardnessScales;
 ---
 
 <Layout title="Hardness Converter | Far East Metals" description="Free online hardness converter for metals. Convert between Brinell, Rockwell B, Rockwell C, Vickers, Knoop, and Shore D hardness scales. ASTM E140 data." ogImage="/og-hardnessconverter.png">
@@ -284,72 +271,16 @@ const scales = [
 </Layout>
 
 <script>
-  // ASTM E140 conversion data for non-ferrous metals (aluminum focus)
-  // Each row: [HB, HRB, HRC, HV, HK, ShoreD]
-  // null = out of valid range for that scale
-  const conversionTable: (number | null)[][] = [
-    [15, null, null, 15, 15, null],
-    [20, null, null, 20, 20, null],
-    [25, 22, null, 26, 26, 20],
-    [30, 30, null, 31, 31, 22],
-    [35, 36, null, 37, 37, 25],
-    [40, 42, null, 42, 42, 28],
-    [45, 47, null, 47, 47, 30],
-    [50, 52, null, 53, 53, 32],
-    [55, 56, null, 58, 58, 34],
-    [60, 60, null, 63, 63, 36],
-    [65, 63, null, 68, 68, 38],
-    [70, 66, null, 74, 74, 39],
-    [75, 69, null, 79, 79, 41],
-    [80, 72, null, 84, 84, 42],
-    [85, 74, null, 89, 90, 44],
-    [90, 76, null, 95, 96, 45],
-    [95, 78, null, 100, 101, 47],
-    [100, 80, null, 105, 107, 48],
-    [105, 82, null, 110, 112, 49],
-    [110, 83, null, 116, 118, 50],
-    [115, 84, null, 121, 123, 51],
-    [120, 86, null, 127, 129, 52],
-    [130, 88, null, 138, 140, 54],
-    [140, 90, null, 149, 152, 56],
-    [150, 92, null, 160, 163, 58],
-    [160, 93, null, 171, 175, 59],
-    [170, 94, null, 183, 187, 61],
-    [180, 95, null, 194, 198, 62],
-    [190, 96, null, 206, 210, 63],
-    [200, 97, null, 218, 222, 64],
-    [210, 98, 20, 230, 235, 65],
-    [220, 99, 21, 243, 248, 66],
-    [230, 100, 22, 256, 261, 67],
-    [240, null, 23, 269, 275, 68],
-    [250, null, 24, 282, 288, 69],
-    [260, null, 25, 296, 302, 70],
-    [275, null, 27, 316, 323, 72],
-    [290, null, 29, 336, 343, 73],
-    [310, null, 31, 363, 370, 75],
-    [330, null, 34, 390, 398, 77],
-    [350, null, 36, 420, 428, 78],
-    [375, null, 39, 455, 464, 80],
-    [400, null, 41, 492, 502, 81],
-    [425, null, 43, 530, 540, 82],
-    [450, null, 46, 570, 581, 83],
-    [480, null, 48, 615, 627, 84],
-    [500, null, 50, 649, 662, 85],
-    [530, null, 52, 697, 710, null],
-    [560, null, 54, 746, 760, null],
-    [600, null, 57, 810, 826, null],
-    [630, null, 60, 862, 879, null],
-    [650, null, 62, 900, 920, null],
-  ];
+  import masterData from '../data/alloys-master.json';
+  const conversionTable = masterData.hardnessConversion;
+  const scales = masterData.hardnessScales;
 
-  const scaleIndices: Record<string, number> = {
-    hb: 0, hrb: 1, hrc: 2, hv: 3, hk: 4, shore: 5
-  };
-
-  const scaleRanges: Record<string, [number, number]> = {
-    hb: [15, 650], hrb: [20, 100], hrc: [20, 68],
-    hv: [15, 940], hk: [15, 920], shore: [20, 85]
-  };
+  const scaleIndices: Record<string, number> = {};
+  const scaleRanges: Record<string, [number, number]> = {};
+  scales.forEach((s: any, i: number) => {
+    scaleIndices[s.id] = i;
+    scaleRanges[s.id] = [s.min, s.max];
+  });
 
   function interpolate(x: number, x0: number, x1: number, y0: number, y1: number): number {
     return y0 + (y1 - y0) * ((x - x0) / (x1 - x0));
@@ -424,10 +355,10 @@ const scales = [
   const resultsWrapper = document.getElementById('results-wrapper') as HTMLElement;
   const rangeHint = document.getElementById('range-hint') as HTMLElement;
 
-  const scaleRangeMap: Record<string, string> = {
-    hb: 'Range: 15 - 650', hrb: 'Range: 20 - 100', hrc: 'Range: 20 - 68',
-    hv: 'Range: 15 - 940', hk: 'Range: 15 - 920', shore: 'Range: 20 - 85'
-  };
+  const scaleRangeMap: Record<string, string> = {};
+  scales.forEach((s: any) => {
+    scaleRangeMap[s.id] = `Range: ${s.min} - ${s.max}`;
+  });
 
   scaleSelect.addEventListener('change', () => {
     rangeHint.textContent = scaleRangeMap[scaleSelect.value] || '';

@@ -701,20 +701,40 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script>
-import aluminumData from '../data/aluminum.json';
-import stainlessData from '../data/stainless-steel.json';
-import copperData from '../data/copper.json';
-import titaniumData from '../data/titanium.json';
-import ingotData from '../data/aluminum-ingot.json';
+import masterData from '../data/alloys-master.json';
+
+// Convert master format to alloy compare format
+function convertForCompare(materialKey) {
+  const mat = masterData.materials[materialKey];
+  if (!mat) return { label: '', groups: {} };
+  const groups = {};
+  for (const group of mat.groups) {
+    groups[group.name] = {};
+    for (const alloy of group.alloys) {
+      const { name, desc, tags, standards, tempers, standardsCategory, ...props } = alloy;
+      // Build equivalentStandards string from standards object
+      let eqStd = props.equivalentStandards || '';
+      if (standards && !eqStd) {
+        const parts = [];
+        if (standards.en) parts.push(standards.en);
+        if (standards.jis) parts.push(standards.jis);
+        if (standards.gb && standards.gb !== name) parts.push(`GB: ${standards.gb}`);
+        eqStd = parts.join(', ');
+      }
+      groups[group.name][name] = { ...props, equivalentStandards: eqStd };
+    }
+  }
+  return { label: mat.label, groups };
+}
 
 (function() {
-  // ============ ALLOY DATA (from JSON files) ============
+  // ============ ALLOY DATA (from master JSON) ============
   const alloyData = {
-    aluminum: aluminumData,
-    stainless: stainlessData,
-    copper: copperData,
-    titanium: titaniumData,
-    ingot: ingotData
+    aluminum: convertForCompare('aluminum'),
+    stainless: convertForCompare('stainless'),
+    copper: convertForCompare('copper'),
+    titanium: convertForCompare('titanium'),
+    ingot: convertForCompare('ingot'),
   };
 
 

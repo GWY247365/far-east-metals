@@ -1,16 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import masterData from '../data/alloys-master.json';
 
-const materials = [
-  { name: 'Aluminum', density: 2.71, color: '#C0C0C0' },
-  { name: 'Stainless Steel', density: 7.93, color: '#808090' },
-  { name: 'Copper', density: 8.96, color: '#E07020' },
-  { name: 'Brass', density: 8.55, color: '#C8A820' },
-  { name: 'Zinc', density: 7.13, color: '#7088A0' },
-  { name: 'Titanium', density: 4.51, color: '#989088' },
-  { name: 'Nickel', density: 8.90, color: '#A8A8A0' },
-  { name: 'Magnesium', density: 1.74, color: '#B8B8B0' },
-];
+const materialKeys = ['aluminum', 'stainless', 'copper', 'brass', 'zinc', 'titanium', 'nickel', 'magnesium'] as const;
+const materials = materialKeys.map(key => {
+  const mat = (masterData.materials as Record<string, any>)[key];
+  return {
+    name: mat.label.replace(' Alloys', '').replace(' Alloy', ''),
+    density: mat.defaultDensity,
+    color: mat.color,
+  };
+});
 ---
 
 <Layout title="Metal Weight Calculator | Far East Metals" description="Free online metal weight calculator. Calculate weight for aluminum, stainless steel, copper, brass, titanium and more. Supports 100+ alloy grades." ogImage="/og-metweighcalculator.png">
@@ -140,205 +140,39 @@ const materials = [
 </Layout>
 
 <script>
+  // Build grade data from master JSON
+  import masterData from '../data/alloys-master.json';
+
   const PI = Math.PI;
   let selectedDensity = 0; // no density until grade is selected
   let gradeSelected = false;
 
-  // Grade data by material
-  const gradeData: Record<string, { category: string; grades: { name: string; desc: string; density: number; tags: string[] }[] }[]> = {
-    'Aluminum': [
-      { category: 'Pure Aluminum (1xxx)', grades: [
-        { name: '1050', desc: 'High purity aluminum for chemical and electrical applications', density: 2.71, tags: ['High Purity', 'Excellent Corrosion Resistance'] },
-        { name: '1060', desc: 'High purity aluminum with excellent formability', density: 2.70, tags: ['High Conductivity', 'Good Formability'] },
-        { name: '1100', desc: 'Commercially pure aluminum with excellent formability', density: 2.71, tags: ['Excellent Formability', 'Good Corrosion Resistance'] },
-        { name: '1350', desc: 'Electrical conductor grade aluminum', density: 2.70, tags: ['Electrical Grade', 'High Conductivity'] },
-      ]},
-      { category: 'Aluminum-Copper (2xxx)', grades: [
-        { name: '2011', desc: 'Free-machining alloy with good strength', density: 2.83, tags: ['Free Machining', 'Good Strength', 'Heat Treatable'] },
-        { name: '2014', desc: 'High-strength structural alloy for heavy-duty applications', density: 2.80, tags: ['High Strength', 'Structural', 'Heat Treatable'] },
-        { name: '2017', desc: 'Good machinability and moderate strength', density: 2.79, tags: ['Good Machinability', 'Rivet Alloy'] },
-        { name: '2024', desc: 'High-strength alloy with good fatigue resistance', density: 2.78, tags: ['High Strength', 'Good Fatigue Resistance', 'Aerospace'] },
-        { name: '2219', desc: 'Weldable high-strength alloy for cryogenic applications', density: 2.84, tags: ['Weldable', 'Cryogenic', 'Aerospace'] },
-      ]},
-      { category: 'Aluminum-Manganese (3xxx)', grades: [
-        { name: '3003', desc: 'General-purpose alloy with good workability', density: 2.73, tags: ['Good Workability', 'Moderate Strength'] },
-        { name: '3004', desc: 'Higher strength than 3003, used for beverage cans', density: 2.72, tags: ['Can Stock', 'Good Formability'] },
-        { name: '3105', desc: 'Moderate strength with good corrosion resistance', density: 2.72, tags: ['Building Products', 'Good Finishing'] },
-      ]},
-      { category: 'Aluminum-Silicon (4xxx)', grades: [
-        { name: '4032', desc: 'Forged piston alloy with low thermal expansion', density: 2.68, tags: ['Forging', 'Low Expansion', 'Wear Resistant'] },
-        { name: '4043', desc: 'Welding filler alloy with good fluidity', density: 2.69, tags: ['Welding Filler', 'Good Fluidity'] },
-        { name: '4047', desc: 'Brazing and welding filler alloy', density: 2.66, tags: ['Brazing', 'Low Melting Point'] },
-      ]},
-      { category: 'Aluminum-Magnesium (5xxx)', grades: [
-        { name: '5005', desc: 'Low-strength alloy with good anodizing response', density: 2.70, tags: ['Anodizing', 'Decorative', 'Non-Heat Treatable'] },
-        { name: '5052', desc: 'Good workability and corrosion resistance', density: 2.68, tags: ['Marine Grade', 'Good Weldability'] },
-        { name: '5083', desc: 'Highest strength non-heat treatable alloy', density: 2.66, tags: ['High Strength', 'Marine Grade', 'Shipbuilding'] },
-        { name: '5086', desc: 'Marine structural alloy with good weldability', density: 2.66, tags: ['Marine Grade', 'Structural', 'Weldable'] },
-        { name: '5182', desc: 'Beverage can end alloy with high strength', density: 2.65, tags: ['Can End Stock', 'High Strength'] },
-        { name: '5251', desc: 'Medium-strength marine alloy', density: 2.69, tags: ['Marine Grade', 'Good Formability'] },
-        { name: '5754', desc: 'Automotive body panel alloy', density: 2.67, tags: ['Automotive', 'Good Formability', 'Weldable'] },
-      ]},
-      { category: 'Aluminum-Magnesium-Silicon (6xxx)', grades: [
-        { name: '6005', desc: 'Medium-strength structural extrusion alloy', density: 2.70, tags: ['Extrusion', 'Structural', 'Heat Treatable'] },
-        { name: '6060', desc: 'Lower-strength extrusion alloy with excellent surface finish', density: 2.70, tags: ['Extrusion', 'Anodizing', 'Architectural'] },
-        { name: '6061', desc: 'Versatile alloy with good mechanical properties', density: 2.70, tags: ['Versatile', 'Good Weldability', 'Heat Treatable'] },
-        { name: '6063', desc: 'Architectural alloy with good surface finish', density: 2.70, tags: ['Extrusion Alloy', 'Good Surface Finish'] },
-        { name: '6082', desc: 'Medium-strength structural alloy', density: 2.71, tags: ['Structural', 'Good Machinability', 'Heat Treatable'] },
-        { name: '6101', desc: 'High-strength electrical conductor alloy', density: 2.70, tags: ['Electrical', 'Bus Bar', 'Heat Treatable'] },
-        { name: '6262', desc: 'Free-machining alloy similar to 6061', density: 2.72, tags: ['Free Machining', 'Fittings', 'Heat Treatable'] },
-        { name: '6351', desc: 'High-strength extrusion alloy for structural use', density: 2.71, tags: ['Extrusion', 'High Strength', 'Structural'] },
-      ]},
-      { category: 'Aluminum-Zinc (7xxx)', grades: [
-        { name: '7005', desc: 'Medium-strength weldable alloy', density: 2.78, tags: ['Weldable', 'Structural', 'Heat Treatable'] },
-        { name: '7050', desc: 'High-strength aerospace alloy with good toughness', density: 2.83, tags: ['Aerospace', 'High Toughness', 'Thick Sections'] },
-        { name: '7075', desc: 'Very high strength aerospace alloy', density: 2.81, tags: ['Aerospace Grade', 'Very High Strength'] },
-        { name: '7178', desc: 'Highest strength aluminum alloy for aircraft structures', density: 2.83, tags: ['Aircraft', 'Ultra High Strength'] },
-      ]},
-    ],
-    'Stainless Steel': [
-      { category: 'Austenitic', grades: [
-        { name: '301', desc: 'High work-hardening rate for structural applications', density: 7.88, tags: ['Work Hardenable', 'Spring Quality'] },
-        { name: '303', desc: 'Free-machining austenitic stainless steel', density: 7.93, tags: ['Free Machining', 'Non-Magnetic'] },
-        { name: '304', desc: 'Most common stainless steel grade', density: 7.93, tags: ['Corrosion Resistant', 'Non-Magnetic', 'Weldable'] },
-        { name: '304L', desc: 'Low-carbon version for improved weldability', density: 7.93, tags: ['Low Carbon', 'Weldable', 'Non-Magnetic'] },
-        { name: '309', desc: 'Heat-resistant grade for high-temperature use', density: 7.98, tags: ['High Temperature', 'Oxidation Resistant'] },
-        { name: '310', desc: 'High-temperature oxidation-resistant grade', density: 7.98, tags: ['Furnace Parts', 'High Temperature'] },
-        { name: '316', desc: 'Marine grade with molybdenum for pitting resistance', density: 7.99, tags: ['Marine Grade', 'Chemical Resistant'] },
-        { name: '316L', desc: 'Low-carbon marine grade for welded structures', density: 7.99, tags: ['Low Carbon', 'Marine Grade', 'Biomedical'] },
-        { name: '321', desc: 'Titanium-stabilized for high-temperature service', density: 7.92, tags: ['Ti-Stabilized', 'High Temperature', 'Weldable'] },
-        { name: '347', desc: 'Niobium-stabilized for high-temperature welding', density: 7.96, tags: ['Nb-Stabilized', 'High Temperature'] },
-      ]},
-      { category: 'Ferritic', grades: [
-        { name: '405', desc: 'Low-chromium ferritic for welded applications', density: 7.74, tags: ['Weldable', 'Magnetic'] },
-        { name: '409', desc: 'Automotive exhaust grade', density: 7.74, tags: ['Automotive', 'Heat Resistant', 'Low Cost'] },
-        { name: '430', desc: 'General purpose ferritic stainless steel', density: 7.74, tags: ['Magnetic', 'Good Formability', 'Decorative'] },
-        { name: '446', desc: 'High-chromium heat-resistant grade', density: 7.60, tags: ['High Temperature', 'Oxidation Resistant'] },
-      ]},
-      { category: 'Martensitic', grades: [
-        { name: '410', desc: 'General purpose hardenable stainless steel', density: 7.74, tags: ['Heat Treatable', 'Magnetic', 'Hardenable'] },
-        { name: '420', desc: 'Cutlery grade with higher hardness', density: 7.74, tags: ['Cutlery', 'High Hardness', 'Wear Resistant'] },
-        { name: '440C', desc: 'High-carbon for maximum hardness and wear resistance', density: 7.68, tags: ['Bearings', 'High Hardness', 'Wear Resistant'] },
-      ]},
-      { category: 'Duplex', grades: [
-        { name: '2205', desc: 'Most common duplex grade with high strength', density: 7.82, tags: ['High Strength', 'Corrosion Resistant', 'Oil & Gas'] },
-        { name: '2507', desc: 'Super duplex for severe corrosion environments', density: 7.79, tags: ['Super Duplex', 'Chemical Resistant'] },
-      ]},
-      { category: 'Precipitation Hardening', grades: [
-        { name: '17-4 PH', desc: 'High-strength precipitation hardening grade', density: 7.78, tags: ['High Strength', 'Aerospace', 'Medical'] },
-        { name: '15-5 PH', desc: 'Better toughness than 17-4 PH', density: 7.78, tags: ['Good Toughness', 'Aerospace'] },
-      ]},
-    ],
-    'Copper': [
-      { category: 'Pure Copper', grades: [
-        { name: 'C101 (OFE)', desc: 'Oxygen-free electronic copper, 99.99% pure', density: 8.94, tags: ['Ultra High Purity', 'Electronic Grade'] },
-        { name: 'C110 (ETP)', desc: 'Electrolytic tough pitch copper, 99.9% pure', density: 8.94, tags: ['High Conductivity', 'Excellent Ductility'] },
-        { name: 'C122 (DHP)', desc: 'Phosphorus deoxidized copper for plumbing', density: 8.94, tags: ['Plumbing', 'Brazeable', 'Weldable'] },
-      ]},
-      { category: 'Beryllium Copper', grades: [
-        { name: 'C172', desc: 'High-strength beryllium copper spring alloy', density: 8.26, tags: ['High Strength', 'Non-Sparking', 'Spring Quality'] },
-        { name: 'C175', desc: 'High-conductivity beryllium copper', density: 8.59, tags: ['Good Conductivity', 'Moderate Strength'] },
-      ]},
-      { category: 'Bronze', grades: [
-        { name: 'C220 (Commercial Bronze)', desc: '90/10 copper-zinc with golden color', density: 8.80, tags: ['Decorative', 'Good Formability'] },
-        { name: 'C510 (Phosphor Bronze A)', desc: 'Excellent spring qualities and fatigue resistance', density: 8.86, tags: ['Spring Quality', 'Fatigue Resistant'] },
-        { name: 'C544 (Phosphor Bronze B)', desc: 'Free-machining phosphor bronze', density: 8.89, tags: ['Free Machining', 'Bearings'] },
-        { name: 'C630 (Aluminum Bronze)', desc: 'High-strength corrosion-resistant alloy', density: 7.78, tags: ['High Strength', 'Marine Grade'] },
-        { name: 'C932 (Bearing Bronze)', desc: 'Leaded tin bronze for bearings and bushings', density: 8.93, tags: ['Bearings', 'Low Friction', 'Wear Resistant'] },
-      ]},
-    ],
-    'Brass': [
-      { category: 'Alpha Brass', grades: [
-        { name: 'C210 (Gilding Metal)', desc: '95/5 copper-zinc with red-gold color', density: 8.86, tags: ['Decorative', 'Coins', 'Jewelry'] },
-        { name: 'C220 (Commercial Bronze)', desc: '90/10 copper-zinc alloy', density: 8.80, tags: ['Decorative', 'Architectural'] },
-        { name: 'C230 (Red Brass)', desc: '85/15 copper-zinc for plumbing fittings', density: 8.75, tags: ['Plumbing', 'Corrosion Resistant'] },
-        { name: 'C260 (Cartridge Brass)', desc: '70/30 copper-zinc with excellent cold working', density: 8.53, tags: ['Good Formability', 'Cold Working', 'Ammunition'] },
-        { name: 'C270 (Yellow Brass)', desc: '65/35 copper-zinc general purpose', density: 8.47, tags: ['General Purpose', 'Good Strength'] },
-      ]},
-      { category: 'Alpha-Beta Brass', grades: [
-        { name: 'C280 (Muntz Metal)', desc: '60/40 brass for architectural and marine use', density: 8.39, tags: ['Marine', 'Architectural', 'Hot Working'] },
-        { name: 'C360 (Free-Cutting Brass)', desc: 'Best machinability of all copper alloys', density: 8.49, tags: ['Free Machining', 'Screw Machine Parts'] },
-        { name: 'C385 (Architectural Bronze)', desc: 'Leaded brass for architectural hardware', density: 8.47, tags: ['Architectural', 'Hardware', 'Decorative'] },
-      ]},
-      { category: 'Naval Brass', grades: [
-        { name: 'C464 (Naval Brass)', desc: 'Tin-modified for seawater resistance', density: 8.41, tags: ['Marine Grade', 'Corrosion Resistant'] },
-      ]},
-    ],
-    'Zinc': [
-      { category: 'Pure Zinc', grades: [
-        { name: 'Zn 99.99', desc: 'Special high-grade zinc', density: 7.13, tags: ['High Purity', 'Galvanizing'] },
-      ]},
-      { category: 'Zamak Die Casting Alloys', grades: [
-        { name: 'Zamak 2 (ZA-2)', desc: 'Highest strength and hardness zamak alloy', density: 6.60, tags: ['Highest Strength', 'Die Casting', 'Bearings'] },
-        { name: 'Zamak 3 (ZA-3)', desc: 'Most widely used zinc die casting alloy', density: 6.60, tags: ['Die Casting', 'Good Stability', 'Platable'] },
-        { name: 'Zamak 5 (ZA-5)', desc: 'Higher strength and creep resistance than Zamak 3', density: 6.60, tags: ['Die Casting', 'Higher Strength', 'Good Creep Resistance'] },
-        { name: 'Zamak 7 (ZA-7)', desc: 'Improved fluidity and surface finish', density: 6.60, tags: ['Die Casting', 'Thin Walls', 'Good Surface Finish'] },
-      ]},
-      { category: 'ZA Alloys', grades: [
-        { name: 'ZA-8', desc: 'Zinc-aluminum alloy for hot chamber die casting', density: 6.30, tags: ['Hot Chamber', 'Good Bearing Properties'] },
-        { name: 'ZA-12', desc: 'Medium aluminum content zinc alloy', density: 6.03, tags: ['Sand Casting', 'Good Strength'] },
-        { name: 'ZA-27', desc: 'Highest strength zinc alloy, lightweight', density: 5.00, tags: ['Highest Strength', 'Lightweight', 'Gravity Casting'] },
-      ]},
-    ],
-    'Titanium': [
-      { category: 'Commercially Pure (CP)', grades: [
-        { name: 'Grade 1', desc: 'Most ductile and softest CP titanium', density: 4.51, tags: ['Most Ductile', 'Corrosion Resistant', 'Chemical Processing'] },
-        { name: 'Grade 2', desc: 'Most common CP titanium, good balance of properties', density: 4.51, tags: ['General Purpose', 'Biocompatible', 'Weldable'] },
-        { name: 'Grade 3', desc: 'Higher strength CP titanium', density: 4.51, tags: ['Higher Strength', 'Pressure Vessels'] },
-        { name: 'Grade 4', desc: 'Highest strength CP titanium', density: 4.51, tags: ['Highest CP Strength', 'Dental Implants'] },
-      ]},
-      { category: 'Alpha & Near-Alpha Alloys', grades: [
-        { name: 'Ti-5Al-2.5Sn (Grade 6)', desc: 'Weldable alloy for elevated temperature use', density: 4.48, tags: ['High Temperature', 'Weldable', 'Cryogenic'] },
-        { name: 'Ti-8Al-1Mo-1V', desc: 'High modulus alloy for jet engine components', density: 4.37, tags: ['Jet Engine', 'High Modulus'] },
-      ]},
-      { category: 'Alpha-Beta Alloys', grades: [
-        { name: 'Ti-6Al-4V (Grade 5)', desc: 'Most common titanium alloy, aerospace workhorse', density: 4.43, tags: ['Aerospace Grade', 'High Strength', 'Heat Treatable'] },
-        { name: 'Ti-6Al-4V ELI (Grade 23)', desc: 'Extra-low interstitial version for biomedical use', density: 4.43, tags: ['Biomedical', 'Surgical Implants', 'Fracture Toughness'] },
-        { name: 'Ti-6Al-2Sn-4Zr-2Mo', desc: 'High-temperature aerospace alloy', density: 4.54, tags: ['Jet Engine', 'High Temperature', 'Creep Resistant'] },
-      ]},
-      { category: 'Beta Alloys', grades: [
-        { name: 'Ti-3Al-8V-6Cr-4Mo-4Zr (Beta C)', desc: 'High-strength cold-formable beta alloy', density: 4.82, tags: ['Cold Formable', 'High Strength', 'Springs'] },
-        { name: 'Ti-15V-3Cr-3Al-3Sn', desc: 'Cold-formable sheet alloy for aerospace', density: 4.71, tags: ['Sheet Alloy', 'Cold Formable', 'Aerospace'] },
-      ]},
-    ],
-    'Nickel': [
-      { category: 'Pure Nickel', grades: [
-        { name: 'Nickel 200', desc: 'Commercially pure wrought nickel', density: 8.89, tags: ['High Purity', 'Corrosion Resistant', 'Magnetic'] },
-        { name: 'Nickel 201', desc: 'Low-carbon version of Nickel 200', density: 8.89, tags: ['Low Carbon', 'High Temperature'] },
-      ]},
-      { category: 'Inconel (Ni-Cr)', grades: [
-        { name: 'Inconel 600', desc: 'Nickel-chromium alloy for high-temperature oxidation', density: 8.47, tags: ['High Temperature', 'Oxidation Resistant'] },
-        { name: 'Inconel 625', desc: 'Outstanding corrosion and fatigue resistance', density: 8.44, tags: ['High Temperature', 'Corrosion Resistant', 'Weldable'] },
-        { name: 'Inconel 718', desc: 'Precipitation-hardened superalloy for jet engines', density: 8.19, tags: ['Superalloy', 'Jet Engine', 'High Strength'] },
-        { name: 'Inconel X-750', desc: 'Age-hardenable for springs and fasteners', density: 8.28, tags: ['Springs', 'Nuclear', 'High Temperature'] },
-      ]},
-      { category: 'Monel (Ni-Cu)', grades: [
-        { name: 'Monel 400', desc: 'Nickel-copper alloy for marine and chemical use', density: 8.80, tags: ['Marine Grade', 'Acid Resistant', 'High Strength'] },
-        { name: 'Monel K-500', desc: 'Age-hardenable version with higher strength', density: 8.44, tags: ['High Strength', 'Non-Magnetic', 'Oil & Gas'] },
-      ]},
-      { category: 'Hastelloy (Ni-Mo)', grades: [
-        { name: 'Hastelloy C-276', desc: 'Universal corrosion-resistant alloy', density: 8.89, tags: ['Chemical Resistant', 'Versatile', 'Weldable'] },
-        { name: 'Hastelloy B-2', desc: 'Excellent resistance to hydrochloric acid', density: 9.22, tags: ['HCl Resistant', 'Reducing Environments'] },
-        { name: 'Hastelloy X', desc: 'High-temperature oxidation-resistant alloy', density: 8.22, tags: ['Gas Turbine', 'High Temperature', 'Oxidation Resistant'] },
-      ]},
-    ],
-    'Magnesium': [
-      { category: 'Wrought Alloys', grades: [
-        { name: 'AZ31B', desc: 'Most common wrought magnesium alloy', density: 1.77, tags: ['Lightweight', 'Good Strength', 'Weldable'] },
-        { name: 'AZ61A', desc: 'Higher strength wrought alloy', density: 1.80, tags: ['Higher Strength', 'Extrusion'] },
-        { name: 'AZ80A', desc: 'High-strength forging alloy', density: 1.80, tags: ['Forging', 'High Strength'] },
-        { name: 'ZK60A', desc: 'Highest strength wrought magnesium alloy', density: 1.83, tags: ['Highest Strength', 'Forging', 'Extrusion'] },
-        { name: 'M1A', desc: 'Low-alloy extrusion with moderate strength', density: 1.76, tags: ['Extrusion', 'Low Alloy', 'Moderate Strength'] },
-      ]},
-      { category: 'Cast Alloys', grades: [
-        { name: 'AZ91D', desc: 'Most common magnesium die casting alloy', density: 1.81, tags: ['Die Casting', 'Good Castability', 'Corrosion Resistant'] },
-        { name: 'AM60B', desc: 'Automotive die casting alloy with good ductility', density: 1.79, tags: ['Automotive', 'Good Ductility', 'Die Casting'] },
-        { name: 'AM50A', desc: 'Higher ductility automotive casting alloy', density: 1.77, tags: ['Automotive', 'High Ductility', 'Energy Absorbing'] },
-        { name: 'AE44', desc: 'Creep-resistant alloy with rare earth elements', density: 1.82, tags: ['Creep Resistant', 'Powertrain', 'High Temperature'] },
-        { name: 'EZ33A', desc: 'Sand casting alloy for elevated temperature use', density: 1.83, tags: ['Sand Casting', 'High Temperature', 'Aerospace'] },
-      ]},
-    ],
+  const materialKeyMap: Record<string, string> = {
+    'Aluminum': 'aluminum',
+    'Stainless Steel': 'stainless',
+    'Copper': 'copper',
+    'Brass': 'brass',
+    'Zinc': 'zinc',
+    'Titanium': 'titanium',
+    'Nickel': 'nickel',
+    'Magnesium': 'magnesium',
   };
+
+  const gradeData: Record<string, { category: string; grades: { name: string; desc: string; density: number; tags: string[] }[] }[]> = {};
+
+  for (const [displayName, key] of Object.entries(materialKeyMap)) {
+    const mat = (masterData.materials as Record<string, any>)[key];
+    if (!mat) continue;
+    gradeData[displayName] = mat.groups.map((group: any) => ({
+      category: group.name,
+      grades: group.alloys.map((alloy: any) => ({
+        name: alloy.name,
+        desc: alloy.desc || alloy.applications || '',
+        density: alloy.density,
+        tags: alloy.tags || [],
+      })),
+    }));
+  }
 
   let currentMaterial = 'Aluminum';
 

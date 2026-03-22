@@ -1,0 +1,3306 @@
+{
+  "materials": {
+    "aluminum": {
+      "label": "Aluminum Alloys",
+      "defaultDensity": 2.71,
+      "color": "#C0C0C0",
+      "groups": [
+        {
+          "name": "1xxx - Pure Aluminum",
+          "alloys": [
+            {
+              "name": "1050",
+              "tensileStrength": "76-145",
+              "yieldStrength": "28-130",
+              "elongation": 12,
+              "hardness": 26,
+              "density": 2.71,
+              "meltingRange": "646-657",
+              "thermalConductivity": 231,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Chemical equipment, food packaging, reflectors",
+              "equivalentStandards": "EN AW-1050, A1050P (JIS)",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "0.40",
+                "Cu": "0.05",
+                "Mn": "0.05",
+                "Mg": "0.05",
+                "Zn": "0.05",
+                "Ti": "0.03",
+                "Al": "99.50 min"
+              },
+              "standards": {
+                "aa": "1050",
+                "astm": "B209 / B210",
+                "en": "EN AW-1050A",
+                "jis": "A1050",
+                "gb": "1050A",
+                "iso": "Al 99.5"
+              },
+              "desc": "High purity aluminum for chemical and electrical applications",
+              "tags": [
+                "High Purity",
+                "Excellent Corrosion Resistance"
+              ]
+            },
+            {
+              "name": "1060",
+              "tensileStrength": "69-130",
+              "yieldStrength": "24-115",
+              "elongation": 16,
+              "hardness": 23,
+              "density": 2.7,
+              "meltingRange": "646-657",
+              "thermalConductivity": 234,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Bus conductors, chemical tanks, lighting",
+              "equivalentStandards": "EN AW-1060, A1060 (JIS)",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "0.35",
+                "Cu": "0.05",
+                "Mn": "0.03",
+                "Mg": "0.03",
+                "Zn": "0.05",
+                "Ti": "0.03",
+                "Al": "99.60 min"
+              },
+              "standards": {
+                "aa": "1060",
+                "astm": "B209",
+                "en": "EN AW-1060",
+                "jis": "A1060",
+                "gb": "1060",
+                "iso": "Al 99.6"
+              },
+              "desc": "High purity aluminum with excellent formability",
+              "tags": [
+                "High Conductivity",
+                "Good Formability"
+              ]
+            },
+            {
+              "name": "1100",
+              "tensileStrength": "90-165",
+              "yieldStrength": "34-150",
+              "elongation": 12,
+              "hardness": 28,
+              "density": 2.71,
+              "meltingRange": "643-657",
+              "thermalConductivity": 222,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Heat exchangers, pressure vessels, kitchenware",
+              "equivalentStandards": "EN AW-1100, A1100P (JIS)",
+              "composition": {
+                "Si": "0.95 (Si+Fe)",
+                "Fe": "—",
+                "Cu": "0.05-0.20",
+                "Mn": "0.05",
+                "Mg": "—",
+                "Zn": "0.10",
+                "Ti": "—",
+                "Al": "99.00 min"
+              },
+              "standards": {
+                "aa": "1100",
+                "astm": "B209 / B210",
+                "en": "EN AW-1100",
+                "jis": "A1100",
+                "gb": "1100",
+                "iso": "Al 99.0Cu"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 23,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 32,
+                  "type": "Strain Hardened"
+                }
+              ],
+              "desc": "Commercially pure aluminum with excellent formability",
+              "tags": [
+                "Excellent Formability",
+                "Good Corrosion Resistance"
+              ]
+            },
+            {
+              "name": "1350",
+              "density": 2.7,
+              "desc": "Electrical conductor grade aluminum",
+              "tags": [
+                "Electrical Grade",
+                "High Conductivity"
+              ]
+            },
+            {
+              "name": "4032",
+              "density": 2.68,
+              "desc": "Forged piston alloy with low thermal expansion",
+              "tags": [
+                "Forging",
+                "Low Expansion",
+                "Wear Resistant"
+              ]
+            },
+            {
+              "name": "4043",
+              "density": 2.69,
+              "desc": "Welding filler alloy with good fluidity",
+              "tags": [
+                "Welding Filler",
+                "Good Fluidity"
+              ]
+            },
+            {
+              "name": "4047",
+              "density": 2.66,
+              "desc": "Brazing and welding filler alloy",
+              "tags": [
+                "Brazing",
+                "Low Melting Point"
+              ]
+            }
+          ],
+          "standardsCategory": "1xxx Pure"
+        },
+        {
+          "name": "2xxx - Copper Alloy",
+          "alloys": [
+            {
+              "name": "2014",
+              "tensileStrength": "185-485",
+              "yieldStrength": "97-415",
+              "elongation": 13,
+              "hardness": 135,
+              "density": 2.8,
+              "meltingRange": "507-638",
+              "thermalConductivity": 154,
+              "corrosionResistance": "Poor",
+              "weldability": "Fair",
+              "applications": "Aerospace fittings, truck wheels, structural",
+              "equivalentStandards": "EN AW-2014, A2014 (JIS)",
+              "composition": {
+                "Si": "0.50-1.2",
+                "Fe": "0.7",
+                "Cu": "3.9-5.0",
+                "Mn": "0.40-1.2",
+                "Mg": "0.20-0.8",
+                "Cr": "0.10",
+                "Zn": "0.25",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "2014",
+                "astm": "B209 / B211",
+                "en": "EN AW-2014",
+                "jis": "A2014",
+                "gb": "2014",
+                "iso": "AlCu4SiMg"
+              },
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 135,
+                  "type": "Aged"
+                }
+              ],
+              "desc": "High-strength structural alloy for heavy-duty applications",
+              "tags": [
+                "High Strength",
+                "Structural",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "2017",
+              "tensileStrength": "180-430",
+              "yieldStrength": "70-275",
+              "elongation": 12,
+              "hardness": 105,
+              "density": 2.79,
+              "meltingRange": "513-640",
+              "thermalConductivity": 134,
+              "corrosionResistance": "Poor",
+              "weldability": "Fair",
+              "applications": "Rivets, screw products, general structural",
+              "equivalentStandards": "EN AW-2017, A2017 (JIS)",
+              "composition": {
+                "Si": "0.20-0.8",
+                "Fe": "0.7",
+                "Cu": "3.5-4.5",
+                "Mn": "0.40-1.0",
+                "Mg": "0.40-0.8",
+                "Cr": "0.10",
+                "Zn": "0.25",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "2017",
+                "astm": "B211",
+                "en": "EN AW-2017A",
+                "jis": "A2017",
+                "gb": "2017",
+                "iso": "AlCu4MgSi(A)"
+              },
+              "desc": "Good machinability and moderate strength",
+              "tags": [
+                "Good Machinability",
+                "Rivet Alloy"
+              ]
+            },
+            {
+              "name": "2024",
+              "tensileStrength": "185-485",
+              "yieldStrength": "76-450",
+              "elongation": 10,
+              "hardness": 120,
+              "density": 2.78,
+              "meltingRange": "502-638",
+              "thermalConductivity": 121,
+              "corrosionResistance": "Poor",
+              "weldability": "Poor",
+              "applications": "Aircraft skins, wing tension members, rivets",
+              "equivalentStandards": "EN AW-2024, A2024P (JIS)",
+              "composition": {
+                "Si": "0.50",
+                "Fe": "0.50",
+                "Cu": "3.8-4.9",
+                "Mn": "0.30-0.9",
+                "Mg": "1.2-1.8",
+                "Cr": "0.10",
+                "Zn": "0.25",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "2024",
+                "astm": "B209 / B211",
+                "en": "EN AW-2024",
+                "jis": "A2024",
+                "gb": "2024",
+                "iso": "AlCu4Mg1"
+              },
+              "tempers": [
+                {
+                  "name": "T3",
+                  "hb": 120,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "T4",
+                  "hb": 120,
+                  "type": "Naturally Aged"
+                }
+              ],
+              "desc": "High-strength alloy with good fatigue resistance",
+              "tags": [
+                "High Strength",
+                "Good Fatigue Resistance",
+                "Aerospace"
+              ]
+            },
+            {
+              "name": "2011",
+              "density": 2.83,
+              "desc": "Free-machining alloy with good strength",
+              "tags": [
+                "Free Machining",
+                "Good Strength",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "2219",
+              "density": 2.84,
+              "desc": "Weldable high-strength alloy for cryogenic applications",
+              "tags": [
+                "Weldable",
+                "Cryogenic",
+                "Aerospace"
+              ]
+            }
+          ],
+          "standardsCategory": "2xxx Cu"
+        },
+        {
+          "name": "3xxx - Manganese Alloy",
+          "alloys": [
+            {
+              "name": "3003",
+              "tensileStrength": "110-200",
+              "yieldStrength": "42-185",
+              "elongation": 10,
+              "hardness": 40,
+              "density": 2.73,
+              "meltingRange": "643-654",
+              "thermalConductivity": 193,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Cooking utensils, storage tanks, roofing sheets",
+              "equivalentStandards": "EN AW-3003, A3003P (JIS)",
+              "composition": {
+                "Si": "0.6",
+                "Fe": "0.7",
+                "Cu": "0.05-0.20",
+                "Mn": "1.0-1.5",
+                "Mg": "—",
+                "Zn": "0.10",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "3003",
+                "astm": "B209 / B210",
+                "en": "EN AW-3003",
+                "jis": "A3003",
+                "gb": "3003",
+                "iso": "AlMn1Cu"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 28,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 40,
+                  "type": "Strain Hardened"
+                }
+              ],
+              "desc": "General-purpose alloy with good workability",
+              "tags": [
+                "Good Workability",
+                "Moderate Strength"
+              ]
+            },
+            {
+              "name": "3004",
+              "tensileStrength": "170-250",
+              "yieldStrength": "69-235",
+              "elongation": 10,
+              "hardness": 52,
+              "density": 2.72,
+              "meltingRange": "629-654",
+              "thermalConductivity": 163,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Beverage cans, roofing panels, storage tanks",
+              "equivalentStandards": "EN AW-3004, A3004 (JIS)",
+              "composition": {
+                "Si": "0.30",
+                "Fe": "0.7",
+                "Cu": "0.25",
+                "Mn": "1.0-1.5",
+                "Mg": "0.8-1.3",
+                "Zn": "0.25",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "3004",
+                "astm": "B209",
+                "en": "EN AW-3004",
+                "jis": "A3004",
+                "gb": "3004",
+                "iso": "AlMn1Mg1"
+              },
+              "desc": "Higher strength than 3003, used for beverage cans",
+              "tags": [
+                "Can Stock",
+                "Good Formability"
+              ]
+            },
+            {
+              "name": "3105",
+              "density": 2.72,
+              "desc": "Moderate strength with good corrosion resistance",
+              "tags": [
+                "Building Products",
+                "Good Finishing"
+              ]
+            }
+          ],
+          "standardsCategory": "3xxx Mn"
+        },
+        {
+          "name": "5xxx - Magnesium Alloy",
+          "alloys": [
+            {
+              "name": "5052",
+              "tensileStrength": "170-265",
+              "yieldStrength": "65-215",
+              "elongation": 12,
+              "hardness": 60,
+              "density": 2.68,
+              "meltingRange": "607-649",
+              "thermalConductivity": 138,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Marine components, fuel tanks, sheet metal",
+              "equivalentStandards": "EN AW-5052, A5052P (JIS)",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.10",
+                "Mg": "2.2-2.8",
+                "Cr": "0.15-0.35",
+                "Zn": "0.10",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5052",
+                "astm": "B209 / B210",
+                "en": "EN AW-5052",
+                "jis": "A5052",
+                "gb": "5052",
+                "iso": "AlMg2.5"
+              },
+              "tempers": [
+                {
+                  "name": "H32",
+                  "hb": 60,
+                  "type": "Stabilized"
+                },
+                {
+                  "name": "H34",
+                  "hb": 68,
+                  "type": "Stabilized"
+                }
+              ],
+              "desc": "Good workability and corrosion resistance",
+              "tags": [
+                "Marine Grade",
+                "Good Weldability"
+              ]
+            },
+            {
+              "name": "5083",
+              "tensileStrength": "275-350",
+              "yieldStrength": "125-280",
+              "elongation": 12,
+              "hardness": 96,
+              "density": 2.66,
+              "meltingRange": "574-638",
+              "thermalConductivity": 117,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Shipbuilding, pressure vessels, cryogenic tanks",
+              "equivalentStandards": "EN AW-5083, A5083P (JIS)",
+              "composition": {
+                "Si": "0.40",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.40-1.0",
+                "Mg": "4.0-4.9",
+                "Cr": "0.05-0.25",
+                "Zn": "0.25",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5083",
+                "astm": "B209 / B928",
+                "en": "EN AW-5083",
+                "jis": "A5083",
+                "gb": "5083",
+                "iso": "AlMg4.5Mn0.7"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 75,
+                  "type": "Annealed"
+                }
+              ],
+              "desc": "Highest strength non-heat treatable alloy",
+              "tags": [
+                "High Strength",
+                "Marine Grade",
+                "Shipbuilding"
+              ]
+            },
+            {
+              "name": "5086",
+              "tensileStrength": "240-315",
+              "yieldStrength": "100-255",
+              "elongation": 12,
+              "hardness": 73,
+              "density": 2.66,
+              "meltingRange": "585-640",
+              "thermalConductivity": 127,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Marine hulls, unfired pressure vessels, piping",
+              "equivalentStandards": "EN AW-5086, A5086 (JIS)",
+              "composition": {
+                "Si": "0.40",
+                "Fe": "0.50",
+                "Cu": "0.10",
+                "Mn": "0.20-0.7",
+                "Mg": "3.5-4.5",
+                "Cr": "0.05-0.25",
+                "Zn": "0.25",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5086",
+                "astm": "B209",
+                "en": "EN AW-5086",
+                "jis": "A5086",
+                "gb": "5086",
+                "iso": "AlMg4"
+              },
+              "tempers": [
+                {
+                  "name": "H32",
+                  "hb": 73,
+                  "type": "Stabilized"
+                }
+              ],
+              "desc": "Marine structural alloy with good weldability",
+              "tags": [
+                "Marine Grade",
+                "Structural",
+                "Weldable"
+              ]
+            },
+            {
+              "name": "5754",
+              "tensileStrength": "190-270",
+              "yieldStrength": "80-200",
+              "elongation": 12,
+              "hardness": 63,
+              "density": 2.67,
+              "meltingRange": "600-643",
+              "thermalConductivity": 132,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Automotive body panels, flooring, welded structures",
+              "equivalentStandards": "EN AW-5754, AlMg3 (DIN)",
+              "composition": {
+                "Si": "0.40",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.50",
+                "Mg": "2.6-3.6",
+                "Cr": "0.30",
+                "Zn": "0.20",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5754",
+                "astm": "B209",
+                "en": "EN AW-5754",
+                "jis": "—",
+                "gb": "5754",
+                "iso": "AlMg3"
+              },
+              "desc": "Automotive body panel alloy",
+              "tags": [
+                "Automotive",
+                "Good Formability",
+                "Weldable"
+              ]
+            },
+            {
+              "name": "5005",
+              "density": 2.7,
+              "desc": "Low-strength alloy with good anodizing response",
+              "tags": [
+                "Anodizing",
+                "Decorative",
+                "Non-Heat Treatable"
+              ]
+            },
+            {
+              "name": "5182",
+              "density": 2.65,
+              "desc": "Beverage can end alloy with high strength",
+              "tags": [
+                "Can End Stock",
+                "High Strength"
+              ]
+            },
+            {
+              "name": "5251",
+              "density": 2.69,
+              "desc": "Medium-strength marine alloy",
+              "tags": [
+                "Marine Grade",
+                "Good Formability"
+              ]
+            }
+          ],
+          "standardsCategory": "5xxx Mg"
+        },
+        {
+          "name": "6xxx - Magnesium-Silicon",
+          "alloys": [
+            {
+              "name": "6005",
+              "tensileStrength": "190-310",
+              "yieldStrength": "100-260",
+              "elongation": 11,
+              "hardness": 90,
+              "density": 2.7,
+              "meltingRange": "607-654",
+              "thermalConductivity": 190,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Structural profiles, ladders, platforms",
+              "equivalentStandards": "EN AW-6005A, AlSiMg (DIN)",
+              "composition": {
+                "Si": "0.6-0.9",
+                "Fe": "0.35",
+                "Cu": "0.10",
+                "Mn": "0.10",
+                "Mg": "0.40-0.6",
+                "Cr": "0.10",
+                "Zn": "0.10",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "6005",
+                "astm": "B221",
+                "en": "EN AW-6005A",
+                "jis": "A6005",
+                "gb": "6005A",
+                "iso": "AlSiMg(A)"
+              },
+              "desc": "Medium-strength structural extrusion alloy",
+              "tags": [
+                "Extrusion",
+                "Structural",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "6060",
+              "tensileStrength": "120-215",
+              "yieldStrength": "60-170",
+              "elongation": 12,
+              "hardness": 65,
+              "density": 2.7,
+              "meltingRange": "616-654",
+              "thermalConductivity": 209,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Window frames, furniture, architectural trim",
+              "equivalentStandards": "EN AW-6060, AlMgSi (DIN)",
+              "composition": {
+                "Si": "0.30-0.6",
+                "Fe": "0.10-0.30",
+                "Cu": "0.10",
+                "Mn": "0.10",
+                "Mg": "0.35-0.6",
+                "Cr": "0.05",
+                "Zn": "0.15",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "6060",
+                "astm": "—",
+                "en": "EN AW-6060",
+                "jis": "—",
+                "gb": "6060",
+                "iso": "AlMgSi"
+              },
+              "desc": "Lower-strength extrusion alloy with excellent surface finish",
+              "tags": [
+                "Extrusion",
+                "Anodizing",
+                "Architectural"
+              ]
+            },
+            {
+              "name": "6061",
+              "tensileStrength": "125-310",
+              "yieldStrength": "55-275",
+              "elongation": 12,
+              "hardness": 95,
+              "density": 2.7,
+              "meltingRange": "582-652",
+              "thermalConductivity": 167,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Structural components, marine fittings, pipelines",
+              "equivalentStandards": "EN AW-6061, A6061 (JIS)",
+              "composition": {
+                "Si": "0.40-0.8",
+                "Fe": "0.7",
+                "Cu": "0.15-0.40",
+                "Mn": "0.15",
+                "Mg": "0.8-1.2",
+                "Cr": "0.04-0.35",
+                "Zn": "0.25",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "6061",
+                "astm": "B209 / B221",
+                "en": "EN AW-6061",
+                "jis": "A6061",
+                "gb": "6061",
+                "iso": "AlMg1SiCu"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 30,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "T4",
+                  "hb": 65,
+                  "type": "Naturally Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 95,
+                  "type": "Aged"
+                }
+              ],
+              "desc": "Versatile alloy with good mechanical properties",
+              "tags": [
+                "Versatile",
+                "Good Weldability",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "6063",
+              "tensileStrength": "130-240",
+              "yieldStrength": "48-215",
+              "elongation": 12,
+              "hardness": 73,
+              "density": 2.7,
+              "meltingRange": "616-654",
+              "thermalConductivity": 209,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Architectural extrusions, window frames, irrigation pipes",
+              "equivalentStandards": "EN AW-6063, A6063 (JIS)",
+              "composition": {
+                "Si": "0.20-0.6",
+                "Fe": "0.35",
+                "Cu": "0.10",
+                "Mn": "0.10",
+                "Mg": "0.45-0.9",
+                "Cr": "0.10",
+                "Zn": "0.10",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "6063",
+                "astm": "B221 / B241",
+                "en": "EN AW-6063",
+                "jis": "A6063",
+                "gb": "6063",
+                "iso": "AlMg0.7Si"
+              },
+              "tempers": [
+                {
+                  "name": "T5",
+                  "hb": 60,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 73,
+                  "type": "Aged"
+                }
+              ],
+              "desc": "Architectural alloy with good surface finish",
+              "tags": [
+                "Extrusion Alloy",
+                "Good Surface Finish"
+              ]
+            },
+            {
+              "name": "6082",
+              "tensileStrength": "205-340",
+              "yieldStrength": "110-310",
+              "elongation": 10,
+              "hardness": 95,
+              "density": 2.71,
+              "meltingRange": "574-650",
+              "thermalConductivity": 172,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Bridges, cranes, trusses, structural plates",
+              "equivalentStandards": "EN AW-6082, AlSi1MgMn (DIN)",
+              "composition": {
+                "Si": "0.7-1.3",
+                "Fe": "0.50",
+                "Cu": "0.10",
+                "Mn": "0.40-1.0",
+                "Mg": "0.6-1.2",
+                "Cr": "0.25",
+                "Zn": "0.20",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "6082",
+                "astm": "—",
+                "en": "EN AW-6082",
+                "jis": "—",
+                "gb": "6082",
+                "iso": "AlSi1MgMn"
+              },
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 95,
+                  "type": "Aged"
+                }
+              ],
+              "desc": "Medium-strength structural alloy",
+              "tags": [
+                "Structural",
+                "Good Machinability",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "6101",
+              "density": 2.7,
+              "desc": "High-strength electrical conductor alloy",
+              "tags": [
+                "Electrical",
+                "Bus Bar",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "6262",
+              "density": 2.72,
+              "desc": "Free-machining alloy similar to 6061",
+              "tags": [
+                "Free Machining",
+                "Fittings",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "6351",
+              "density": 2.71,
+              "desc": "High-strength extrusion alloy for structural use",
+              "tags": [
+                "Extrusion",
+                "High Strength",
+                "Structural"
+              ]
+            }
+          ],
+          "standardsCategory": "6xxx Mg-Si"
+        },
+        {
+          "name": "7xxx - Zinc Alloy",
+          "alloys": [
+            {
+              "name": "7005",
+              "tensileStrength": "310-370",
+              "yieldStrength": "215-310",
+              "elongation": 12,
+              "hardness": 105,
+              "density": 2.78,
+              "meltingRange": "607-646",
+              "thermalConductivity": 139,
+              "corrosionResistance": "Fair",
+              "weldability": "Good",
+              "applications": "Bicycle frames, structural members, armour plate",
+              "equivalentStandards": "EN AW-7005, AlZn4.5Mg (DIN)",
+              "composition": {
+                "Si": "0.35",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.20-0.7",
+                "Mg": "1.0-1.8",
+                "Cr": "0.06-0.20",
+                "Zn": "4.0-5.0",
+                "Ti": "0.01-0.06",
+                "Zr": "0.08-0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7005",
+                "astm": "B221",
+                "en": "EN AW-7005",
+                "jis": "A7005",
+                "gb": "7005",
+                "iso": "AlZn4.5Mg1.5Mn"
+              },
+              "desc": "Medium-strength weldable alloy",
+              "tags": [
+                "Weldable",
+                "Structural",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "7050",
+              "tensileStrength": "455-525",
+              "yieldStrength": "385-470",
+              "elongation": 10,
+              "hardness": 140,
+              "density": 2.83,
+              "meltingRange": "490-630",
+              "thermalConductivity": 157,
+              "corrosionResistance": "Fair",
+              "weldability": "Poor",
+              "applications": "Aircraft structures, aerospace bulkheads, wing skins",
+              "equivalentStandards": "EN AW-7050, AMS 4050",
+              "composition": {
+                "Si": "0.12",
+                "Fe": "0.15",
+                "Cu": "2.0-2.6",
+                "Mn": "0.10",
+                "Mg": "1.9-2.6",
+                "Cr": "0.04",
+                "Zn": "5.7-6.7",
+                "Ti": "0.06",
+                "Zr": "0.08-0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7050",
+                "astm": "B209 / B247",
+                "en": "EN AW-7050",
+                "jis": "A7050",
+                "gb": "7050",
+                "iso": "AlZn6CuMgZr"
+              },
+              "tempers": [
+                {
+                  "name": "T7451",
+                  "hb": 140,
+                  "type": "Overaged"
+                }
+              ],
+              "desc": "High-strength aerospace alloy with good toughness",
+              "tags": [
+                "Aerospace",
+                "High Toughness",
+                "Thick Sections"
+              ]
+            },
+            {
+              "name": "7075",
+              "tensileStrength": "228-572",
+              "yieldStrength": "103-503",
+              "elongation": 11,
+              "hardness": 150,
+              "density": 2.81,
+              "meltingRange": "477-635",
+              "thermalConductivity": 130,
+              "corrosionResistance": "Fair",
+              "weldability": "Poor",
+              "applications": "Aircraft wings, fuselage, missile parts",
+              "equivalentStandards": "EN AW-7075, A7075 (JIS)",
+              "composition": {
+                "Si": "0.40",
+                "Fe": "0.50",
+                "Cu": "1.2-2.0",
+                "Mn": "0.30",
+                "Mg": "2.1-2.9",
+                "Cr": "0.18-0.28",
+                "Zn": "5.1-6.1",
+                "Ti": "0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7075",
+                "astm": "B209 / B211",
+                "en": "EN AW-7075",
+                "jis": "A7075",
+                "gb": "7075",
+                "iso": "AlZn5.5MgCu"
+              },
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 150,
+                  "type": "Aged"
+                },
+                {
+                  "name": "T73",
+                  "hb": 135,
+                  "type": "Overaged"
+                }
+              ],
+              "desc": "Very high strength aerospace alloy",
+              "tags": [
+                "Aerospace Grade",
+                "Very High Strength"
+              ]
+            },
+            {
+              "name": "7178",
+              "density": 2.83,
+              "desc": "Highest strength aluminum alloy for aircraft structures",
+              "tags": [
+                "Aircraft",
+                "Ultra High Strength"
+              ]
+            }
+          ],
+          "standardsCategory": "7xxx Zn"
+        }
+      ]
+    },
+    "stainless": {
+      "label": "Stainless Steel",
+      "defaultDensity": 7.93,
+      "color": "#808090",
+      "groups": [
+        {
+          "name": "Austenitic",
+          "alloys": [
+            {
+              "name": "304",
+              "tensileStrength": "515-690",
+              "yieldStrength": "205-310",
+              "elongation": 40,
+              "hardness": 201,
+              "density": 8,
+              "meltingRange": "1400-1450",
+              "thermalConductivity": 16.2,
+              "corrosionResistance": "Good",
+              "weldability": "Excellent",
+              "applications": "Kitchen sinks, food processing, chemical vessels",
+              "equivalentStandards": "1.4301 (EN), SUS304 (JIS)",
+              "composition": {
+                "C": "0.08",
+                "Mn": "2.0",
+                "Si": "0.75",
+                "Cr": "18.0-20.0",
+                "Ni": "8.0-10.5",
+                "P": "0.045",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 304",
+                "en": "EN 1.4301 / X5CrNi18-10",
+                "jis": "SUS 304",
+                "gb": "0Cr18Ni9 / 06Cr19Ni10",
+                "iso": "X5CrNi18-10"
+              },
+              "desc": "Most common stainless steel grade",
+              "tags": [
+                "Corrosion Resistant",
+                "Non-Magnetic",
+                "Weldable"
+              ]
+            },
+            {
+              "name": "316",
+              "tensileStrength": "515-690",
+              "yieldStrength": "205-310",
+              "elongation": 40,
+              "hardness": 217,
+              "density": 8,
+              "meltingRange": "1375-1400",
+              "thermalConductivity": 16.3,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Marine hardware, pharmaceutical equipment, surgical implants",
+              "equivalentStandards": "1.4401 (EN), SUS316 (JIS)",
+              "composition": {
+                "C": "0.08",
+                "Mn": "2.0",
+                "Si": "0.75",
+                "Cr": "16.0-18.0",
+                "Ni": "10.0-14.0",
+                "Mo": "2.0-3.0",
+                "P": "0.045",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 316",
+                "en": "EN 1.4401 / X5CrNiMo17-12-2",
+                "jis": "SUS 316",
+                "gb": "0Cr17Ni12Mo2 / 06Cr17Ni12Mo2",
+                "iso": "X5CrNiMo17-12-2"
+              },
+              "desc": "Marine grade with molybdenum for pitting resistance",
+              "tags": [
+                "Marine Grade",
+                "Chemical Resistant"
+              ]
+            },
+            {
+              "name": "321",
+              "tensileStrength": "515-690",
+              "yieldStrength": "205-310",
+              "elongation": 40,
+              "hardness": 217,
+              "density": 8,
+              "meltingRange": "1400-1425",
+              "thermalConductivity": 16.1,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Exhaust manifolds, expansion joints, jet engine parts",
+              "equivalentStandards": "1.4541 (EN), SUS321 (JIS)",
+              "composition": {
+                "C": "0.08",
+                "Mn": "2.0",
+                "Si": "0.75",
+                "Cr": "17.0-19.0",
+                "Ni": "9.0-12.0",
+                "Ti": "5xC min",
+                "P": "0.045",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 321",
+                "en": "EN 1.4541 / X6CrNiTi18-10",
+                "jis": "SUS 321",
+                "gb": "1Cr18Ni9Ti / 06Cr18Ni11Ti",
+                "iso": "X6CrNiTi18-10"
+              },
+              "desc": "Titanium-stabilized for high-temperature service",
+              "tags": [
+                "Ti-Stabilized",
+                "High Temperature",
+                "Weldable"
+              ]
+            },
+            {
+              "name": "304L",
+              "tensileStrength": "485-680",
+              "yieldStrength": "170-305",
+              "elongation": 40,
+              "hardness": 187,
+              "density": 8,
+              "meltingRange": "1400-1450",
+              "thermalConductivity": 16.2,
+              "corrosionResistance": "Good",
+              "weldability": "Excellent",
+              "applications": "Welded structures, cryogenic vessels, dairy equipment",
+              "equivalentStandards": "1.4307 (EN), SUS304L (JIS)",
+              "composition": {
+                "C": "0.03",
+                "Mn": "2.0",
+                "Si": "0.75",
+                "Cr": "18.0-20.0",
+                "Ni": "8.0-12.0",
+                "P": "0.045",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 304L",
+                "en": "EN 1.4307 / X2CrNi18-9",
+                "jis": "SUS 304L",
+                "gb": "00Cr19Ni10 / 022Cr19Ni10",
+                "iso": "X2CrNi18-9"
+              },
+              "desc": "Low-carbon version for improved weldability",
+              "tags": [
+                "Low Carbon",
+                "Weldable",
+                "Non-Magnetic"
+              ]
+            },
+            {
+              "name": "316L",
+              "tensileStrength": "485-680",
+              "yieldStrength": "170-290",
+              "elongation": 40,
+              "hardness": 217,
+              "density": 8,
+              "meltingRange": "1375-1400",
+              "thermalConductivity": 16.3,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Chemical processing, medical devices, marine structures",
+              "equivalentStandards": "1.4404 (EN), SUS316L (JIS)",
+              "composition": {
+                "C": "0.03",
+                "Mn": "2.0",
+                "Si": "0.75",
+                "Cr": "16.0-18.0",
+                "Ni": "10.0-14.0",
+                "Mo": "2.0-3.0",
+                "P": "0.045",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 316L",
+                "en": "EN 1.4404 / X2CrNiMo17-12-2",
+                "jis": "SUS 316L",
+                "gb": "00Cr17Ni14Mo2 / 022Cr17Ni12Mo2",
+                "iso": "X2CrNiMo17-12-2"
+              },
+              "desc": "Low-carbon marine grade for welded structures",
+              "tags": [
+                "Low Carbon",
+                "Marine Grade",
+                "Biomedical"
+              ]
+            },
+            {
+              "name": "310S",
+              "tensileStrength": "515-690",
+              "yieldStrength": "205-310",
+              "elongation": 40,
+              "hardness": 217,
+              "density": 8,
+              "meltingRange": "1400-1455",
+              "thermalConductivity": 14.2,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Furnace parts, heat exchangers, kiln linings",
+              "equivalentStandards": "1.4845 (EN), SUS310S (JIS)",
+              "composition": {
+                "C": "0.08",
+                "Mn": "2.0",
+                "Si": "1.50",
+                "Cr": "24.0-26.0",
+                "Ni": "19.0-22.0",
+                "P": "0.045",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 310S",
+                "en": "EN 1.4845 / X8CrNi25-21",
+                "jis": "SUS 310S",
+                "gb": "0Cr25Ni20 / 06Cr25Ni20",
+                "iso": "X8CrNi25-21"
+              }
+            },
+            {
+              "name": "301",
+              "density": 7.88,
+              "desc": "High work-hardening rate for structural applications",
+              "tags": [
+                "Work Hardenable",
+                "Spring Quality"
+              ]
+            },
+            {
+              "name": "303",
+              "density": 7.93,
+              "desc": "Free-machining austenitic stainless steel",
+              "tags": [
+                "Free Machining",
+                "Non-Magnetic"
+              ]
+            },
+            {
+              "name": "309",
+              "density": 7.98,
+              "desc": "Heat-resistant grade for high-temperature use",
+              "tags": [
+                "High Temperature",
+                "Oxidation Resistant"
+              ]
+            },
+            {
+              "name": "310",
+              "density": 7.98,
+              "desc": "High-temperature oxidation-resistant grade",
+              "tags": [
+                "Furnace Parts",
+                "High Temperature"
+              ]
+            },
+            {
+              "name": "347",
+              "density": 7.96,
+              "desc": "Niobium-stabilized for high-temperature welding",
+              "tags": [
+                "Nb-Stabilized",
+                "High Temperature"
+              ]
+            }
+          ],
+          "standardsCategory": "Austenitic"
+        },
+        {
+          "name": "Ferritic",
+          "alloys": [
+            {
+              "name": "409",
+              "tensileStrength": "380-520",
+              "yieldStrength": "170-260",
+              "elongation": 20,
+              "hardness": 160,
+              "density": 7.7,
+              "meltingRange": "1450-1530",
+              "thermalConductivity": 25.7,
+              "corrosionResistance": "Fair",
+              "weldability": "Good",
+              "applications": "Automotive exhaust systems, catalytic converters, mufflers",
+              "equivalentStandards": "1.4512 (EN), SUS409 (JIS)",
+              "composition": {
+                "C": "0.08",
+                "Mn": "1.0",
+                "Si": "1.0",
+                "Cr": "10.5-11.75",
+                "Ti": "6xC min",
+                "P": "0.045",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "desc": "Automotive exhaust grade",
+              "tags": [
+                "Automotive",
+                "Heat Resistant",
+                "Low Cost"
+              ]
+            },
+            {
+              "name": "430",
+              "tensileStrength": "450-600",
+              "yieldStrength": "205-310",
+              "elongation": 22,
+              "hardness": 183,
+              "density": 7.7,
+              "meltingRange": "1425-1510",
+              "thermalConductivity": 26.1,
+              "corrosionResistance": "Fair",
+              "weldability": "Fair",
+              "applications": "Automotive trim, kitchen appliances, architectural panels",
+              "equivalentStandards": "1.4016 (EN), SUS430 (JIS)",
+              "composition": {
+                "C": "0.12",
+                "Mn": "1.0",
+                "Si": "1.0",
+                "Cr": "16.0-18.0",
+                "Ni": "0.75",
+                "P": "0.040",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 430",
+                "en": "EN 1.4016 / X6Cr17",
+                "jis": "SUS 430",
+                "gb": "1Cr17 / 10Cr17",
+                "iso": "X6Cr17"
+              },
+              "desc": "General purpose ferritic stainless steel",
+              "tags": [
+                "Magnetic",
+                "Good Formability",
+                "Decorative"
+              ]
+            },
+            {
+              "name": "405",
+              "density": 7.74,
+              "desc": "Low-chromium ferritic for welded applications",
+              "tags": [
+                "Weldable",
+                "Magnetic"
+              ]
+            },
+            {
+              "name": "446",
+              "density": 7.6,
+              "desc": "High-chromium heat-resistant grade",
+              "tags": [
+                "High Temperature",
+                "Oxidation Resistant"
+              ]
+            }
+          ],
+          "standardsCategory": "Ferritic"
+        },
+        {
+          "name": "Martensitic",
+          "alloys": [
+            {
+              "name": "410",
+              "tensileStrength": "450-690",
+              "yieldStrength": "205-415",
+              "elongation": 20,
+              "hardness": 217,
+              "density": 7.7,
+              "meltingRange": "1450-1510",
+              "thermalConductivity": 24.9,
+              "corrosionResistance": "Fair",
+              "weldability": "Fair",
+              "applications": "Cutlery, steam turbine blades, valve seats",
+              "equivalentStandards": "1.4006 (EN), SUS410 (JIS)",
+              "composition": {
+                "C": "0.15",
+                "Mn": "1.0",
+                "Si": "1.0",
+                "Cr": "11.5-13.5",
+                "Ni": "0.75",
+                "P": "0.040",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 410",
+                "en": "EN 1.4006 / X12Cr13",
+                "jis": "SUS 410",
+                "gb": "1Cr13 / 12Cr13",
+                "iso": "X12Cr13"
+              },
+              "desc": "General purpose hardenable stainless steel",
+              "tags": [
+                "Heat Treatable",
+                "Magnetic",
+                "Hardenable"
+              ]
+            },
+            {
+              "name": "420",
+              "tensileStrength": "655-1790",
+              "yieldStrength": "345-1480",
+              "elongation": 8,
+              "hardness": 241,
+              "density": 7.7,
+              "meltingRange": "1400-1450",
+              "thermalConductivity": 24.9,
+              "corrosionResistance": "Poor",
+              "weldability": "Poor",
+              "applications": "Surgical instruments, knife blades, plastic molds",
+              "equivalentStandards": "1.4021 (EN), SUS420J2 (JIS)",
+              "composition": {
+                "C": "0.15 min",
+                "Mn": "1.0",
+                "Si": "1.0",
+                "Cr": "12.0-14.0",
+                "Ni": "—",
+                "P": "0.040",
+                "S": "0.030",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 420",
+                "en": "EN 1.4028 / X30Cr13",
+                "jis": "SUS 420J2",
+                "gb": "3Cr13 / 30Cr13",
+                "iso": "X30Cr13"
+              },
+              "desc": "Cutlery grade with higher hardness",
+              "tags": [
+                "Cutlery",
+                "High Hardness",
+                "Wear Resistant"
+              ]
+            },
+            {
+              "name": "440C",
+              "density": 7.68,
+              "desc": "High-carbon for maximum hardness and wear resistance",
+              "tags": [
+                "Bearings",
+                "High Hardness",
+                "Wear Resistant"
+              ]
+            }
+          ],
+          "standardsCategory": "Martensitic"
+        },
+        {
+          "name": "Duplex",
+          "alloys": [
+            {
+              "name": "2205",
+              "tensileStrength": "620-880",
+              "yieldStrength": "450-550",
+              "elongation": 25,
+              "hardness": 293,
+              "density": 7.8,
+              "meltingRange": "1350-1400",
+              "thermalConductivity": 19,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Chemical tankers, desalination, pressure vessels",
+              "equivalentStandards": "1.4462 (EN), S31803 (UNS)",
+              "composition": {
+                "C": "0.03",
+                "Mn": "2.0",
+                "Si": "1.0",
+                "Cr": "22.0-23.0",
+                "Ni": "4.5-6.5",
+                "Mo": "3.0-3.5",
+                "N": "0.14-0.20",
+                "P": "0.030",
+                "S": "0.020",
+                "Fe": "bal"
+              },
+              "standards": {
+                "astm": "ASTM A240 S31803",
+                "en": "EN 1.4462 / X2CrNiMoN22-5-3",
+                "jis": "SUS 329J3L",
+                "gb": "022Cr22Ni5Mo3N",
+                "iso": "X2CrNiMoN22-5-3"
+              },
+              "desc": "Most common duplex grade with high strength",
+              "tags": [
+                "High Strength",
+                "Corrosion Resistant",
+                "Oil & Gas"
+              ]
+            },
+            {
+              "name": "2507",
+              "tensileStrength": "795-1000",
+              "yieldStrength": "550-700",
+              "elongation": 15,
+              "hardness": 310,
+              "density": 7.8,
+              "meltingRange": "1350-1400",
+              "thermalConductivity": 14.2,
+              "corrosionResistance": "Excellent",
+              "weldability": "Fair",
+              "applications": "Offshore oil & gas, seawater systems, flue gas desulfurization",
+              "equivalentStandards": "1.4410 (EN), S32750 (UNS)",
+              "composition": {
+                "C": "0.03",
+                "Mn": "1.2",
+                "Si": "0.8",
+                "Cr": "24.0-26.0",
+                "Ni": "6.0-8.0",
+                "Mo": "3.0-5.0",
+                "N": "0.24-0.32",
+                "P": "0.035",
+                "S": "0.020",
+                "Fe": "bal"
+              },
+              "desc": "Super duplex for severe corrosion environments",
+              "tags": [
+                "Super Duplex",
+                "Chemical Resistant"
+              ]
+            }
+          ],
+          "standardsCategory": "Duplex"
+        },
+        {
+          "name": "Precipitation Hardening",
+          "alloys": [
+            {
+              "name": "17-4 PH",
+              "density": 7.78,
+              "desc": "High-strength precipitation hardening grade",
+              "tags": [
+                "High Strength",
+                "Aerospace",
+                "Medical"
+              ]
+            },
+            {
+              "name": "15-5 PH",
+              "density": 7.78,
+              "desc": "Better toughness than 17-4 PH",
+              "tags": [
+                "Good Toughness",
+                "Aerospace"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "copper": {
+      "label": "Copper Alloys",
+      "defaultDensity": 8.96,
+      "color": "#E07020",
+      "groups": [
+        {
+          "name": "Pure / Low Alloy",
+          "alloys": [
+            {
+              "name": "C11000 (ETP Copper)",
+              "tensileStrength": "220-385",
+              "yieldStrength": "69-345",
+              "elongation": 30,
+              "hardness": 50,
+              "density": 8.94,
+              "meltingRange": "1065-1083",
+              "thermalConductivity": 391,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Electrical wiring, busbars, roofing",
+              "equivalentStandards": "CW004A (EN), C1100 (JIS)",
+              "composition": {
+                "Cu": "99.90 min",
+                "O": "0.04",
+                "Ag": "—",
+                "Fe": "—",
+                "Pb": "—",
+                "Sn": "—",
+                "Zn": "—"
+              }
+            },
+            {
+              "name": "C101 (OFE)",
+              "density": 8.94,
+              "desc": "Oxygen-free electronic copper, 99.99% pure",
+              "tags": [
+                "Ultra High Purity",
+                "Electronic Grade"
+              ]
+            },
+            {
+              "name": "C110 (ETP)",
+              "density": 8.94,
+              "desc": "Electrolytic tough pitch copper, 99.9% pure",
+              "tags": [
+                "High Conductivity",
+                "Excellent Ductility"
+              ]
+            },
+            {
+              "name": "C122 (DHP)",
+              "density": 8.94,
+              "desc": "Phosphorus deoxidized copper for plumbing",
+              "tags": [
+                "Plumbing",
+                "Brazeable",
+                "Weldable"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Beryllium Copper",
+          "alloys": [
+            {
+              "name": "C17200 (Beryllium Cu)",
+              "tensileStrength": "470-1380",
+              "yieldStrength": "195-1170",
+              "elongation": 5,
+              "hardness": 200,
+              "density": 8.25,
+              "meltingRange": "870-980",
+              "thermalConductivity": 115,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Springs, connectors, non-sparking tools",
+              "equivalentStandards": "CW101C (EN), C1720 (JIS)",
+              "composition": {
+                "Cu": "bal",
+                "Be": "1.8-2.0",
+                "Co": "0.20 min",
+                "Ni": "0.20 min",
+                "Fe": "—",
+                "Si": "—"
+              }
+            },
+            {
+              "name": "C172",
+              "density": 8.26,
+              "desc": "High-strength beryllium copper spring alloy",
+              "tags": [
+                "High Strength",
+                "Non-Sparking",
+                "Spring Quality"
+              ]
+            },
+            {
+              "name": "C175",
+              "density": 8.59,
+              "desc": "High-conductivity beryllium copper",
+              "tags": [
+                "Good Conductivity",
+                "Moderate Strength"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Brass",
+          "alloys": [
+            {
+              "name": "C26000 (Cartridge Brass)",
+              "tensileStrength": "300-585",
+              "yieldStrength": "75-435",
+              "elongation": 23,
+              "hardness": 65,
+              "density": 8.53,
+              "meltingRange": "915-955",
+              "thermalConductivity": 121,
+              "corrosionResistance": "Fair",
+              "weldability": "Good",
+              "applications": "Cartridge cases, radiator cores, hardware",
+              "equivalentStandards": "CW505L (EN), C2600 (JIS)",
+              "composition": {
+                "Cu": "68.5-71.5",
+                "Zn": "bal",
+                "Fe": "0.05",
+                "Pb": "0.07"
+              }
+            },
+            {
+              "name": "C36000 (Free-Cutting Brass)",
+              "tensileStrength": "340-470",
+              "yieldStrength": "125-310",
+              "elongation": 18,
+              "hardness": 100,
+              "density": 8.5,
+              "meltingRange": "885-900",
+              "thermalConductivity": 115,
+              "corrosionResistance": "Fair",
+              "weldability": "Fair",
+              "applications": "Screw machine parts, fittings, valves",
+              "equivalentStandards": "CW603N (EN), C3604 (JIS)",
+              "composition": {
+                "Cu": "60.0-63.0",
+                "Pb": "2.5-3.7",
+                "Fe": "0.35",
+                "Zn": "bal"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bronze",
+          "alloys": [
+            {
+              "name": "C51000 (Phosphor Bronze)",
+              "tensileStrength": "325-560",
+              "yieldStrength": "130-435",
+              "elongation": 15,
+              "hardness": 80,
+              "density": 8.86,
+              "meltingRange": "950-1050",
+              "thermalConductivity": 69,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Electrical contacts, bellows, springs",
+              "equivalentStandards": "CW451K (EN), C5101 (JIS)",
+              "composition": {
+                "Cu": "bal",
+                "Sn": "4.2-5.8",
+                "P": "0.03-0.35",
+                "Fe": "0.10",
+                "Zn": "0.30",
+                "Pb": "0.05"
+              }
+            },
+            {
+              "name": "C220 (Commercial Bronze)",
+              "density": 8.8,
+              "desc": "90/10 copper-zinc with golden color",
+              "tags": [
+                "Decorative",
+                "Good Formability"
+              ]
+            },
+            {
+              "name": "C510 (Phosphor Bronze A)",
+              "density": 8.86,
+              "desc": "Excellent spring qualities and fatigue resistance",
+              "tags": [
+                "Spring Quality",
+                "Fatigue Resistant"
+              ]
+            },
+            {
+              "name": "C544 (Phosphor Bronze B)",
+              "density": 8.89,
+              "desc": "Free-machining phosphor bronze",
+              "tags": [
+                "Free Machining",
+                "Bearings"
+              ]
+            },
+            {
+              "name": "C630 (Aluminum Bronze)",
+              "density": 7.78,
+              "desc": "High-strength corrosion-resistant alloy",
+              "tags": [
+                "High Strength",
+                "Marine Grade"
+              ]
+            },
+            {
+              "name": "C932 (Bearing Bronze)",
+              "density": 8.93,
+              "desc": "Leaded tin bronze for bearings and bushings",
+              "tags": [
+                "Bearings",
+                "Low Friction",
+                "Wear Resistant"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Copper-Nickel",
+          "alloys": [
+            {
+              "name": "C71500 (Cu-Ni 70/30)",
+              "tensileStrength": "370-540",
+              "yieldStrength": "125-480",
+              "elongation": 20,
+              "hardness": 100,
+              "density": 8.95,
+              "meltingRange": "1100-1240",
+              "thermalConductivity": 29,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Seawater piping, condenser tubes, marine hardware",
+              "equivalentStandards": "CW354H (EN), C7150 (JIS)",
+              "composition": {
+                "Cu": "bal",
+                "Ni": "29.0-33.0",
+                "Fe": "0.40-1.0",
+                "Mn": "1.0",
+                "Zn": "0.50"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "titanium": {
+      "label": "Titanium Alloys",
+      "defaultDensity": 4.51,
+      "color": "#989088",
+      "groups": [
+        {
+          "name": "Commercially Pure",
+          "alloys": [
+            {
+              "name": "Grade 1 (CP)",
+              "tensileStrength": "240-330",
+              "yieldStrength": "170-241",
+              "elongation": 24,
+              "hardness": 120,
+              "density": 4.51,
+              "meltingRange": "1660-1670",
+              "thermalConductivity": 21.9,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Chemical processing, desalination, medical implants",
+              "equivalentStandards": "3.7025 (EN), TP270C (JIS)",
+              "composition": {
+                "Ti": "bal",
+                "C": "0.08",
+                "Fe": "0.20",
+                "H": "0.015",
+                "N": "0.03",
+                "O": "0.18"
+              }
+            },
+            {
+              "name": "Grade 2 (CP)",
+              "tensileStrength": "345-434",
+              "yieldStrength": "275-345",
+              "elongation": 20,
+              "hardness": 200,
+              "density": 4.51,
+              "meltingRange": "1660-1670",
+              "thermalConductivity": 21.9,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Marine components, heat exchangers, airframe skins",
+              "equivalentStandards": "3.7035 (EN), TP340C (JIS)",
+              "composition": {
+                "Ti": "bal",
+                "C": "0.08",
+                "Fe": "0.30",
+                "H": "0.015",
+                "N": "0.03",
+                "O": "0.25"
+              }
+            },
+            {
+              "name": "Grade 1",
+              "density": 4.51,
+              "desc": "Most ductile and softest CP titanium",
+              "tags": [
+                "Most Ductile",
+                "Corrosion Resistant",
+                "Chemical Processing"
+              ]
+            },
+            {
+              "name": "Grade 2",
+              "density": 4.51,
+              "desc": "Most common CP titanium, good balance of properties",
+              "tags": [
+                "General Purpose",
+                "Biocompatible",
+                "Weldable"
+              ]
+            },
+            {
+              "name": "Grade 3",
+              "density": 4.51,
+              "desc": "Higher strength CP titanium",
+              "tags": [
+                "Higher Strength",
+                "Pressure Vessels"
+              ]
+            },
+            {
+              "name": "Grade 4",
+              "density": 4.51,
+              "desc": "Highest strength CP titanium",
+              "tags": [
+                "Highest CP Strength",
+                "Dental Implants"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alpha-Beta",
+          "alloys": [
+            {
+              "name": "Grade 5 (Ti-6Al-4V)",
+              "tensileStrength": "895-1000",
+              "yieldStrength": "828-910",
+              "elongation": 10,
+              "hardness": 334,
+              "density": 4.43,
+              "meltingRange": "1604-1660",
+              "thermalConductivity": 6.7,
+              "corrosionResistance": "Excellent",
+              "weldability": "Fair",
+              "applications": "Aerospace structures, turbine blades, medical implants",
+              "equivalentStandards": "3.7164 (EN), TAB6400 (JIS)",
+              "composition": {
+                "Ti": "bal",
+                "Al": "5.5-6.75",
+                "V": "3.5-4.5",
+                "C": "0.08",
+                "Fe": "0.40",
+                "H": "0.015",
+                "N": "0.05",
+                "O": "0.20"
+              }
+            },
+            {
+              "name": "Grade 23 (Ti-6Al-4V ELI)",
+              "tensileStrength": "860-965",
+              "yieldStrength": "795-875",
+              "elongation": 10,
+              "hardness": 326,
+              "density": 4.43,
+              "meltingRange": "1604-1660",
+              "thermalConductivity": 6.7,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Surgical implants, cryogenic vessels, dental fixtures",
+              "equivalentStandards": "3.7165 (EN), UNS R56407",
+              "composition": {
+                "Ti": "bal",
+                "Al": "5.5-6.5",
+                "V": "3.5-4.5",
+                "C": "0.08",
+                "Fe": "0.25",
+                "H": "0.0125",
+                "N": "0.03",
+                "O": "0.13"
+              }
+            },
+            {
+              "name": "Ti-5Al-2.5Sn (Grade 6)",
+              "density": 4.48,
+              "desc": "Weldable alloy for elevated temperature use",
+              "tags": [
+                "High Temperature",
+                "Weldable",
+                "Cryogenic"
+              ]
+            },
+            {
+              "name": "Ti-8Al-1Mo-1V",
+              "density": 4.37,
+              "desc": "High modulus alloy for jet engine components",
+              "tags": [
+                "Jet Engine",
+                "High Modulus"
+              ]
+            },
+            {
+              "name": "Ti-6Al-4V (Grade 5)",
+              "density": 4.43,
+              "desc": "Most common titanium alloy, aerospace workhorse",
+              "tags": [
+                "Aerospace Grade",
+                "High Strength",
+                "Heat Treatable"
+              ]
+            },
+            {
+              "name": "Ti-6Al-4V ELI (Grade 23)",
+              "density": 4.43,
+              "desc": "Extra-low interstitial version for biomedical use",
+              "tags": [
+                "Biomedical",
+                "Surgical Implants",
+                "Fracture Toughness"
+              ]
+            },
+            {
+              "name": "Ti-6Al-2Sn-4Zr-2Mo",
+              "density": 4.54,
+              "desc": "High-temperature aerospace alloy",
+              "tags": [
+                "Jet Engine",
+                "High Temperature",
+                "Creep Resistant"
+              ]
+            },
+            {
+              "name": "Ti-3Al-8V-6Cr-4Mo-4Zr (Beta C)",
+              "density": 4.82,
+              "desc": "High-strength cold-formable beta alloy",
+              "tags": [
+                "Cold Formable",
+                "High Strength",
+                "Springs"
+              ]
+            },
+            {
+              "name": "Ti-15V-3Cr-3Al-3Sn",
+              "density": 4.71,
+              "desc": "Cold-formable sheet alloy for aerospace",
+              "tags": [
+                "Sheet Alloy",
+                "Cold Formable",
+                "Aerospace"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Near Alpha",
+          "alloys": [
+            {
+              "name": "Grade 7",
+              "tensileStrength": "345-434",
+              "yieldStrength": "275-345",
+              "elongation": 20,
+              "hardness": 200,
+              "density": 4.51,
+              "meltingRange": "1660-1670",
+              "thermalConductivity": 21.9,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Chemical processing, chlor-alkali, bleach plants",
+              "equivalentStandards": "3.7235 (EN), UNS R52400",
+              "composition": {
+                "Ti": "bal",
+                "Pd": "0.12-0.25",
+                "C": "0.08",
+                "Fe": "0.30",
+                "H": "0.015",
+                "N": "0.03",
+                "O": "0.25"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ingot": {
+      "label": "Aluminum Ingots",
+      "defaultDensity": 2.74,
+      "color": "#C0C0C0",
+      "groups": [
+        {
+          "name": "Al-Si-Cu (Die Casting)",
+          "alloys": [
+            {
+              "name": "ADC12 / A383",
+              "tensileStrength": "310-380",
+              "yieldStrength": "150-170",
+              "elongation": 3,
+              "hardness": 80,
+              "density": 2.74,
+              "meltingRange": "516-582",
+              "thermalConductivity": 96,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Automotive parts, electronic housings, engine brackets, general die casting",
+              "equivalentStandards": "JIS H5302 ADC12, ASTM A383, EN AC-46000 (AlSi10Cu2Fe)",
+              "composition": {
+                "Si": "9.6-12.0",
+                "Fe": "1.3",
+                "Cu": "1.5-3.5",
+                "Mn": "0.5",
+                "Mg": "0.3",
+                "Zn": "1.0",
+                "Ni": "0.5",
+                "Sn": "0.3",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "ADC10 / A380",
+              "tensileStrength": "320-380",
+              "yieldStrength": "160-175",
+              "elongation": 3,
+              "hardness": 82,
+              "density": 2.76,
+              "meltingRange": "521-588",
+              "thermalConductivity": 96,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Engine blocks, transmission housings, power tool housings, furniture fittings",
+              "equivalentStandards": "JIS H5302 ADC10, ASTM A380, EN AC-46500 (AlSi8Cu3Fe)",
+              "composition": {
+                "Si": "7.5-9.5",
+                "Fe": "1.3",
+                "Cu": "2.0-4.0",
+                "Mn": "0.5",
+                "Mg": "0.3",
+                "Zn": "1.0",
+                "Ni": "0.5",
+                "Sn": "0.3",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "A384",
+              "tensileStrength": "330-380",
+              "yieldStrength": "165-175",
+              "elongation": 2,
+              "hardness": 85,
+              "density": 2.75,
+              "meltingRange": "516-582",
+              "thermalConductivity": 92,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Intricate die castings, thin-wall components, structural parts",
+              "equivalentStandards": "ASTM B85 A384",
+              "composition": {
+                "Si": "10.5-12.0",
+                "Fe": "1.3",
+                "Cu": "3.0-4.5",
+                "Mn": "0.5",
+                "Mg": "0.1",
+                "Zn": "3.0",
+                "Ni": "0.5",
+                "Sn": "0.35",
+                "Al": "bal"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Al-Si (Eutectic / Near-Eutectic)",
+          "alloys": [
+            {
+              "name": "ADC1 / A413",
+              "tensileStrength": "295-330",
+              "yieldStrength": "145-160",
+              "elongation": 3,
+              "hardness": 75,
+              "density": 2.66,
+              "meltingRange": "574-582",
+              "thermalConductivity": 121,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Hydraulic cylinders, pressure vessels, cooking utensils, marine fittings",
+              "equivalentStandards": "JIS H5302 ADC1, ASTM A413, EN AC-44100 (AlSi12Fe)",
+              "composition": {
+                "Si": "11.0-13.0",
+                "Fe": "1.3",
+                "Cu": "1.0",
+                "Mn": "0.3",
+                "Mg": "0.3",
+                "Zn": "0.5",
+                "Ni": "0.5",
+                "Sn": "0.1",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "ADC3 / A360",
+              "tensileStrength": "300-340",
+              "yieldStrength": "165-180",
+              "elongation": 4,
+              "hardness": 75,
+              "density": 2.68,
+              "meltingRange": "557-596",
+              "thermalConductivity": 113,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Marine components, food equipment, communication housings, instrument cases",
+              "equivalentStandards": "JIS H5302 ADC3, ASTM A360, EN AC-43400 (AlSi10Mg)",
+              "composition": {
+                "Si": "9.0-10.0",
+                "Fe": "1.3",
+                "Cu": "0.6",
+                "Mn": "0.3",
+                "Mg": "0.4-0.6",
+                "Zn": "0.5",
+                "Ni": "0.5",
+                "Sn": "0.15",
+                "Al": "bal"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Al-Mg (Corrosion Resistant)",
+          "alloys": [
+            {
+              "name": "ADC5",
+              "tensileStrength": "280-330",
+              "yieldStrength": "130-170",
+              "elongation": 5,
+              "hardness": 65,
+              "density": 2.6,
+              "meltingRange": "568-638",
+              "thermalConductivity": 100,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Marine hardware, architectural fittings, food processing, chemical equipment",
+              "equivalentStandards": "JIS H5302 ADC5, EN AC-51200 (AlMg9)",
+              "composition": {
+                "Si": "0.3",
+                "Fe": "1.8",
+                "Cu": "0.2",
+                "Mn": "0.3",
+                "Mg": "4.0-8.5",
+                "Zn": "0.1",
+                "Ni": "0.1",
+                "Sn": "0.1",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "ADC6",
+              "tensileStrength": "300-340",
+              "yieldStrength": "140-180",
+              "elongation": 5,
+              "hardness": 70,
+              "density": 2.64,
+              "meltingRange": "574-632",
+              "thermalConductivity": 105,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Marine parts, decorative hardware, anodized components, optical instruments",
+              "equivalentStandards": "JIS H5302 ADC6, EN AC-51400 (AlMg5Si)",
+              "composition": {
+                "Si": "1.0",
+                "Fe": "0.8",
+                "Cu": "0.1",
+                "Mn": "0.4-0.6",
+                "Mg": "2.6-4.0",
+                "Zn": "0.4",
+                "Ni": "0.1",
+                "Sn": "0.1",
+                "Al": "bal"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Al-Si-Mg (Heat Treatable)",
+          "alloys": [
+            {
+              "name": "A356 (T6)",
+              "tensileStrength": "228-275",
+              "yieldStrength": "165-205",
+              "elongation": 5,
+              "hardness": 85,
+              "density": 2.68,
+              "meltingRange": "557-613",
+              "thermalConductivity": 151,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Automotive wheels, aerospace structures, suspension parts, premium castings",
+              "equivalentStandards": "ASTM A356, EN AC-42100 (AlSi7Mg0.3)",
+              "composition": {
+                "Si": "6.5-7.5",
+                "Fe": "0.2",
+                "Cu": "0.2",
+                "Mn": "0.1",
+                "Mg": "0.25-0.45",
+                "Zn": "0.1",
+                "Ti": "0.2",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "A357 (T6)",
+              "tensileStrength": "290-345",
+              "yieldStrength": "215-280",
+              "elongation": 4,
+              "hardness": 95,
+              "density": 2.68,
+              "meltingRange": "557-613",
+              "thermalConductivity": 151,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Aerospace castings, missile components, high-strength structural parts",
+              "equivalentStandards": "ASTM A357, EN AC-42200 (AlSi7Mg0.6)",
+              "composition": {
+                "Si": "6.5-7.5",
+                "Fe": "0.15",
+                "Cu": "0.05",
+                "Mn": "0.03",
+                "Mg": "0.45-0.70",
+                "Zn": "0.05",
+                "Ti": "0.04-0.20",
+                "Be": "0.04-0.07",
+                "Al": "bal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "brass": {
+      "label": "Brass",
+      "defaultDensity": 8.55,
+      "color": "#C8A820",
+      "groups": [
+        {
+          "name": "Alpha Brass",
+          "alloys": [
+            {
+              "name": "C210 (Gilding Metal)",
+              "density": 8.86,
+              "desc": "95/5 copper-zinc with red-gold color",
+              "tags": [
+                "Decorative",
+                "Coins",
+                "Jewelry"
+              ]
+            },
+            {
+              "name": "C220 (Commercial Bronze)",
+              "density": 8.8,
+              "desc": "90/10 copper-zinc alloy",
+              "tags": [
+                "Decorative",
+                "Architectural"
+              ]
+            },
+            {
+              "name": "C230 (Red Brass)",
+              "density": 8.75,
+              "desc": "85/15 copper-zinc for plumbing fittings",
+              "tags": [
+                "Plumbing",
+                "Corrosion Resistant"
+              ]
+            },
+            {
+              "name": "C260 (Cartridge Brass)",
+              "density": 8.53,
+              "desc": "70/30 copper-zinc with excellent cold working",
+              "tags": [
+                "Good Formability",
+                "Cold Working",
+                "Ammunition"
+              ]
+            },
+            {
+              "name": "C270 (Yellow Brass)",
+              "density": 8.47,
+              "desc": "65/35 copper-zinc general purpose",
+              "tags": [
+                "General Purpose",
+                "Good Strength"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alpha-Beta Brass",
+          "alloys": [
+            {
+              "name": "C280 (Muntz Metal)",
+              "density": 8.39,
+              "desc": "60/40 brass for architectural and marine use",
+              "tags": [
+                "Marine",
+                "Architectural",
+                "Hot Working"
+              ]
+            },
+            {
+              "name": "C360 (Free-Cutting Brass)",
+              "density": 8.49,
+              "desc": "Best machinability of all copper alloys",
+              "tags": [
+                "Free Machining",
+                "Screw Machine Parts"
+              ]
+            },
+            {
+              "name": "C385 (Architectural Bronze)",
+              "density": 8.47,
+              "desc": "Leaded brass for architectural hardware",
+              "tags": [
+                "Architectural",
+                "Hardware",
+                "Decorative"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Naval Brass",
+          "alloys": [
+            {
+              "name": "C464 (Naval Brass)",
+              "density": 8.41,
+              "desc": "Tin-modified for seawater resistance",
+              "tags": [
+                "Marine Grade",
+                "Corrosion Resistant"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "zinc": {
+      "label": "Zinc",
+      "defaultDensity": 7.13,
+      "color": "#7088A0",
+      "groups": [
+        {
+          "name": "Pure Zinc",
+          "alloys": [
+            {
+              "name": "Zn 99.99",
+              "density": 7.13,
+              "desc": "Special high-grade zinc",
+              "tags": [
+                "High Purity",
+                "Galvanizing"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Zamak Die Casting Alloys",
+          "alloys": [
+            {
+              "name": "Zamak 2 (ZA-2)",
+              "density": 6.6,
+              "desc": "Highest strength and hardness zamak alloy",
+              "tags": [
+                "Highest Strength",
+                "Die Casting",
+                "Bearings"
+              ]
+            },
+            {
+              "name": "Zamak 3 (ZA-3)",
+              "density": 6.6,
+              "desc": "Most widely used zinc die casting alloy",
+              "tags": [
+                "Die Casting",
+                "Good Stability",
+                "Platable"
+              ]
+            },
+            {
+              "name": "Zamak 5 (ZA-5)",
+              "density": 6.6,
+              "desc": "Higher strength and creep resistance than Zamak 3",
+              "tags": [
+                "Die Casting",
+                "Higher Strength",
+                "Good Creep Resistance"
+              ]
+            },
+            {
+              "name": "Zamak 7 (ZA-7)",
+              "density": 6.6,
+              "desc": "Improved fluidity and surface finish",
+              "tags": [
+                "Die Casting",
+                "Thin Walls",
+                "Good Surface Finish"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ZA Alloys",
+          "alloys": [
+            {
+              "name": "ZA-8",
+              "density": 6.3,
+              "desc": "Zinc-aluminum alloy for hot chamber die casting",
+              "tags": [
+                "Hot Chamber",
+                "Good Bearing Properties"
+              ]
+            },
+            {
+              "name": "ZA-12",
+              "density": 6.03,
+              "desc": "Medium aluminum content zinc alloy",
+              "tags": [
+                "Sand Casting",
+                "Good Strength"
+              ]
+            },
+            {
+              "name": "ZA-27",
+              "density": 5,
+              "desc": "Highest strength zinc alloy, lightweight",
+              "tags": [
+                "Highest Strength",
+                "Lightweight",
+                "Gravity Casting"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "nickel": {
+      "label": "Nickel",
+      "defaultDensity": 8.9,
+      "color": "#A8A8A0",
+      "groups": [
+        {
+          "name": "Pure Nickel",
+          "alloys": [
+            {
+              "name": "Nickel 200",
+              "density": 8.89,
+              "desc": "Commercially pure wrought nickel",
+              "tags": [
+                "High Purity",
+                "Corrosion Resistant",
+                "Magnetic"
+              ]
+            },
+            {
+              "name": "Nickel 201",
+              "density": 8.89,
+              "desc": "Low-carbon version of Nickel 200",
+              "tags": [
+                "Low Carbon",
+                "High Temperature"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inconel (Ni-Cr)",
+          "alloys": [
+            {
+              "name": "Inconel 600",
+              "density": 8.47,
+              "desc": "Nickel-chromium alloy for high-temperature oxidation",
+              "tags": [
+                "High Temperature",
+                "Oxidation Resistant"
+              ]
+            },
+            {
+              "name": "Inconel 625",
+              "density": 8.44,
+              "desc": "Outstanding corrosion and fatigue resistance",
+              "tags": [
+                "High Temperature",
+                "Corrosion Resistant",
+                "Weldable"
+              ]
+            },
+            {
+              "name": "Inconel 718",
+              "density": 8.19,
+              "desc": "Precipitation-hardened superalloy for jet engines",
+              "tags": [
+                "Superalloy",
+                "Jet Engine",
+                "High Strength"
+              ]
+            },
+            {
+              "name": "Inconel X-750",
+              "density": 8.28,
+              "desc": "Age-hardenable for springs and fasteners",
+              "tags": [
+                "Springs",
+                "Nuclear",
+                "High Temperature"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Monel (Ni-Cu)",
+          "alloys": [
+            {
+              "name": "Monel 400",
+              "density": 8.8,
+              "desc": "Nickel-copper alloy for marine and chemical use",
+              "tags": [
+                "Marine Grade",
+                "Acid Resistant",
+                "High Strength"
+              ]
+            },
+            {
+              "name": "Monel K-500",
+              "density": 8.44,
+              "desc": "Age-hardenable version with higher strength",
+              "tags": [
+                "High Strength",
+                "Non-Magnetic",
+                "Oil & Gas"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hastelloy (Ni-Mo)",
+          "alloys": [
+            {
+              "name": "Hastelloy C-276",
+              "density": 8.89,
+              "desc": "Universal corrosion-resistant alloy",
+              "tags": [
+                "Chemical Resistant",
+                "Versatile",
+                "Weldable"
+              ]
+            },
+            {
+              "name": "Hastelloy B-2",
+              "density": 9.22,
+              "desc": "Excellent resistance to hydrochloric acid",
+              "tags": [
+                "HCl Resistant",
+                "Reducing Environments"
+              ]
+            },
+            {
+              "name": "Hastelloy X",
+              "density": 8.22,
+              "desc": "High-temperature oxidation-resistant alloy",
+              "tags": [
+                "Gas Turbine",
+                "High Temperature",
+                "Oxidation Resistant"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "magnesium": {
+      "label": "Magnesium",
+      "defaultDensity": 1.74,
+      "color": "#B8B8B0",
+      "groups": [
+        {
+          "name": "Wrought Alloys",
+          "alloys": [
+            {
+              "name": "AZ31B",
+              "density": 1.77,
+              "desc": "Most common wrought magnesium alloy",
+              "tags": [
+                "Lightweight",
+                "Good Strength",
+                "Weldable"
+              ]
+            },
+            {
+              "name": "AZ61A",
+              "density": 1.8,
+              "desc": "Higher strength wrought alloy",
+              "tags": [
+                "Higher Strength",
+                "Extrusion"
+              ]
+            },
+            {
+              "name": "AZ80A",
+              "density": 1.8,
+              "desc": "High-strength forging alloy",
+              "tags": [
+                "Forging",
+                "High Strength"
+              ]
+            },
+            {
+              "name": "ZK60A",
+              "density": 1.83,
+              "desc": "Highest strength wrought magnesium alloy",
+              "tags": [
+                "Highest Strength",
+                "Forging",
+                "Extrusion"
+              ]
+            },
+            {
+              "name": "M1A",
+              "density": 1.76,
+              "desc": "Low-alloy extrusion with moderate strength",
+              "tags": [
+                "Extrusion",
+                "Low Alloy",
+                "Moderate Strength"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cast Alloys",
+          "alloys": [
+            {
+              "name": "AZ91D",
+              "density": 1.81,
+              "desc": "Most common magnesium die casting alloy",
+              "tags": [
+                "Die Casting",
+                "Good Castability",
+                "Corrosion Resistant"
+              ]
+            },
+            {
+              "name": "AM60B",
+              "density": 1.79,
+              "desc": "Automotive die casting alloy with good ductility",
+              "tags": [
+                "Automotive",
+                "Good Ductility",
+                "Die Casting"
+              ]
+            },
+            {
+              "name": "AM50A",
+              "density": 1.77,
+              "desc": "Higher ductility automotive casting alloy",
+              "tags": [
+                "Automotive",
+                "High Ductility",
+                "Energy Absorbing"
+              ]
+            },
+            {
+              "name": "AE44",
+              "density": 1.82,
+              "desc": "Creep-resistant alloy with rare earth elements",
+              "tags": [
+                "Creep Resistant",
+                "Powertrain",
+                "High Temperature"
+              ]
+            },
+            {
+              "name": "EZ33A",
+              "density": 1.83,
+              "desc": "Sand casting alloy for elevated temperature use",
+              "tags": [
+                "Sand Casting",
+                "High Temperature",
+                "Aerospace"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "hardnessScales": [
+    {
+      "id": "hb",
+      "name": "Brinell",
+      "abbr": "HB",
+      "min": 15,
+      "max": 650,
+      "unit": "kgf/mm²",
+      "color": "#F5A623"
+    },
+    {
+      "id": "hrb",
+      "name": "Rockwell B",
+      "abbr": "HRB",
+      "min": 20,
+      "max": 100,
+      "unit": "Scale",
+      "color": "#4A90D9"
+    },
+    {
+      "id": "hrc",
+      "name": "Rockwell C",
+      "abbr": "HRC",
+      "min": 20,
+      "max": 68,
+      "unit": "Scale",
+      "color": "#D94A4A"
+    },
+    {
+      "id": "hv",
+      "name": "Vickers",
+      "abbr": "HV",
+      "min": 15,
+      "max": 940,
+      "unit": "kgf/mm²",
+      "color": "#50B86C"
+    },
+    {
+      "id": "hk",
+      "name": "Knoop",
+      "abbr": "HK",
+      "min": 15,
+      "max": 920,
+      "unit": "kgf/mm²",
+      "color": "#9B59B6"
+    },
+    {
+      "id": "shore",
+      "name": "Shore D",
+      "abbr": "Shore D",
+      "min": 20,
+      "max": 85,
+      "unit": "Scale",
+      "color": "#E67E22"
+    }
+  ],
+  "hardnessConversion": [
+    [
+      15,
+      null,
+      null,
+      15,
+      15,
+      null
+    ],
+    [
+      20,
+      null,
+      null,
+      20,
+      20,
+      null
+    ],
+    [
+      25,
+      22,
+      null,
+      26,
+      26,
+      20
+    ],
+    [
+      30,
+      30,
+      null,
+      31,
+      31,
+      22
+    ],
+    [
+      35,
+      36,
+      null,
+      37,
+      37,
+      25
+    ],
+    [
+      40,
+      42,
+      null,
+      42,
+      42,
+      28
+    ],
+    [
+      45,
+      47,
+      null,
+      47,
+      47,
+      30
+    ],
+    [
+      50,
+      52,
+      null,
+      53,
+      53,
+      32
+    ],
+    [
+      55,
+      56,
+      null,
+      58,
+      58,
+      34
+    ],
+    [
+      60,
+      60,
+      null,
+      63,
+      63,
+      36
+    ],
+    [
+      65,
+      63,
+      null,
+      68,
+      68,
+      38
+    ],
+    [
+      70,
+      66,
+      null,
+      74,
+      74,
+      39
+    ],
+    [
+      75,
+      69,
+      null,
+      79,
+      79,
+      41
+    ],
+    [
+      80,
+      72,
+      null,
+      84,
+      84,
+      42
+    ],
+    [
+      85,
+      74,
+      null,
+      89,
+      90,
+      44
+    ],
+    [
+      90,
+      76,
+      null,
+      95,
+      96,
+      45
+    ],
+    [
+      95,
+      78,
+      null,
+      100,
+      101,
+      47
+    ],
+    [
+      100,
+      80,
+      null,
+      105,
+      107,
+      48
+    ],
+    [
+      105,
+      82,
+      null,
+      110,
+      112,
+      49
+    ],
+    [
+      110,
+      83,
+      null,
+      116,
+      118,
+      50
+    ],
+    [
+      115,
+      84,
+      null,
+      121,
+      123,
+      51
+    ],
+    [
+      120,
+      86,
+      null,
+      127,
+      129,
+      52
+    ],
+    [
+      130,
+      88,
+      null,
+      138,
+      140,
+      54
+    ],
+    [
+      140,
+      90,
+      null,
+      149,
+      152,
+      56
+    ],
+    [
+      150,
+      92,
+      null,
+      160,
+      163,
+      58
+    ],
+    [
+      160,
+      93,
+      null,
+      171,
+      175,
+      59
+    ],
+    [
+      170,
+      94,
+      null,
+      183,
+      187,
+      61
+    ],
+    [
+      180,
+      95,
+      null,
+      194,
+      198,
+      62
+    ],
+    [
+      190,
+      96,
+      null,
+      206,
+      210,
+      63
+    ],
+    [
+      200,
+      97,
+      null,
+      218,
+      222,
+      64
+    ],
+    [
+      210,
+      98,
+      20,
+      230,
+      235,
+      65
+    ],
+    [
+      220,
+      99,
+      21,
+      243,
+      248,
+      66
+    ],
+    [
+      230,
+      100,
+      22,
+      256,
+      261,
+      67
+    ],
+    [
+      240,
+      null,
+      23,
+      269,
+      275,
+      68
+    ],
+    [
+      250,
+      null,
+      24,
+      282,
+      288,
+      69
+    ],
+    [
+      260,
+      null,
+      25,
+      296,
+      302,
+      70
+    ],
+    [
+      275,
+      null,
+      27,
+      316,
+      323,
+      72
+    ],
+    [
+      290,
+      null,
+      29,
+      336,
+      343,
+      73
+    ],
+    [
+      310,
+      null,
+      31,
+      363,
+      370,
+      75
+    ],
+    [
+      330,
+      null,
+      34,
+      390,
+      398,
+      77
+    ],
+    [
+      350,
+      null,
+      36,
+      420,
+      428,
+      78
+    ],
+    [
+      375,
+      null,
+      39,
+      455,
+      464,
+      80
+    ],
+    [
+      400,
+      null,
+      41,
+      492,
+      502,
+      81
+    ],
+    [
+      425,
+      null,
+      43,
+      530,
+      540,
+      82
+    ],
+    [
+      450,
+      null,
+      46,
+      570,
+      581,
+      83
+    ],
+    [
+      480,
+      null,
+      48,
+      615,
+      627,
+      84
+    ],
+    [
+      500,
+      null,
+      50,
+      649,
+      662,
+      85
+    ],
+    [
+      530,
+      null,
+      52,
+      697,
+      710,
+      null
+    ],
+    [
+      560,
+      null,
+      54,
+      746,
+      760,
+      null
+    ],
+    [
+      600,
+      null,
+      57,
+      810,
+      826,
+      null
+    ],
+    [
+      630,
+      null,
+      60,
+      862,
+      879,
+      null
+    ],
+    [
+      650,
+      null,
+      62,
+      900,
+      920,
+      null
+    ]
+  ]
+}

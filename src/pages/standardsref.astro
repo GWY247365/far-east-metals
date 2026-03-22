@@ -1,6 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import standardsData from '../data/alloy-standards.json';
+import masterData from '../data/alloys-master.json';
+
+// Build standards data from master
+const standardsData: Record<string, any> = {};
+for (const [key, mat] of Object.entries(masterData.materials)) {
+  // Only include materials that have standards data
+  const alloys = [];
+  for (const group of (mat as any).groups) {
+    for (const alloy of group.alloys) {
+      if (alloy.standards) {
+        alloys.push({
+          name: alloy.name,
+          ...alloy.standards,
+          category: group.standardsCategory || group.name
+        });
+      }
+    }
+  }
+  if (alloys.length > 0) {
+    standardsData[key] = { label: (mat as any).label, alloys };
+  }
+}
 ---
 
 <Layout title="Alloy Standards Cross-Reference | Far East Metals" description="Cross-reference aluminum and stainless steel alloy designations across international standards: ASTM, EN, JIS, GB, and ISO. Find equivalent grades instantly." ogImage="/og-standardsref.png">
@@ -87,7 +108,27 @@ import standardsData from '../data/alloy-standards.json';
 </Layout>
 
 <script>
-  import standardsData from '../data/alloy-standards.json';
+  import masterData from '../data/alloys-master.json';
+
+  // Build standards data from master
+  const standardsData: Record<string, any> = {};
+  for (const [key, mat] of Object.entries(masterData.materials)) {
+    const alloys = [];
+    for (const group of (mat as any).groups) {
+      for (const alloy of group.alloys) {
+        if (alloy.standards) {
+          alloys.push({
+            name: alloy.name,
+            ...alloy.standards,
+            category: group.standardsCategory || group.name
+          });
+        }
+      }
+    }
+    if (alloys.length > 0) {
+      standardsData[key] = { label: (mat as any).label, alloys };
+    }
+  }
 
   let currentMaterial = 'aluminum';
   let currentFilter = 'all';

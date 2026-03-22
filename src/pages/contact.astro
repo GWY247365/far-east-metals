@@ -58,9 +58,14 @@ import Layout from '../layouts/Layout.astro';
       </form>
 
       <div id="form-success" class="form-success" hidden>
-        <div class="success-icon">&#10003;</div>
+        <svg class="success-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#059669" stroke-width="3" opacity="0.15"/>
+          <circle class="success-circle" cx="60" cy="60" r="50" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+          <path class="success-check" d="M38 62 L52 76 L82 46" fill="none" stroke="#059669" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <h3>Thank you for your message</h3>
         <p>We will get back to you within 1-2 business days.</p>
+        <a href="/" class="back-home-btn">Back to Home</a>
       </div>
     </div>
   </section>
@@ -348,12 +353,36 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .form-error {
-    padding: 12px 16px;
+    padding: 14px 18px;
     background: #fef2f2;
     border: 1px solid #fecaca;
     border-radius: 16px;
     color: #b91c1c;
     font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideDown 0.3s ease;
+  }
+
+  .form-error::before {
+    content: '!';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #fee2e2;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #dc2626;
+    flex-shrink: 0;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .submit-btn:disabled {
@@ -363,31 +392,75 @@ import Layout from '../layouts/Layout.astro';
 
   .form-success {
     text-align: center;
-    padding: 40px;
+    padding: 50px 40px;
     color: var(--color-text);
+    animation: fadeInUp 0.5s ease;
   }
 
-  .success-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 16px;
-    background: #ecfdf5;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #059669;
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .success-svg {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .success-circle {
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+    animation: drawCircle 0.6s ease forwards;
+  }
+
+  .success-check {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: drawCheck 0.4s 0.5s ease forwards;
+  }
+
+  @keyframes drawCircle {
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
   }
 
   .form-success h3 {
+    font-family: var(--font-title);
     color: var(--color-text);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
     margin-bottom: 8px;
   }
 
   .form-success p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: 24px;
+  }
+
+  .back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
     font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .back-home-btn:hover {
+    background: #d4891a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(245, 166, 35, 0.3);
   }
 
   @media (max-width: 768px) {

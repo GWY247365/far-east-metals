@@ -6,10 +6,12 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = 'Far East Metals Development Limited - Aluminum Extrusion, Forging, and Ingot Production. Hong Kong based industry leader since 2003.' } = Astro.props;
+const { title, description = 'Far East Metals Development Limited - Aluminum Extrusion, Forging, and Ingot Production. Hong Kong based industry leader since 2003.', ogImage } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, 'https://www.fareastmetals.com.hk').href;
+const ogImageUrl = ogImage ? new URL(ogImage, 'https://www.fareastmetals.com.hk').href : '${ogImageUrl}';
 ---
 
 <!DOCTYPE html>
@@ -21,7 +23,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://www.fareastmetals.com.
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <!-- Canonical -->
   <link rel="canonical" href={canonicalUrl} />
@@ -33,7 +35,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://www.fareastmetals.com.
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:site_name" content="Far East Metals Development Limited" />
   <meta property="og:locale" content="en_HK" />
-  <meta property="og:image" content="https://www.fareastmetals.com.hk/og-image.png" />
+  <meta property="og:image" content={ogImageUrl} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -41,7 +43,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://www.fareastmetals.com.
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content="https://www.fareastmetals.com.hk/og-image.png" />
+  <meta name="twitter:image" content={ogImageUrl} />
 
   <!-- Fonts (non-blocking with preload) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

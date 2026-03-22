@@ -59,17 +59,19 @@ import standardsData from '../data/alloy-standards.json';
           <span id="result-count"></span>
           <p class="table-note">Equivalents are approximate — verify with official specifications for critical applications.</p>
         </div>
+        <div class="column-toggles" id="column-toggles">
+          <span class="toggle-label">Columns:</span>
+          <label class="col-toggle" data-col="aa"><input type="checkbox" checked /><span>AA</span></label>
+          <label class="col-toggle active" data-col="astm"><input type="checkbox" checked /><span>ASTM</span></label>
+          <label class="col-toggle active" data-col="en"><input type="checkbox" checked /><span>EN</span></label>
+          <label class="col-toggle active" data-col="jis"><input type="checkbox" checked /><span>JIS</span></label>
+          <label class="col-toggle active" data-col="gb"><input type="checkbox" checked /><span>GB</span></label>
+          <label class="col-toggle" data-col="iso"><input type="checkbox" /><span>ISO</span></label>
+        </div>
         <div class="table-wrapper">
           <table class="standards-table" id="standards-table">
             <thead>
-              <tr>
-                <th class="th-alloy">Alloy</th>
-                <th>ASTM</th>
-                <th>EN</th>
-                <th>JIS</th>
-                <th>GB</th>
-                <th>ISO</th>
-              </tr>
+              <tr id="table-header"></tr>
             </thead>
             <tbody id="table-body"></tbody>
           </table>
@@ -91,10 +93,20 @@ import standardsData from '../data/alloy-standards.json';
   let currentFilter = 'all';
   let searchQuery = '';
 
+  // Column visibility — AA and ISO hidden by default
+  const allColumns = ['aa', 'astm', 'en', 'jis', 'gb', 'iso'];
+  let visibleColumns = new Set(['astm', 'en', 'jis', 'gb']);
+
   const tableBody = document.getElementById('table-body')!;
+  const tableHeader = document.getElementById('table-header')!;
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const filterRow = document.getElementById('filter-row')!;
   const resultCount = document.getElementById('result-count')!;
+  const columnToggles = document.getElementById('column-toggles')!;
+
+  const colLabels: Record<string, string> = {
+    aa: 'AA', astm: 'ASTM', en: 'EN', jis: 'JIS', gb: 'GB', iso: 'ISO'
+  };
 
   function getCategories(material: string): string[] {
     const data = (standardsData as any)[material];
@@ -102,6 +114,43 @@ import standardsData from '../data/alloy-standards.json';
     const cats = new Set<string>();
     data.alloys.forEach((a: any) => cats.add(a.category));
     return [...cats];
+  }
+
+  function getVisibleCols(): string[] {
+    const isAluminum = currentMaterial === 'aluminum';
+    return allColumns.filter(c => {
+      if (c === 'aa' && !isAluminum) return false;
+      return visibleColumns.has(c);
+    });
+  }
+
+  function renderColumnToggles() {
+    const isAluminum = currentMaterial === 'aluminum';
+    let html = '<span class="toggle-label">Columns:</span>';
+    allColumns.forEach(col => {
+      if (col === 'aa' && !isAluminum) return;
+      const checked = visibleColumns.has(col);
+      html += `<label class="col-toggle${checked ? ' active' : ''}" data-col="${col}">
+        <input type="checkbox" ${checked ? 'checked' : ''} />
+        <span>${colLabels[col]}</span>
+      </label>`;
+    });
+    columnToggles.innerHTML = html;
+
+    columnToggles.querySelectorAll('.col-toggle input').forEach(input => {
+      input.addEventListener('change', (e) => {
+        const checkbox = e.target as HTMLInputElement;
+        const col = checkbox.closest('.col-toggle')!.getAttribute('data-col')!;
+        if (checkbox.checked) {
+          visibleColumns.add(col);
+          checkbox.closest('.col-toggle')!.classList.add('active');
+        } else {
+          visibleColumns.delete(col);
+          checkbox.closest('.col-toggle')!.classList.remove('active');
+        }
+        renderTable();
+      });
+    });
   }
 
   function renderFilters() {
@@ -127,60 +176,47 @@ import standardsData from '../data/alloy-standards.json';
     const data = (standardsData as any)[currentMaterial];
     if (!data) { tableBody.innerHTML = ''; return; }
 
-    const isAluminum = currentMaterial === 'aluminum';
+    const cols = getVisibleCols();
+    const totalCols = cols.length + 1; // +1 for Alloy column
     const query = searchQuery.toLowerCase();
 
-    // Update header for AA column
-    const headerRow = document.querySelector('.standards-table thead tr')!;
-    if (isAluminum) {
-      headerRow.innerHTML = '<th class="th-alloy">Alloy</th><th>AA</th><th>ASTM</th><th>EN</th><th>JIS</th><th>GB</th><th>ISO</th>';
-    } else {
-      headerRow.innerHTML = '<th class="th-alloy">Alloy</th><th>ASTM</th><th>EN</th><th>JIS</th><th>GB</th><th>ISO</th>';
-    }
+    // Build header
+    let headerHtml = '<th class="th-alloy">Alloy</th>';
+    cols.forEach(c => {
+      headerHtml += `<th>${colLabels[c]}</th>`;
+    });
+    tableHeader.innerHTML = headerHtml;
 
+    // Filter data
     let filtered = data.alloys.filter((a: any) => {
       if (currentFilter !== 'all' && a.category !== currentFilter) return false;
       if (query) {
         const searchFields = [a.name, a.astm, a.en, a.jis, a.gb, a.iso, a.category];
-        if (isAluminum) searchFields.push(a.aa);
+        if (currentMaterial === 'aluminum') searchFields.push(a.aa);
         return searchFields.some((f: string) => f && f.toLowerCase().includes(query));
       }
       return true;
     });
 
+    // Build rows
     let html = '';
     let lastCategory = '';
     filtered.forEach((a: any) => {
       if (a.category !== lastCategory) {
         lastCategory = a.category;
-        const cols = isAluminum ? 7 : 6;
-        html += `<tr class="category-row"><td colspan="${cols}">${a.category}</td></tr>`;
+        html += `<tr class="category-row"><td colspan="${totalCols}">${a.category}</td></tr>`;
       }
-      if (isAluminum) {
-        html += `<tr>
-          <td class="td-alloy">${a.name}</td>
-          <td>${formatCell(a.aa)}</td>
-          <td>${formatCell(a.astm)}</td>
-          <td>${formatCell(a.en)}</td>
-          <td>${formatCell(a.jis)}</td>
-          <td>${formatCell(a.gb)}</td>
-          <td class="td-iso">${formatCell(a.iso)}</td>
-        </tr>`;
-      } else {
-        html += `<tr>
-          <td class="td-alloy">${a.name}</td>
-          <td>${formatCell(a.astm)}</td>
-          <td>${formatCell(a.en)}</td>
-          <td>${formatCell(a.jis)}</td>
-          <td>${formatCell(a.gb)}</td>
-          <td class="td-iso">${formatCell(a.iso)}</td>
-        </tr>`;
-      }
+      html += '<tr>';
+      html += `<td class="td-alloy">${a.name}</td>`;
+      cols.forEach(c => {
+        const cls = c === 'iso' ? ' class="td-iso"' : '';
+        html += `<td${cls}>${formatCell(a[c])}</td>`;
+      });
+      html += '</tr>';
     });
 
     if (!html) {
-      const cols = isAluminum ? 7 : 6;
-      html = `<tr><td colspan="${cols}" class="no-results">No matching alloys found</td></tr>`;
+      html = `<tr><td colspan="${totalCols}" class="no-results">No matching alloys found</td></tr>`;
     }
 
     tableBody.innerHTML = html;
@@ -214,6 +250,7 @@ import standardsData from '../data/alloy-standards.json';
       tab.classList.add('active');
       currentMaterial = tab.getAttribute('data-material') || 'aluminum';
       currentFilter = 'all';
+      renderColumnToggles();
       renderFilters();
       renderTable();
     });
@@ -226,6 +263,7 @@ import standardsData from '../data/alloy-standards.json';
   });
 
   // Init
+  renderColumnToggles();
   renderFilters();
   renderTable();
 </script>
@@ -334,34 +372,15 @@ import standardsData from '../data/alloy-standards.json';
     align-items: center;
   }
 
-  .filter-label {
-    font-size: 0.8rem;
-    color: var(--color-text-light);
-    margin-right: 4px;
-  }
-
-  .filter-btn {
-    padding: 5px 14px;
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 16px;
-    background: rgba(255,255,255,0.6);
-    font-family: var(--font-main);
-    font-size: 0.78rem;
-    color: var(--color-text-light);
-    cursor: pointer;
-    transition: all 0.25s;
-  }
-
-  .filter-btn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-  }
-
-  .filter-btn.active {
-    background: rgba(245,166,35,0.12);
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    font-weight: 500;
+  /* Column Toggles (layout only — visual styles in global block for dynamic content) */
+  .column-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
 
   /* Table */
@@ -369,14 +388,14 @@ import standardsData from '../data/alloy-standards.json';
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     flex-wrap: wrap;
     gap: 8px;
   }
 
   #result-count {
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-text);
   }
 
@@ -390,91 +409,24 @@ import standardsData from '../data/alloy-standards.json';
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     border-radius: 14px;
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
   }
 
   .standards-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.85rem;
-    min-width: 700px;
-  }
-
-  .standards-table th {
-    background: rgba(245,166,35,0.08);
-    padding: 12px 14px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--color-text);
-    border-bottom: 2px solid rgba(245,166,35,0.15);
-    white-space: nowrap;
-    position: sticky;
-    top: 0;
-  }
-
-  .standards-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid rgba(0,0,0,0.04);
-    color: var(--color-text);
-    white-space: nowrap;
-  }
-
-  .standards-table tr:hover td {
-    background: rgba(245,166,35,0.04);
-  }
-
-  .td-alloy {
-    font-weight: 600;
-    color: var(--color-accent) !important;
-    font-family: var(--font-title);
-    font-size: 0.92rem;
-  }
-
-  .td-iso {
-    font-size: 0.8rem;
-    color: var(--color-text-light) !important;
-  }
-
-  .na {
-    color: #ccc;
-  }
-
-  .category-row td {
-    background: rgba(0,0,0,0.02) !important;
-    font-weight: 600;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--color-text-light) !important;
-    padding: 8px 14px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .no-results {
-    text-align: center;
-    padding: 40px 14px !important;
-    color: var(--color-text-light) !important;
-    font-size: 0.95rem;
-  }
-
-  mark {
-    background: rgba(245,166,35,0.25);
-    color: inherit;
-    padding: 1px 2px;
-    border-radius: 3px;
+    font-size: 0.9rem;
   }
 
   .disclaimer {
-    padding: 16px 20px;
+    padding: 18px 22px;
     background: rgba(245,166,35,0.04);
     border: 1px dashed rgba(245,166,35,0.2);
     border-radius: 12px;
     font-size: 0.8rem;
     color: var(--color-text-light);
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .disclaimer strong {
@@ -495,6 +447,178 @@ import standardsData from '../data/alloy-standards.json';
       text-align: center;
       padding: 10px 12px;
       font-size: 0.85rem;
+    }
+  }
+</style>
+
+<style is:global>
+  /* Styles for dynamically-generated content (innerHTML) */
+  .standards-page .col-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 14px;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .standards-page .col-toggle input {
+    display: none;
+  }
+
+  .standards-page .col-toggle:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .standards-page .col-toggle.active {
+    background: rgba(245,166,35,0.12);
+    border-color: rgba(245,166,35,0.4);
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .standards-page .toggle-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-right: 4px;
+  }
+
+  .standards-page .filter-btn {
+    padding: 5px 14px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.6);
+    font-family: var(--font-main);
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .standards-page .filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .standards-page .filter-btn.active {
+    background: rgba(245,166,35,0.12);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .standards-page .filter-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-right: 4px;
+  }
+
+  .standards-page .standards-table th {
+    background: rgba(245,166,35,0.08);
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--color-text);
+    border-bottom: 2px solid rgba(245,166,35,0.18);
+    white-space: nowrap;
+  }
+
+  .standards-page .standards-table th:first-child {
+    padding-left: 24px;
+  }
+
+  .standards-page .standards-table td {
+    padding: 13px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: var(--color-text);
+    transition: background 0.15s ease;
+  }
+
+  .standards-page .standards-table td:first-child {
+    padding-left: 24px;
+  }
+
+  .standards-page .standards-table tbody tr:nth-child(even):not(.category-row) td {
+    background: rgba(0,0,0,0.015);
+  }
+
+  .standards-page .standards-table tbody tr:not(.category-row):hover td {
+    background: rgba(245,166,35,0.06);
+  }
+
+  .standards-page .td-alloy {
+    font-weight: 600;
+    color: var(--color-accent) !important;
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+  }
+
+  .standards-page .td-iso {
+    font-size: 0.82rem;
+    color: var(--color-text-light) !important;
+    font-style: italic;
+  }
+
+  .standards-page .na {
+    color: #ccc;
+    font-size: 0.9em;
+  }
+
+  .standards-page .category-row td {
+    background: linear-gradient(135deg, rgba(245,166,35,0.06), rgba(245,166,35,0.02)) !important;
+    font-weight: 700;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-accent) !important;
+    padding: 10px 24px;
+    border-bottom: 1.5px solid rgba(245,166,35,0.12);
+    border-top: 1.5px solid rgba(245,166,35,0.08);
+  }
+
+  .standards-page .no-results {
+    text-align: center;
+    padding: 48px 14px !important;
+    color: var(--color-text-light) !important;
+    font-size: 0.95rem;
+  }
+
+  .standards-page mark {
+    background: rgba(245,166,35,0.28);
+    color: inherit;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .standards-page .standards-table th {
+      padding: 12px 12px;
+    }
+
+    .standards-page .standards-table td {
+      padding: 10px 12px;
+    }
+
+    .standards-page .standards-table th:first-child,
+    .standards-page .standards-table td:first-child {
+      padding-left: 14px;
+    }
+
+    .standards-page .category-row td {
+      padding: 8px 14px;
     }
   }
 </style>

@@ -79,10 +79,10 @@ function isActive(itemPath: string): boolean {
     width: 100%;
     z-index: 100;
     padding: 10px 0;
-    background: rgba(30, 30, 30, 0.45);
-    backdrop-filter: saturate(180%) blur(40px);
-    -webkit-backdrop-filter: saturate(180%) blur(40px);
-    border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: saturate(200%) blur(40px);
+    -webkit-backdrop-filter: saturate(200%) blur(40px);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.4);
     transition: transform 0.3s ease;
     overflow: visible;
   }
@@ -178,6 +178,7 @@ function isActive(itemPath: string): boolean {
     line-height: 1.6;
     transition: color 0.3s ease;
     position: relative;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
 
   .nav-link::before {

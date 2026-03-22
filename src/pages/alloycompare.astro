@@ -249,6 +249,8 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-bottom: 16px;
+    position: relative;
+    z-index: 10;
   }
 
   .selector-group label {
@@ -312,7 +314,7 @@ import Layout from '../layouts/Layout.astro';
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 50;
+    z-index: 100;
     background: rgba(255,255,255,0.97);
     backdrop-filter: blur(20px);
     border: 2px solid rgba(245,166,35,0.2);

@@ -318,6 +318,8 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     padding-bottom: 80px;
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
   }
 
   .hp-hero-title {
@@ -430,6 +432,7 @@ import Layout from '../layouts/Layout.astro';
     transform: translateX(-50%);
     animation: hp-bounce 2s infinite;
     opacity: 0.6;
+    pointer-events: none;
   }
 
   @keyframes hp-bounce {

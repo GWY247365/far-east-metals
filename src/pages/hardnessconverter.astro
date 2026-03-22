@@ -575,7 +575,7 @@ const scales = [
     display: grid;
     grid-template-columns: 1fr 1fr auto;
     gap: 16px;
-    align-items: start;
+    align-items: end;
   }
 
   .input-group {
@@ -644,7 +644,8 @@ const scales = [
     cursor: pointer;
     transition: background 0.3s, transform 0.15s, box-shadow 0.3s;
     white-space: nowrap;
-    margin-top: 23px; /* align with input fields (label height + gap) */
+    height: 46px;
+    margin-bottom: 22px; /* align with range-hint space */
   }
 
   .convert-btn:hover {

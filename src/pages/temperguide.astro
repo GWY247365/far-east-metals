@@ -58,7 +58,8 @@ import Layout from '../layouts/Layout.astro';
                 <div class="flowchart-connector"><div class="connector-line"></div></div>
                 <div class="flowchart-node node-f" data-temper="f">F<span class="node-label">As Fabricated</span></div>
                 <div class="sub-branches sub-desc">
-                  <div class="sub-node sub-note">No special control over thermal conditions or strain hardening</div>
+                  <div class="sub-node sub-note">No thermal or strain hardening control</div>
+                  <div class="sub-node sub-note">Billets, ingots, semi-finished products</div>
                 </div>
               </div>
 
@@ -66,7 +67,8 @@ import Layout from '../layouts/Layout.astro';
                 <div class="flowchart-connector"><div class="connector-line"></div></div>
                 <div class="flowchart-node node-o" data-temper="o">O<span class="node-label">Annealed</span></div>
                 <div class="sub-branches sub-desc">
-                  <div class="sub-node sub-note">Lowest strength, maximum ductility &amp; workability</div>
+                  <div class="sub-node sub-note">Lowest strength condition</div>
+                  <div class="sub-node sub-note">Maximum ductility &amp; workability</div>
                 </div>
               </div>
 
@@ -85,7 +87,8 @@ import Layout from '../layouts/Layout.astro';
                 <div class="flowchart-connector"><div class="connector-line"></div></div>
                 <div class="flowchart-node node-w" data-temper="w">W<span class="node-label">Solution Heat Treated</span></div>
                 <div class="sub-branches sub-desc">
-                  <div class="sub-node sub-note">Unstable temper, naturally ages over time after treatment</div>
+                  <div class="sub-node sub-note">Unstable temper designation</div>
+                  <div class="sub-node sub-note">Naturally ages over time</div>
                 </div>
               </div>
 
@@ -1166,8 +1169,12 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text-light);
     background: rgba(245,166,35,0.04);
     border: 1px dashed rgba(245,166,35,0.2);
-    padding: 8px 10px;
+    padding: 6px 10px;
     line-height: 1.4;
+  }
+
+  .sub-desc {
+    gap: 4px;
   }
 
   /* =========================================

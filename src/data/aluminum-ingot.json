@@ -1,74 +1,84 @@
 {
   "label": "Aluminum Ingots",
   "groups": {
-    "High Purity (≥99.85%)": {
-      "P0303 (99.90%)": {
-        "tensileStrength": "45-75", "yieldStrength": "15-35", "elongation": 50, "hardness": 17,
-        "density": 2.70, "meltingRange": "657-660", "thermalConductivity": 237,
-        "corrosionResistance": "Excellent", "weldability": "Excellent",
-        "applications": "Electronics, capacitors, high-purity chemical equipment, reflectors",
-        "equivalentStandards": "Al99.90 (GB/T 1196), EN 576",
-        "composition": { "Al": "99.90 min", "Fe": "0.07", "Si": "0.05", "Cu": "0.005", "Ga": "0.020", "Mg": "0.01", "Zn": "0.025", "Others": "0.010" }
+    "Al-Si-Cu (Die Casting)": {
+      "ADC12 / A383": {
+        "tensileStrength": "310-380", "yieldStrength": "150-170", "elongation": 3, "hardness": 80,
+        "density": 2.74, "meltingRange": "516-582", "thermalConductivity": 96,
+        "corrosionResistance": "Good", "weldability": "Fair",
+        "applications": "Automotive parts, electronic housings, engine brackets, general die casting",
+        "equivalentStandards": "JIS H5302 ADC12, ASTM A383, EN AC-46000 (AlSi10Cu2Fe)",
+        "composition": { "Si": "9.6-12.0", "Fe": "1.3", "Cu": "1.5-3.5", "Mn": "0.5", "Mg": "0.3", "Zn": "1.0", "Ni": "0.5", "Sn": "0.3", "Al": "bal" }
       },
-      "P0506 (99.85%)": {
-        "tensileStrength": "50-80", "yieldStrength": "18-38", "elongation": 48, "hardness": 18,
-        "density": 2.70, "meltingRange": "657-660", "thermalConductivity": 236,
-        "corrosionResistance": "Excellent", "weldability": "Excellent",
-        "applications": "Electrical conductors, capacitor foil, chemical processing",
-        "equivalentStandards": "Al99.85 (GB/T 1196), EN 576",
-        "composition": { "Al": "99.85 min", "Fe": "0.10", "Si": "0.06", "Cu": "0.005", "Ga": "0.020", "Mg": "0.02", "Zn": "0.025", "Others": "0.010" }
+      "ADC10 / A380": {
+        "tensileStrength": "320-380", "yieldStrength": "160-175", "elongation": 3, "hardness": 82,
+        "density": 2.76, "meltingRange": "521-588", "thermalConductivity": 96,
+        "corrosionResistance": "Good", "weldability": "Fair",
+        "applications": "Engine blocks, transmission housings, power tool housings, furniture fittings",
+        "equivalentStandards": "JIS H5302 ADC10, ASTM A380, EN AC-46500 (AlSi8Cu3Fe)",
+        "composition": { "Si": "7.5-9.5", "Fe": "1.3", "Cu": "2.0-4.0", "Mn": "0.5", "Mg": "0.3", "Zn": "1.0", "Ni": "0.5", "Sn": "0.3", "Al": "bal" }
+      },
+      "A384": {
+        "tensileStrength": "330-380", "yieldStrength": "165-175", "elongation": 2, "hardness": 85,
+        "density": 2.75, "meltingRange": "516-582", "thermalConductivity": 92,
+        "corrosionResistance": "Good", "weldability": "Fair",
+        "applications": "Intricate die castings, thin-wall components, structural parts",
+        "equivalentStandards": "ASTM B85 A384",
+        "composition": { "Si": "10.5-12.0", "Fe": "1.3", "Cu": "3.0-4.5", "Mn": "0.5", "Mg": "0.1", "Zn": "3.0", "Ni": "0.5", "Sn": "0.35", "Al": "bal" }
       }
     },
-    "Standard Purity (99.50–99.80%)": {
-      "P0610 (99.80%)": {
-        "tensileStrength": "55-85", "yieldStrength": "20-40", "elongation": 45, "hardness": 19,
-        "density": 2.70, "meltingRange": "657-660", "thermalConductivity": 235,
-        "corrosionResistance": "Excellent", "weldability": "Excellent",
-        "applications": "Electrical bus bars, cable conductors, chemical equipment",
-        "equivalentStandards": "Al99.80 (GB/T 1196), EN 576",
-        "composition": { "Al": "99.80 min", "Fe": "0.12", "Si": "0.08", "Cu": "0.005", "Ga": "0.030", "Mg": "0.02", "Zn": "0.025", "Others": "0.015" }
+    "Al-Si (Eutectic / Near-Eutectic)": {
+      "ADC1 / A413": {
+        "tensileStrength": "295-330", "yieldStrength": "145-160", "elongation": 3, "hardness": 75,
+        "density": 2.66, "meltingRange": "574-582", "thermalConductivity": 121,
+        "corrosionResistance": "Excellent", "weldability": "Good",
+        "applications": "Hydraulic cylinders, pressure vessels, cooking utensils, marine fittings",
+        "equivalentStandards": "JIS H5302 ADC1, ASTM A413, EN AC-44100 (AlSi12Fe)",
+        "composition": { "Si": "11.0-13.0", "Fe": "1.3", "Cu": "1.0", "Mn": "0.3", "Mg": "0.3", "Zn": "0.5", "Ni": "0.5", "Sn": "0.1", "Al": "bal" }
       },
-      "P1020A (99.70%)": {
-        "tensileStrength": "60-95", "yieldStrength": "22-45", "elongation": 40, "hardness": 20,
-        "density": 2.71, "meltingRange": "655-658", "thermalConductivity": 234,
-        "corrosionResistance": "Excellent", "weldability": "Excellent",
-        "applications": "General remelting, alloy production, die casting feedstock",
-        "equivalentStandards": "Al99.70 / A00 (GB/T 1196), EN 576, LME Primary",
-        "composition": { "Al": "99.70 min", "Fe": "0.20", "Si": "0.10", "Cu": "0.01", "Ga": "0.030", "Mg": "0.02", "Zn": "0.030", "Others": "0.020" }
-      },
-      "P1015 (99.60%)": {
-        "tensileStrength": "65-100", "yieldStrength": "25-48", "elongation": 38, "hardness": 21,
-        "density": 2.71, "meltingRange": "654-657", "thermalConductivity": 232,
-        "corrosionResistance": "Excellent", "weldability": "Excellent",
-        "applications": "Alloy production, casting feedstock, deoxidizer in steelmaking",
-        "equivalentStandards": "Al99.60 (GB/T 1196), EN 576",
-        "composition": { "Al": "99.60 min", "Fe": "0.25", "Si": "0.12", "Cu": "0.01", "Ga": "0.030", "Mg": "0.03", "Zn": "0.030", "Others": "0.020" }
-      },
-      "P0812 (99.50%)": {
-        "tensileStrength": "70-110", "yieldStrength": "28-55", "elongation": 35, "hardness": 22,
-        "density": 2.71, "meltingRange": "652-657", "thermalConductivity": 230,
-        "corrosionResistance": "Excellent", "weldability": "Excellent",
-        "applications": "Alloy production, general industrial use, construction",
-        "equivalentStandards": "Al99.50 (GB/T 1196), EN 576",
-        "composition": { "Al": "99.50 min", "Fe": "0.30", "Si": "0.15", "Cu": "0.02", "Ga": "0.030", "Mg": "0.03", "Zn": "0.050", "Others": "0.020" }
+      "ADC3 / A360": {
+        "tensileStrength": "300-340", "yieldStrength": "165-180", "elongation": 4, "hardness": 75,
+        "density": 2.68, "meltingRange": "557-596", "thermalConductivity": 113,
+        "corrosionResistance": "Excellent", "weldability": "Good",
+        "applications": "Marine components, food equipment, communication housings, instrument cases",
+        "equivalentStandards": "JIS H5302 ADC3, ASTM A360, EN AC-43400 (AlSi10Mg)",
+        "composition": { "Si": "9.0-10.0", "Fe": "1.3", "Cu": "0.6", "Mn": "0.3", "Mg": "0.4-0.6", "Zn": "0.5", "Ni": "0.5", "Sn": "0.15", "Al": "bal" }
       }
     },
-    "Commercial Purity (≤99.00%)": {
-      "P1535 (99.00%)": {
-        "tensileStrength": "75-120", "yieldStrength": "30-60", "elongation": 30, "hardness": 24,
-        "density": 2.71, "meltingRange": "646-657", "thermalConductivity": 225,
-        "corrosionResistance": "Good", "weldability": "Excellent",
-        "applications": "Deoxidizer, alloy production, general construction",
-        "equivalentStandards": "Al99.00 (GB/T 1196), EN 576",
-        "composition": { "Al": "99.00 min", "Fe": "0.50", "Si": "0.25", "Cu": "0.02", "Ga": "0.030", "Mg": "0.05", "Zn": "0.050", "Others": "0.030" }
+    "Al-Mg (Corrosion Resistant)": {
+      "ADC5": {
+        "tensileStrength": "280-330", "yieldStrength": "130-170", "elongation": 5, "hardness": 65,
+        "density": 2.60, "meltingRange": "568-638", "thermalConductivity": 100,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Marine hardware, architectural fittings, food processing, chemical equipment",
+        "equivalentStandards": "JIS H5302 ADC5, EN AC-51200 (AlMg9)",
+        "composition": { "Si": "0.3", "Fe": "1.8", "Cu": "0.2", "Mn": "0.3", "Mg": "4.0-8.5", "Zn": "0.1", "Ni": "0.1", "Sn": "0.1", "Al": "bal" }
       },
-      "Secondary (98.00%)": {
-        "tensileStrength": "80-130", "yieldStrength": "35-65", "elongation": 25, "hardness": 26,
-        "density": 2.72, "meltingRange": "640-655", "thermalConductivity": 218,
-        "corrosionResistance": "Good", "weldability": "Good",
-        "applications": "Die casting alloy feedstock, automotive parts remelting",
-        "equivalentStandards": "Industry grade, ADC12 feedstock",
-        "composition": { "Al": "98.00 min", "Fe": "0.80", "Si": "0.50", "Cu": "0.10", "Ga": "0.030", "Mg": "0.10", "Zn": "0.10", "Others": "0.050" }
+      "ADC6": {
+        "tensileStrength": "300-340", "yieldStrength": "140-180", "elongation": 5, "hardness": 70,
+        "density": 2.64, "meltingRange": "574-632", "thermalConductivity": 105,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Marine parts, decorative hardware, anodized components, optical instruments",
+        "equivalentStandards": "JIS H5302 ADC6, EN AC-51400 (AlMg5Si)",
+        "composition": { "Si": "1.0", "Fe": "0.8", "Cu": "0.1", "Mn": "0.4-0.6", "Mg": "2.6-4.0", "Zn": "0.4", "Ni": "0.1", "Sn": "0.1", "Al": "bal" }
+      }
+    },
+    "Al-Si-Mg (Heat Treatable)": {
+      "A356 (T6)": {
+        "tensileStrength": "228-275", "yieldStrength": "165-205", "elongation": 5, "hardness": 85,
+        "density": 2.68, "meltingRange": "557-613", "thermalConductivity": 151,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Automotive wheels, aerospace structures, suspension parts, premium castings",
+        "equivalentStandards": "ASTM A356, EN AC-42100 (AlSi7Mg0.3)",
+        "composition": { "Si": "6.5-7.5", "Fe": "0.2", "Cu": "0.2", "Mn": "0.1", "Mg": "0.25-0.45", "Zn": "0.1", "Ti": "0.2", "Al": "bal" }
+      },
+      "A357 (T6)": {
+        "tensileStrength": "290-345", "yieldStrength": "215-280", "elongation": 4, "hardness": 95,
+        "density": 2.68, "meltingRange": "557-613", "thermalConductivity": 151,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Aerospace castings, missile components, high-strength structural parts",
+        "equivalentStandards": "ASTM A357, EN AC-42200 (AlSi7Mg0.6)",
+        "composition": { "Si": "6.5-7.5", "Fe": "0.15", "Cu": "0.05", "Mn": "0.03", "Mg": "0.45-0.70", "Zn": "0.05", "Ti": "0.04-0.20", "Be": "0.04-0.07", "Al": "bal" }
       }
     }
   }

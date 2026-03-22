@@ -42,6 +42,6 @@
     "stainless": ["Fe", "Cr", "Ni", "Mo"],
     "copper": ["Cu", "Zn", "Sn", "Be"],
     "titanium": ["Ti", "Al", "V"],
-    "ingot": ["Al", "Fe", "Si", "Cu", "Ga", "Mg"]
+    "ingot": ["Si", "Cu", "Mg", "Fe", "Mn", "Zn"]
   }
 }

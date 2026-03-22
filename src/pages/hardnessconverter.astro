@@ -80,6 +80,7 @@ const scales = [
                 <option value={s.id}>{s.name} ({s.abbr})</option>
               ))}
             </select>
+            <span class="range-hint">&nbsp;</span>
           </div>
           <div class="input-group">
             <label for="hardness-input">Value</label>
@@ -645,7 +646,8 @@ const scales = [
     transition: background 0.3s, transform 0.15s, box-shadow 0.3s;
     white-space: nowrap;
     height: 46px;
-    margin-bottom: 22px; /* align with range-hint space */
+    align-self: center;
+    margin-top: 10px;
   }
 
   .convert-btn:hover {

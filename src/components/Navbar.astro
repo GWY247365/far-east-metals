@@ -1,16 +1,16 @@
 ---
 const rawPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const navItems = [
-  { name: 'Home', path: '/', i18n: 'nav.home' },
-  { name: 'About', path: '/about', i18n: 'nav.about' },
-  { name: 'Tools', path: '#', i18n: 'nav.tools', children: [
-    { name: 'Weight Calculator', path: '/metweighcalculator', i18n: 'nav.weightCalc' },
-    { name: 'Alloy Comparison', path: '/alloycompare', i18n: 'nav.alloyCompare' },
-    { name: 'Hardness Converter', path: '/hardnessconverter', i18n: 'nav.hardnessConv' },
-    { name: 'Temper Guide', path: '/temperguide', i18n: 'nav.temperGuide' },
-    { name: 'Standards Reference', path: '/standardsref', i18n: 'nav.standardsRef' },
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Tools', path: '#', children: [
+    { name: 'Weight Calculator', path: '/metweighcalculator' },
+    { name: 'Alloy Comparison', path: '/alloycompare' },
+    { name: 'Hardness Converter', path: '/hardnessconverter' },
+    { name: 'Temper Guide', path: '/temperguide' },
+    { name: 'Standards Reference', path: '/standardsref' },
   ]},
-  { name: 'Contact', path: '/contact', i18n: 'nav.contact' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 function isActive(itemPath: string): boolean {
@@ -40,7 +40,7 @@ function isActive(itemPath: string): boolean {
                   class:list={['nav-link', 'dropdown-toggle', { active: item.children.some(c => isActive(c.path)) }]}
                   aria-expanded="false"
                 >
-                  <span data-i18n={item.i18n}>{item.name}</span>
+                  {item.name}
                   <svg class="dropdown-arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M2 4l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
                 <ul class="dropdown-menu">
@@ -50,7 +50,7 @@ function isActive(itemPath: string): boolean {
                         href={child.path}
                         class:list={['dropdown-link', { active: isActive(child.path) }]}
                       >
-                        <span data-i18n={child.i18n}>{child.name}</span>
+                        {child.name}
                       </a>
                     </li>
                   ))}
@@ -61,17 +61,12 @@ function isActive(itemPath: string): boolean {
                 href={item.path}
                 class:list={['nav-link', { active: isActive(item.path) }]}
               >
-                <span data-i18n={item.i18n}>{item.name}</span>
+                {item.name}
               </a>
             )}
           </li>
         ))}
       </ul>
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
-        <span class="lang-label" data-lang="en">EN</span>
-        <span class="lang-divider">/</span>
-        <span class="lang-label" data-lang="cn">中</span>
-      </button>
     </div>
   </nav>
 </header>
@@ -277,43 +272,6 @@ function isActive(itemPath: string): boolean {
     font-weight: 500;
   }
 
-  .lang-toggle {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 8px;
-    padding: 6px 12px;
-    cursor: pointer;
-    margin-right: 20px;
-    flex-shrink: 0;
-    transition: all 0.3s;
-  }
-
-  .lang-toggle:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  .lang-label {
-    font-family: var(--font-main);
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.6);
-    transition: color 0.3s;
-  }
-
-  .lang-label.active {
-    color: var(--color-accent);
-    font-weight: 600;
-  }
-
-  .lang-divider {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.3);
-  }
-
   @media (max-width: 768px) {
     .navbar {
       padding: 0;
@@ -326,13 +284,6 @@ function isActive(itemPath: string): boolean {
     .nav-logo img {
       width: 30px;
       height: 30px;
-    }
-
-    .lang-toggle {
-      order: 2;
-      margin-left: auto;
-      margin-right: 0;
-      padding: 5px 10px;
     }
 
     .hamburger {

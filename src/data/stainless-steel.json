@@ -1,0 +1,109 @@
+{
+  "label": "Stainless Steel",
+  "groups": {
+    "Austenitic": {
+      "304": {
+        "tensileStrength": "515-690", "yieldStrength": "205-310", "elongation": 40, "hardness": 201,
+        "density": 8.00, "meltingRange": "1400-1450", "thermalConductivity": 16.2,
+        "corrosionResistance": "Good", "weldability": "Excellent",
+        "applications": "Kitchen sinks, food processing, chemical vessels",
+        "equivalentStandards": "1.4301 (EN), SUS304 (JIS)",
+        "composition": { "C": "0.08", "Mn": "2.0", "Si": "0.75", "Cr": "18.0-20.0", "Ni": "8.0-10.5", "P": "0.045", "S": "0.030", "Fe": "bal" }
+      },
+      "304L": {
+        "tensileStrength": "485-680", "yieldStrength": "170-305", "elongation": 40, "hardness": 187,
+        "density": 8.00, "meltingRange": "1400-1450", "thermalConductivity": 16.2,
+        "corrosionResistance": "Good", "weldability": "Excellent",
+        "applications": "Welded structures, cryogenic vessels, dairy equipment",
+        "equivalentStandards": "1.4307 (EN), SUS304L (JIS)",
+        "composition": { "C": "0.03", "Mn": "2.0", "Si": "0.75", "Cr": "18.0-20.0", "Ni": "8.0-12.0", "P": "0.045", "S": "0.030", "Fe": "bal" }
+      },
+      "316": {
+        "tensileStrength": "515-690", "yieldStrength": "205-310", "elongation": 40, "hardness": 217,
+        "density": 8.00, "meltingRange": "1375-1400", "thermalConductivity": 16.3,
+        "corrosionResistance": "Excellent", "weldability": "Good",
+        "applications": "Marine hardware, pharmaceutical equipment, surgical implants",
+        "equivalentStandards": "1.4401 (EN), SUS316 (JIS)",
+        "composition": { "C": "0.08", "Mn": "2.0", "Si": "0.75", "Cr": "16.0-18.0", "Ni": "10.0-14.0", "Mo": "2.0-3.0", "P": "0.045", "S": "0.030", "Fe": "bal" }
+      },
+      "316L": {
+        "tensileStrength": "485-680", "yieldStrength": "170-290", "elongation": 40, "hardness": 217,
+        "density": 8.00, "meltingRange": "1375-1400", "thermalConductivity": 16.3,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Chemical processing, medical devices, marine structures",
+        "equivalentStandards": "1.4404 (EN), SUS316L (JIS)",
+        "composition": { "C": "0.03", "Mn": "2.0", "Si": "0.75", "Cr": "16.0-18.0", "Ni": "10.0-14.0", "Mo": "2.0-3.0", "P": "0.045", "S": "0.030", "Fe": "bal" }
+      },
+      "321": {
+        "tensileStrength": "515-690", "yieldStrength": "205-310", "elongation": 40, "hardness": 217,
+        "density": 8.00, "meltingRange": "1400-1425", "thermalConductivity": 16.1,
+        "corrosionResistance": "Good", "weldability": "Good",
+        "applications": "Exhaust manifolds, expansion joints, jet engine parts",
+        "equivalentStandards": "1.4541 (EN), SUS321 (JIS)",
+        "composition": { "C": "0.08", "Mn": "2.0", "Si": "0.75", "Cr": "17.0-19.0", "Ni": "9.0-12.0", "Ti": "5xC min", "P": "0.045", "S": "0.030", "Fe": "bal" }
+      },
+      "310S": {
+        "tensileStrength": "515-690", "yieldStrength": "205-310", "elongation": 40, "hardness": 217,
+        "density": 8.00, "meltingRange": "1400-1455", "thermalConductivity": 14.2,
+        "corrosionResistance": "Good", "weldability": "Good",
+        "applications": "Furnace parts, heat exchangers, kiln linings",
+        "equivalentStandards": "1.4845 (EN), SUS310S (JIS)",
+        "composition": { "C": "0.08", "Mn": "2.0", "Si": "1.50", "Cr": "24.0-26.0", "Ni": "19.0-22.0", "P": "0.045", "S": "0.030", "Fe": "bal" }
+      }
+    },
+    "Ferritic": {
+      "430": {
+        "tensileStrength": "450-600", "yieldStrength": "205-310", "elongation": 22, "hardness": 183,
+        "density": 7.70, "meltingRange": "1425-1510", "thermalConductivity": 26.1,
+        "corrosionResistance": "Fair", "weldability": "Fair",
+        "applications": "Automotive trim, kitchen appliances, architectural panels",
+        "equivalentStandards": "1.4016 (EN), SUS430 (JIS)",
+        "composition": { "C": "0.12", "Mn": "1.0", "Si": "1.0", "Cr": "16.0-18.0", "Ni": "0.75", "P": "0.040", "S": "0.030", "Fe": "bal" }
+      },
+      "409": {
+        "tensileStrength": "380-520", "yieldStrength": "170-260", "elongation": 20, "hardness": 160,
+        "density": 7.70, "meltingRange": "1450-1530", "thermalConductivity": 25.7,
+        "corrosionResistance": "Fair", "weldability": "Good",
+        "applications": "Automotive exhaust systems, catalytic converters, mufflers",
+        "equivalentStandards": "1.4512 (EN), SUS409 (JIS)",
+        "composition": { "C": "0.08", "Mn": "1.0", "Si": "1.0", "Cr": "10.5-11.75", "Ti": "6xC min", "P": "0.045", "S": "0.030", "Fe": "bal" }
+      }
+    },
+    "Martensitic": {
+      "410": {
+        "tensileStrength": "450-690", "yieldStrength": "205-415", "elongation": 20, "hardness": 217,
+        "density": 7.70, "meltingRange": "1450-1510", "thermalConductivity": 24.9,
+        "corrosionResistance": "Fair", "weldability": "Fair",
+        "applications": "Cutlery, steam turbine blades, valve seats",
+        "equivalentStandards": "1.4006 (EN), SUS410 (JIS)",
+        "composition": { "C": "0.15", "Mn": "1.0", "Si": "1.0", "Cr": "11.5-13.5", "Ni": "0.75", "P": "0.040", "S": "0.030", "Fe": "bal" }
+      },
+      "420": {
+        "tensileStrength": "655-1790", "yieldStrength": "345-1480", "elongation": 8, "hardness": 241,
+        "density": 7.70, "meltingRange": "1400-1450", "thermalConductivity": 24.9,
+        "corrosionResistance": "Poor", "weldability": "Poor",
+        "applications": "Surgical instruments, knife blades, plastic molds",
+        "equivalentStandards": "1.4021 (EN), SUS420J2 (JIS)",
+        "composition": { "C": "0.15 min", "Mn": "1.0", "Si": "1.0", "Cr": "12.0-14.0", "Ni": "—", "P": "0.040", "S": "0.030", "Fe": "bal" }
+      }
+    },
+    "Duplex": {
+      "2205": {
+        "tensileStrength": "620-880", "yieldStrength": "450-550", "elongation": 25, "hardness": 293,
+        "density": 7.80, "meltingRange": "1350-1400", "thermalConductivity": 19.0,
+        "corrosionResistance": "Excellent", "weldability": "Good",
+        "applications": "Chemical tankers, desalination, pressure vessels",
+        "equivalentStandards": "1.4462 (EN), S31803 (UNS)",
+        "composition": { "C": "0.03", "Mn": "2.0", "Si": "1.0", "Cr": "22.0-23.0", "Ni": "4.5-6.5", "Mo": "3.0-3.5", "N": "0.14-0.20", "P": "0.030", "S": "0.020", "Fe": "bal" }
+      },
+      "2507": {
+        "tensileStrength": "795-1000", "yieldStrength": "550-700", "elongation": 15, "hardness": 310,
+        "density": 7.80, "meltingRange": "1350-1400", "thermalConductivity": 14.2,
+        "corrosionResistance": "Excellent", "weldability": "Fair",
+        "applications": "Offshore oil & gas, seawater systems, flue gas desulfurization",
+        "equivalentStandards": "1.4410 (EN), S32750 (UNS)",
+        "composition": { "C": "0.03", "Mn": "1.2", "Si": "0.8", "Cr": "24.0-26.0", "Ni": "6.0-8.0", "Mo": "3.0-5.0", "N": "0.24-0.32", "P": "0.035", "S": "0.020", "Fe": "bal" }
+      }
+    }
+  }
+}

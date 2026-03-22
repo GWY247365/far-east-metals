@@ -1,0 +1,63 @@
+{
+  "label": "Copper Alloys",
+  "groups": {
+    "Pure / Low Alloy": {
+      "C11000 (ETP Copper)": {
+        "tensileStrength": "220-385", "yieldStrength": "69-345", "elongation": 30, "hardness": 50,
+        "density": 8.94, "meltingRange": "1065-1083", "thermalConductivity": 391,
+        "corrosionResistance": "Good", "weldability": "Good",
+        "applications": "Electrical wiring, busbars, roofing",
+        "equivalentStandards": "CW004A (EN), C1100 (JIS)",
+        "composition": { "Cu": "99.90 min", "O": "0.04", "Ag": "—", "Fe": "—", "Pb": "—", "Sn": "—", "Zn": "—" }
+      }
+    },
+    "Beryllium Copper": {
+      "C17200 (Beryllium Cu)": {
+        "tensileStrength": "470-1380", "yieldStrength": "195-1170", "elongation": 5, "hardness": 200,
+        "density": 8.25, "meltingRange": "870-980", "thermalConductivity": 115,
+        "corrosionResistance": "Good", "weldability": "Fair",
+        "applications": "Springs, connectors, non-sparking tools",
+        "equivalentStandards": "CW101C (EN), C1720 (JIS)",
+        "composition": { "Cu": "bal", "Be": "1.8-2.0", "Co": "0.20 min", "Ni": "0.20 min", "Fe": "—", "Si": "—" }
+      }
+    },
+    "Brass": {
+      "C26000 (Cartridge Brass)": {
+        "tensileStrength": "300-585", "yieldStrength": "75-435", "elongation": 23, "hardness": 65,
+        "density": 8.53, "meltingRange": "915-955", "thermalConductivity": 121,
+        "corrosionResistance": "Fair", "weldability": "Good",
+        "applications": "Cartridge cases, radiator cores, hardware",
+        "equivalentStandards": "CW505L (EN), C2600 (JIS)",
+        "composition": { "Cu": "68.5-71.5", "Zn": "bal", "Fe": "0.05", "Pb": "0.07" }
+      },
+      "C36000 (Free-Cutting Brass)": {
+        "tensileStrength": "340-470", "yieldStrength": "125-310", "elongation": 18, "hardness": 100,
+        "density": 8.50, "meltingRange": "885-900", "thermalConductivity": 115,
+        "corrosionResistance": "Fair", "weldability": "Fair",
+        "applications": "Screw machine parts, fittings, valves",
+        "equivalentStandards": "CW603N (EN), C3604 (JIS)",
+        "composition": { "Cu": "60.0-63.0", "Pb": "2.5-3.7", "Fe": "0.35", "Zn": "bal" }
+      }
+    },
+    "Bronze": {
+      "C51000 (Phosphor Bronze)": {
+        "tensileStrength": "325-560", "yieldStrength": "130-435", "elongation": 15, "hardness": 80,
+        "density": 8.86, "meltingRange": "950-1050", "thermalConductivity": 69,
+        "corrosionResistance": "Good", "weldability": "Fair",
+        "applications": "Electrical contacts, bellows, springs",
+        "equivalentStandards": "CW451K (EN), C5101 (JIS)",
+        "composition": { "Cu": "bal", "Sn": "4.2-5.8", "P": "0.03-0.35", "Fe": "0.10", "Zn": "0.30", "Pb": "0.05" }
+      }
+    },
+    "Copper-Nickel": {
+      "C71500 (Cu-Ni 70/30)": {
+        "tensileStrength": "370-540", "yieldStrength": "125-480", "elongation": 20, "hardness": 100,
+        "density": 8.95, "meltingRange": "1100-1240", "thermalConductivity": 29,
+        "corrosionResistance": "Excellent", "weldability": "Good",
+        "applications": "Seawater piping, condenser tubes, marine hardware",
+        "equivalentStandards": "CW354H (EN), C7150 (JIS)",
+        "composition": { "Cu": "bal", "Ni": "29.0-33.0", "Fe": "0.40-1.0", "Mn": "1.0", "Zn": "0.50" }
+      }
+    }
+  }
+}

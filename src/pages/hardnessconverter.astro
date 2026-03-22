@@ -38,41 +38,40 @@ const scales = [
 <Layout title="Hardness Converter | Far East Metals" description="Free online hardness converter for metals. Convert between Brinell, Rockwell B, Rockwell C, Vickers, Knoop, and Shore D hardness scales. ASTM E140 data.">
   <section class="converter-page">
 
-    <!-- Header with SVG animation -->
-    <div class="converter-header reveal">
-      <svg class="header-svg" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
-        <!-- Material block -->
-        <rect x="100" y="100" width="200" height="50" rx="4" fill="#b0b0b0" stroke="#888" stroke-width="1.5"/>
-        <rect x="100" y="100" width="200" height="12" rx="2" fill="#c8c8c8" opacity="0.5"/>
-        <!-- Base -->
-        <rect x="60" y="150" width="280" height="10" rx="3" fill="#999" stroke="#777" stroke-width="1"/>
-        <!-- Indenter body -->
-        <g class="indenter-group">
-          <rect x="185" y="10" width="30" height="55" rx="3" fill="#666" stroke="#555" stroke-width="1.2"/>
-          <rect x="180" y="8" width="40" height="10" rx="2" fill="#777" stroke="#555" stroke-width="1"/>
-          <!-- Diamond tip -->
-          <polygon points="200,95 192,68 208,68" fill="#50B86C" stroke="#3a8a50" stroke-width="1"/>
-          <!-- Force arrows -->
-          <line x1="200" y1="0" x2="200" y2="8" stroke="#F5A623" stroke-width="2" marker-end="url(#arrowhead)"/>
-          <line x1="188" y1="3" x2="188" y2="8" stroke="#F5A623" stroke-width="1.2" opacity="0.6"/>
-          <line x1="212" y1="3" x2="212" y2="8" stroke="#F5A623" stroke-width="1.2" opacity="0.6"/>
-        </g>
-        <!-- Impression mark -->
-        <ellipse class="impression-mark" cx="200" cy="102" rx="6" ry="2" fill="rgba(80,80,80,0.4)" opacity="0"/>
-        <defs>
-          <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="4" refY="3" orient="auto">
-            <polygon points="0,0 8,3 0,6" fill="#F5A623"/>
-          </marker>
-        </defs>
-      </svg>
-      <h1>Hardness Converter</h1>
-      <p class="header-subtitle">Convert between industry-standard hardness scales for metals and alloys</p>
-    </div>
-
-    <!-- Input Section -->
+    <!-- Main content card -->
     <div class="content-card converter-card">
+      <!-- Header with SVG animation -->
+      <div class="converter-header reveal">
+        <svg class="header-svg" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Material block -->
+          <rect x="100" y="100" width="200" height="50" rx="4" fill="#b0b0b0" stroke="#888" stroke-width="1.5"/>
+          <rect x="100" y="100" width="200" height="12" rx="2" fill="#c8c8c8" opacity="0.5"/>
+          <!-- Base -->
+          <rect x="60" y="150" width="280" height="10" rx="3" fill="#999" stroke="#777" stroke-width="1"/>
+          <!-- Indenter body -->
+          <g class="indenter-group">
+            <rect x="185" y="10" width="30" height="55" rx="3" fill="#666" stroke="#555" stroke-width="1.2"/>
+            <rect x="180" y="8" width="40" height="10" rx="2" fill="#777" stroke="#555" stroke-width="1"/>
+            <!-- Diamond tip -->
+            <polygon points="200,95 192,68 208,68" fill="#50B86C" stroke="#3a8a50" stroke-width="1"/>
+            <!-- Force arrows -->
+            <line x1="200" y1="0" x2="200" y2="8" stroke="#F5A623" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="188" y1="3" x2="188" y2="8" stroke="#F5A623" stroke-width="1.2" opacity="0.6"/>
+            <line x1="212" y1="3" x2="212" y2="8" stroke="#F5A623" stroke-width="1.2" opacity="0.6"/>
+          </g>
+          <!-- Impression mark -->
+          <ellipse class="impression-mark" cx="200" cy="102" rx="6" ry="2" fill="rgba(80,80,80,0.4)" opacity="0"/>
+          <defs>
+            <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="4" refY="3" orient="auto">
+              <polygon points="0,0 8,3 0,6" fill="#F5A623"/>
+            </marker>
+          </defs>
+        </svg>
+        <h1 class="page-title">Hardness Converter</h1>
+        <p class="page-subtitle">Convert between industry-standard hardness scales for metals and alloys</p>
+      </div>
       <div class="input-section content-card-inner reveal">
-        <h3 class="section-title">Enter Hardness Value</h3>
+        <h3 class="section-heading">Enter Hardness Value</h3>
         <div class="input-row">
           <div class="input-group">
             <label for="scale-select">Hardness Scale</label>
@@ -96,7 +95,7 @@ const scales = [
 
       <!-- Results Section -->
       <div class="results-wrapper" id="results-wrapper" hidden>
-        <h3 class="section-title results-title reveal">Converted Values</h3>
+        <h3 class="section-heading results-title reveal">Converted Values</h3>
         <div class="results-grid" id="results-grid">
           {scales.map((s, i) => (
             <div class={`result-card reveal reveal-delay-${(i % 3) + 1}`} data-scale={s.id} style={`--scale-color: ${s.color};`}>
@@ -531,19 +530,6 @@ const scales = [
     margin-bottom: 40px;
   }
 
-  .converter-header h1 {
-    font-family: var(--font-title);
-    font-size: 2.6rem;
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: 8px;
-  }
-
-  .header-subtitle {
-    font-size: 1.05rem;
-    color: var(--color-text-light);
-    font-weight: 400;
-  }
 
   .header-svg {
     width: 220px;
@@ -576,14 +562,6 @@ const scales = [
     margin-bottom: 40px;
   }
 
-  .section-title {
-    font-family: var(--font-title);
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: 20px;
-  }
-
   .results-title {
     margin-top: 30px;
   }
@@ -594,13 +572,13 @@ const scales = [
   }
 
   .input-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
     gap: 16px;
-    align-items: flex-end;
+    align-items: start;
   }
 
   .input-group {
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -666,7 +644,7 @@ const scales = [
     cursor: pointer;
     transition: background 0.3s, transform 0.15s, box-shadow 0.3s;
     white-space: nowrap;
-    height: fit-content;
+    margin-top: 23px; /* align with input fields (label height + gap) */
   }
 
   .convert-btn:hover {
@@ -936,17 +914,16 @@ const scales = [
       padding: 90px 14px 40px;
     }
 
-    .converter-header h1 {
-      font-size: 2rem;
-    }
+
 
     .input-row {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
 
     .convert-btn {
       width: 100%;
       justify-content: center;
+      margin-top: 0;
     }
 
     .results-grid {
@@ -963,9 +940,6 @@ const scales = [
   }
 
   @media (max-width: 480px) {
-    .converter-header h1 {
-      font-size: 1.7rem;
-    }
 
     .results-grid {
       grid-template-columns: 1fr;

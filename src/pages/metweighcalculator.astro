@@ -17,10 +17,39 @@ const materials = [
   <section class="calculator-page">
     <div class="content-card calc-card">
       <div class="calc-title-bar reveal">
-        <h2>Metal Weight Calculator</h2>
+        <svg class="header-svg" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Scale base / pillar -->
+          <rect x="190" y="80" width="20" height="70" rx="3" fill="#999" stroke="#777" stroke-width="1"/>
+          <rect x="160" y="148" width="80" height="10" rx="4" fill="#888" stroke="#666" stroke-width="1"/>
+          <!-- Beam -->
+          <g class="scale-beam">
+            <rect x="80" y="74" width="240" height="8" rx="3" fill="#b0b0b0" stroke="#888" stroke-width="1.2"/>
+            <!-- Fulcrum triangle -->
+            <polygon points="200,82 192,74 208,74" fill="#999" stroke="#777" stroke-width="1"/>
+            <!-- Left pan strings -->
+            <line x1="105" y1="82" x2="90" y2="115" stroke="#aaa" stroke-width="1.2"/>
+            <line x1="105" y1="82" x2="120" y2="115" stroke="#aaa" stroke-width="1.2"/>
+            <!-- Left pan -->
+            <ellipse cx="105" cy="118" rx="30" ry="6" fill="#c0c0c0" stroke="#999" stroke-width="1"/>
+            <!-- Metal block on left pan -->
+            <g class="scale-weight">
+              <rect x="90" y="98" width="30" height="18" rx="3" fill="#F5A623" stroke="#d4891a" stroke-width="1.2"/>
+              <rect x="90" y="98" width="30" height="5" rx="2" fill="#f7be5e" opacity="0.5"/>
+            </g>
+            <!-- Right pan strings -->
+            <line x1="295" y1="82" x2="280" y2="115" stroke="#aaa" stroke-width="1.2"/>
+            <line x1="295" y1="82" x2="310" y2="115" stroke="#aaa" stroke-width="1.2"/>
+            <!-- Right pan -->
+            <ellipse cx="295" cy="118" rx="30" ry="6" fill="#c0c0c0" stroke="#999" stroke-width="1"/>
+          </g>
+          <!-- Weight numbers -->
+          <text class="weight-text" x="105" y="50" text-anchor="middle" font-size="16" font-weight="600" fill="#F5A623">kg</text>
+        </svg>
+        <h1 class="page-title">Metal Weight Calculator</h1>
+        <p class="page-subtitle">Calculate weight for common metals and alloys across different shapes and dimensions</p>
       </div>
       <div class="calc-section content-card-inner reveal">
-        <h3 class="section-title">Select Material</h3>
+        <h3 class="section-heading">Select Material</h3>
         <div class="materials-grid">
           {materials.map((mat) => (
             <button
@@ -37,7 +66,7 @@ const materials = [
       </div>
 
       <div class="calc-section content-card-inner reveal">
-        <h3 class="section-title">Select Grade</h3>
+        <h3 class="section-heading">Select Grade</h3>
         <div class="grade-dropdown" id="grade-dropdown">
           <button type="button" class="grade-trigger" id="grade-trigger">
             <span id="grade-trigger-text">Select a grade...</span>
@@ -54,7 +83,7 @@ const materials = [
       </div>
 
       <div class="calc-section content-card-inner reveal">
-        <h3 class="section-title">Select Shape</h3>
+        <h3 class="section-heading">Select Shape</h3>
         <select id="shape-select">
           <option value="cylinder">Solid Cylinder</option>
           <option value="hollow-cylinder">Hollow Cylinder</option>
@@ -65,7 +94,7 @@ const materials = [
       </div>
 
       <div class="calc-section content-card-inner reveal">
-        <h3 class="section-title">Dimensions</h3>
+        <h3 class="section-heading">Dimensions</h3>
         <div class="unit-row">
           <select id="unit-select">
             <option value="mm">Millimeters (mm)</option>
@@ -79,7 +108,7 @@ const materials = [
       </div>
 
       <div class="calc-section content-card-inner results-section" id="results-section" hidden>
-        <h3 class="section-title">Results</h3>
+        <h3 class="section-heading">Results</h3>
         <div class="results-grid">
           <div class="result-box">
             <span class="result-label">Volume</span>
@@ -549,12 +578,45 @@ const materials = [
 
   .calc-title-bar {
     padding: 0 0 10px;
+    text-align: center;
   }
 
-  .calc-title-bar h2 {
-    margin: 0;
-    font-size: 1.4rem;
+  .header-svg {
+    width: 220px;
+    height: auto;
+    margin-bottom: 16px;
   }
+
+  .scale-beam {
+    transform-origin: 200px 78px;
+    animation: scaleRock 3s ease-in-out infinite;
+  }
+
+  .scale-weight {
+    animation: weightDrop 3s ease-in-out infinite;
+  }
+
+  .weight-text {
+    animation: weightFade 3s ease-in-out infinite;
+  }
+
+  @keyframes scaleRock {
+    0%, 100% { transform: rotate(0deg); }
+    30%, 50% { transform: rotate(-4deg); }
+    70% { transform: rotate(1deg); }
+  }
+
+  @keyframes weightDrop {
+    0%, 10% { opacity: 0; transform: translateY(-15px); }
+    25%, 100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes weightFade {
+    0%, 20% { opacity: 0; }
+    40%, 80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
 
   .calc-card {
     border-radius: 22px;
@@ -567,12 +629,6 @@ const materials = [
     padding: 25px 30px;
   }
 
-  .section-title {
-    color: var(--color-accent);
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
 
   .materials-grid {
     display: grid;

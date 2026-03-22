@@ -2,426 +2,316 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Aluminum Alloy Comparison Tool | Far East Metals" description="Compare aluminum alloy properties side by side. Comprehensive data for 1xxx-7xxx series alloys including mechanical properties, thermal conductivity, and applications.">
-  <section class="alloy-page page-section">
-
-    <!-- Animated Header -->
-    <div class="alloy-header reveal">
-      <div class="header-illustration">
-        <svg viewBox="0 0 600 140" class="lattice-svg" aria-hidden="true">
-          <!-- Crystal lattice structure -->
-          <defs>
-            <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#F5A623" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="bondGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#F5A623" stop-opacity="0.6"/>
-              <stop offset="50%" stop-color="#F5A623" stop-opacity="0.2"/>
-              <stop offset="100%" stop-color="#F5A623" stop-opacity="0.6"/>
-            </linearGradient>
-          </defs>
-          <!-- Row 1 atoms -->
-          <circle cx="80" cy="35" r="8" fill="#F5A623" opacity="0.25"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite"/></circle>
-          <circle cx="80" cy="35" r="4" fill="#F5A623" opacity="0.7"><animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/></circle>
-          <circle cx="160" cy="35" r="8" fill="#F5A623" opacity="0.25"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="0.3s"/></circle>
-          <circle cx="160" cy="35" r="4" fill="#F5A623" opacity="0.7"/>
-          <circle cx="240" cy="35" r="8" fill="#F5A623" opacity="0.25"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="0.6s"/></circle>
-          <circle cx="240" cy="35" r="4" fill="#F5A623" opacity="0.7"/>
-          <circle cx="320" cy="35" r="8" fill="#F5A623" opacity="0.25"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="0.9s"/></circle>
-          <circle cx="320" cy="35" r="4" fill="#F5A623" opacity="0.7"/>
-          <circle cx="400" cy="35" r="8" fill="#F5A623" opacity="0.25"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="1.2s"/></circle>
-          <circle cx="400" cy="35" r="4" fill="#F5A623" opacity="0.7"/>
-          <circle cx="480" cy="35" r="8" fill="#F5A623" opacity="0.25"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="1.5s"/></circle>
-          <circle cx="480" cy="35" r="4" fill="#F5A623" opacity="0.7"/>
-          <!-- Row 2 atoms (offset) -->
-          <circle cx="120" cy="75" r="8" fill="#F5A623" opacity="0.2"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="0.5s"/></circle>
-          <circle cx="120" cy="75" r="4" fill="#F5A623" opacity="0.6"/>
-          <circle cx="200" cy="75" r="8" fill="#F5A623" opacity="0.2"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="0.8s"/></circle>
-          <circle cx="200" cy="75" r="4" fill="#F5A623" opacity="0.6"/>
-          <circle cx="280" cy="75" r="8" fill="#F5A623" opacity="0.2"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="1.1s"/></circle>
-          <circle cx="280" cy="75" r="4" fill="#F5A623" opacity="0.6"/>
-          <circle cx="360" cy="75" r="8" fill="#F5A623" opacity="0.2"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="1.4s"/></circle>
-          <circle cx="360" cy="75" r="4" fill="#F5A623" opacity="0.6"/>
-          <circle cx="440" cy="75" r="8" fill="#F5A623" opacity="0.2"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="1.7s"/></circle>
-          <circle cx="440" cy="75" r="4" fill="#F5A623" opacity="0.6"/>
-          <circle cx="520" cy="75" r="8" fill="#F5A623" opacity="0.2"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="2s"/></circle>
-          <circle cx="520" cy="75" r="4" fill="#F5A623" opacity="0.6"/>
-          <!-- Row 3 atoms -->
-          <circle cx="80" cy="115" r="8" fill="#F5A623" opacity="0.15"><animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" begin="1s"/></circle>
-          <circle cx="80" cy="115" r="4" fill="#F5A623" opacity="0.5"/>
-          <circle cx="160" cy="115" r="8" fill="#F5A623" opacity="0.15"/>
-          <circle cx="160" cy="115" r="4" fill="#F5A623" opacity="0.5"/>
-          <circle cx="240" cy="115" r="8" fill="#F5A623" opacity="0.15"/>
-          <circle cx="240" cy="115" r="4" fill="#F5A623" opacity="0.5"/>
-          <circle cx="320" cy="115" r="8" fill="#F5A623" opacity="0.15"/>
-          <circle cx="320" cy="115" r="4" fill="#F5A623" opacity="0.5"/>
-          <circle cx="400" cy="115" r="8" fill="#F5A623" opacity="0.15"/>
-          <circle cx="400" cy="115" r="4" fill="#F5A623" opacity="0.5"/>
-          <circle cx="480" cy="115" r="8" fill="#F5A623" opacity="0.15"/>
-          <circle cx="480" cy="115" r="4" fill="#F5A623" opacity="0.5"/>
-          <!-- Bonds row1-row2 -->
-          <line x1="80" y1="35" x2="120" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="160" y1="35" x2="120" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="160" y1="35" x2="200" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="240" y1="35" x2="200" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="240" y1="35" x2="280" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="320" y1="35" x2="280" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="320" y1="35" x2="360" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="400" y1="35" x2="360" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="400" y1="35" x2="440" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="480" y1="35" x2="440" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <line x1="480" y1="35" x2="520" y2="75" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.4"/>
-          <!-- Bonds row2-row3 -->
-          <line x1="120" y1="75" x2="80" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="120" y1="75" x2="160" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="200" y1="75" x2="160" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="200" y1="75" x2="240" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="280" y1="75" x2="240" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="280" y1="75" x2="320" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="360" y1="75" x2="320" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="360" y1="75" x2="400" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="440" y1="75" x2="400" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <line x1="440" y1="75" x2="480" y2="115" stroke="url(#bondGrad)" stroke-width="1.5" opacity="0.3"/>
-          <!-- Horizontal bonds -->
-          <line x1="80" y1="35" x2="160" y2="35" stroke="#F5A623" stroke-width="1" opacity="0.2"/>
-          <line x1="160" y1="35" x2="240" y2="35" stroke="#F5A623" stroke-width="1" opacity="0.2"/>
-          <line x1="240" y1="35" x2="320" y2="35" stroke="#F5A623" stroke-width="1" opacity="0.2"/>
-          <line x1="320" y1="35" x2="400" y2="35" stroke="#F5A623" stroke-width="1" opacity="0.2"/>
-          <line x1="400" y1="35" x2="480" y2="35" stroke="#F5A623" stroke-width="1" opacity="0.2"/>
-          <!-- Electron cloud -->
-          <circle cx="300" cy="75" r="60" fill="none" stroke="#F5A623" stroke-width="0.5" opacity="0.15" stroke-dasharray="4 4">
-            <animateTransform attributeName="transform" type="rotate" values="0 300 75;360 300 75" dur="20s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="300" cy="75" r="90" fill="none" stroke="#F5A623" stroke-width="0.5" opacity="0.1" stroke-dasharray="6 6">
-            <animateTransform attributeName="transform" type="rotate" values="360 300 75;0 300 75" dur="25s" repeatCount="indefinite"/>
-          </circle>
+<Layout title="Alloy Comparison Tool | Far East Metals" description="Compare mechanical properties of Aluminum, Stainless Steel, Copper, and Titanium alloys side by side. Interactive charts, radar diagrams, and detailed property tables.">
+  <section class="compare-page">
+    <div class="content-card reveal">
+      <div class="page-header-visual">
+        <svg class="header-svg" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Left bar -->
+          <rect class="compare-bar-left" x="110" y="45" width="40" height="105" rx="4" fill="#b0b0b0" stroke="#888" stroke-width="1.5"/>
+          <rect x="110" y="45" width="40" height="14" rx="3" fill="#c8c8c8" opacity="0.5"/>
+          <!-- Right bar -->
+          <rect class="compare-bar-right" x="250" y="65" width="40" height="85" rx="4" fill="#F5A623" stroke="#d4891a" stroke-width="1.5"/>
+          <rect x="250" y="65" width="40" height="14" rx="3" fill="#f7be5e" opacity="0.5"/>
+          <!-- Base -->
+          <rect x="80" y="150" width="240" height="8" rx="3" fill="#999" stroke="#777" stroke-width="1"/>
+          <!-- Comparison arrows -->
+          <g class="compare-arrows">
+            <line x1="165" y1="100" x2="235" y2="100" stroke="#F5A623" stroke-width="2" stroke-dasharray="4 3"/>
+            <polygon points="233,96 243,100 233,104" fill="#F5A623"/>
+            <polygon points="167,96 157,100 167,104" fill="#F5A623"/>
+          </g>
+          <!-- Labels -->
+          <text x="130" y="38" text-anchor="middle" font-size="13" font-weight="600" fill="#888">A</text>
+          <text x="270" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#d4891a">B</text>
         </svg>
       </div>
-      <h1>Aluminum Alloy Comparison</h1>
-      <p class="header-sub">Select up to 3 alloys to compare properties side by side</p>
-    </div>
+      <h1 class="page-title">Alloy Comparison Tool</h1>
+      <p class="page-subtitle">Compare mechanical and physical properties across Aluminum, Stainless Steel, Copper, and Titanium alloys</p>
 
-    <!-- Series Overview Cards -->
-    <div class="content-card reveal" style="margin-bottom: 30px;">
-      <h2 class="section-heading">Alloy Series Overview</h2>
-      <p class="section-desc">Click a series to filter alloys in the selectors below</p>
-      <div class="series-grid" id="series-grid">
-        <button class="series-card active" data-series="all" type="button">
-          <div class="series-icon">
-            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.4"/><circle cx="24" cy="24" r="10" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.6"/><circle cx="24" cy="24" r="3" fill="#F5A623" opacity="0.8"><animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/></circle></svg>
-          </div>
-          <span class="series-name">All</span>
+      <!-- Section 1: Metal Category Tabs -->
+      <div class="metal-tabs" id="metalTabs">
+        <button class="metal-tab active" data-category="aluminum">
+          <svg class="tab-icon" viewBox="0 0 48 48" fill="none">
+            <rect x="8" y="12" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="14" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <line x1="14" y1="24" x2="34" y2="24" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="14" y1="30" x2="34" y2="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <text x="24" y="26" text-anchor="middle" font-size="7" font-weight="600" fill="currentColor">Al</text>
+          </svg>
+          <span>Aluminum</span>
         </button>
-        <button class="series-card" data-series="1xxx" type="button">
-          <div class="series-icon">
-            <svg viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="4" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.5"/><text x="24" y="30" text-anchor="middle" fill="#F5A623" font-size="14" font-weight="600" font-family="var(--font-title)">Al</text><circle cx="24" cy="10" r="2" fill="#F5A623" opacity="0.6"><animate attributeName="cy" values="10;8;10" dur="2s" repeatCount="indefinite"/></circle></svg>
-          </div>
-          <span class="series-name">1xxx</span>
-          <span class="series-label">Pure Al</span>
+        <button class="metal-tab" data-category="stainless">
+          <svg class="tab-icon" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="2"/>
+            <path d="M18 18 L30 30 M30 18 L18 30" stroke="currentColor" stroke-width="1.5"/>
+            <text x="24" y="27" text-anchor="middle" font-size="7" font-weight="600" fill="currentColor">Fe</text>
+          </svg>
+          <span>Stainless Steel</span>
         </button>
-        <button class="series-card" data-series="2xxx" type="button">
-          <div class="series-icon">
-            <svg viewBox="0 0 48 48"><circle cx="20" cy="24" r="10" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.4"/><circle cx="30" cy="24" r="10" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.6"/><circle cx="25" cy="24" r="3" fill="#F5A623" opacity="0.5"><animate attributeName="r" values="3;4;3" dur="1.8s" repeatCount="indefinite"/></circle></svg>
-          </div>
-          <span class="series-name">2xxx</span>
-          <span class="series-label">Al-Cu</span>
+        <button class="metal-tab" data-category="copper">
+          <svg class="tab-icon" viewBox="0 0 48 48" fill="none">
+            <path d="M24 10 L38 20 L34 36 L14 36 L10 20 Z" stroke="currentColor" stroke-width="2"/>
+            <text x="24" y="27" text-anchor="middle" font-size="7" font-weight="600" fill="currentColor">Cu</text>
+          </svg>
+          <span>Copper</span>
         </button>
-        <button class="series-card" data-series="3xxx" type="button">
-          <div class="series-icon">
-            <svg viewBox="0 0 48 48"><path d="M24 8 L38 36 L10 36 Z" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.5"/><circle cx="24" cy="28" r="3" fill="#F5A623" opacity="0.6"><animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/></circle></svg>
-          </div>
-          <span class="series-name">3xxx</span>
-          <span class="series-label">Al-Mn</span>
-        </button>
-        <button class="series-card" data-series="4xxx" type="button">
-          <div class="series-icon">
-            <svg viewBox="0 0 48 48"><polygon points="24,6 42,24 24,42 6,24" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.5"/><circle cx="24" cy="24" r="4" fill="#F5A623" opacity="0.5"><animate attributeName="r" values="4;6;4" dur="2.2s" repeatCount="indefinite"/></circle></svg>
-          </div>
-          <span class="series-name">4xxx</span>
-          <span class="series-label">Al-Si</span>
-        </button>
-        <button class="series-card" data-series="5xxx" type="button">
-          <div class="series-icon">
-            <svg viewBox="0 0 48 48"><path d="M24 6 L40 18 L36 38 L12 38 L8 18 Z" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.5"/><circle cx="24" cy="24" r="3" fill="#F5A623" opacity="0.6"><animate attributeName="opacity" values="0.6;0.9;0.6" dur="1.5s" repeatCount="indefinite"/></circle></svg>
-          </div>
-          <span class="series-name">5xxx</span>
-          <span class="series-label">Al-Mg</span>
-        </button>
-        <button class="series-card" data-series="6xxx" type="button">
-          <div class="series-icon">
-            <svg viewBox="0 0 48 48"><rect x="12" y="12" width="24" height="24" rx="6" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.4"/><rect x="18" y="18" width="12" height="12" rx="3" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.7"><animate attributeName="rx" values="3;6;3" dur="2s" repeatCount="indefinite"/></rect></svg>
-          </div>
-          <span class="series-name">6xxx</span>
-          <span class="series-label">Al-Mg-Si</span>
-        </button>
-        <button class="series-card" data-series="7xxx" type="button">
-          <div class="series-icon">
-            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="none" stroke="#F5A623" stroke-width="2.5" opacity="0.5" stroke-dasharray="3 3"><animateTransform attributeName="transform" type="rotate" values="0 24 24;360 24 24" dur="8s" repeatCount="indefinite"/></circle><circle cx="24" cy="24" r="5" fill="#F5A623" opacity="0.7"><animate attributeName="r" values="5;7;5" dur="1.6s" repeatCount="indefinite"/></circle></svg>
-          </div>
-          <span class="series-name">7xxx</span>
-          <span class="series-label">Al-Zn</span>
+        <button class="metal-tab" data-category="titanium">
+          <svg class="tab-icon" viewBox="0 0 48 48" fill="none">
+            <polygon points="24,10 38,36 10,36" stroke="currentColor" stroke-width="2" fill="none"/>
+            <text x="24" y="30" text-anchor="middle" font-size="7" font-weight="600" fill="currentColor">Ti</text>
+          </svg>
+          <span>Titanium</span>
         </button>
       </div>
-    </div>
 
-    <!-- Alloy Selectors -->
-    <div class="content-card reveal" style="margin-bottom: 30px;">
-      <h2 class="section-heading">Select Alloys to Compare</h2>
-      <div class="selectors-row">
-        <div class="selector-col">
-          <label class="selector-label">Alloy 1</label>
-          <div class="custom-select" id="select-wrap-0">
-            <button type="button" class="select-trigger" id="trigger-0">
-              <span class="select-text" id="text-0">Choose alloy...</span>
-              <svg class="select-arrow" width="12" height="12" viewBox="0 0 12 12"><path fill="#666" d="M6 8L1 3h10z"/></svg>
-            </button>
-            <div class="select-dropdown" id="dropdown-0">
-              <input type="text" class="select-search" id="search-0" placeholder="Search alloy..." />
-              <div class="select-options" id="options-0"></div>
+      <!-- Section 2: Alloy Selectors -->
+      <div class="selector-row reveal">
+        <div class="selector-group">
+          <label>Alloy 1</label>
+          <div class="custom-select" id="select1">
+            <div class="select-display" data-placeholder="Select alloy...">Select alloy...</div>
+            <div class="select-dropdown">
+              <input type="text" class="select-search" placeholder="Search alloys...">
+              <div class="select-options"></div>
             </div>
           </div>
         </div>
-        <div class="selector-col">
-          <label class="selector-label">Alloy 2</label>
-          <div class="custom-select" id="select-wrap-1">
-            <button type="button" class="select-trigger" id="trigger-1">
-              <span class="select-text" id="text-1">Choose alloy...</span>
-              <svg class="select-arrow" width="12" height="12" viewBox="0 0 12 12"><path fill="#666" d="M6 8L1 3h10z"/></svg>
-            </button>
-            <div class="select-dropdown" id="dropdown-1">
-              <input type="text" class="select-search" id="search-1" placeholder="Search alloy..." />
-              <div class="select-options" id="options-1"></div>
+        <div class="selector-group">
+          <label>Alloy 2</label>
+          <div class="custom-select" id="select2">
+            <div class="select-display" data-placeholder="Select alloy...">Select alloy...</div>
+            <div class="select-dropdown">
+              <input type="text" class="select-search" placeholder="Search alloys...">
+              <div class="select-options"></div>
             </div>
           </div>
         </div>
-        <div class="selector-col">
-          <label class="selector-label">Alloy 3 <span class="optional-tag">(optional)</span></label>
-          <div class="custom-select" id="select-wrap-2">
-            <button type="button" class="select-trigger" id="trigger-2">
-              <span class="select-text" id="text-2">Choose alloy...</span>
-              <svg class="select-arrow" width="12" height="12" viewBox="0 0 12 12"><path fill="#666" d="M6 8L1 3h10z"/></svg>
-            </button>
-            <div class="select-dropdown" id="dropdown-2">
-              <input type="text" class="select-search" id="search-2" placeholder="Search alloy..." />
-              <div class="select-options" id="options-2"></div>
+        <div class="selector-group">
+          <label>Alloy 3 <span class="optional">(optional)</span></label>
+          <div class="custom-select" id="select3">
+            <div class="select-display" data-placeholder="Select alloy...">Select alloy...</div>
+            <div class="select-dropdown">
+              <input type="text" class="select-search" placeholder="Search alloys...">
+              <div class="select-options"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="selector-actions">
-        <button type="button" class="btn-compare" id="btn-compare" disabled>Compare Alloys</button>
-        <button type="button" class="btn-reset" id="btn-reset">Reset</button>
+      <div class="compare-btn-row">
+        <button class="compare-btn" id="compareBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Compare Alloys
+        </button>
+        <button class="reset-btn" id="resetBtn">Reset</button>
       </div>
-    </div>
 
-    <!-- Radar Chart -->
-    <div class="content-card reveal" id="radar-section" style="margin-bottom: 30px; display: none;">
-      <h2 class="section-heading">Property Radar Chart</h2>
-      <div class="radar-container">
-        <div class="radar-chart" id="radar-chart"></div>
-        <div class="radar-legend" id="radar-legend"></div>
+      <!-- Section 3: Comparison Results -->
+      <div id="resultsSection" class="results-section" style="display:none;">
+        <!-- Property Comparison Table -->
+        <div class="content-card-inner reveal" id="propertyTable"></div>
+
+        <!-- Chemical Composition -->
+        <div class="content-card-inner reveal" id="compositionSection">
+          <h3 class="section-heading">Chemical Composition (%)</h3>
+          <div id="compositionContent"></div>
+        </div>
+
+        <!-- Radar Chart -->
+        <div class="content-card-inner reveal" id="radarSection">
+          <h3 class="section-heading">Property Radar</h3>
+          <div class="radar-container">
+            <div class="radar-chart" id="radarChart"></div>
+            <div class="radar-legend" id="radarLegend"></div>
+          </div>
+        </div>
+
+        <!-- Applications -->
+        <div class="content-card-inner reveal" id="applicationsSection">
+          <h3 class="section-heading">Typical Applications</h3>
+          <div class="app-cards" id="appCards"></div>
+        </div>
       </div>
-    </div>
 
-    <!-- Comparison Table -->
-    <div class="content-card reveal" id="comparison-section" style="display: none;">
-      <h2 class="section-heading">Detailed Comparison</h2>
-      <div class="comparison-table-wrap">
-        <table class="comparison-table" id="comparison-table">
-          <thead id="table-head"></thead>
-          <tbody id="table-body"></tbody>
-        </table>
-      </div>
     </div>
-
   </section>
 </Layout>
 
 <style>
-  .alloy-page {
+  .compare-page {
     padding: 100px 20px 60px;
-  }
-
-  .alloy-header {
-    text-align: center;
     max-width: var(--max-width);
-    margin: 0 auto 40px;
+    margin: 0 auto;
   }
 
-  .header-illustration {
-    max-width: 600px;
-    margin: 0 auto 20px;
+  .page-header-visual {
+    text-align: center;
+    margin-bottom: 16px;
   }
 
-  .lattice-svg {
-    width: 100%;
+  .header-svg {
+    width: 220px;
     height: auto;
   }
 
-  .alloy-header h1 {
-    font-family: var(--font-title);
-    font-size: 2.6rem;
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: 8px;
+  .compare-bar-left {
+    animation: barPulseLeft 3s ease-in-out infinite;
   }
 
-  .header-sub {
-    font-size: 1.1rem;
+  .compare-bar-right {
+    animation: barPulseRight 3s ease-in-out infinite;
+  }
+
+  .compare-arrows {
+    animation: arrowFade 3s ease-in-out infinite;
+  }
+
+  @keyframes barPulseLeft {
+    0%, 100% { transform: translateY(0); height: 105; }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes barPulseRight {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  @keyframes arrowFade {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* Metal Tabs */
+  .metal-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .metal-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 10px;
+    border: 2px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 500;
     color: var(--color-text-light);
-    font-weight: 400;
   }
 
-  .section-heading {
-    font-family: var(--font-title);
-    font-size: 1.5rem;
-    font-weight: 500;
+  .metal-tab:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245,166,35,0.12);
+    border-color: rgba(245,166,35,0.3);
+  }
+
+  .metal-tab.active {
+    border-color: var(--color-accent);
+    background: rgba(245,166,35,0.08);
+    color: var(--color-text);
+    box-shadow: 0 4px 16px rgba(245,166,35,0.15);
+  }
+
+  .tab-icon {
+    width: 44px;
+    height: 44px;
+    transition: transform 0.3s ease;
+  }
+
+  .metal-tab.active .tab-icon {
+    transform: scale(1.1);
+    color: var(--color-accent);
+  }
+
+  .metal-tab:hover .tab-icon {
+    transform: scale(1.08);
+  }
+
+  /* Selectors */
+  .selector-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .selector-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
     color: var(--color-text);
     margin-bottom: 6px;
   }
 
-  .section-desc {
-    font-size: 0.92rem;
-    color: var(--color-text-light);
-    margin-bottom: 20px;
-  }
-
-  /* Series Grid */
-  .series-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
-    gap: 12px;
-    margin-top: 16px;
-  }
-
-  .series-card {
-    background: rgba(255,255,255,0.65);
-    border: 1px solid rgba(245,166,35,0.12);
-    border-radius: 16px;
-    padding: 14px 8px 12px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
-    font-family: var(--font-main);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .series-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(245,166,35,0.15);
-    border-color: rgba(245,166,35,0.4);
-    background: rgba(255,255,255,0.9);
-  }
-
-  .series-card.active {
-    border-color: rgba(245,166,35,0.6);
-    background: rgba(245,166,35,0.08);
-    box-shadow: 0 0 20px rgba(245,166,35,0.15);
-  }
-
-  .series-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .series-icon svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .series-name {
-    font-family: var(--font-title);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text);
-  }
-
-  .series-label {
-    font-size: 0.72rem;
-    color: var(--color-text-light);
-    font-weight: 400;
-  }
-
-  /* Selectors */
-  .selectors-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .selector-col {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .selector-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-text);
-  }
-
-  .optional-tag {
+  .optional {
     font-weight: 400;
     color: var(--color-text-light);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
   }
 
+  /* Custom Select */
   .custom-select {
     position: relative;
   }
 
-  .select-trigger {
-    width: 100%;
-    padding: 10px 14px;
-    background: rgba(255,255,255,0.85);
-    border: 1px solid rgba(245,166,35,0.2);
-    border-radius: 12px;
+  .select-display {
+    padding: 10px 36px 10px 14px;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.7);
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: var(--font-main);
     font-size: 0.9rem;
     color: var(--color-text);
-    transition: all 0.25s;
+    transition: border-color 0.2s;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    position: relative;
   }
 
-  .select-trigger:hover {
-    border-color: rgba(245,166,35,0.5);
+  .select-display:hover {
+    border-color: rgba(245,166,35,0.4);
   }
 
-  .select-trigger.has-value {
-    border-color: rgba(245,166,35,0.5);
-    background: rgba(245,166,35,0.05);
+  .select-display.placeholder {
+    color: #999;
   }
 
-  .select-arrow {
-    transition: transform 0.25s;
-  }
-
-  .custom-select.open .select-arrow {
-    transform: rotate(180deg);
+  .select-display::after {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--color-text-light);
   }
 
   .select-dropdown {
+    display: none;
     position: absolute;
-    top: calc(100% + 4px);
+    top: 100%;
     left: 0;
     right: 0;
-    background: rgba(255,255,255,0.97);
-    border: 1px solid rgba(245,166,35,0.25);
-    border-radius: 12px;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.1);
     z-index: 50;
-    display: none;
-    overflow: hidden;
+    background: rgba(255,255,255,0.97);
     backdrop-filter: blur(20px);
+    border: 2px solid rgba(245,166,35,0.2);
+    border-radius: 10px;
+    margin-top: 4px;
+    max-height: 280px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   }
 
   .custom-select.open .select-dropdown {
@@ -432,11 +322,12 @@ import Layout from '../layouts/Layout.astro';
     width: 100%;
     padding: 10px 14px;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    font-family: var(--font-main);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
     font-size: 0.85rem;
+    font-family: var(--font-main);
     outline: none;
     background: transparent;
+    box-sizing: border-box;
   }
 
   .select-options {
@@ -444,75 +335,60 @@ import Layout from '../layouts/Layout.astro';
     overflow-y: auto;
   }
 
-  .select-option {
-    padding: 8px 14px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    color: var(--color-text);
-    transition: background 0.15s;
+  /* Compare Button */
+  .compare-btn-row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .select-option:hover {
-    background: rgba(245,166,35,0.08);
-  }
-
-  .select-option .opt-series {
-    font-size: 0.72rem;
-    color: var(--color-text-light);
-    background: rgba(245,166,35,0.1);
-    padding: 1px 6px;
-    border-radius: 6px;
-  }
-
-  /* Buttons */
-  .selector-actions {
-    display: flex;
-    gap: 12px;
+    gap: 10px;
     justify-content: center;
+    margin-bottom: 32px;
   }
 
-  .btn-compare {
-    padding: 12px 36px;
-    background: linear-gradient(135deg, var(--color-accent), #d4891a);
-    color: #fff;
+  .compare-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 32px;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
+    background: var(--color-accent);
+    color: white;
     font-family: var(--font-main);
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
-    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
   }
 
-  .btn-compare:hover:not(:disabled) {
+  .compare-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(245,166,35,0.3);
   }
 
-  .btn-compare:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
-  }
-
-  .btn-reset {
-    padding: 12px 28px;
+  .reset-btn {
+    padding: 12px 24px;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
     background: transparent;
     color: var(--color-text-light);
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 12px;
     font-family: var(--font-main);
     font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.25s;
+    transition: all 0.2s;
   }
 
-  .btn-reset:hover {
-    border-color: rgba(0,0,0,0.3);
-    background: rgba(0,0,0,0.03);
+  .reset-btn:hover {
+    border-color: rgba(0,0,0,0.2);
+    color: var(--color-text);
+  }
+
+  /* Results */
+  .results-section {
+    margin-top: 10px;
+  }
+
+  .results-section .content-card-inner {
+    margin-bottom: 20px;
   }
 
   /* Radar Chart */
@@ -520,14 +396,18 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
   .radar-chart {
-    width: 380px;
-    height: 380px;
+    width: 320px;
+    height: 320px;
     position: relative;
+    flex-shrink: 0;
+  }
+
+  .radar-chart svg {
+    width: 100%;
+    height: 100%;
   }
 
   .radar-legend {
@@ -536,560 +416,629 @@ import Layout from '../layouts/Layout.astro';
     gap: 10px;
   }
 
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: var(--color-text);
+  /* Responsive */
+  @media (max-width: 768px) {
+    .compare-page {
+      padding: 90px 12px 40px;
+    }
+
+    .metal-tabs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .selector-row {
+      grid-template-columns: 1fr;
+    }
+
+    .radar-container {
+      flex-direction: column;
+    }
+
+    .radar-chart {
+      width: 260px;
+      height: 260px;
+    }
+
+    .app-cards {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .legend-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+  @media (max-width: 480px) {
+
+    .metal-tab {
+      padding: 12px 6px;
+      font-size: 0.78rem;
+    }
+
+    .tab-icon {
+      width: 34px;
+      height: 34px;
+    }
+  }
+</style>
+
+<style is:global>
+  @keyframes radarDraw {
+    from { opacity: 0; transform: scale(0.3); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .radar-poly {
+    transform-origin: 160px 160px;
+  }
+
+  /* ── Dynamic content styles (injected via innerHTML) ── */
+
+  /* Custom Select Options */
+  .select-group-header {
+    padding: 7px 14px 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-light);
+    background: rgba(0,0,0,0.02);
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .select-group-header:first-child {
+    border-top: none;
+  }
+
+  .select-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 14px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    transition: background 0.15s;
+    gap: 12px;
+  }
+
+  .select-option:hover {
+    background: rgba(245,166,35,0.08);
+  }
+
+  .select-option .alloy-name {
+    font-weight: 500;
+    color: var(--color-text);
+    flex: 1;
+    min-width: 0;
+  }
+
+  .select-option .alloy-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(245,166,35,0.1);
+    color: #b07a14;
+    white-space: nowrap;
     flex-shrink: 0;
   }
 
-  /* Comparison Table */
-  .comparison-table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .comparison-table {
+  /* Property Table */
+  .prop-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    font-size: 0.85rem;
+    border-collapse: collapse;
   }
 
-  .comparison-table thead th {
-    position: sticky;
-    top: 0;
-    background: rgba(245,166,35,0.08);
-    padding: 12px 14px;
-    font-family: var(--font-title);
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--color-text);
-    text-align: center;
-    border-bottom: 2px solid rgba(245,166,35,0.25);
-  }
-
-  .comparison-table thead th:first-child {
+  .prop-table thead th {
     text-align: left;
-    border-radius: 12px 0 0 0;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text);
+    border-bottom: 2px solid rgba(0,0,0,0.1);
   }
 
-  .comparison-table thead th:last-child {
-    border-radius: 0 12px 0 0;
-  }
-
-  .comparison-table tbody tr {
-    transition: background 0.2s;
-  }
-
-  .comparison-table tbody tr:hover {
-    background: rgba(245,166,35,0.04);
-  }
-
-  .comparison-table td {
-    padding: 10px 14px;
+  .prop-table tbody td {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+    color: var(--color-text);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     vertical-align: middle;
   }
 
-  .comparison-table td:first-child {
-    font-weight: 600;
-    color: var(--color-text);
+  .prop-table tbody tr:hover {
+    background: rgba(245,166,35,0.03);
+  }
+
+  .prop-label {
+    font-weight: 500;
     white-space: nowrap;
-    min-width: 160px;
+    min-width: 140px;
   }
 
-  .comparison-table td:not(:first-child) {
-    text-align: center;
-    color: var(--color-text-light);
-  }
-
-  .prop-category {
-    background: rgba(245,166,35,0.06) !important;
-  }
-
-  .prop-category td {
-    font-family: var(--font-title);
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--color-accent) !important;
-    padding: 8px 14px;
-    border-bottom: 1px solid rgba(245,166,35,0.15);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  /* Comparison bars */
   .bar-cell {
-    position: relative;
+    min-width: 140px;
   }
 
   .bar-wrap {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 3px;
+    gap: 8px;
   }
 
   .bar-track {
-    width: 100%;
-    height: 6px;
+    flex: 1;
+    height: 8px;
     background: rgba(0,0,0,0.06);
-    border-radius: 3px;
+    border-radius: 4px;
     overflow: hidden;
+    min-width: 60px;
   }
 
   .bar-fill {
     height: 100%;
-    border-radius: 3px;
-    background: linear-gradient(90deg, var(--color-accent), #d4891a);
-    width: 0%;
-    transition: width 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+    border-radius: 4px;
+    width: 0;
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .bar-value {
     font-size: 0.82rem;
     font-weight: 500;
+    white-space: nowrap;
+    min-width: 50px;
+  }
+
+  .bar-fill.best {
+    box-shadow: 0 0 8px rgba(245,166,35,0.4);
+  }
+
+  /* Rating dots */
+  .rating-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+  }
+
+  .rating-dot::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .rating-dot.excellent::before { background: #2ecc71; box-shadow: 0 0 6px rgba(46,204,113,0.4); }
+  .rating-dot.good::before { background: #f1c40f; box-shadow: 0 0 6px rgba(241,196,15,0.4); }
+  .rating-dot.fair::before { background: #e67e22; box-shadow: 0 0 6px rgba(230,126,34,0.4); }
+  .rating-dot.poor::before { background: #e74c3c; box-shadow: 0 0 6px rgba(231,76,60,0.4); }
+
+  /* Radar legend */
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
     color: var(--color-text);
   }
 
-  /* Rating badges */
-  .rating-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 3px 10px;
-    border-radius: 10px;
-    font-size: 0.78rem;
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  /* Application cards */
+  .app-card {
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: rgba(255,255,255,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .app-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(245,166,35,0.1);
+  }
+
+  .app-card-title {
     font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-accent);
+    margin-bottom: 8px;
   }
 
-  .rating-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+  .app-card-text {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
   }
 
-  .rating-excellent { background: rgba(46,184,92,0.1); color: #1a8a42; }
-  .rating-excellent .rating-dot { background: #2eb85c; }
-  .rating-good { background: rgba(51,153,255,0.1); color: #1a6fcc; }
-  .rating-good .rating-dot { background: #39f; }
-  .rating-fair { background: rgba(245,166,35,0.12); color: #c4841a; }
-  .rating-fair .rating-dot { background: #F5A623; }
-  .rating-poor { background: rgba(229,83,83,0.1); color: #c43a3a; }
-  .rating-poor .rating-dot { background: #e55353; }
+  /* Composition table */
+  .comp-table { width:100%; border-collapse:collapse; }
+  .comp-table th { text-align:left; padding:8px 12px; font-size:0.82rem; font-weight:600; border-bottom:2px solid rgba(0,0,0,0.1); }
+  .comp-table td { padding:8px 12px; font-size:0.85rem; border-bottom:1px solid rgba(0,0,0,0.05); }
+  .comp-table tr:hover { background:rgba(245,166,35,0.03); }
+  .comp-element { font-weight:600; color:var(--color-accent); min-width:50px; }
+  .comp-value { font-family:var(--font-main); }
+  .comp-bar { height:6px; border-radius:3px; margin-top:4px; transition:width 0.6s ease; }
 
-  .best-value {
-    font-weight: 700;
-    color: var(--color-accent) !important;
-  }
-
-  /* Responsive */
+  /* Responsive overrides for dynamic content */
   @media (max-width: 768px) {
-    .alloy-header h1 {
-      font-size: 1.8rem;
+    .prop-table {
+      font-size: 0.8rem;
     }
 
-    .series-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
+    .prop-table thead th,
+    .prop-table tbody td {
+      padding: 8px 8px;
     }
 
-    .selectors-row {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .radar-chart {
-      width: 300px;
-      height: 300px;
-    }
-
-    .comparison-table {
-      font-size: 0.78rem;
-    }
-
-    .comparison-table td:first-child {
-      min-width: 120px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .series-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .selector-actions {
-      flex-direction: column;
-    }
-
-    .selector-actions button {
-      width: 100%;
-    }
   }
 </style>
 
 <script>
-// ===== ALLOY DATABASE =====
-const ALLOYS = {
-  // 1xxx Series - Pure Aluminum
-  "1050": { series:"1xxx", tensileMin:76, tensileMax:110, yieldMin:28, yieldMax:75, elongation:27, hardness:26, density:2.71, meltMin:646, meltMax:657, thermal:231, electrical:62, corrosion:"Excellent", weldability:"Excellent", machinability:"Poor", tempers:"O, H14, H18, H24", applications:"Chemical equipment, food industry, heat exchangers", standards:"EN AW-1050, JIS A1050, GB/T 1050A" },
-  "1060": { series:"1xxx", tensileMin:69, tensileMax:97, yieldMin:24, yieldMax:69, elongation:30, hardness:23, density:2.70, meltMin:646, meltMax:657, thermal:234, electrical:62, corrosion:"Excellent", weldability:"Excellent", machinability:"Poor", tempers:"O, H12, H14, H16, H18", applications:"Chemical processing, capacitor foil, lighting reflectors", standards:"EN AW-1060, JIS A1060, GB/T 1060" },
-  "1070": { series:"1xxx", tensileMin:69, tensileMax:97, yieldMin:24, yieldMax:69, elongation:33, hardness:22, density:2.70, meltMin:646, meltMax:657, thermal:236, electrical:64, corrosion:"Excellent", weldability:"Excellent", machinability:"Poor", tempers:"O, H14, H18", applications:"Electrical conductors, capacitors, packaging foil", standards:"EN AW-1070A, JIS A1070, GB/T 1070A" },
-  "1100": { series:"1xxx", tensileMin:90, tensileMax:165, yieldMin:34, yieldMax:150, elongation:25, hardness:28, density:2.71, meltMin:643, meltMax:657, thermal:222, electrical:59, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H12, H14, H16, H18", applications:"Sheet metalwork, cooking utensils, heat exchangers", standards:"EN AW-1100, JIS A1100, GB/T 1100" },
+import aluminumData from '../data/aluminum.json';
+import stainlessData from '../data/stainless-steel.json';
+import copperData from '../data/copper.json';
+import titaniumData from '../data/titanium.json';
 
-  // 2xxx Series - Al-Cu
-  "2011": { series:"2xxx", tensileMin:310, tensileMax:395, yieldMin:270, yieldMax:310, elongation:12, hardness:95, density:2.83, meltMin:535, meltMax:643, thermal:151, electrical:39, corrosion:"Poor", weldability:"Poor", machinability:"Excellent", tempers:"T3, T4, T6, T8", applications:"Screw machine products, fittings, connectors", standards:"EN AW-2011, JIS A2011, GB/T 2A11" },
-  "2014": { series:"2xxx", tensileMin:185, tensileMax:485, yieldMin:97, yieldMax:415, elongation:13, hardness:135, density:2.80, meltMin:507, meltMax:638, thermal:154, electrical:40, corrosion:"Poor", weldability:"Fair", machinability:"Good", tempers:"O, T4, T6, T651", applications:"Aircraft structures, truck frames, heavy-duty forgings", standards:"EN AW-2014, JIS A2014, GB/T 2A14" },
-  "2017": { series:"2xxx", tensileMin:180, tensileMax:430, yieldMin:75, yieldMax:275, elongation:15, hardness:105, density:2.79, meltMin:513, meltMax:641, thermal:159, electrical:40, corrosion:"Poor", weldability:"Fair", machinability:"Good", tempers:"O, T4, T451", applications:"Rivets, screw machine products, general structural", standards:"EN AW-2017A, JIS A2017, GB/T 2A17" },
-  "2024": { series:"2xxx", tensileMin:185, tensileMax:485, yieldMin:76, yieldMax:345, elongation:17, hardness:120, density:2.78, meltMin:502, meltMax:638, thermal:121, electrical:30, corrosion:"Poor", weldability:"Poor", machinability:"Good", tempers:"O, T3, T4, T351, T361", applications:"Aircraft structures, rivets, automotive wheels", standards:"EN AW-2024, JIS A2024, GB/T 2A12" },
-  "2219": { series:"2xxx", tensileMin:172, tensileMax:476, yieldMin:76, yieldMax:352, elongation:10, hardness:130, density:2.84, meltMin:543, meltMax:643, thermal:120, electrical:28, corrosion:"Fair", weldability:"Good", machinability:"Good", tempers:"O, T31, T37, T62, T81, T87", applications:"Space vehicles, cryogenic tanks, supersonic aircraft", standards:"EN AW-2219, JIS A2219, GB/T 2A19" },
+(function() {
+  // ============ ALLOY DATA (from JSON files) ============
+  const alloyData = {
+    aluminum: aluminumData,
+    stainless: stainlessData,
+    copper: copperData,
+    titanium: titaniumData
+  };
 
-  // 3xxx Series - Al-Mn
-  "3003": { series:"3xxx", tensileMin:110, tensileMax:200, yieldMin:42, yieldMax:185, elongation:25, hardness:35, density:2.73, meltMin:643, meltMax:654, thermal:193, electrical:50, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H12, H14, H16, H18", applications:"Cooking utensils, pressure vessels, heat exchangers", standards:"EN AW-3003, JIS A3003, GB/T 3A21" },
-  "3004": { series:"3xxx", tensileMin:180, tensileMax:285, yieldMin:69, yieldMax:250, elongation:20, hardness:52, density:2.72, meltMin:629, meltMax:654, thermal:163, electrical:42, corrosion:"Excellent", weldability:"Good", machinability:"Fair", tempers:"O, H32, H34, H36, H38", applications:"Beverage can bodies, roofing sheets, storage tanks", standards:"EN AW-3004, JIS A3004, GB/T 3A04" },
-  "3005": { series:"3xxx", tensileMin:130, tensileMax:235, yieldMin:55, yieldMax:215, elongation:22, hardness:46, density:2.73, meltMin:629, meltMax:654, thermal:163, electrical:42, corrosion:"Excellent", weldability:"Good", machinability:"Fair", tempers:"O, H14, H25, H26, H28", applications:"Building products, fencing, beverage can ends", standards:"EN AW-3005, JIS A3005, GB/T 3005" },
-  "3105": { series:"3xxx", tensileMin:115, tensileMax:215, yieldMin:55, yieldMax:195, elongation:24, hardness:40, density:2.72, meltMin:635, meltMax:654, thermal:173, electrical:45, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H12, H14, H16, H25", applications:"Mobile homes, rain gutters, sheet metal", standards:"EN AW-3105, JIS A3105, GB/T 3105" },
 
-  // 4xxx Series - Al-Si
-  "4032": { series:"4xxx", tensileMin:315, tensileMax:380, yieldMin:260, yieldMax:315, elongation:9, hardness:120, density:2.68, meltMin:532, meltMax:571, thermal:154, electrical:40, corrosion:"Good", weldability:"Fair", machinability:"Good", tempers:"T6, T651", applications:"Pistons, engine components, pulleys", standards:"EN AW-4032, JIS A4032, GB/T 4A32" },
-  "4043": { series:"4xxx", tensileMin:145, tensileMax:185, yieldMin:70, yieldMax:125, elongation:22, hardness:44, density:2.69, meltMin:574, meltMax:632, thermal:163, electrical:42, corrosion:"Good", weldability:"Excellent", machinability:"Fair", tempers:"O, H34, H38", applications:"Welding wire, brazing filler, cladding", standards:"EN AW-4043, JIS A4043, GB/T 4A43" },
+  const COLORS = ["#F5A623","#4A90D9","#50B86C"];
 
-  // 5xxx Series - Al-Mg
-  "5005": { series:"5xxx", tensileMin:124, tensileMax:200, yieldMin:41, yieldMax:165, elongation:25, hardness:36, density:2.70, meltMin:632, meltMax:654, thermal:201, electrical:52, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H12, H14, H16, H32, H34", applications:"Architectural trim, appliances, general sheet", standards:"EN AW-5005, JIS A5005, GB/T 5A05" },
-  "5052": { series:"5xxx", tensileMin:193, tensileMax:290, yieldMin:90, yieldMax:255, elongation:19, hardness:60, density:2.68, meltMin:607, meltMax:649, thermal:138, electrical:35, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H32, H34, H36, H38", applications:"Marine hardware, truck bodies, pressure vessels", standards:"EN AW-5052, JIS A5052, GB/T 5A02" },
-  "5083": { series:"5xxx", tensileMin:275, tensileMax:350, yieldMin:125, yieldMax:255, elongation:16, hardness:75, density:2.66, meltMin:574, meltMax:638, thermal:117, electrical:29, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H111, H116, H321", applications:"Shipbuilding, pressure vessels, LNG tanks", standards:"EN AW-5083, JIS A5083, GB/T 5A83" },
-  "5086": { series:"5xxx", tensileMin:240, tensileMax:325, yieldMin:100, yieldMax:255, elongation:14, hardness:72, density:2.66, meltMin:585, meltMax:641, thermal:126, electrical:31, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H32, H34, H111, H116", applications:"Marine structures, unfired pressure vessels, cryogenic tanks", standards:"EN AW-5086, JIS A5086, GB/T 5A86" },
-  "5154": { series:"5xxx", tensileMin:205, tensileMax:290, yieldMin:85, yieldMax:230, elongation:18, hardness:58, density:2.66, meltMin:593, meltMax:643, thermal:126, electrical:32, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H32, H34, H36, H38", applications:"Welded structures, storage tanks, automotive frames", standards:"EN AW-5154, JIS A5154, GB/T 5154" },
-  "5251": { series:"5xxx", tensileMin:160, tensileMax:230, yieldMin:60, yieldMax:180, elongation:20, hardness:48, density:2.69, meltMin:624, meltMax:652, thermal:155, electrical:40, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H22, H24, H26", applications:"Vehicle panelling, marine fittings, cooking utensils", standards:"EN AW-5251, JIS A5251, GB/T 5A51" },
-  "5454": { series:"5xxx", tensileMin:215, tensileMax:305, yieldMin:85, yieldMax:250, elongation:17, hardness:62, density:2.69, meltMin:602, meltMax:646, thermal:134, electrical:34, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H32, H34, H111", applications:"Pressure vessels, tanker trucks, structural marine", standards:"EN AW-5454, JIS A5454, GB/T 5A54" },
-  "5754": { series:"5xxx", tensileMin:190, tensileMax:270, yieldMin:80, yieldMax:210, elongation:18, hardness:55, density:2.67, meltMin:600, meltMax:645, thermal:138, electrical:34, corrosion:"Excellent", weldability:"Excellent", machinability:"Fair", tempers:"O, H22, H24, H26, H111", applications:"Automotive body panels, flooring, welded structures", standards:"EN AW-5754, JIS A5754, GB/T 5A54" },
+  // ============ STATE ============
+  let currentCategory = "aluminum";
+  let selections = [null, null, null];
 
-  // 6xxx Series - Al-Mg-Si
-  "6005": { series:"6xxx", tensileMin:170, tensileMax:310, yieldMin:100, yieldMax:270, elongation:14, hardness:90, density:2.70, meltMin:607, meltMax:654, thermal:188, electrical:47, corrosion:"Good", weldability:"Good", machinability:"Good", tempers:"T1, T5, T6", applications:"Structural extrusions, ladders, platforms", standards:"EN AW-6005A, JIS A6N01, GB/T 6A05" },
-  "6060": { series:"6xxx", tensileMin:120, tensileMax:215, yieldMin:60, yieldMax:170, elongation:16, hardness:65, density:2.70, meltMin:610, meltMax:654, thermal:209, electrical:53, corrosion:"Good", weldability:"Good", machinability:"Fair", tempers:"T4, T5, T6, T66", applications:"Furniture, window frames, irrigation pipes", standards:"EN AW-6060, JIS A6060, GB/T 6060" },
-  "6061": { series:"6xxx", tensileMin:125, tensileMax:310, yieldMin:55, yieldMax:275, elongation:15, hardness:95, density:2.70, meltMin:582, meltMax:652, thermal:167, electrical:43, corrosion:"Good", weldability:"Good", machinability:"Good", tempers:"O, T4, T6, T651, T652", applications:"Structural components, marine fittings, automotive parts", standards:"EN AW-6061, JIS A6061, GB/T 6A02" },
-  "6063": { series:"6xxx", tensileMin:90, tensileMax:240, yieldMin:48, yieldMax:215, elongation:18, hardness:73, density:2.70, meltMin:615, meltMax:654, thermal:201, electrical:53, corrosion:"Good", weldability:"Good", machinability:"Fair", tempers:"O, T1, T4, T5, T6", applications:"Architectural extrusions, window frames, irrigation tubing", standards:"EN AW-6063, JIS A6063, GB/T 6A63" },
-  "6082": { series:"6xxx", tensileMin:130, tensileMax:340, yieldMin:60, yieldMax:310, elongation:11, hardness:100, density:2.71, meltMin:574, meltMax:650, thermal:172, electrical:44, corrosion:"Good", weldability:"Good", machinability:"Good", tempers:"O, T4, T6, T651", applications:"Bridges, cranes, structural engineering, transport", standards:"EN AW-6082, JIS A6082, GB/T 6A82" },
-  "6101": { series:"6xxx", tensileMin:97, tensileMax:221, yieldMin:76, yieldMax:193, elongation:15, hardness:71, density:2.70, meltMin:621, meltMax:654, thermal:218, electrical:57, corrosion:"Good", weldability:"Good", machinability:"Fair", tempers:"T6, T61, T63, T64", applications:"Bus bars, electrical conductors, high-strength connectors", standards:"EN AW-6101, JIS A6101, GB/T E-AlMgSi" },
-  "6201": { series:"6xxx", tensileMin:290, tensileMax:330, yieldMin:248, yieldMax:290, elongation:8, hardness:89, density:2.69, meltMin:607, meltMax:654, thermal:188, electrical:52, corrosion:"Good", weldability:"Good", machinability:"Fair", tempers:"T81", applications:"Electrical conductor wire, ACSR, overhead lines", standards:"EN AW-6201, JIS A6201, GB/T 6201" },
-  "6262": { series:"6xxx", tensileMin:150, tensileMax:400, yieldMin:85, yieldMax:380, elongation:10, hardness:120, density:2.72, meltMin:582, meltMax:652, thermal:172, electrical:44, corrosion:"Good", weldability:"Fair", machinability:"Excellent", tempers:"T6, T651, T9", applications:"Threaded products, fittings, valve parts", standards:"EN AW-6262, JIS A6262, GB/T 6A62" },
-  "6351": { series:"6xxx", tensileMin:150, tensileMax:310, yieldMin:90, yieldMax:285, elongation:14, hardness:95, density:2.71, meltMin:596, meltMax:650, thermal:176, electrical:46, corrosion:"Good", weldability:"Good", machinability:"Good", tempers:"T4, T5, T6", applications:"Tread plate, automotive wheels, structural sections", standards:"EN AW-6351, JIS A6N01, GB/T 6351" },
+  // ============ DOM REFS ============
+  const tabs = document.querySelectorAll('.metal-tab');
+  const selectEls = [document.getElementById('select1'), document.getElementById('select2'), document.getElementById('select3')];
+  const compareBtn = document.getElementById('compareBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const resultsSection = document.getElementById('resultsSection');
 
-  // 7xxx Series - Al-Zn
-  "7003": { series:"7xxx", tensileMin:275, tensileMax:350, yieldMin:220, yieldMax:290, elongation:14, hardness:88, density:2.79, meltMin:599, meltMax:643, thermal:155, electrical:40, corrosion:"Fair", weldability:"Good", machinability:"Fair", tempers:"T5, T6", applications:"Bicycle frames, motorcycle parts, automotive bumpers", standards:"EN AW-7003, JIS A7003, GB/T 7003" },
-  "7005": { series:"7xxx", tensileMin:290, tensileMax:370, yieldMin:215, yieldMax:310, elongation:12, hardness:92, density:2.78, meltMin:607, meltMax:649, thermal:155, electrical:40, corrosion:"Fair", weldability:"Good", machinability:"Fair", tempers:"T53, T6, T6351", applications:"Structural extrusions, railway stock, recreational equipment", standards:"EN AW-7005, JIS A7005, GB/T 7A05" },
-  "7020": { series:"7xxx", tensileMin:280, tensileMax:390, yieldMin:210, yieldMax:320, elongation:12, hardness:95, density:2.78, meltMin:604, meltMax:646, thermal:155, electrical:40, corrosion:"Fair", weldability:"Good", machinability:"Fair", tempers:"T5, T6, T651", applications:"Armoured vehicles, structural members, railway", standards:"EN AW-7020, JIS A7020, GB/T 7A20" },
-  "7049": { series:"7xxx", tensileMin:490, tensileMax:550, yieldMin:435, yieldMax:510, elongation:8, hardness:150, density:2.81, meltMin:477, meltMax:635, thermal:155, electrical:38, corrosion:"Fair", weldability:"Poor", machinability:"Good", tempers:"T73, T7352", applications:"Aircraft forgings, high-strength structural", standards:"EN AW-7049A, JIS A7049, GB/T 7A49" },
-  "7050": { series:"7xxx", tensileMin:490, tensileMax:550, yieldMin:420, yieldMax:490, elongation:10, hardness:148, density:2.82, meltMin:488, meltMax:635, thermal:155, electrical:40, corrosion:"Good", weldability:"Poor", machinability:"Good", tempers:"T7451, T7651, T74, T76", applications:"Aircraft structures, fuselage frames, bulkheads", standards:"EN AW-7050, JIS A7050, GB/T 7A50" },
-  "7075": { series:"7xxx", tensileMin:228, tensileMax:572, yieldMin:103, yieldMax:503, elongation:11, hardness:150, density:2.81, meltMin:477, meltMax:635, thermal:130, electrical:33, corrosion:"Fair", weldability:"Poor", machinability:"Good", tempers:"O, T6, T651, T73, T7351", applications:"Aircraft structures, gears, shafts, missile parts", standards:"EN AW-7075, JIS A7075, GB/T 7A04" },
-  "7175": { series:"7xxx", tensileMin:480, tensileMax:545, yieldMin:410, yieldMax:475, elongation:9, hardness:145, density:2.80, meltMin:477, meltMax:635, thermal:155, electrical:39, corrosion:"Fair", weldability:"Poor", machinability:"Good", tempers:"T66, T7351, T74, T7452", applications:"Die forgings for aircraft, landing gear, high-strength parts", standards:"EN AW-7175, JIS A7175, GB/T 7175" },
-  "7475": { series:"7xxx", tensileMin:462, tensileMax:538, yieldMin:386, yieldMax:469, elongation:11, hardness:140, density:2.81, meltMin:477, meltMax:635, thermal:163, electrical:40, corrosion:"Good", weldability:"Poor", machinability:"Good", tempers:"T61, T651, T7351, T761", applications:"Aircraft fuselage skins, wing skins, critical aerospace", standards:"EN AW-7475, JIS A7475, GB/T 7475" }
-};
-
-const SERIES_INFO = {
-  "1xxx": "Pure Aluminum (>=99% Al)",
-  "2xxx": "Aluminum-Copper Alloys",
-  "3xxx": "Aluminum-Manganese Alloys",
-  "4xxx": "Aluminum-Silicon Alloys",
-  "5xxx": "Aluminum-Magnesium Alloys",
-  "6xxx": "Aluminum-Magnesium-Silicon Alloys",
-  "7xxx": "Aluminum-Zinc Alloys"
-};
-
-const RADAR_COLORS = ["#F5A623","#3399ff","#2eb85c"];
-const RADAR_PROPS = [
-  { key:"tensileMax", label:"Tensile Str.", max:580 },
-  { key:"yieldMax", label:"Yield Str.", max:510 },
-  { key:"elongation", label:"Elongation", max:35 },
-  { key:"hardness", label:"Hardness", max:155 },
-  { key:"thermal", label:"Thermal Cond.", max:240 },
-  { key:"electrical", label:"Elec. Cond.", max:65 }
-];
-
-// State
-let selectedSeries = "all";
-let selections = [null, null, null];
-
-// Init
-document.addEventListener("DOMContentLoaded", () => {
-  populateDropdowns();
-  bindSeriesCards();
-  bindSelectors();
-  bindActions();
-});
-
-function getAlloyList(series) {
-  return Object.entries(ALLOYS)
-    .filter(([,a]) => series === "all" || a.series === series)
-    .sort((a,b) => a[0].localeCompare(b[0], undefined, {numeric:true}));
-}
-
-function populateDropdowns() {
-  for (let i = 0; i < 3; i++) {
-    const container = document.getElementById(`options-${i}`);
-    container.innerHTML = "";
-    const list = getAlloyList(selectedSeries);
-    list.forEach(([id, alloy]) => {
-      const div = document.createElement("div");
-      div.className = "select-option";
-      div.dataset.alloy = id;
-      div.innerHTML = `<span>${id}</span><span class="opt-series">${alloy.series}</span>`;
-      div.addEventListener("click", () => selectAlloy(i, id));
-      container.appendChild(div);
-    });
-  }
-}
-
-function bindSeriesCards() {
-  document.querySelectorAll(".series-card").forEach(card => {
-    card.addEventListener("click", () => {
-      document.querySelectorAll(".series-card").forEach(c => c.classList.remove("active"));
-      card.classList.add("active");
-      selectedSeries = card.dataset.series;
-      populateDropdowns();
+  // ============ TABS ============
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      currentCategory = tab.dataset.category;
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      selections = [null, null, null];
+      populateSelects();
+      resultsSection.style.display = 'none';
     });
   });
-}
 
-function bindSelectors() {
-  for (let i = 0; i < 3; i++) {
-    const wrap = document.getElementById(`select-wrap-${i}`);
-    const trigger = document.getElementById(`trigger-${i}`);
-    const search = document.getElementById(`search-${i}`);
+  // ============ CUSTOM SELECT ============
+  function populateSelects() {
+    selectEls.forEach((sel, idx) => {
+      const display = sel.querySelector('.select-display');
+      const searchInput = sel.querySelector('.select-search');
+      display.textContent = display.dataset.placeholder;
+      display.classList.add('placeholder');
+      searchInput.value = '';
+      renderOptions(sel, '');
+    });
+  }
 
-    trigger.addEventListener("click", (e) => {
+  function renderOptions(selEl, filter) {
+    const container = selEl.querySelector('.select-options');
+    const cat = alloyData[currentCategory];
+    let html = '';
+    for (const [groupName, groupAlloys] of Object.entries(cat.groups)) {
+      const filtered = Object.entries(groupAlloys).filter(([name]) =>
+        name.toLowerCase().includes(filter.toLowerCase()) || groupName.toLowerCase().includes(filter.toLowerCase())
+      );
+      if (filtered.length === 0) continue;
+      html += '<div class="select-group-header">' + groupName + '</div>';
+      for (const [name] of filtered) {
+        html += '<div class="select-option" data-value="' + name + '"><span class="alloy-name">' + name + '</span><span class="alloy-tag">' + groupName + '</span></div>';
+      }
+    }
+    container.innerHTML = html || '<div style="padding:12px 14px;color:#999;font-size:0.85rem;">No alloys found</div>';
+  }
+
+  // Open/close selects
+  selectEls.forEach((sel, idx) => {
+    const display = sel.querySelector('.select-display');
+    const searchInput = sel.querySelector('.select-search');
+
+    display.addEventListener('click', (e) => {
       e.stopPropagation();
-      document.querySelectorAll(".custom-select.open").forEach(s => {
-        if (s !== wrap) s.classList.remove("open");
-      });
-      wrap.classList.toggle("open");
-      if (wrap.classList.contains("open")) {
-        search.value = "";
-        filterOptions(i, "");
-        setTimeout(() => search.focus(), 50);
+      const wasOpen = sel.classList.contains('open');
+      closeAllSelects();
+      if (!wasOpen) {
+        sel.classList.add('open');
+        searchInput.focus();
+        renderOptions(sel, searchInput.value);
       }
     });
 
-    search.addEventListener("input", () => filterOptions(i, search.value));
-    search.addEventListener("click", e => e.stopPropagation());
-  }
-
-  document.addEventListener("click", () => {
-    document.querySelectorAll(".custom-select.open").forEach(s => s.classList.remove("open"));
-  });
-}
-
-function filterOptions(idx, term) {
-  const container = document.getElementById(`options-${idx}`);
-  const t = term.toLowerCase();
-  container.querySelectorAll(".select-option").forEach(opt => {
-    const id = opt.dataset.alloy;
-    const alloy = ALLOYS[id];
-    const searchStr = `${id} ${alloy.series} ${alloy.applications} ${alloy.standards}`.toLowerCase();
-    opt.style.display = searchStr.includes(t) ? "" : "none";
-  });
-}
-
-function selectAlloy(idx, id) {
-  selections[idx] = id;
-  const trigger = document.getElementById(`trigger-${idx}`);
-  document.getElementById(`text-${idx}`).textContent = id;
-  trigger.classList.add("has-value");
-  document.getElementById(`select-wrap-${idx}`).classList.remove("open");
-  updateCompareBtn();
-}
-
-function updateCompareBtn() {
-  const count = selections.filter(Boolean).length;
-  document.getElementById("btn-compare").disabled = count < 2;
-}
-
-function bindActions() {
-  document.getElementById("btn-compare").addEventListener("click", runComparison);
-  document.getElementById("btn-reset").addEventListener("click", resetAll);
-}
-
-function resetAll() {
-  selections = [null, null, null];
-  for (let i = 0; i < 3; i++) {
-    document.getElementById(`text-${i}`).textContent = "Choose alloy...";
-    document.getElementById(`trigger-${i}`).classList.remove("has-value");
-  }
-  updateCompareBtn();
-  document.getElementById("radar-section").style.display = "none";
-  document.getElementById("comparison-section").style.display = "none";
-}
-
-function runComparison() {
-  const chosen = selections.filter(Boolean);
-  if (chosen.length < 2) return;
-  buildRadarChart(chosen);
-  buildComparisonTable(chosen);
-  document.getElementById("radar-section").style.display = "";
-  document.getElementById("comparison-section").style.display = "";
-
-  // Re-observe for reveal
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }});
-  }, { threshold: 0.05 });
-  document.querySelectorAll("#radar-section, #comparison-section").forEach(el => {
-    el.classList.remove("visible");
-    el.classList.add("reveal");
-    obs.observe(el);
-  });
-
-  document.getElementById("radar-section").scrollIntoView({ behavior:"smooth", block:"start" });
-
-  // Animate bars after short delay
-  setTimeout(() => {
-    document.querySelectorAll(".bar-fill").forEach(bar => {
-      bar.style.width = bar.dataset.width + "%";
+    searchInput.addEventListener('input', () => {
+      renderOptions(sel, searchInput.value);
     });
-  }, 200);
-}
 
-// ===== RADAR CHART (Pure CSS/SVG) =====
-function buildRadarChart(alloyIds) {
-  const chart = document.getElementById("radar-chart");
-  const legend = document.getElementById("radar-legend");
-  const n = RADAR_PROPS.length;
-  const cx = 190, cy = 190, R = 150;
-  const angleStep = (2 * Math.PI) / n;
+    searchInput.addEventListener('click', (e) => e.stopPropagation());
 
-  // Build SVG
-  let svg = `<svg viewBox="0 0 380 380" style="width:100%;height:100%;">`;
-
-  // Grid rings
-  for (let ring = 1; ring <= 5; ring++) {
-    const r = (R / 5) * ring;
-    let pts = [];
-    for (let i = 0; i < n; i++) {
-      const angle = -Math.PI / 2 + i * angleStep;
-      pts.push(`${cx + r * Math.cos(angle)},${cy + r * Math.sin(angle)}`);
-    }
-    svg += `<polygon points="${pts.join(" ")}" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>`;
-  }
-
-  // Axes and labels
-  for (let i = 0; i < n; i++) {
-    const angle = -Math.PI / 2 + i * angleStep;
-    const x2 = cx + R * Math.cos(angle);
-    const y2 = cy + R * Math.sin(angle);
-    svg += `<line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>`;
-    const lx = cx + (R + 22) * Math.cos(angle);
-    const ly = cy + (R + 22) * Math.sin(angle);
-    const anchor = Math.abs(Math.cos(angle)) < 0.1 ? "middle" : Math.cos(angle) > 0 ? "start" : "end";
-    svg += `<text x="${lx}" y="${ly}" text-anchor="${anchor}" dominant-baseline="central" fill="#444" font-size="11" font-family="var(--font-main)">${RADAR_PROPS[i].label}</text>`;
-  }
-
-  // Data polygons
-  alloyIds.forEach((id, ai) => {
-    const alloy = ALLOYS[id];
-    const color = RADAR_COLORS[ai];
-    let pts = [];
-    for (let i = 0; i < n; i++) {
-      const angle = -Math.PI / 2 + i * angleStep;
-      const val = alloy[RADAR_PROPS[i].key] / RADAR_PROPS[i].max;
-      const r = Math.min(val, 1) * R;
-      pts.push(`${cx + r * Math.cos(angle)},${cy + r * Math.sin(angle)}`);
-    }
-    svg += `<polygon points="${pts.join(" ")}" fill="${color}" fill-opacity="0.12" stroke="${color}" stroke-width="2" stroke-opacity="0.8">
-      <animate attributeName="fill-opacity" from="0" to="0.12" dur="0.6s" fill="freeze"/>
-    </polygon>`;
-    // Dots
-    for (let i = 0; i < n; i++) {
-      const angle = -Math.PI / 2 + i * angleStep;
-      const val = alloy[RADAR_PROPS[i].key] / RADAR_PROPS[i].max;
-      const r = Math.min(val, 1) * R;
-      svg += `<circle cx="${cx + r * Math.cos(angle)}" cy="${cy + r * Math.sin(angle)}" r="4" fill="${color}" opacity="0.9"/>`;
-    }
+    sel.querySelector('.select-options').addEventListener('click', (e) => {
+      const opt = e.target.closest('.select-option');
+      if (!opt) return;
+      const val = opt.dataset.value;
+      selections[idx] = val;
+      display.textContent = val;
+      display.classList.remove('placeholder');
+      sel.classList.remove('open');
+    });
   });
 
-  svg += `</svg>`;
-  chart.innerHTML = svg;
+  function closeAllSelects() {
+    selectEls.forEach(s => s.classList.remove('open'));
+  }
 
-  // Legend
-  legend.innerHTML = alloyIds.map((id, i) =>
-    `<div class="legend-item"><span class="legend-dot" style="background:${RADAR_COLORS[i]}"></span>${id}</div>`
-  ).join("");
-}
+  document.addEventListener('click', closeAllSelects);
 
-// ===== COMPARISON TABLE =====
-function buildComparisonTable(alloyIds) {
-  const head = document.getElementById("table-head");
-  const body = document.getElementById("table-body");
-
-  // Header
-  head.innerHTML = `<tr><th>Property</th>${alloyIds.map(id => `<th>${id}</th>`).join("")}</tr>`;
-
-  // Find max values for bar scaling
-  const alloys = alloyIds.map(id => ALLOYS[id]);
-
-  const numericRows = [
-    { cat:"Mechanical Properties" },
-    { label:"Tensile Strength (MPa)", key:"tensile", fmt:(a) => `${a.tensileMin} - ${a.tensileMax}`, val:(a) => a.tensileMax },
-    { label:"Yield Strength (MPa)", key:"yield", fmt:(a) => `${a.yieldMin} - ${a.yieldMax}`, val:(a) => a.yieldMax },
-    { label:"Elongation (%)", key:"elongation", fmt:(a) => `${a.elongation}`, val:(a) => a.elongation },
-    { label:"Hardness (Brinell HB)", key:"hardness", fmt:(a) => `${a.hardness}`, val:(a) => a.hardness },
-    { cat:"Physical Properties" },
-    { label:"Density (g/cm\u00B3)", key:"density", fmt:(a) => `${a.density}`, val:(a) => a.density, invert:true },
-    { label:"Melting Range (\u00B0C)", key:"melt", fmt:(a) => `${a.meltMin} - ${a.meltMax}`, val:(a) => a.meltMax },
-    { label:"Thermal Conductivity (W/m\u00B7K)", key:"thermal", fmt:(a) => `${a.thermal}`, val:(a) => a.thermal },
-    { label:"Electrical Conductivity (%IACS)", key:"electrical", fmt:(a) => `${a.electrical}`, val:(a) => a.electrical },
-    { cat:"Ratings" },
-    { label:"Corrosion Resistance", key:"corrosion", rating:true },
-    { label:"Weldability", key:"weldability", rating:true },
-    { label:"Machinability", key:"machinability", rating:true },
-    { cat:"Specifications" },
-    { label:"Common Tempers", key:"tempers", text:true },
-    { label:"Typical Applications", key:"applications", text:true },
-    { label:"Equivalent Standards", key:"standards", text:true }
-  ];
-
-  let html = "";
-  numericRows.forEach(row => {
-    if (row.cat) {
-      html += `<tr class="prop-category"><td colspan="${alloyIds.length + 1}">${row.cat}</td></tr>`;
+  // ============ COMPARE ============
+  compareBtn.addEventListener('click', () => {
+    const selected = selections.filter(Boolean);
+    if (selected.length < 2) {
+      alert('Please select at least 2 alloys to compare.');
       return;
     }
+    const alloys = getAlloysFlat(currentCategory);
+    const items = selected.map(name => {
+      const found = alloys.find(a => a.name === name);
+      return found ? { name: found.name, group: found.group, ...found.data } : null;
+    }).filter(Boolean);
 
-    html += `<tr><td>${row.label}</td>`;
-    if (row.rating) {
-      alloys.forEach(a => {
-        const val = a[row.key];
-        const cls = val.toLowerCase();
-        html += `<td><span class="rating-badge rating-${cls}"><span class="rating-dot"></span>${val}</span></td>`;
+    if (items.length < 2) return;
+
+    renderPropertyTable(items);
+    renderComposition(items);
+    renderRadar(items);
+    renderApplications(items);
+    resultsSection.style.display = 'block';
+
+    // Trigger reveal for newly visible elements
+    resultsSection.querySelectorAll('.reveal').forEach(el => {
+      el.classList.add('visible');
+    });
+
+    // Animate bars after a tick
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.bar-fill[data-width]').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
       });
-    } else if (row.text) {
-      alloys.forEach(a => {
-        html += `<td style="text-align:left;font-size:0.8rem;">${a[row.key]}</td>`;
-      });
-    } else {
-      // Numeric with bars
-      const vals = alloys.map(a => row.val(a));
-      const maxVal = Math.max(...vals);
-      alloys.forEach((a, i) => {
-        const pct = maxVal > 0 ? (vals[i] / maxVal) * 100 : 0;
-        const isBest = vals[i] === maxVal && !row.invert;
-        const isLowest = vals[i] === Math.min(...vals) && row.invert;
-        html += `<td class="bar-cell"><div class="bar-wrap">
-          <span class="bar-value ${isBest || isLowest ? 'best-value' : ''}">${row.fmt(a)}</span>
-          <div class="bar-track"><div class="bar-fill" data-width="${pct}" style="width:0%"></div></div>
-        </div></td>`;
-      });
-    }
-    html += `</tr>`;
+    });
   });
 
-  body.innerHTML = html;
-}
+  resetBtn.addEventListener('click', () => {
+    selections = [null, null, null];
+    populateSelects();
+    resultsSection.style.display = 'none';
+  });
+
+  function getAlloysFlat(category) {
+    const cat = alloyData[category];
+    const list = [];
+    for (const [groupName, alloys] of Object.entries(cat.groups)) {
+      for (const [name, data] of Object.entries(alloys)) {
+        list.push({ name, group: groupName, data });
+      }
+    }
+    return list;
+  }
+
+  // ============ PROPERTY TABLE ============
+  function parseNumeric(val) {
+    if (typeof val === 'number') return val;
+    if (typeof val === 'string') {
+      const parts = val.split('-').map(Number);
+      if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) return (parts[0] + parts[1]) / 2;
+      return parseFloat(val) || 0;
+    }
+    return 0;
+  }
+
+  function renderPropertyTable(items) {
+    const container = document.getElementById('propertyTable');
+    const props = [
+      { key:"tensileStrength", label:"Tensile Strength (MPa)", type:"bar", max:1800 },
+      { key:"yieldStrength", label:"Yield Strength (MPa)", type:"bar", max:1500 },
+      { key:"elongation", label:"Elongation (%)", type:"bar", max:50 },
+      { key:"hardness", label:"Hardness (HB)", type:"bar", max:350 },
+      { key:"density", label:"Density (g/cm\u00B3)", type:"bar", max:10, lowerBetter:true },
+      { key:"thermalConductivity", label:"Thermal Conductivity (W/m\u00B7K)", type:"bar", max:400 },
+      { key:"meltingRange", label:"Melting Range (\u00B0C)", type:"text" },
+      { key:"corrosionResistance", label:"Corrosion Resistance", type:"rating" },
+      { key:"weldability", label:"Weldability", type:"rating" },
+      { key:"equivalentStandards", label:"Equivalent Standards", type:"text" }
+    ];
+
+    let html = '<h3 class="section-heading">Property Comparison</h3><div style="overflow-x:auto;"><table class="prop-table"><thead><tr><th>Property</th>';
+    items.forEach(item => { html += '<th>' + item.name + '</th>'; });
+    html += '</tr></thead><tbody>';
+
+    props.forEach(prop => {
+      html += '<tr><td class="prop-label">' + prop.label + '</td>';
+      if (prop.type === 'bar') {
+        const values = items.map(it => parseNumeric(it[prop.key]));
+        const best = prop.lowerBetter ? Math.min(...values) : Math.max(...values);
+        items.forEach((item, i) => {
+          const raw = item[prop.key];
+          const num = values[i];
+          const pct = Math.min((num / prop.max) * 100, 100);
+          const isBest = num === best;
+          html += '<td class="bar-cell"><div class="bar-wrap"><div class="bar-track"><div class="bar-fill' + (isBest ? ' best' : '') + '" data-width="' + pct.toFixed(1) + '" style="background:' + COLORS[i] + ';width:0;"></div></div><span class="bar-value" style="' + (isBest ? 'color:' + COLORS[i] + ';font-weight:700;' : '') + '">' + raw + '</span></div></td>';
+        });
+      } else if (prop.type === 'rating') {
+        const ratingOrder = { Excellent: 4, Good: 3, Fair: 2, Poor: 1 };
+        const rValues = items.map(it => ratingOrder[it[prop.key]] || 0);
+        const bestR = Math.max(...rValues);
+        items.forEach((item, i) => {
+          const val = item[prop.key];
+          const cls = val.toLowerCase();
+          const glow = rValues[i] === bestR ? 'font-weight:600;' : '';
+          html += '<td><span class="rating-dot ' + cls + '" style="' + glow + '">' + val + '</span></td>';
+        });
+      } else {
+        items.forEach(item => {
+          html += '<td>' + item[prop.key] + '</td>';
+        });
+      }
+      html += '</tr>';
+    });
+
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+  }
+
+  // ============ RADAR CHART ============
+  function renderRadar(items) {
+    const radarChart = document.getElementById('radarChart');
+    const radarLegend = document.getElementById('radarLegend');
+    const axes = [
+      { key:"tensileStrength", label:"Tensile", max:1800 },
+      { key:"yieldStrength", label:"Yield", max:1500 },
+      { key:"elongation", label:"Elongation", max:50 },
+      { key:"hardness", label:"Hardness", max:350 },
+      { key:"thermalConductivity", label:"Thermal Cond.", max:400 },
+      { key:"corrosionResistance", label:"Corrosion Res.", max:4 }
+    ];
+
+    const ratingMap = { Excellent: 4, Good: 3, Fair: 2, Poor: 1 };
+    const cx = 160, cy = 160, R = 120;
+    const n = axes.length;
+    const angleStep = (2 * Math.PI) / n;
+
+    function polarToXY(angle, r) {
+      return [cx + r * Math.sin(angle), cy - r * Math.cos(angle)];
+    }
+
+    let svg = '<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">';
+
+    // Grid rings
+    for (let ring = 1; ring <= 5; ring++) {
+      const r = (ring / 5) * R;
+      let pts = [];
+      for (let i = 0; i < n; i++) {
+        pts.push(polarToXY(i * angleStep, r).join(','));
+      }
+      svg += '<polygon points="' + pts.join(' ') + '" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>';
+    }
+
+    // Axis lines and labels
+    for (let i = 0; i < n; i++) {
+      const [x, y] = polarToXY(i * angleStep, R);
+      svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + x + '" y2="' + y + '" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>';
+      const [lx, ly] = polarToXY(i * angleStep, R + 18);
+      svg += '<text x="' + lx + '" y="' + ly + '" text-anchor="middle" dominant-baseline="middle" font-size="9" fill="#666" font-family="var(--font-main)">' + axes[i].label + '</text>';
+    }
+
+    // Data polygons
+    items.forEach((item, idx) => {
+      let pts = [];
+      for (let i = 0; i < n; i++) {
+        let val;
+        if (axes[i].key === 'corrosionResistance') {
+          val = ratingMap[item[axes[i].key]] || 1;
+        } else {
+          val = parseNumeric(item[axes[i].key]);
+        }
+        const norm = Math.min(val / axes[i].max, 1);
+        pts.push(polarToXY(i * angleStep, norm * R).join(','));
+      }
+      const color = COLORS[idx];
+      svg += '<polygon points="' + pts.join(' ') + '" fill="' + color + '22" stroke="' + color + '" stroke-width="2" class="radar-poly" style="animation: radarDraw 0.8s ' + (idx * 0.2) + 's ease both;"/>';
+    });
+
+    svg += '</svg>';
+    radarChart.innerHTML = svg;
+
+    // Legend
+    radarLegend.innerHTML = items.map((item, i) =>
+      '<div class="legend-item"><span class="legend-swatch" style="background:' + COLORS[i] + '"></span>' + item.name + '</div>'
+    ).join('');
+  }
+
+  // ============ APPLICATIONS ============
+  function renderApplications(items) {
+    const container = document.getElementById('appCards');
+    container.innerHTML = items.map((item, i) =>
+      '<div class="app-card" style="border-top:3px solid ' + COLORS[i] + '"><div class="app-card-title">' + item.name + '</div><div class="app-card-text">' + item.applications + '</div></div>'
+    ).join('');
+  }
+
+  // ============ COMPOSITION TABLE ============
+  function renderComposition(items) {
+    const container = document.getElementById('compositionContent');
+    // Collect all element symbols across selected alloys
+    const allElements = new Set();
+    items.forEach(item => {
+      if (item.composition) {
+        Object.keys(item.composition).forEach(el => allElements.add(el));
+      }
+    });
+    // Filter out elements that are all "—" or missing across every selected alloy
+    const elements = [...allElements].filter(el => {
+      return items.some(item => {
+        const val = item.composition && item.composition[el];
+        return val && val !== '\u2014';
+      });
+    });
+    if (elements.length === 0) {
+      container.innerHTML = '<p style="color:var(--color-text-light);font-size:0.9rem;">No composition data available.</p>';
+      return;
+    }
+    // Helper: parse the first number from a composition string for bar width
+    function parseCompVal(str) {
+      if (!str || str === '\u2014' || str === 'bal') return 0;
+      const m = str.match(/([\d.]+)/);
+      return m ? parseFloat(m[1]) : 0;
+    }
+    let html = '<div style="overflow-x:auto;"><table class="comp-table"><thead><tr><th>Element</th>';
+    items.forEach((item, i) => {
+      html += '<th style="color:' + COLORS[i] + '">' + item.name + '</th>';
+    });
+    html += '</tr></thead><tbody>';
+    // Find max numeric value across all elements for bar scaling
+    let globalMax = 0;
+    elements.forEach(el => {
+      items.forEach(item => {
+        const val = item.composition && item.composition[el];
+        const n = parseCompVal(val);
+        if (n > globalMax) globalMax = n;
+      });
+    });
+    if (globalMax === 0) globalMax = 1;
+    elements.forEach(el => {
+      html += '<tr><td class="comp-element">' + el + '</td>';
+      items.forEach((item, i) => {
+        const val = (item.composition && item.composition[el]) || '\u2014';
+        const num = parseCompVal(val);
+        const pct = Math.min((num / globalMax) * 100, 100);
+        html += '<td class="comp-value">' + val;
+        if (num > 0 && val !== 'bal') {
+          html += '<div class="comp-bar" style="width:' + pct.toFixed(1) + '%;background:' + COLORS[i] + '33;"><div class="comp-bar" style="width:100%;background:' + COLORS[i] + ';opacity:0.6;margin-top:0;"></div></div>';
+        }
+        html += '</td>';
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+  }
+
+  // ============ INIT ============
+  populateSelects();
+})();
 </script>

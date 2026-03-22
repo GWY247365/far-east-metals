@@ -8,28 +8,66 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Page Header -->
       <div class="page-header reveal">
-        <h1>Aluminum Temper Designation Guide</h1>
-        <p class="intro">Understanding temper designations is critical for selecting the right aluminum alloy condition for your application. This guide provides a complete reference to the Aluminum Association temper designation system, covering basic temper categories, subdivisions, and the metallurgical processes behind each designation.</p>
+        <svg class="header-svg" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Furnace body -->
+          <rect x="120" y="50" width="160" height="100" rx="8" fill="#888" stroke="#666" stroke-width="1.5"/>
+          <rect x="130" y="58" width="140" height="75" rx="4" fill="#555" stroke="#444" stroke-width="1"/>
+          <!-- Heat glow inside furnace -->
+          <rect class="furnace-glow" x="130" y="58" width="140" height="75" rx="4" fill="#F5A623" opacity="0.15"/>
+          <!-- Metal piece inside -->
+          <g class="temper-metal">
+            <rect x="165" y="90" width="70" height="25" rx="3" fill="#c0c0c0" stroke="#999" stroke-width="1.2"/>
+            <rect x="165" y="90" width="70" height="7" rx="2" fill="#d8d8d8" opacity="0.5"/>
+          </g>
+          <!-- Heat waves -->
+          <g class="heat-waves">
+            <path d="M170 80 Q175 72 180 80" fill="none" stroke="#F5A623" stroke-width="1.5" opacity="0.6"/>
+            <path d="M190 75 Q195 65 200 75" fill="none" stroke="#e04040" stroke-width="1.5" opacity="0.5"/>
+            <path d="M210 78 Q215 70 220 78" fill="none" stroke="#F5A623" stroke-width="1.5" opacity="0.6"/>
+          </g>
+          <!-- Temperature gauge on right -->
+          <rect x="290" y="60" width="12" height="80" rx="6" fill="#ddd" stroke="#bbb" stroke-width="1"/>
+          <rect class="temp-fill" x="292" y="90" width="8" height="48" rx="4" fill="#e04040"/>
+          <circle cx="296" cy="140" r="8" fill="#e04040" stroke="#bbb" stroke-width="1"/>
+          <!-- Chimney -->
+          <rect x="175" y="30" width="20" height="24" rx="2" fill="#777" stroke="#666" stroke-width="1"/>
+          <!-- Smoke -->
+          <g class="furnace-smoke">
+            <circle cx="185" cy="22" r="5" fill="#ccc" opacity="0.4"/>
+            <circle cx="180" cy="14" r="4" fill="#ccc" opacity="0.3"/>
+            <circle cx="188" cy="6" r="3" fill="#ccc" opacity="0.2"/>
+          </g>
+        </svg>
+        <h1 class="page-title">Aluminum Temper Designation Guide</h1>
+        <p class="page-subtitle">Understanding temper designations is critical for selecting the right aluminum alloy condition for your application. This guide provides a complete reference to the Aluminum Association temper designation system, covering basic temper categories, subdivisions, and the metallurgical processes behind each designation.</p>
       </div>
 
       <!-- Section 1: Temper System Overview / Flowchart -->
       <div class="section-block reveal">
-        <h2 class="section-title"><span class="section-num">01</span> Temper Designation System Overview</h2>
+        <h2 class="section-heading"><span class="section-num">01</span> Temper Designation System Overview</h2>
         <p>The temper designation follows the alloy number, separated by a hyphen (e.g., 6061-T6). It indicates the mechanical and thermal processing history that determines the material's final properties. The system consists of five basic temper categories.</p>
 
         <div class="flowchart-container">
           <div class="flowchart-root">
             <div class="flowchart-node root-node">Temper Designations</div>
+            <div class="flowchart-trunk"><div class="connector-line"></div></div>
+            <div class="flowchart-hline"></div>
             <div class="flowchart-branches">
 
               <div class="flowchart-branch">
                 <div class="flowchart-connector"><div class="connector-line"></div></div>
                 <div class="flowchart-node node-f" data-temper="f">F<span class="node-label">As Fabricated</span></div>
+                <div class="sub-branches sub-desc">
+                  <div class="sub-node sub-note">No special control over thermal conditions or strain hardening</div>
+                </div>
               </div>
 
               <div class="flowchart-branch">
                 <div class="flowchart-connector"><div class="connector-line"></div></div>
                 <div class="flowchart-node node-o" data-temper="o">O<span class="node-label">Annealed</span></div>
+                <div class="sub-branches sub-desc">
+                  <div class="sub-node sub-note">Lowest strength, maximum ductility &amp; workability</div>
+                </div>
               </div>
 
               <div class="flowchart-branch branch-h">
@@ -37,15 +75,18 @@ import Layout from '../layouts/Layout.astro';
                 <div class="flowchart-node node-h" data-temper="h">H<span class="node-label">Strain Hardened</span></div>
                 <div class="sub-branches">
                   <div class="sub-node">H1x<span>Strain hardened only</span></div>
-                  <div class="sub-node">H2x<span>Strain hardened + partially annealed</span></div>
-                  <div class="sub-node">H3x<span>Strain hardened + stabilized</span></div>
-                  <div class="sub-node">H4x<span>Strain hardened + painted</span></div>
+                  <div class="sub-node">H2x<span>Partially annealed</span></div>
+                  <div class="sub-node">H3x<span>Stabilized</span></div>
+                  <div class="sub-node">H4x<span>Lacquered / painted</span></div>
                 </div>
               </div>
 
               <div class="flowchart-branch">
                 <div class="flowchart-connector"><div class="connector-line"></div></div>
                 <div class="flowchart-node node-w" data-temper="w">W<span class="node-label">Solution Heat Treated</span></div>
+                <div class="sub-branches sub-desc">
+                  <div class="sub-node sub-note">Unstable temper, naturally ages over time after treatment</div>
+                </div>
               </div>
 
               <div class="flowchart-branch branch-t">
@@ -53,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="flowchart-node node-t" data-temper="t">T<span class="node-label">Thermally Treated</span></div>
                 <div class="sub-branches">
                   <div class="sub-node">T1&ndash;T2<span>Cooled from hot working</span></div>
-                  <div class="sub-node">T3&ndash;T4<span>Solution treated + natural age</span></div>
+                  <div class="sub-node">T3&ndash;T4<span>Natural aging</span></div>
                   <div class="sub-node">T5&ndash;T6<span>Artificially aged</span></div>
                   <div class="sub-node">T7&ndash;T10<span>Overaged / special</span></div>
                 </div>
@@ -66,7 +107,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Section 2: F - As Fabricated -->
       <div class="section-block reveal">
-        <h2 class="section-title"><span class="section-num">02</span> F &mdash; As Fabricated</h2>
+        <h2 class="section-heading"><span class="section-num">02</span> F &mdash; As Fabricated</h2>
         <div class="content-card-inner">
           <div class="temper-detail-grid">
             <div class="temper-info">
@@ -113,7 +154,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Section 3: O - Annealed -->
       <div class="section-block reveal">
-        <h2 class="section-title"><span class="section-num">03</span> O &mdash; Annealed</h2>
+        <h2 class="section-heading"><span class="section-num">03</span> O &mdash; Annealed</h2>
         <div class="content-card-inner">
           <div class="temper-detail-grid">
             <div class="temper-info">
@@ -189,7 +230,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Section 4: H - Strain Hardened -->
       <div class="section-block reveal">
-        <h2 class="section-title"><span class="section-num">04</span> H &mdash; Strain Hardened</h2>
+        <h2 class="section-heading"><span class="section-num">04</span> H &mdash; Strain Hardened</h2>
         <p class="section-intro">The H temper applies to wrought products that have been strengthened through strain hardening (cold working), with or without supplementary thermal treatment. This designation is used exclusively for <strong>non-heat-treatable alloys</strong> in the 1xxx, 3xxx, and 5xxx series.</p>
 
         <!-- H1x -->
@@ -391,7 +432,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Section 5: T - Thermally Treated -->
       <div class="section-block reveal">
-        <h2 class="section-title"><span class="section-num">05</span> T &mdash; Thermally Treated</h2>
+        <h2 class="section-heading"><span class="section-num">05</span> T &mdash; Thermally Treated</h2>
         <p class="section-intro">The T temper applies to products that have been heat treated to produce stable tempers other than F, O, or H. The T designation is used for <strong>heat-treatable alloys</strong> in the 2xxx, 6xxx, and 7xxx series. A numeral 1 through 10 follows the T to indicate the specific sequence of treatments.</p>
 
         <!-- Solution Heat Treatment SVG -->
@@ -656,7 +697,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Section 6: Process Temperature & Time Reference -->
       <div class="section-block reveal">
-        <h2 class="section-title"><span class="section-num">06</span> Process Temperature &amp; Time Reference</h2>
+        <h2 class="section-heading"><span class="section-num">06</span> Process Temperature &amp; Time Reference</h2>
         <p class="section-intro">The following table provides typical heat treatment parameters for commonly used aluminum alloys. These values are representative; actual parameters may vary based on product form, thickness, and specific alloy composition.</p>
 
         <div class="table-wrapper">
@@ -776,7 +817,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Section 7: Quick Reference Cards -->
       <div class="section-block reveal">
-        <h2 class="section-title"><span class="section-num">07</span> Quick Reference &mdash; Common Temper Comparisons</h2>
+        <h2 class="section-heading"><span class="section-num">07</span> Quick Reference &mdash; Common Temper Comparisons</h2>
         <p class="section-intro">Click a comparison card to expand and see the property differences between common alloy-temper combinations.</p>
 
         <div class="comparison-grid">
@@ -895,21 +936,60 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 50px;
   }
 
-  .page-header h1 {
-    font-family: var(--font-title);
-    font-size: 2.6rem;
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
+  .page-header .page-subtitle {
+    max-width: 720px;
+    margin: 0 auto 36px;
   }
 
-  .page-header .intro {
-    max-width: 720px;
-    margin: 0 auto;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: var(--color-text-light);
+  .header-svg {
+    width: 220px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  .furnace-glow {
+    animation: glowPulse 2.5s ease-in-out infinite;
+  }
+
+  .heat-waves {
+    animation: heatRise 2s ease-in-out infinite;
+  }
+
+  .furnace-smoke {
+    animation: smokeRise 3s ease-in-out infinite;
+  }
+
+  .temp-fill {
+    animation: tempRise 3s ease-in-out infinite;
+  }
+
+  .temper-metal {
+    animation: metalGlow 2.5s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.35; }
+  }
+
+  @keyframes heatRise {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(-6px); opacity: 0.9; }
+  }
+
+  @keyframes smokeRise {
+    0% { transform: translateY(0); opacity: 0.4; }
+    100% { transform: translateY(-10px); opacity: 0; }
+  }
+
+  @keyframes tempRise {
+    0%, 100% { height: 48px; y: 90px; }
+    50% { height: 65px; y: 73px; }
+  }
+
+  @keyframes metalGlow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
   }
 
   /* Section blocks */
@@ -917,15 +997,11 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 50px;
   }
 
-  .section-title {
-    font-family: var(--font-title);
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: 14px;
+  .section-heading {
     display: flex;
     align-items: center;
     gap: 12px;
+    font-size: 1.4rem;
   }
 
   .section-num {
@@ -963,38 +1039,49 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 600px;
+    min-width: 700px;
   }
 
   .root-node {
-    background: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-accent), #d4891a);
     color: #fff;
     font-family: var(--font-title);
     font-size: 1.1rem;
     font-weight: 500;
-    padding: 12px 28px;
+    padding: 12px 32px;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(245,166,35,0.25);
   }
 
+  .flowchart-trunk {
+    width: 2px;
+    height: 20px;
+  }
+
+  .flowchart-hline {
+    width: 82%;
+    height: 2px;
+    background: linear-gradient(to right, rgba(245,166,35,0.15), var(--color-accent), var(--color-accent), rgba(245,166,35,0.15));
+    border-radius: 1px;
+  }
+
   .flowchart-branches {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
     margin-top: 0;
-    flex-wrap: nowrap;
+    width: 100%;
   }
 
   .flowchart-branch {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0 0 auto;
   }
 
   .flowchart-connector {
     width: 2px;
-    height: 28px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1003,14 +1090,14 @@ import Layout from '../layouts/Layout.astro';
   .connector-line {
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--color-accent), rgba(245,166,35,0.3));
+    background: linear-gradient(to bottom, var(--color-accent), rgba(245,166,35,0.25));
   }
 
   .flowchart-node {
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.9);
     border: 2px solid rgba(245,166,35,0.3);
     border-radius: 14px;
-    padding: 10px 18px;
+    padding: 10px 12px;
     font-family: var(--font-title);
     font-size: 1.3rem;
     font-weight: 500;
@@ -1018,7 +1105,7 @@ import Layout from '../layouts/Layout.astro';
     text-align: center;
     cursor: default;
     transition: all 0.3s ease;
-    min-width: 70px;
+    width: 100%;
   }
 
   .flowchart-node:hover {
@@ -1034,22 +1121,24 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 400;
     color: var(--color-text-light);
     margin-top: 2px;
+    white-space: nowrap;
   }
 
   .sub-branches {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     margin-top: 10px;
+    width: 100%;
   }
 
   .sub-node {
-    background: rgba(245,166,35,0.08);
-    border: 1px solid rgba(245,166,35,0.18);
+    background: rgba(245,166,35,0.06);
+    border: 1px solid rgba(245,166,35,0.16);
     border-radius: 10px;
-    padding: 6px 12px;
+    padding: 6px 10px;
     font-family: var(--font-title);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
     color: var(--color-text);
     text-align: center;
@@ -1064,10 +1153,21 @@ import Layout from '../layouts/Layout.astro';
   .sub-node span {
     display: block;
     font-family: var(--font-main);
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 400;
     color: #888;
     margin-top: 1px;
+  }
+
+  .sub-note {
+    font-family: var(--font-main);
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+    background: rgba(245,166,35,0.04);
+    border: 1px dashed rgba(245,166,35,0.2);
+    padding: 8px 10px;
+    line-height: 1.4;
   }
 
   /* =========================================
@@ -1574,26 +1674,26 @@ import Layout from '../layouts/Layout.astro';
       padding: 80px 10px 40px;
     }
 
-    .page-header h1 {
-      font-size: 1.8rem;
-    }
-
-    .page-header .intro {
-      font-size: 0.95rem;
-    }
 
     .temper-detail-grid {
       grid-template-columns: 1fr;
     }
 
     .flowchart-branches {
-      flex-direction: column;
-      align-items: center;
+      grid-template-columns: 1fr;
       gap: 8px;
+      max-width: 280px;
+      margin: 0 auto;
     }
 
     .flowchart-root {
       min-width: auto;
+    }
+
+    .flowchart-hline {
+      width: 2px;
+      height: 16px;
+      background: var(--color-accent);
     }
 
     .flowchart-connector {
@@ -1624,9 +1724,6 @@ import Layout from '../layouts/Layout.astro';
       padding-left: 0;
     }
 
-    .section-title {
-      font-size: 1.3rem;
-    }
 
     .process-svg {
       max-width: 100%;
@@ -1638,10 +1735,6 @@ import Layout from '../layouts/Layout.astro';
   }
 
   @media (max-width: 480px) {
-    .page-header h1 {
-      font-size: 1.5rem;
-    }
-
     .section-num {
       width: 30px;
       height: 30px;

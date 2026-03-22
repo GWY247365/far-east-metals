@@ -1,0 +1,51 @@
+{
+  "label": "Titanium Alloys",
+  "groups": {
+    "Commercially Pure": {
+      "Grade 1 (CP)": {
+        "tensileStrength": "240-330", "yieldStrength": "170-241", "elongation": 24, "hardness": 120,
+        "density": 4.51, "meltingRange": "1660-1670", "thermalConductivity": 21.9,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Chemical processing, desalination, medical implants",
+        "equivalentStandards": "3.7025 (EN), TP270C (JIS)",
+        "composition": { "Ti": "bal", "C": "0.08", "Fe": "0.20", "H": "0.015", "N": "0.03", "O": "0.18" }
+      },
+      "Grade 2 (CP)": {
+        "tensileStrength": "345-434", "yieldStrength": "275-345", "elongation": 20, "hardness": 200,
+        "density": 4.51, "meltingRange": "1660-1670", "thermalConductivity": 21.9,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Marine components, heat exchangers, airframe skins",
+        "equivalentStandards": "3.7035 (EN), TP340C (JIS)",
+        "composition": { "Ti": "bal", "C": "0.08", "Fe": "0.30", "H": "0.015", "N": "0.03", "O": "0.25" }
+      }
+    },
+    "Alpha-Beta": {
+      "Grade 5 (Ti-6Al-4V)": {
+        "tensileStrength": "895-1000", "yieldStrength": "828-910", "elongation": 10, "hardness": 334,
+        "density": 4.43, "meltingRange": "1604-1660", "thermalConductivity": 6.7,
+        "corrosionResistance": "Excellent", "weldability": "Fair",
+        "applications": "Aerospace structures, turbine blades, medical implants",
+        "equivalentStandards": "3.7164 (EN), TAB6400 (JIS)",
+        "composition": { "Ti": "bal", "Al": "5.5-6.75", "V": "3.5-4.5", "C": "0.08", "Fe": "0.40", "H": "0.015", "N": "0.05", "O": "0.20" }
+      },
+      "Grade 23 (Ti-6Al-4V ELI)": {
+        "tensileStrength": "860-965", "yieldStrength": "795-875", "elongation": 10, "hardness": 326,
+        "density": 4.43, "meltingRange": "1604-1660", "thermalConductivity": 6.7,
+        "corrosionResistance": "Excellent", "weldability": "Good",
+        "applications": "Surgical implants, cryogenic vessels, dental fixtures",
+        "equivalentStandards": "3.7165 (EN), UNS R56407",
+        "composition": { "Ti": "bal", "Al": "5.5-6.5", "V": "3.5-4.5", "C": "0.08", "Fe": "0.25", "H": "0.0125", "N": "0.03", "O": "0.13" }
+      }
+    },
+    "Near Alpha": {
+      "Grade 7": {
+        "tensileStrength": "345-434", "yieldStrength": "275-345", "elongation": 20, "hardness": 200,
+        "density": 4.51, "meltingRange": "1660-1670", "thermalConductivity": 21.9,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Chemical processing, chlor-alkali, bleach plants",
+        "equivalentStandards": "3.7235 (EN), UNS R52400",
+        "composition": { "Ti": "bal", "Pd": "0.12-0.25", "C": "0.08", "Fe": "0.30", "H": "0.015", "N": "0.03", "O": "0.25" }
+      }
+    }
+  }
+}

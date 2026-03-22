@@ -5,8 +5,8 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="About | Far East Metals" description="Learn about Far East Metals Development Limited - Hong Kong's aluminum industry leader since 2003. Specializing in extrusion, forging, and ingot production with a network of 100+ factories.">
   <section class="about-page">
     <div class="content-card">
-      <h1 class="reveal">About Far East Metals</h1>
-      <p class="intro reveal reveal-delay-1">
+      <h1 class="page-title reveal">About Far East Metals</h1>
+      <p class="page-subtitle reveal reveal-delay-1">
         Founded in 2003 with its headquarters in Hong Kong, Far East Metals Development Limited stands as a prominent industry leader, specializing in aluminum extrusion, forging, and ingot production. Our primary commitment is to cultivate robust partnerships between our Chinese clientele and global customers.
       </p>
 
@@ -56,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Manufacturing Process Flow -->
       <div class="process-section reveal">
-        <h2>Manufacturing Process</h2>
+        <h2 class="section-heading">Manufacturing Process</h2>
         <p class="section-desc">From raw material to finished product, our integrated manufacturing process ensures consistent quality at every stage.</p>
         <div class="process-flow">
           <div class="process-step reveal">
@@ -126,7 +126,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Core Processes Detail -->
       <div class="processes-detail reveal">
-        <h2>Our Core Processes</h2>
+        <h2 class="section-heading">Our Core Processes</h2>
         <div class="process-cards">
 
           <div class="process-card content-card-inner reveal">
@@ -259,7 +259,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="services-section content-card-inner reveal">
-        <h2>Our Services</h2>
+        <h2 class="section-heading">Our Services</h2>
         <ul class="services-list">
           <li>Extruding</li>
           <li>Flat rolling</li>
@@ -276,7 +276,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="wyeetech-section content-card-inner reveal">
-        <h2>Wyeetech Technology Limited</h2>
+        <h2 class="section-heading">Wyeetech Technology Limited</h2>
         <p>
           <a href="https://www.wyeetech.com/" target="_blank" rel="noopener noreferrer">Wyeetech Technology Limited</a>, a National High-Tech Enterprise and subsidiary of Far East Metals Development Limited, specializes in precision forging and extruding. This further contributes to our unwavering commitment to excellence in the industry.
         </p>
@@ -296,11 +296,6 @@ import Layout from '../layouts/Layout.astro';
 <style>
   .about-page {
     padding: 100px 20px 60px;
-  }
-
-  .intro {
-    margin-bottom: 30px;
-    font-size: 0.95rem;
   }
 
   /* Stats Bar */

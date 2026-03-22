@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Astro Dev Server",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["astro", "dev"],
+      "port": 4321
+    },
+    {
+      "name": "Astro Preview (Production Build)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["astro", "preview"],
+      "port": 4321
+    },
+    {
+      "name": "Wrangler Dev (Workers Local)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["wrangler", "dev"],
+      "port": 8787
+    }
+  ]
+}

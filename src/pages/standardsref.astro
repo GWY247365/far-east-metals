@@ -1,0 +1,506 @@
+---
+import Layout from '../layouts/Layout.astro';
+import standardsData from '../data/alloy-standards.json';
+---
+
+<Layout title="Alloy Standards Cross-Reference | Far East Metals" description="Cross-reference aluminum and stainless steel alloy designations across international standards: ASTM, EN, JIS, GB, and ISO. Find equivalent grades instantly." ogImage="/og-standardsref.png">
+  <section class="standards-page page-section">
+    <div class="content-card">
+      <div class="standards-header reveal">
+        <svg class="header-svg" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Globe outline -->
+          <circle cx="200" cy="75" r="40" fill="none" stroke="#b0b0b0" stroke-width="1.5"/>
+          <ellipse cx="200" cy="75" rx="18" ry="40" fill="none" stroke="#ccc" stroke-width="1"/>
+          <line x1="160" y1="65" x2="240" y2="65" stroke="#ccc" stroke-width="1"/>
+          <line x1="160" y1="85" x2="240" y2="85" stroke="#ccc" stroke-width="1"/>
+          <!-- Standard labels orbiting -->
+          <g class="orbit-labels">
+            <text x="140" y="48" text-anchor="middle" font-size="10" font-weight="600" fill="#F5A623">ASTM</text>
+            <text x="260" y="48" text-anchor="middle" font-size="10" font-weight="600" fill="#4A90D9">EN</text>
+            <text x="260" y="108" text-anchor="middle" font-size="10" font-weight="600" fill="#50B86C">JIS</text>
+            <text x="140" y="108" text-anchor="middle" font-size="10" font-weight="600" fill="#D94A4A">GB</text>
+          </g>
+          <!-- Connection lines -->
+          <line x1="155" y1="52" x2="170" y2="62" stroke="#F5A623" stroke-width="0.8" opacity="0.5"/>
+          <line x1="245" y1="52" x2="230" y2="62" stroke="#4A90D9" stroke-width="0.8" opacity="0.5"/>
+          <line x1="245" y1="102" x2="230" y2="92" stroke="#50B86C" stroke-width="0.8" opacity="0.5"/>
+          <line x1="155" y1="102" x2="170" y2="92" stroke="#D94A4A" stroke-width="0.8" opacity="0.5"/>
+        </svg>
+        <h1 class="page-title">Alloy Standards Cross-Reference</h1>
+        <p class="page-subtitle">Find equivalent alloy designations across ASTM, EN, JIS, GB and ISO standards</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-section content-card-inner reveal">
+        <div class="controls-row">
+          <div class="control-group">
+            <label>Material</label>
+            <div class="material-tabs" id="materialTabs">
+              <button class="mat-tab active" data-material="aluminum">Aluminum</button>
+              <button class="mat-tab" data-material="stainless">Stainless Steel</button>
+            </div>
+          </div>
+          <div class="control-group search-group">
+            <label for="search-input">Search</label>
+            <input type="text" id="search-input" placeholder="Search any standard (e.g. 6061, SUS 304, EN AW...)"/>
+          </div>
+        </div>
+        <div class="filter-row" id="filter-row">
+          <span class="filter-label">Category:</span>
+          <button class="filter-btn active" data-filter="all">All</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="table-section reveal">
+        <div class="table-info">
+          <span id="result-count"></span>
+          <p class="table-note">Equivalents are approximate — verify with official specifications for critical applications.</p>
+        </div>
+        <div class="table-wrapper">
+          <table class="standards-table" id="standards-table">
+            <thead>
+              <tr>
+                <th class="th-alloy">Alloy</th>
+                <th>ASTM</th>
+                <th>EN</th>
+                <th>JIS</th>
+                <th>GB</th>
+                <th>ISO</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer reveal">
+        <p><strong>Note:</strong> Cross-references shown are approximate equivalents based on similar chemical composition and mechanical properties. Always refer to the specific standard document for exact requirements. Some designations may differ in minor alloying element tolerances.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import standardsData from '../data/alloy-standards.json';
+
+  let currentMaterial = 'aluminum';
+  let currentFilter = 'all';
+  let searchQuery = '';
+
+  const tableBody = document.getElementById('table-body')!;
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const filterRow = document.getElementById('filter-row')!;
+  const resultCount = document.getElementById('result-count')!;
+
+  function getCategories(material: string): string[] {
+    const data = (standardsData as any)[material];
+    if (!data) return [];
+    const cats = new Set<string>();
+    data.alloys.forEach((a: any) => cats.add(a.category));
+    return [...cats];
+  }
+
+  function renderFilters() {
+    const cats = getCategories(currentMaterial);
+    let html = '<span class="filter-label">Category:</span>';
+    html += '<button class="filter-btn active" data-filter="all">All</button>';
+    cats.forEach(c => {
+      html += `<button class="filter-btn" data-filter="${c}">${c}</button>`;
+    });
+    filterRow.innerHTML = html;
+
+    filterRow.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter') || 'all';
+        renderTable();
+      });
+    });
+  }
+
+  function renderTable() {
+    const data = (standardsData as any)[currentMaterial];
+    if (!data) { tableBody.innerHTML = ''; return; }
+
+    const isAluminum = currentMaterial === 'aluminum';
+    const query = searchQuery.toLowerCase();
+
+    // Update header for AA column
+    const headerRow = document.querySelector('.standards-table thead tr')!;
+    if (isAluminum) {
+      headerRow.innerHTML = '<th class="th-alloy">Alloy</th><th>AA</th><th>ASTM</th><th>EN</th><th>JIS</th><th>GB</th><th>ISO</th>';
+    } else {
+      headerRow.innerHTML = '<th class="th-alloy">Alloy</th><th>ASTM</th><th>EN</th><th>JIS</th><th>GB</th><th>ISO</th>';
+    }
+
+    let filtered = data.alloys.filter((a: any) => {
+      if (currentFilter !== 'all' && a.category !== currentFilter) return false;
+      if (query) {
+        const searchFields = [a.name, a.astm, a.en, a.jis, a.gb, a.iso, a.category];
+        if (isAluminum) searchFields.push(a.aa);
+        return searchFields.some((f: string) => f && f.toLowerCase().includes(query));
+      }
+      return true;
+    });
+
+    let html = '';
+    let lastCategory = '';
+    filtered.forEach((a: any) => {
+      if (a.category !== lastCategory) {
+        lastCategory = a.category;
+        const cols = isAluminum ? 7 : 6;
+        html += `<tr class="category-row"><td colspan="${cols}">${a.category}</td></tr>`;
+      }
+      if (isAluminum) {
+        html += `<tr>
+          <td class="td-alloy">${a.name}</td>
+          <td>${formatCell(a.aa)}</td>
+          <td>${formatCell(a.astm)}</td>
+          <td>${formatCell(a.en)}</td>
+          <td>${formatCell(a.jis)}</td>
+          <td>${formatCell(a.gb)}</td>
+          <td class="td-iso">${formatCell(a.iso)}</td>
+        </tr>`;
+      } else {
+        html += `<tr>
+          <td class="td-alloy">${a.name}</td>
+          <td>${formatCell(a.astm)}</td>
+          <td>${formatCell(a.en)}</td>
+          <td>${formatCell(a.jis)}</td>
+          <td>${formatCell(a.gb)}</td>
+          <td class="td-iso">${formatCell(a.iso)}</td>
+        </tr>`;
+      }
+    });
+
+    if (!html) {
+      const cols = isAluminum ? 7 : 6;
+      html = `<tr><td colspan="${cols}" class="no-results">No matching alloys found</td></tr>`;
+    }
+
+    tableBody.innerHTML = html;
+    resultCount.textContent = `${filtered.length} alloy${filtered.length !== 1 ? 's' : ''} found`;
+
+    // Highlight search matches
+    if (query) {
+      tableBody.querySelectorAll('td').forEach(td => {
+        if (td.classList.contains('no-results') || td.parentElement?.classList.contains('category-row')) return;
+        const text = td.textContent || '';
+        if (text.toLowerCase().includes(query)) {
+          td.innerHTML = text.replace(new RegExp(`(${escapeRegex(query)})`, 'gi'), '<mark>$1</mark>');
+        }
+      });
+    }
+  }
+
+  function formatCell(val: string): string {
+    if (!val || val === '—') return '<span class="na">—</span>';
+    return val;
+  }
+
+  function escapeRegex(str: string): string {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // Material tabs
+  document.querySelectorAll('.mat-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.mat-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentMaterial = tab.getAttribute('data-material') || 'aluminum';
+      currentFilter = 'all';
+      renderFilters();
+      renderTable();
+    });
+  });
+
+  // Search
+  searchInput.addEventListener('input', () => {
+    searchQuery = searchInput.value.trim();
+    renderTable();
+  });
+
+  // Init
+  renderFilters();
+  renderTable();
+</script>
+
+<style>
+  .standards-page {
+    padding: 100px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .standards-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .header-svg {
+    width: 220px;
+    margin: 0 auto 10px;
+    display: block;
+  }
+
+  .orbit-labels text {
+    animation: label-glow 3s ease-in-out infinite;
+  }
+
+  .orbit-labels text:nth-child(2) { animation-delay: 0.75s; }
+  .orbit-labels text:nth-child(3) { animation-delay: 1.5s; }
+  .orbit-labels text:nth-child(4) { animation-delay: 2.25s; }
+
+  @keyframes label-glow {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  /* Controls */
+  .controls-section {
+    margin-bottom: 20px;
+  }
+
+  .controls-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: end;
+    margin-bottom: 14px;
+  }
+
+  .control-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .material-tabs {
+    display: flex;
+    gap: 6px;
+  }
+
+  .mat-tab {
+    padding: 10px 20px;
+    border: 1.5px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.7);
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .mat-tab:hover {
+    border-color: var(--color-accent);
+  }
+
+  .mat-tab.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .search-group input {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1.5px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.9);
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+  }
+
+  .search-group input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-right: 4px;
+  }
+
+  .filter-btn {
+    padding: 5px 14px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.6);
+    font-family: var(--font-main);
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .filter-btn.active {
+    background: rgba(245,166,35,0.12);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  /* Table */
+  .table-section {
+    margin-bottom: 20px;
+  }
+
+  .table-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #result-count {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .table-note {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    font-style: italic;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .standards-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 700px;
+  }
+
+  .standards-table th {
+    background: rgba(245,166,35,0.08);
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text);
+    border-bottom: 2px solid rgba(245,166,35,0.15);
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+  }
+
+  .standards-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+
+  .standards-table tr:hover td {
+    background: rgba(245,166,35,0.04);
+  }
+
+  .td-alloy {
+    font-weight: 600;
+    color: var(--color-accent) !important;
+    font-family: var(--font-title);
+    font-size: 0.92rem;
+  }
+
+  .td-iso {
+    font-size: 0.8rem;
+    color: var(--color-text-light) !important;
+  }
+
+  .na {
+    color: #ccc;
+  }
+
+  .category-row td {
+    background: rgba(0,0,0,0.02) !important;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-light) !important;
+    padding: 8px 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 40px 14px !important;
+    color: var(--color-text-light) !important;
+    font-size: 0.95rem;
+  }
+
+  mark {
+    background: rgba(245,166,35,0.25);
+    color: inherit;
+    padding: 1px 2px;
+    border-radius: 3px;
+  }
+
+  .disclaimer {
+    padding: 16px 20px;
+    background: rgba(245,166,35,0.04);
+    border: 1px dashed rgba(245,166,35,0.2);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  .disclaimer strong {
+    color: var(--color-text);
+  }
+
+  @media (max-width: 768px) {
+    .controls-row {
+      grid-template-columns: 1fr;
+    }
+
+    .material-tabs {
+      width: 100%;
+    }
+
+    .mat-tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+    }
+  }
+</style>

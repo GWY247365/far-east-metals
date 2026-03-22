@@ -1,0 +1,75 @@
+{
+  "label": "Aluminum Ingots",
+  "groups": {
+    "High Purity (≥99.85%)": {
+      "Al99.90": {
+        "tensileStrength": "45-75", "yieldStrength": "15-35", "elongation": 50, "hardness": 17,
+        "density": 2.70, "meltingRange": "657-660", "thermalConductivity": 237,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Electronics, capacitors, high-purity chemical equipment, reflectors",
+        "equivalentStandards": "GB/T 1196, P0303 (AA), EN 576",
+        "composition": { "Al": "99.90 min", "Fe": "0.07", "Si": "0.05", "Cu": "0.005", "Ga": "0.020", "Mg": "0.01", "Zn": "0.025", "Others": "0.010" }
+      },
+      "Al99.85": {
+        "tensileStrength": "50-80", "yieldStrength": "18-38", "elongation": 48, "hardness": 18,
+        "density": 2.70, "meltingRange": "657-660", "thermalConductivity": 236,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Electrical conductors, capacitor foil, chemical processing",
+        "equivalentStandards": "GB/T 1196, P0506 (AA), EN 576",
+        "composition": { "Al": "99.85 min", "Fe": "0.10", "Si": "0.06", "Cu": "0.005", "Ga": "0.020", "Mg": "0.02", "Zn": "0.025", "Others": "0.010" }
+      }
+    },
+    "Standard Purity (99.50–99.80%)": {
+      "Al99.80": {
+        "tensileStrength": "55-85", "yieldStrength": "20-40", "elongation": 45, "hardness": 19,
+        "density": 2.70, "meltingRange": "657-660", "thermalConductivity": 235,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Electrical bus bars, cable conductors, chemical equipment",
+        "equivalentStandards": "GB/T 1196, P0610 (AA), EN 576",
+        "composition": { "Al": "99.80 min", "Fe": "0.12", "Si": "0.08", "Cu": "0.005", "Ga": "0.030", "Mg": "0.02", "Zn": "0.025", "Others": "0.015" }
+      },
+      "Al99.70 (A00)": {
+        "tensileStrength": "60-95", "yieldStrength": "22-45", "elongation": 40, "hardness": 20,
+        "density": 2.71, "meltingRange": "655-658", "thermalConductivity": 234,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "General remelting, alloy production, die casting feedstock",
+        "equivalentStandards": "GB/T 1196, P1020A (AA/LME), EN 576",
+        "composition": { "Al": "99.70 min", "Fe": "0.20", "Si": "0.10", "Cu": "0.01", "Ga": "0.030", "Mg": "0.02", "Zn": "0.030", "Others": "0.020" }
+      },
+      "Al99.60": {
+        "tensileStrength": "65-100", "yieldStrength": "25-48", "elongation": 38, "hardness": 21,
+        "density": 2.71, "meltingRange": "654-657", "thermalConductivity": 232,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Alloy production, casting feedstock, deoxidizer in steelmaking",
+        "equivalentStandards": "GB/T 1196, EN 576",
+        "composition": { "Al": "99.60 min", "Fe": "0.25", "Si": "0.12", "Cu": "0.01", "Ga": "0.030", "Mg": "0.03", "Zn": "0.030", "Others": "0.020" }
+      },
+      "Al99.50": {
+        "tensileStrength": "70-110", "yieldStrength": "28-55", "elongation": 35, "hardness": 22,
+        "density": 2.71, "meltingRange": "652-657", "thermalConductivity": 230,
+        "corrosionResistance": "Excellent", "weldability": "Excellent",
+        "applications": "Alloy production, general industrial use, construction",
+        "equivalentStandards": "GB/T 1196, EN 576",
+        "composition": { "Al": "99.50 min", "Fe": "0.30", "Si": "0.15", "Cu": "0.02", "Ga": "0.030", "Mg": "0.03", "Zn": "0.050", "Others": "0.020" }
+      }
+    },
+    "Commercial Purity (≤99.00%)": {
+      "Al99.00": {
+        "tensileStrength": "75-120", "yieldStrength": "30-60", "elongation": 30, "hardness": 24,
+        "density": 2.71, "meltingRange": "646-657", "thermalConductivity": 225,
+        "corrosionResistance": "Good", "weldability": "Excellent",
+        "applications": "Deoxidizer, alloy production, general construction",
+        "equivalentStandards": "GB/T 1196, EN 576",
+        "composition": { "Al": "99.00 min", "Fe": "0.50", "Si": "0.25", "Cu": "0.02", "Ga": "0.030", "Mg": "0.05", "Zn": "0.050", "Others": "0.030" }
+      },
+      "Al98.00 (ADC12 Feedstock)": {
+        "tensileStrength": "80-130", "yieldStrength": "35-65", "elongation": 25, "hardness": 26,
+        "density": 2.72, "meltingRange": "640-655", "thermalConductivity": 218,
+        "corrosionResistance": "Good", "weldability": "Good",
+        "applications": "Die casting alloy feedstock, automotive parts remelting",
+        "equivalentStandards": "Industry grade",
+        "composition": { "Al": "98.00 min", "Fe": "0.80", "Si": "0.50", "Cu": "0.10", "Ga": "0.030", "Mg": "0.10", "Zn": "0.10", "Others": "0.050" }
+      }
+    }
+  }
+}

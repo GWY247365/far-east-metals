@@ -25,6 +25,7 @@
   "Co": { "number": 27, "name": "Cobalt" },
   "Ni": { "number": 28, "name": "Nickel" },
   "Cu": { "number": 29, "name": "Copper" },
+  "Ga": { "number": 31, "name": "Gallium" },
   "Zn": { "number": 30, "name": "Zinc" },
   "Zr": { "number": 40, "name": "Zirconium" },
   "Nb": { "number": 41, "name": "Niobium" },
@@ -40,6 +41,7 @@
     "aluminum": ["Al", "Cu", "Mg", "Si", "Zn", "Mn"],
     "stainless": ["Fe", "Cr", "Ni", "Mo"],
     "copper": ["Cu", "Zn", "Sn", "Be"],
-    "titanium": ["Ti", "Al", "V"]
+    "titanium": ["Ti", "Al", "V"],
+    "ingot": ["Al", "Fe", "Si", "Cu", "Ga", "Mg"]
   }
 }

@@ -435,6 +435,19 @@ import standardsData from '../data/alloy-standards.json';
       padding: 10px 12px;
       font-size: 0.85rem;
     }
+
+    .table-wrapper {
+      position: relative;
+    }
+    .table-wrapper::after {
+      content: '← Scroll →';
+      display: block;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+      padding: 8px;
+      opacity: 0.6;
+    }
   }
 </style>
 
@@ -444,11 +457,11 @@ import standardsData from '../data/alloy-standards.json';
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 5px 14px;
+    padding: 8px 16px;
     border: 1.5px solid rgba(0,0,0,0.08);
     border-radius: 16px;
     background: rgba(255,255,255,0.5);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--color-text-light);
     cursor: pointer;
@@ -479,12 +492,12 @@ import standardsData from '../data/alloy-standards.json';
   }
 
   .standards-page .filter-btn {
-    padding: 5px 14px;
+    padding: 8px 16px;
     border: 1px solid rgba(0,0,0,0.08);
     border-radius: 16px;
     background: rgba(255,255,255,0.6);
     font-family: var(--font-main);
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     color: var(--color-text-light);
     cursor: pointer;
     transition: all 0.25s;

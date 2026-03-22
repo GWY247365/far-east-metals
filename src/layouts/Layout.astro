@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import DownloadModal from '../components/DownloadModal.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -82,6 +83,10 @@ const ogImageUrl = ogImage ? new URL(ogImage, 'https://www.fareastmetals.com.hk'
     <slot />
   </main>
   <Footer />
+  <DownloadModal />
+  <script>
+    import '../scripts/i18n';
+  </script>
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>

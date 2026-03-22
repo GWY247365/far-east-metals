@@ -6,30 +6,30 @@ import Layout from '../layouts/Layout.astro';
   <section class="contact-page">
     <div class="content-card reveal">
       <div class="contact-header">
-        <h1 class="page-title">Contact</h1>
+        <h1 class="page-title" data-i18n="contact.title">Contact</h1>
         <a href="mailto:info@fareastmetals.com.hk" class="email-link">info@fareastmetals.com.hk</a>
       </div>
 
       <form id="contact-form" class="contact-form" novalidate>
         <div class="form-row">
           <div class="form-field">
-            <label for="field-name">Name <span class="required">*</span></label>
+            <label for="field-name"><span data-i18n="contact.name">Name</span> <span class="required">*</span></label>
             <input type="text" id="field-name" name="name" placeholder="Your name" required />
             <span class="field-hint" id="hint-name"></span>
           </div>
           <div class="form-field">
-            <label for="field-email">E-mail <span class="required">*</span></label>
+            <label for="field-email"><span data-i18n="contact.email">E-mail</span> <span class="required">*</span></label>
             <input type="email" id="field-email" name="email" placeholder="your@email.com" required />
             <span class="field-hint" id="hint-email"></span>
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
-            <label for="field-tel">Tel</label>
+            <label for="field-tel"><span data-i18n="contact.tel">Tel</span></label>
             <input type="tel" id="field-tel" name="tel" placeholder="+852 xxxx xxxx" />
           </div>
           <div class="form-field">
-            <label for="field-service">Service type <span class="required">*</span></label>
+            <label for="field-service"><span data-i18n="contact.serviceType">Service type</span> <span class="required">*</span></label>
             <select id="field-service" name="service" required>
               <option value="" disabled selected>Select a service</option>
               <option value="Forging">Forging</option>
@@ -46,15 +46,15 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
         <div class="form-field">
-          <label for="field-message">Message</label>
+          <label for="field-message"><span data-i18n="contact.message">Message</span></label>
           <textarea id="field-message" name="message" placeholder="Tell us about your requirements..." rows="6"></textarea>
         </div>
         <label class="subscribe-label">
           <input type="checkbox" name="subscribe" checked />
-          Subscribe for more information
+          <span data-i18n="contact.subscribe">Subscribe for more information</span>
         </label>
         <div id="form-error" class="form-error" hidden></div>
-        <button type="submit" class="submit-btn" id="submit-btn">Submit</button>
+        <button type="submit" class="submit-btn" id="submit-btn" data-i18n="contact.submit">Submit</button>
       </form>
 
       <div id="form-success" class="form-success" hidden>
@@ -63,9 +63,9 @@ import Layout from '../layouts/Layout.astro';
           <circle class="success-circle" cx="60" cy="60" r="50" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
           <path class="success-check" d="M38 62 L52 76 L82 46" fill="none" stroke="#059669" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <h3>Thank you for your message</h3>
-        <p>We will get back to you within 1-2 business days.</p>
-        <a href="/" class="back-home-btn">Back to Home</a>
+        <h3 data-i18n="contact.successTitle">Thank you for your message</h3>
+        <p data-i18n="contact.successMsg">We will get back to you within 1-2 business days.</p>
+        <a href="/" class="back-home-btn" data-i18n="contact.backHome">Back to Home</a>
       </div>
     </div>
   </section>

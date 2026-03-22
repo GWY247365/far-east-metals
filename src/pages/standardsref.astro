@@ -31,7 +31,8 @@ import standardsData from '../data/alloy-standards.json';
       </div>
 
       <!-- Controls -->
-      <div class="controls-section content-card-inner reveal">
+      <div class="content-card-inner reveal">
+        <h3 class="section-heading">Search Standards</h3>
         <div class="controls-row">
           <div class="control-group">
             <label>Material</label>
@@ -52,7 +53,8 @@ import standardsData from '../data/alloy-standards.json';
       </div>
 
       <!-- Results -->
-      <div class="table-section reveal">
+      <div class="content-card-inner reveal">
+        <h3 class="section-heading">Cross-Reference Table</h3>
         <div class="table-info">
           <span id="result-count"></span>
           <p class="table-note">Equivalents are approximate — verify with official specifications for critical applications.</p>
@@ -260,10 +262,6 @@ import standardsData from '../data/alloy-standards.json';
   }
 
   /* Controls */
-  .controls-section {
-    margin-bottom: 20px;
-  }
-
   .controls-row {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -367,10 +365,6 @@ import standardsData from '../data/alloy-standards.json';
   }
 
   /* Table */
-  .table-section {
-    margin-bottom: 20px;
-  }
-
   .table-info {
     display: flex;
     justify-content: space-between;

@@ -1,0 +1,1777 @@
+{
+  "schemaVersion": 1,
+  "lastFullAudit": null,
+  "tolerances": {
+    "density": 0.02,
+    "tensileYield": 0.1,
+    "elongation": 3,
+    "hardness": 10,
+    "thermalConductivity": 10,
+    "meltingRange": 5
+  },
+  "alloys": {
+    "aluminum/1050": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/1060": {
+      "status": "verified",
+      "confidence": 0.89,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/1100": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/1350": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [
+        "tensile/yield range widened to include H19 temper"
+      ],
+      "corrections": [
+        {
+          "alloy": "1350",
+          "field": "hardness",
+          "old": 22,
+          "new": 45,
+          "source": "makeitfrom"
+        },
+        {
+          "field": "tensileStrength",
+          "old": "75-124",
+          "new": "75-186",
+          "source": "makeitfrom H19"
+        },
+        {
+          "field": "yieldStrength",
+          "old": "28-110",
+          "new": "28-165",
+          "source": "makeitfrom H19"
+        }
+      ]
+    },
+    "aluminum/1200": {
+      "status": "verified",
+      "confidence": 0.89,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/1145": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/1235": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/2014": {
+      "status": "verified",
+      "confidence": 0.89,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/2017": {
+      "status": "verified",
+      "confidence": 0.88,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/2024": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/2011": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [
+        "thermal: ours=172 vs MIF=150"
+      ],
+      "corrections": [
+        {
+          "alloy": "2011",
+          "field": "thermalConductivity",
+          "old": 172,
+          "new": 150,
+          "source": "makeitfrom"
+        }
+      ]
+    },
+    "aluminum/2219": {
+      "status": "verified",
+      "confidence": 0.88,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/2124": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/2618": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/2A12": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/2195": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/3003": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/3004": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [
+        "hardness: ours=52 vs MIF=64"
+      ],
+      "corrections": [
+        {
+          "alloy": "3004",
+          "field": "hardness",
+          "old": 52,
+          "new": 64,
+          "source": "makeitfrom"
+        }
+      ]
+    },
+    "aluminum/3105": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/3005": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/3104": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/3A21": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/4032": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/4043": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/4047": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5052": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5083": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5086": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5754": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5005": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5182": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5251": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5056": {
+      "status": "verified",
+      "confidence": 0.88,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": [
+        {
+          "field": "hardness",
+          "old": 77,
+          "new": 110,
+          "source": "makeitfrom"
+        }
+      ]
+    },
+    "aluminum/5154": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5356": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5454": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5657": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5A06": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/5059": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6005": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6060": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6061": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6063": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6082": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6101": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6262": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6351": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6066": {
+      "status": "verified",
+      "confidence": 0.92,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6463": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6201": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6N01": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/6A02": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7005": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7050": {
+      "status": "verified",
+      "confidence": 0.88,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": [
+        {
+          "field": "thermalConductivity",
+          "old": 157,
+          "new": 140,
+          "source": "makeitfrom"
+        }
+      ]
+    },
+    "aluminum/7075": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7178": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7003": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7020": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7049": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7475": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7A04": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7A09": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7055": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/7085": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/8011": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "aluminum/8079": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/304": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/316": {
+      "status": "verified",
+      "confidence": 0.9,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/321": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/304L": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/316L": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/310S": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/301": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/303": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/309": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/310": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/347": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/409": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/430": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/405": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/446": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/410": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/420": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/440C": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/2205": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/2507": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/17-4 PH": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "stainless/15-5 PH": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C11000 (ETP Copper)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C101 (OFE)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C110 (ETP)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C122 (DHP)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C17200 (Beryllium Cu)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C172": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C175": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C26000 (Cartridge Brass)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C36000 (Free-Cutting Brass)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C51000 (Phosphor Bronze)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C220 (Commercial Bronze)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C510 (Phosphor Bronze A)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C544 (Phosphor Bronze B)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C630 (Aluminum Bronze)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C932 (Bearing Bronze)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "copper/C71500 (Cu-Ni 70/30)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 1 (CP)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 2 (CP)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 1": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 2": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 3": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 4": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 5 (Ti-6Al-4V)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 23 (Ti-6Al-4V ELI)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Ti-5Al-2.5Sn (Grade 6)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Ti-8Al-1Mo-1V": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Ti-6Al-4V (Grade 5)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Ti-6Al-4V ELI (Grade 23)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Ti-6Al-2Sn-4Zr-2Mo": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Ti-3Al-8V-6Cr-4Mo-4Zr (Beta C)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Ti-15V-3Cr-3Al-3Sn": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "titanium/Grade 7": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/ADC12 / A383": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/ADC10 / A380": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A384": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A319": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/ADC14 / A390": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A332": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/ADC7 / A336": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/ADC1 / A413": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/ADC3 / A360": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A444": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/B390": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A443": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/ADC5": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/ADC6": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A514 / B514": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A520": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A356 (T6)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A357 (T6)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A355": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A359": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A201": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A242": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A535": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A206": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "ingot/A713": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C210 (Gilding Metal)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C220 (Commercial Bronze)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C230 (Red Brass)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C260 (Cartridge Brass)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C270 (Yellow Brass)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C280 (Muntz Metal)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C360 (Free-Cutting Brass)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C385 (Architectural Bronze)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "brass/C464 (Naval Brass)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "zinc/Zn 99.99": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "zinc/Zamak 2 (ZA-2)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "zinc/Zamak 3 (ZA-3)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "zinc/Zamak 5 (ZA-5)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "zinc/Zamak 7 (ZA-7)": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "zinc/ZA-8": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "zinc/ZA-12": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "zinc/ZA-27": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Nickel 200": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Nickel 201": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Inconel 600": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Inconel 625": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Inconel 718": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Inconel X-750": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Monel 400": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Monel K-500": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Hastelloy C-276": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Hastelloy B-2": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "nickel/Hastelloy X": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/AZ31B": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/AZ61A": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/AZ80A": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/ZK60A": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/M1A": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/AZ91D": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/AM60B": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/AM50A": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/AE44": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    },
+    "magnesium/EZ33A": {
+      "status": "unverified",
+      "confidence": 0.8,
+      "lastVerified": null,
+      "verifiedBy": null,
+      "sources": [],
+      "discrepancies": [],
+      "corrections": []
+    }
+  }
+}

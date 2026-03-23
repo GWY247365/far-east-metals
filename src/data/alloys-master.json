@@ -177,82 +177,58 @@
               }
             },
             {
-              "name": "4032",
-              "density": 2.68,
-              "desc": "Forged piston alloy with low thermal expansion",
-              "tags": [
-                "Forging",
-                "Low Expansion",
-                "Wear Resistant"
-              ],
-              "tensileStrength": "380",
-              "yieldStrength": "315",
-              "elongation": 9,
-              "hardness": 120,
-              "meltingRange": "532-571",
-              "thermalConductivity": 154,
-              "corrosionResistance": "Good",
-              "weldability": "Fair",
-              "applications": "Forged pistons, engine components",
-              "composition": {
-                "Si": "11-13.5",
-                "Cu": "0.50-1.3",
-                "Mg": "0.8-1.3",
-                "Ni": "0.50-1.3",
-                "Al": "bal"
-              }
-            },
-            {
-              "name": "4043",
-              "density": 2.69,
-              "desc": "Welding filler alloy with good fluidity",
-              "tags": [
-                "Welding Filler",
-                "Good Fluidity"
-              ],
-              "tensileStrength": "145-186",
-              "yieldStrength": "70-130",
-              "elongation": 18,
-              "hardness": 40,
-              "meltingRange": "574-632",
-              "thermalConductivity": 163,
-              "corrosionResistance": "Good",
+              "name": "1200",
+              "tensileStrength": "75-150",
+              "yieldStrength": "30-130",
+              "elongation": 12,
+              "hardness": 28,
+              "density": 2.71,
+              "meltingRange": "643-657",
+              "thermalConductivity": 222,
+              "corrosionResistance": "Excellent",
               "weldability": "Excellent",
-              "applications": "Welding filler wire, brazing alloy",
+              "applications": "Fin stock, heat exchanger fins, packaging foil, general sheet metal",
+              "equivalentStandards": "EN AW-1200, A1200 (JIS)",
               "composition": {
-                "Si": "4.5-6.0",
-                "Fe": "0.8",
-                "Cu": "0.30",
+                "Si": "1.00 (Si+Fe)",
+                "Fe": "—",
+                "Cu": "0.05",
                 "Mn": "0.05",
-                "Mg": "0.05",
-                "Al": "bal"
-              }
-            },
-            {
-              "name": "4047",
-              "density": 2.66,
-              "desc": "Brazing and welding filler alloy",
+                "Mg": "—",
+                "Zn": "0.10",
+                "Ti": "0.05",
+                "Al": "99.00 min"
+              },
+              "standards": {
+                "aa": "1200",
+                "astm": "B209",
+                "en": "EN AW-1200",
+                "jis": "A1200",
+                "gb": "1200",
+                "iso": "Al 99.0"
+              },
+              "desc": "Commercially pure aluminum with good formability and corrosion resistance",
               "tags": [
-                "Brazing",
-                "Low Melting Point"
+                "General Purpose",
+                "Good Formability"
               ],
-              "tensileStrength": "175-186",
-              "yieldStrength": "125-145",
-              "elongation": 4,
-              "hardness": 60,
-              "meltingRange": "574-582",
-              "thermalConductivity": 151,
-              "corrosionResistance": "Good",
-              "weldability": "Excellent",
-              "applications": "Brazing filler, cladding alloy",
-              "composition": {
-                "Si": "11-13",
-                "Fe": "0.8",
-                "Cu": "0.30",
-                "Mn": "0.15",
-                "Mg": "0.10",
-                "Al": "bal"
-              }
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 23,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 35,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H18",
+                  "hb": 44,
+                  "type": "Strain Hardened"
+                }
+              ]
             }
           ],
           "standardsCategory": "1xxx Pure"
@@ -458,6 +434,107 @@
                 "Zr": "0.10-0.25",
                 "Al": "bal"
               }
+            },
+            {
+              "name": "2124",
+              "tensileStrength": "440-490",
+              "yieldStrength": "370-440",
+              "elongation": 8,
+              "hardness": 130,
+              "density": 2.78,
+              "meltingRange": "502-638",
+              "thermalConductivity": 151,
+              "corrosionResistance": "Poor",
+              "weldability": "Fair",
+              "applications": "Aerospace plate, lower wing skins, fuselage structures, military vehicles",
+              "equivalentStandards": "EN AW-2124, A2124 (JIS)",
+              "composition": {
+                "Si": "0.20",
+                "Fe": "0.30",
+                "Cu": "3.8-4.9",
+                "Mn": "0.30-0.9",
+                "Mg": "1.2-1.8",
+                "Cr": "0.10",
+                "Zn": "0.25",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "2124",
+                "astm": "B209",
+                "en": "EN AW-2124",
+                "jis": "A2124",
+                "gb": "2124",
+                "iso": "AlCu4Mg1"
+              },
+              "desc": "High-purity variant of 2024 with improved fracture toughness for aerospace plate",
+              "tags": [
+                "Aerospace",
+                "High Strength",
+                "Improved Toughness"
+              ],
+              "tempers": [
+                {
+                  "name": "T851",
+                  "hb": 130,
+                  "type": "Aged"
+                },
+                {
+                  "name": "T3",
+                  "hb": 120,
+                  "type": "Solution Treated"
+                }
+              ]
+            },
+            {
+              "name": "2618",
+              "tensileStrength": "370-440",
+              "yieldStrength": "290-370",
+              "elongation": 8,
+              "hardness": 115,
+              "density": 2.76,
+              "meltingRange": "507-638",
+              "thermalConductivity": 147,
+              "corrosionResistance": "Poor",
+              "weldability": "Fair",
+              "applications": "Aero engine components, pistons, high-temperature structural parts, turbocharger wheels",
+              "equivalentStandards": "EN AW-2618A, A2618 (JIS)",
+              "composition": {
+                "Si": "0.10-0.25",
+                "Fe": "0.9-1.3",
+                "Cu": "1.9-2.7",
+                "Mn": "—",
+                "Mg": "1.3-1.8",
+                "Ni": "0.9-1.2",
+                "Ti": "0.04-0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "2618",
+                "astm": "B247",
+                "en": "EN AW-2618A",
+                "jis": "A2618",
+                "gb": "2A70",
+                "iso": "AlCu2Mg1.5Ni"
+              },
+              "desc": "High-temperature aluminum alloy retaining strength up to 200°C, used in aero engines",
+              "tags": [
+                "High Temperature",
+                "Aerospace",
+                "Engine Components"
+              ],
+              "tempers": [
+                {
+                  "name": "T61",
+                  "hb": 115,
+                  "type": "Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 120,
+                  "type": "Aged"
+                }
+              ]
             }
           ],
           "standardsCategory": "2xxx Cu"
@@ -594,9 +671,200 @@
                 "Zn": "0.40",
                 "Al": "bal"
               }
+            },
+            {
+              "name": "3005",
+              "tensileStrength": "130-185",
+              "yieldStrength": "55-165",
+              "elongation": 11,
+              "hardness": 46,
+              "density": 2.73,
+              "meltingRange": "629-654",
+              "thermalConductivity": 163,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Building products, roofing, siding, mobile home paneling, rain gutters",
+              "equivalentStandards": "EN AW-3005, A3005 (JIS)",
+              "composition": {
+                "Si": "0.6",
+                "Fe": "0.7",
+                "Cu": "0.30",
+                "Mn": "1.0-1.5",
+                "Mg": "0.20-0.6",
+                "Cr": "0.10",
+                "Zn": "0.25",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "3005",
+                "astm": "B209",
+                "en": "EN AW-3005",
+                "jis": "A3005",
+                "gb": "3005",
+                "iso": "AlMn1Mg0.5"
+              },
+              "desc": "Manganese-magnesium alloy with higher strength than 3003 for building products",
+              "tags": [
+                "Building Products",
+                "Good Formability",
+                "Higher Strength"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 28,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 46,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H25",
+                  "hb": 52,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "3104",
+              "tensileStrength": "145-285",
+              "yieldStrength": "55-260",
+              "elongation": 6,
+              "hardness": 50,
+              "density": 2.72,
+              "meltingRange": "629-654",
+              "thermalConductivity": 163,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Beverage can bodies, drawn and ironed containers, packaging",
+              "equivalentStandards": "EN AW-3104",
+              "composition": {
+                "Si": "0.6",
+                "Fe": "0.8",
+                "Cu": "0.05-0.25",
+                "Mn": "0.8-1.4",
+                "Mg": "0.8-1.3",
+                "Cr": "—",
+                "Zn": "0.25",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "3104",
+                "astm": "B209",
+                "en": "EN AW-3104",
+                "jis": "—",
+                "gb": "3104",
+                "iso": "AlMn1Mg1"
+              },
+              "desc": "Primary alloy for drawn and ironed beverage can bodies worldwide",
+              "tags": [
+                "Can Body",
+                "Packaging",
+                "High Volume"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 30,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H19",
+                  "hb": 65,
+                  "type": "Strain Hardened"
+                }
+              ]
             }
           ],
           "standardsCategory": "3xxx Mn"
+        },
+        {
+          "name": "4xxx - Silicon Alloy",
+          "alloys": [
+            {
+              "name": "4032",
+              "density": 2.68,
+              "desc": "Forged piston alloy with low thermal expansion",
+              "tags": [
+                "Forging",
+                "Low Expansion",
+                "Wear Resistant"
+              ],
+              "tensileStrength": "380",
+              "yieldStrength": "315",
+              "elongation": 9,
+              "hardness": 120,
+              "meltingRange": "532-571",
+              "thermalConductivity": 154,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Forged pistons, engine components",
+              "composition": {
+                "Si": "11-13.5",
+                "Cu": "0.50-1.3",
+                "Mg": "0.8-1.3",
+                "Ni": "0.50-1.3",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "4043",
+              "density": 2.69,
+              "desc": "Welding filler alloy with good fluidity",
+              "tags": [
+                "Welding Filler",
+                "Good Fluidity"
+              ],
+              "tensileStrength": "145-186",
+              "yieldStrength": "70-130",
+              "elongation": 18,
+              "hardness": 40,
+              "meltingRange": "574-632",
+              "thermalConductivity": 163,
+              "corrosionResistance": "Good",
+              "weldability": "Excellent",
+              "applications": "Welding filler wire, brazing alloy",
+              "composition": {
+                "Si": "4.5-6.0",
+                "Fe": "0.8",
+                "Cu": "0.30",
+                "Mn": "0.05",
+                "Mg": "0.05",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "4047",
+              "density": 2.66,
+              "desc": "Brazing and welding filler alloy",
+              "tags": [
+                "Brazing",
+                "Low Melting Point"
+              ],
+              "tensileStrength": "175-186",
+              "yieldStrength": "125-145",
+              "elongation": 4,
+              "hardness": 60,
+              "meltingRange": "574-582",
+              "thermalConductivity": 151,
+              "corrosionResistance": "Good",
+              "weldability": "Excellent",
+              "applications": "Brazing filler, cladding alloy",
+              "composition": {
+                "Si": "11-13",
+                "Fe": "0.8",
+                "Cu": "0.30",
+                "Mn": "0.15",
+                "Mg": "0.10",
+                "Al": "bal"
+              }
+            }
+          ],
+          "standardsCategory": "4xxx Silicon"
         },
         {
           "name": "5xxx - Magnesium Alloy",
@@ -884,6 +1152,276 @@
                 "Cr": "0.15",
                 "Al": "bal"
               }
+            },
+            {
+              "name": "5056",
+              "tensileStrength": "290-435",
+              "yieldStrength": "152-405",
+              "elongation": 15,
+              "hardness": 77,
+              "density": 2.64,
+              "meltingRange": "568-638",
+              "thermalConductivity": 117,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Rivets for magnesium alloys, cable sheathing, zippers, screen wire",
+              "equivalentStandards": "EN AW-5056A, A5056 (JIS)",
+              "composition": {
+                "Si": "0.30",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.05-0.20",
+                "Mg": "4.5-5.6",
+                "Cr": "0.05-0.20",
+                "Zn": "0.10",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5056",
+                "astm": "B211 / B221",
+                "en": "EN AW-5056A",
+                "jis": "A5056",
+                "gb": "5056",
+                "iso": "AlMg5Cr"
+              },
+              "desc": "High magnesium content alloy with excellent anodizing response for rivets and wire",
+              "tags": [
+                "Rivets",
+                "Wire",
+                "Excellent Anodizing"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 65,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H18",
+                  "hb": 105,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H38",
+                  "hb": 100,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "5154",
+              "tensileStrength": "205-330",
+              "yieldStrength": "75-270",
+              "elongation": 15,
+              "hardness": 58,
+              "density": 2.66,
+              "meltingRange": "593-643",
+              "thermalConductivity": 125,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Welded pressure vessels, marine structures, storage tanks, automotive wheels",
+              "equivalentStandards": "EN AW-5154A, A5154 (JIS)",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.10",
+                "Mg": "3.1-3.9",
+                "Cr": "0.15-0.35",
+                "Zn": "0.20",
+                "Ti": "0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5154",
+                "astm": "B209 / B221",
+                "en": "EN AW-5154A",
+                "jis": "A5154",
+                "gb": "5154A",
+                "iso": "AlMg3.5(A)"
+              },
+              "desc": "Moderate-strength non-heat-treatable alloy for welded structures and pressure vessels",
+              "tags": [
+                "Pressure Vessels",
+                "Weldable",
+                "Marine"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 58,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H34",
+                  "hb": 73,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H112",
+                  "hb": 63,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "5356",
+              "tensileStrength": "265-350",
+              "yieldStrength": "130-285",
+              "elongation": 17,
+              "hardness": 73,
+              "density": 2.64,
+              "meltingRange": "571-635",
+              "thermalConductivity": 117,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Welding filler wire for 5xxx and 6xxx alloys, marine fabrication",
+              "equivalentStandards": "EN AW-5356, AWS A5.10 ER5356",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.05-0.20",
+                "Mg": "4.5-5.5",
+                "Cr": "0.05-0.20",
+                "Zn": "0.10",
+                "Ti": "0.06-0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5356",
+                "astm": "B211 (filler)",
+                "en": "EN AW-5356",
+                "jis": "A5356",
+                "gb": "5356",
+                "iso": "AlMg5Cr(A)"
+              },
+              "desc": "Most widely used aluminum MIG welding filler wire for 5xxx and 6xxx base metals",
+              "tags": [
+                "Welding Filler",
+                "MIG Wire",
+                "Marine"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 63,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H18",
+                  "hb": 96,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "5454",
+              "tensileStrength": "215-305",
+              "yieldStrength": "85-250",
+              "elongation": 14,
+              "hardness": 62,
+              "density": 2.69,
+              "meltingRange": "602-646",
+              "thermalConductivity": 134,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Welded structures, pressure vessels, tanker trucks, hot environments up to 120°C",
+              "equivalentStandards": "EN AW-5454, A5454 (JIS)",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.50-1.0",
+                "Mg": "2.4-3.0",
+                "Cr": "0.05-0.20",
+                "Zn": "0.25",
+                "Ti": "0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5454",
+                "astm": "B209 / B221",
+                "en": "EN AW-5454",
+                "jis": "A5454",
+                "gb": "5454",
+                "iso": "AlMg3Mn"
+              },
+              "desc": "Moderate-strength alloy permitted for use in elevated-temperature pressure vessels",
+              "tags": [
+                "Pressure Vessels",
+                "Elevated Temperature",
+                "Weldable"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 58,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H32",
+                  "hb": 73,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H34",
+                  "hb": 81,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "5657",
+              "tensileStrength": "110-165",
+              "yieldStrength": "40-140",
+              "elongation": 16,
+              "hardness": 30,
+              "density": 2.69,
+              "meltingRange": "607-649",
+              "thermalConductivity": 167,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Bright trim, anodized automotive and appliance trim, decorative applications",
+              "equivalentStandards": "EN AW-5657",
+              "composition": {
+                "Si": "0.08",
+                "Fe": "0.10",
+                "Cu": "0.10",
+                "Mn": "0.03",
+                "Mg": "0.6-1.0",
+                "Cr": "—",
+                "Zn": "0.05",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5657",
+                "astm": "B209",
+                "en": "EN AW-5657",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlMg0.8"
+              },
+              "desc": "High-purity bright-finish alloy for decorative anodized automotive trim",
+              "tags": [
+                "Bright Finish",
+                "Decorative",
+                "Anodizing"
+              ],
+              "tempers": [
+                {
+                  "name": "H25",
+                  "hb": 30,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H28",
+                  "hb": 40,
+                  "type": "Strain Hardened"
+                }
+              ]
             }
           ],
           "standardsCategory": "5xxx Mg"
@@ -1232,6 +1770,159 @@
                 "Mg": "0.40-0.8",
                 "Al": "bal"
               }
+            },
+            {
+              "name": "6066",
+              "tensileStrength": "360-395",
+              "yieldStrength": "310-360",
+              "elongation": 8,
+              "hardness": 120,
+              "density": 2.71,
+              "meltingRange": "565-649",
+              "thermalConductivity": 147,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Forgings and extrusions for high-strength applications, pipeline fittings, automotive",
+              "equivalentStandards": "EN AW-6066",
+              "composition": {
+                "Si": "0.9-1.8",
+                "Fe": "0.50",
+                "Cu": "0.7-1.2",
+                "Mn": "0.6-1.1",
+                "Mg": "0.8-1.4",
+                "Cr": "0.40",
+                "Zn": "0.25",
+                "Ti": "0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "6066",
+                "astm": "B221 / B247",
+                "en": "EN AW-6066",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlSi1.4Cu1Mg1"
+              },
+              "desc": "High-strength Mg-Si-Cu alloy for heavy-duty forgings and structural extrusions",
+              "tags": [
+                "High Strength",
+                "Forgings",
+                "Extrusions"
+              ],
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 120,
+                  "type": "Aged"
+                },
+                {
+                  "name": "O",
+                  "hb": 43,
+                  "type": "Annealed"
+                }
+              ]
+            },
+            {
+              "name": "6463",
+              "tensileStrength": "150-240",
+              "yieldStrength": "90-215",
+              "elongation": 12,
+              "hardness": 74,
+              "density": 2.69,
+              "meltingRange": "616-654",
+              "thermalConductivity": 201,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Architectural extrusions, decorative trim, bright anodized parts, furniture",
+              "equivalentStandards": "EN AW-6463",
+              "composition": {
+                "Si": "0.20-0.6",
+                "Fe": "0.15",
+                "Cu": "0.20",
+                "Mn": "0.05",
+                "Mg": "0.45-0.9",
+                "Cr": "—",
+                "Zn": "0.05",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "6463",
+                "astm": "B221",
+                "en": "EN AW-6463",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlMg0.7Si"
+              },
+              "desc": "Bright-finish variant of 6063 for decorative and architectural extrusions",
+              "tags": [
+                "Bright Finish",
+                "Architectural",
+                "Decorative"
+              ],
+              "tempers": [
+                {
+                  "name": "T1",
+                  "hb": 42,
+                  "type": "Naturally Aged"
+                },
+                {
+                  "name": "T5",
+                  "hb": 60,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 74,
+                  "type": "Aged"
+                }
+              ]
+            },
+            {
+              "name": "6201",
+              "tensileStrength": "290-330",
+              "yieldStrength": "248-310",
+              "elongation": 6,
+              "hardness": 89,
+              "density": 2.69,
+              "meltingRange": "607-654",
+              "thermalConductivity": 201,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Electrical conductor wire, overhead transmission lines, ACSR conductors",
+              "equivalentStandards": "EN AW-6201, ASTM B398",
+              "composition": {
+                "Si": "0.50-0.9",
+                "Fe": "0.50",
+                "Cu": "0.10",
+                "Mn": "0.03",
+                "Mg": "0.6-0.9",
+                "Cr": "0.03",
+                "Zn": "0.10",
+                "Ti": "—",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "6201",
+                "astm": "B398 / B317",
+                "en": "EN AW-6201",
+                "jis": "—",
+                "gb": "6201",
+                "iso": "AlMgSi0.7"
+              },
+              "desc": "High-strength electrical conductor alloy for overhead transmission lines",
+              "tags": [
+                "Electrical Conductor",
+                "High Strength Wire",
+                "Transmission"
+              ],
+              "tempers": [
+                {
+                  "name": "T81",
+                  "hb": 89,
+                  "type": "Aged"
+                }
+              ]
             }
           ],
           "standardsCategory": "6xxx Mg-Si"
@@ -1420,6 +2111,216 @@
                 "Zn": "6.3-7.3",
                 "Al": "bal"
               }
+            },
+            {
+              "name": "7003",
+              "tensileStrength": "310-370",
+              "yieldStrength": "240-315",
+              "elongation": 10,
+              "hardness": 95,
+              "density": 2.79,
+              "meltingRange": "610-650",
+              "thermalConductivity": 155,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Bicycle frames, motorcycle frames, automotive bumpers, structural extrusions",
+              "equivalentStandards": "EN AW-7003, JIS A7003",
+              "composition": {
+                "Si": "0.30",
+                "Fe": "0.35",
+                "Cu": "0.20",
+                "Mn": "0.30",
+                "Mg": "0.50-1.0",
+                "Cr": "0.20",
+                "Zn": "5.0-6.5",
+                "Ti": "0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7003",
+                "astm": "B221",
+                "en": "EN AW-7003",
+                "jis": "A7003",
+                "gb": "7003",
+                "iso": "AlZn6Mg0.8"
+              },
+              "desc": "Weldable medium-strength zinc alloy for structural extrusions and vehicle frames",
+              "tags": [
+                "Weldable",
+                "Structural",
+                "Vehicle Frames"
+              ],
+              "tempers": [
+                {
+                  "name": "T5",
+                  "hb": 95,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 105,
+                  "type": "Aged"
+                }
+              ]
+            },
+            {
+              "name": "7020",
+              "tensileStrength": "350-410",
+              "yieldStrength": "280-350",
+              "elongation": 10,
+              "hardness": 105,
+              "density": 2.78,
+              "meltingRange": "605-650",
+              "thermalConductivity": 142,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Armored vehicles, rail cars, bridges, structural weldments, crane booms",
+              "equivalentStandards": "EN AW-7020, DIN AlZn4.5Mg1",
+              "composition": {
+                "Si": "0.35",
+                "Fe": "0.40",
+                "Cu": "0.20",
+                "Mn": "0.05-0.50",
+                "Mg": "1.0-1.4",
+                "Cr": "0.10-0.35",
+                "Zn": "4.0-5.0",
+                "Ti": "0.08-0.25",
+                "Zr": "0.08-0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7020",
+                "astm": "—",
+                "en": "EN AW-7020",
+                "jis": "—",
+                "gb": "7020",
+                "iso": "AlZn4.5Mg1"
+              },
+              "desc": "Weldable medium-strength alloy widely used in European structural applications",
+              "tags": [
+                "Weldable",
+                "Structural",
+                "European Standard"
+              ],
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 105,
+                  "type": "Aged"
+                },
+                {
+                  "name": "T651",
+                  "hb": 110,
+                  "type": "Aged"
+                }
+              ]
+            },
+            {
+              "name": "7049",
+              "tensileStrength": "510-570",
+              "yieldStrength": "435-510",
+              "elongation": 8,
+              "hardness": 150,
+              "density": 2.84,
+              "meltingRange": "477-635",
+              "thermalConductivity": 142,
+              "corrosionResistance": "Fair",
+              "weldability": "Poor",
+              "applications": "Aircraft forgings, landing gear, high-strength structural, military applications",
+              "equivalentStandards": "EN AW-7049A",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "0.35",
+                "Cu": "1.2-1.9",
+                "Mn": "0.20",
+                "Mg": "2.0-2.9",
+                "Cr": "0.10-0.22",
+                "Zn": "7.2-8.2",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7049",
+                "astm": "B247",
+                "en": "EN AW-7049A",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlZn8MgCu"
+              },
+              "desc": "Ultra-high-strength forging alloy for aircraft structures with SCC resistance in T73 temper",
+              "tags": [
+                "Ultra High Strength",
+                "Forgings",
+                "Aerospace"
+              ],
+              "tempers": [
+                {
+                  "name": "T73",
+                  "hb": 135,
+                  "type": "Overaged"
+                },
+                {
+                  "name": "T7352",
+                  "hb": 140,
+                  "type": "Overaged"
+                }
+              ]
+            },
+            {
+              "name": "7475",
+              "tensileStrength": "490-560",
+              "yieldStrength": "420-505",
+              "elongation": 10,
+              "hardness": 140,
+              "density": 2.81,
+              "meltingRange": "477-635",
+              "thermalConductivity": 138,
+              "corrosionResistance": "Fair",
+              "weldability": "Poor",
+              "applications": "Aerospace fuselage skins, wing skins, critical fatigue-limited structures",
+              "equivalentStandards": "EN AW-7475",
+              "composition": {
+                "Si": "0.10",
+                "Fe": "0.12",
+                "Cu": "1.2-1.9",
+                "Mn": "0.06",
+                "Mg": "1.9-2.6",
+                "Cr": "0.18-0.25",
+                "Zn": "5.2-6.2",
+                "Ti": "0.06",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7475",
+                "astm": "B209",
+                "en": "EN AW-7475",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlZn5.5MgCu"
+              },
+              "desc": "High-purity controlled-toughness variant of 7075 for damage-tolerant aerospace structures",
+              "tags": [
+                "Aerospace",
+                "Damage Tolerant",
+                "High Toughness"
+              ],
+              "tempers": [
+                {
+                  "name": "T7351",
+                  "hb": 135,
+                  "type": "Overaged"
+                },
+                {
+                  "name": "T61",
+                  "hb": 150,
+                  "type": "Aged"
+                },
+                {
+                  "name": "T761",
+                  "hb": 140,
+                  "type": "Overaged"
+                }
+              ]
             }
           ],
           "standardsCategory": "7xxx Zn"
@@ -3110,6 +4011,57 @@
                 "Sn": "0.35",
                 "Al": "bal"
               }
+            },
+            {
+              "name": "A319",
+              "tensileStrength": "185-235",
+              "yieldStrength": "125-165",
+              "elongation": 2,
+              "hardness": 80,
+              "density": 2.79,
+              "meltingRange": "521-599",
+              "thermalConductivity": 109,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Engine blocks, cylinder heads, intake manifolds, transmission cases",
+              "equivalentStandards": "ASTM B85 A319, EN AC-46200 (AlSi5Cu3)",
+              "composition": {
+                "Si": "5.5-6.5",
+                "Fe": "1.0",
+                "Cu": "3.0-4.0",
+                "Mn": "0.50",
+                "Mg": "0.10",
+                "Zn": "1.0",
+                "Ni": "0.35",
+                "Sn": "0.25",
+                "Ti": "0.25",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "ADC14 / A390",
+              "tensileStrength": "275-310",
+              "yieldStrength": "240-280",
+              "elongation": 1,
+              "hardness": 120,
+              "density": 2.73,
+              "meltingRange": "507-649",
+              "thermalConductivity": 134,
+              "corrosionResistance": "Good",
+              "weldability": "Poor",
+              "applications": "Engine blocks with integrated cylinder liners, compressor bodies, high-wear castings",
+              "equivalentStandards": "JIS H5302 ADC14, ASTM B85 A390, EN AC-48000 (AlSi17Cu4Mg)",
+              "composition": {
+                "Si": "16.0-18.0",
+                "Fe": "1.3",
+                "Cu": "4.0-5.0",
+                "Mn": "0.10",
+                "Mg": "0.45-0.65",
+                "Zn": "0.10",
+                "Ni": "—",
+                "Ti": "0.20",
+                "Al": "bal"
+              }
             }
           ]
         },
@@ -3163,6 +4115,30 @@
                 "Zn": "0.5",
                 "Ni": "0.5",
                 "Sn": "0.15",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "A444",
+              "tensileStrength": "145-170",
+              "yieldStrength": "62-83",
+              "elongation": 9,
+              "hardness": 45,
+              "density": 2.68,
+              "meltingRange": "574-613",
+              "thermalConductivity": 155,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Intricate thin-wall castings, cookware, decorative applications, pump housings",
+              "equivalentStandards": "ASTM B85 A444",
+              "composition": {
+                "Si": "6.5-7.5",
+                "Fe": "0.15",
+                "Cu": "0.05",
+                "Mn": "0.05",
+                "Mg": "0.05",
+                "Zn": "0.05",
+                "Ti": "0.20",
                 "Al": "bal"
               }
             }
@@ -3272,6 +4248,85 @@
                 "Zn": "0.05",
                 "Ti": "0.04-0.20",
                 "Be": "0.04-0.07",
+                "Al": "bal"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Special / High-Performance",
+          "alloys": [
+            {
+              "name": "A201",
+              "tensileStrength": "415-485",
+              "yieldStrength": "345-435",
+              "elongation": 5,
+              "hardness": 130,
+              "density": 2.8,
+              "meltingRange": "521-635",
+              "thermalConductivity": 121,
+              "corrosionResistance": "Fair",
+              "weldability": "Poor",
+              "applications": "Aerospace castings, missile components, helicopter transmission housings, high-strength structural castings",
+              "equivalentStandards": "ASTM B26 A201.0 (T7)",
+              "composition": {
+                "Si": "0.05",
+                "Fe": "0.10",
+                "Cu": "4.0-5.2",
+                "Mn": "0.20-0.50",
+                "Mg": "0.15-0.55",
+                "Ti": "0.15-0.35",
+                "Ag": "0.40-1.0",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "A242",
+              "tensileStrength": "185-325",
+              "yieldStrength": "125-290",
+              "elongation": 2,
+              "hardness": 100,
+              "density": 2.82,
+              "meltingRange": "527-638",
+              "thermalConductivity": 138,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Diesel and aircraft pistons, air-cooled cylinder heads, high-temperature castings",
+              "equivalentStandards": "ASTM B26 A242.0, EN AC-21100 (AlCu4Ni2Mg2)",
+              "composition": {
+                "Si": "0.7",
+                "Fe": "1.0",
+                "Cu": "3.5-4.5",
+                "Mn": "0.35",
+                "Mg": "1.2-1.8",
+                "Ni": "1.7-2.3",
+                "Zn": "0.35",
+                "Ti": "0.25",
+                "Al": "bal"
+              }
+            },
+            {
+              "name": "A535",
+              "tensileStrength": "240-275",
+              "yieldStrength": "125-165",
+              "elongation": 9,
+              "hardness": 65,
+              "density": 2.54,
+              "meltingRange": "549-638",
+              "thermalConductivity": 96,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Marine castings, chemical equipment, food processing machinery, architectural castings",
+              "equivalentStandards": "ASTM B26 A535.0, EN AC-51300 (AlMg5)",
+              "composition": {
+                "Si": "0.15",
+                "Fe": "0.15",
+                "Cu": "0.05",
+                "Mn": "0.10-0.25",
+                "Mg": "6.2-7.5",
+                "Zn": "0.05",
+                "Ti": "0.10-0.25",
+                "Be": "0.003-0.007",
                 "Al": "bal"
               }
             }

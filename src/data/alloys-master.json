@@ -97,6 +97,23 @@
               "tags": [
                 "High Conductivity",
                 "Good Formability"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 19,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 26,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H18",
+                  "hb": 35,
+                  "type": "Strain Hardened"
+                }
               ]
             },
             {
@@ -174,7 +191,33 @@
                 "Zn": "0.05",
                 "Ti": "—",
                 "Al": "99.50 min"
-              }
+              },
+              "equivalentStandards": "EN AW-1350, A1350 (JIS)",
+              "standards": {
+                "aa": "1350",
+                "astm": "B230/B233",
+                "en": "EN AW-1350",
+                "jis": "A1350",
+                "gb": "1350",
+                "iso": "EAl 99.5"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 15,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 30,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H19",
+                  "hb": 45,
+                  "type": "Strain Hardened"
+                }
+              ]
             },
             {
               "name": "1200",
@@ -328,6 +371,23 @@
               "tags": [
                 "Good Machinability",
                 "Rivet Alloy"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 45,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "T4",
+                  "hb": 105,
+                  "type": "Solution Heat Treated + Naturally Aged"
+                },
+                {
+                  "name": "T451",
+                  "hb": 105,
+                  "type": "Solution Heat Treated + Stress Relieved"
+                }
               ]
             },
             {
@@ -406,7 +466,28 @@
                 "Pb": "0.20-0.6",
                 "Bi": "0.20-0.6",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-2011, A2011 (JIS)",
+              "standards": {
+                "aa": "2011",
+                "astm": "B211",
+                "en": "EN AW-2011",
+                "jis": "A2011",
+                "gb": "2011",
+                "iso": "AlCuBiPb"
+              },
+              "tempers": [
+                {
+                  "name": "T3",
+                  "hb": 95,
+                  "type": "Solution Treated + Cold Worked"
+                },
+                {
+                  "name": "T8",
+                  "hb": 100,
+                  "type": "Solution Treated + Cold Worked + Aged"
+                }
+              ]
             },
             {
               "name": "2219",
@@ -433,7 +514,33 @@
                 "V": "0.05-0.15",
                 "Zr": "0.10-0.25",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-2219, A2219 (JIS)",
+              "standards": {
+                "aa": "2219",
+                "astm": "B209/B211",
+                "en": "EN AW-2219",
+                "jis": "A2219",
+                "gb": "2219",
+                "iso": "AlCu6Mn"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 55,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "T62",
+                  "hb": 130,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "T87",
+                  "hb": 140,
+                  "type": "Solution Treated + Cold Worked + Aged"
+                }
+              ]
             },
             {
               "name": "2124",
@@ -670,7 +777,33 @@
                 "Mg": "0.20-0.8",
                 "Zn": "0.40",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-3105, A3105 (JIS)",
+              "standards": {
+                "aa": "3105",
+                "astm": "B209",
+                "en": "EN AW-3105",
+                "jis": "A3105",
+                "gb": "3105",
+                "iso": "AlMn0.5Mg0.5"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 28,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 45,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H25",
+                  "hb": 50,
+                  "type": "Strain Hardened + Partially Annealed"
+                }
+              ]
             },
             {
               "name": "3005",
@@ -809,7 +942,28 @@
                 "Mg": "0.8-1.3",
                 "Ni": "0.50-1.3",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-4032, A4032 (JIS)",
+              "standards": {
+                "aa": "4032",
+                "astm": "B247",
+                "en": "EN AW-4032",
+                "jis": "A4032",
+                "gb": "4032",
+                "iso": "AlSi12.5MgCuNi"
+              },
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 120,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "O",
+                  "hb": 65,
+                  "type": "Annealed"
+                }
+              ]
             },
             {
               "name": "4043",
@@ -835,7 +989,28 @@
                 "Mn": "0.05",
                 "Mg": "0.05",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-4043, A4043 (JIS)",
+              "standards": {
+                "aa": "4043",
+                "astm": "B211/ER4043",
+                "en": "EN AW-4043",
+                "jis": "A4043",
+                "gb": "4043",
+                "iso": "AlSi5"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 28,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H18",
+                  "hb": 63,
+                  "type": "Strain Hardened"
+                }
+              ]
             },
             {
               "name": "4047",
@@ -861,7 +1036,28 @@
                 "Mn": "0.15",
                 "Mg": "0.10",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-4047, A4047 (JIS)",
+              "standards": {
+                "aa": "4047",
+                "astm": "B211/ER4047",
+                "en": "EN AW-4047",
+                "jis": "A4047",
+                "gb": "4047",
+                "iso": "AlSi12"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 40,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "WS",
+                  "hb": 40,
+                  "type": "As Welded"
+                }
+              ]
             }
           ],
           "standardsCategory": "4xxx Silicon"
@@ -1009,9 +1205,19 @@
               },
               "tempers": [
                 {
+                  "name": "O",
+                  "hb": 52,
+                  "type": "Annealed"
+                },
+                {
                   "name": "H32",
-                  "hb": 73,
-                  "type": "Stabilized"
+                  "hb": 68,
+                  "type": "Strain Hardened + Stabilized"
+                },
+                {
+                  "name": "H116",
+                  "hb": 72,
+                  "type": "Strain Hardened"
                 }
               ],
               "desc": "Marine structural alloy with good weldability",
@@ -1098,7 +1304,33 @@
                 "Mg": "0.50-1.1",
                 "Zn": "0.25",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-5005, A5005 (JIS)",
+              "standards": {
+                "aa": "5005",
+                "astm": "B209",
+                "en": "EN AW-5005",
+                "jis": "A5005",
+                "gb": "5005",
+                "iso": "AlMg1"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 28,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 41,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H34",
+                  "hb": 41,
+                  "type": "Strain Hardened + Stabilized"
+                }
+              ]
             },
             {
               "name": "5182",
@@ -1124,7 +1356,33 @@
                 "Mn": "0.20-0.50",
                 "Mg": "4.0-5.0",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-5182, A5182 (JIS)",
+              "standards": {
+                "aa": "5182",
+                "astm": "B209",
+                "en": "EN AW-5182",
+                "jis": "A5182",
+                "gb": "5182",
+                "iso": "AlMg4.5Mn0.4"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 58,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H19",
+                  "hb": 95,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H48",
+                  "hb": 85,
+                  "type": "Strain Hardened + Baked"
+                }
+              ]
             },
             {
               "name": "5251",
@@ -1151,7 +1409,33 @@
                 "Mg": "1.7-2.4",
                 "Cr": "0.15",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-5251, A5251 (JIS)",
+              "standards": {
+                "aa": "5251",
+                "astm": "—",
+                "en": "EN AW-5251",
+                "jis": "—",
+                "gb": "5251",
+                "iso": "AlMg2"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 42,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 58,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H22",
+                  "hb": 55,
+                  "type": "Strain Hardened + Partially Annealed"
+                }
+              ]
             },
             {
               "name": "5056",
@@ -1469,9 +1753,19 @@
               ],
               "tempers": [
                 {
+                  "name": "T1",
+                  "hb": 55,
+                  "type": "Naturally Aged"
+                },
+                {
                   "name": "T5",
-                  "hb": 90,
+                  "hb": 75,
                   "type": "Artificially Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 80,
+                  "type": "Solution Heat Treated + Aged"
                 }
               ]
             },
@@ -1713,7 +2007,33 @@
                 "Mn": "0.03",
                 "Mg": "0.35-0.8",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-6101, A6101 (JIS)",
+              "standards": {
+                "aa": "6101",
+                "astm": "B317",
+                "en": "EN AW-6101",
+                "jis": "A6101",
+                "gb": "6101",
+                "iso": "EAlMgSi"
+              },
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 71,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "T61",
+                  "hb": 60,
+                  "type": "Solution Heat Treated + Aged (underaged)"
+                },
+                {
+                  "name": "T63",
+                  "hb": 50,
+                  "type": "Solution Heat Treated + Aged"
+                }
+              ]
             },
             {
               "name": "6262",
@@ -1742,7 +2062,33 @@
                 "Pb": "0.40-0.7",
                 "Bi": "0.40-0.7",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-6262, A6262 (JIS)",
+              "standards": {
+                "aa": "6262",
+                "astm": "B211",
+                "en": "EN AW-6262",
+                "jis": "A6262",
+                "gb": "6262",
+                "iso": "AlMg1SiPb"
+              },
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 95,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "T9",
+                  "hb": 105,
+                  "type": "Solution Treated + Aged + Cold Worked"
+                },
+                {
+                  "name": "O",
+                  "hb": 30,
+                  "type": "Annealed"
+                }
+              ]
             },
             {
               "name": "6351",
@@ -1769,7 +2115,28 @@
                 "Mn": "0.40-0.8",
                 "Mg": "0.40-0.8",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-6351, A6351 (JIS)",
+              "standards": {
+                "aa": "6351",
+                "astm": "B221",
+                "en": "EN AW-6351",
+                "jis": "A6351",
+                "gb": "6351",
+                "iso": "AlSi1Mg0.5Mn"
+              },
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 95,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "O",
+                  "hb": 40,
+                  "type": "Annealed"
+                }
+              ]
             },
             {
               "name": "6066",
@@ -1918,9 +2285,14 @@
               ],
               "tempers": [
                 {
+                  "name": "T6",
+                  "hb": 85,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
                   "name": "T81",
-                  "hb": 89,
-                  "type": "Aged"
+                  "hb": 95,
+                  "type": "Solution Treated + Cold Worked + Aged"
                 }
               ]
             }
@@ -1971,9 +2343,19 @@
               ],
               "tempers": [
                 {
+                  "name": "O",
+                  "hb": 56,
+                  "type": "Annealed"
+                },
+                {
                   "name": "T53",
+                  "hb": 100,
+                  "type": "Solution Treated + Aged"
+                },
+                {
+                  "name": "T6",
                   "hb": 105,
-                  "type": "Aged"
+                  "type": "Solution Heat Treated + Aged"
                 }
               ]
             },
@@ -2110,7 +2492,33 @@
                 "Cr": "0.18-0.28",
                 "Zn": "6.3-7.3",
                 "Al": "bal"
-              }
+              },
+              "equivalentStandards": "EN AW-7178, A7178 (JIS)",
+              "standards": {
+                "aa": "7178",
+                "astm": "B209",
+                "en": "EN AW-7178",
+                "jis": "A7178",
+                "gb": "7178",
+                "iso": "AlZn7MgCu"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 60,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "T6",
+                  "hb": 160,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "T76",
+                  "hb": 145,
+                  "type": "Solution Treated + Overaged"
+                }
+              ]
             },
             {
               "name": "7003",
@@ -2370,6 +2778,23 @@
                 "Corrosion Resistant",
                 "Non-Magnetic",
                 "Weldable"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 123,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked 1/4 Hard",
+                  "hb": 175,
+                  "type": "Cold Worked"
+                },
+                {
+                  "name": "Cold Worked 1/2 Hard",
+                  "hb": 250,
+                  "type": "Cold Worked"
+                }
               ]
             },
             {
@@ -2407,6 +2832,18 @@
               "tags": [
                 "Marine Grade",
                 "Chemical Resistant"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 146,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked 1/4 Hard",
+                  "hb": 190,
+                  "type": "Cold Worked"
+                }
               ]
             },
             {
@@ -2445,6 +2882,18 @@
                 "Ti-Stabilized",
                 "High Temperature",
                 "Weldable"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 150,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 190,
+                  "type": "Cold Worked"
+                }
               ]
             },
             {
@@ -2482,6 +2931,18 @@
                 "Low Carbon",
                 "Weldable",
                 "Non-Magnetic"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 120,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 170,
+                  "type": "Cold Worked"
+                }
               ]
             },
             {
@@ -2520,6 +2981,18 @@
                 "Low Carbon",
                 "Marine Grade",
                 "Biomedical"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 140,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 185,
+                  "type": "Cold Worked"
+                }
               ]
             },
             {
@@ -2551,7 +3024,25 @@
                 "jis": "SUS 310S",
                 "gb": "0Cr25Ni20 / 06Cr25Ni20",
                 "iso": "X8CrNi25-21"
-              }
+              },
+              "desc": "High-temperature austenitic stainless steel with excellent oxidation resistance",
+              "tags": [
+                "High Temperature",
+                "Oxidation Resistant",
+                "Furnace Parts"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Hot Rolled",
+                  "hb": 170,
+                  "type": "Hot Worked"
+                }
+              ]
             },
             {
               "name": "301",
@@ -2583,7 +3074,26 @@
                 "jis": "SUS 301",
                 "gb": "1Cr17Ni7/12Cr17Ni7",
                 "iso": "X10CrNi18-8"
-              }
+              },
+              "applications": "Springs, railway cars, structural components, automotive trim",
+              "equivalentStandards": "1.4310 (EN), SUS301 (JIS)",
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 150,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "1/4 Hard",
+                  "hb": 230,
+                  "type": "Cold Worked"
+                },
+                {
+                  "name": "Full Hard",
+                  "hb": 370,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "303",
@@ -2616,7 +3126,21 @@
                 "jis": "SUS 303",
                 "gb": "Y1Cr18Ni9",
                 "iso": "X8CrNiS18-9"
-              }
+              },
+              "applications": "Screws, bolts, nuts, fittings, shafts, aircraft components",
+              "equivalentStandards": "1.4305 (EN), SUS303 (JIS)",
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Drawn",
+                  "hb": 230,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "309",
@@ -2641,7 +3165,29 @@
                 "Cr": "22-24",
                 "Ni": "12-15",
                 "Fe": "bal"
-              }
+              },
+              "applications": "Furnace parts, heat exchangers, boiler baffles",
+              "equivalentStandards": "1.4828 (EN), SUS309 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "A240/A276",
+                "en": "1.4828",
+                "jis": "SUS309",
+                "gb": "0Cr23Ni13",
+                "iso": "X15CrNiSi25-20"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Hot Rolled",
+                  "hb": 175,
+                  "type": "Hot Worked"
+                }
+              ]
             },
             {
               "name": "310",
@@ -2666,7 +3212,29 @@
                 "Cr": "24-26",
                 "Ni": "19-22",
                 "Fe": "bal"
-              }
+              },
+              "applications": "Furnace parts, kiln linings, radiant tubes, heat treatment fixtures",
+              "equivalentStandards": "1.4845 (EN), SUS310 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "A240/A276",
+                "en": "1.4845",
+                "jis": "SUS310",
+                "gb": "0Cr25Ni20",
+                "iso": "X8CrNi25-21"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Hot Rolled",
+                  "hb": 175,
+                  "type": "Hot Worked"
+                }
+              ]
             },
             {
               "name": "347",
@@ -2692,7 +3260,29 @@
                 "Ni": "9-13",
                 "Nb": "10xC min",
                 "Fe": "bal"
-              }
+              },
+              "applications": "Aircraft exhaust systems, expansion joints, chemical equipment",
+              "equivalentStandards": "1.4550 (EN), SUS347 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "A240/A276",
+                "en": "1.4550",
+                "jis": "SUS347",
+                "gb": "0Cr18Ni11Nb",
+                "iso": "X6CrNiNb18-10"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 200,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ],
           "standardsCategory": "Austenitic"
@@ -2728,6 +3318,26 @@
                 "Automotive",
                 "Heat Resistant",
                 "Low Cost"
+              ],
+              "standards": {
+                "aa": "—",
+                "astm": "A240",
+                "en": "1.4512",
+                "jis": "SUS409",
+                "gb": "0Cr11Ti",
+                "iso": "X2CrTi12"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 137,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "As Rolled",
+                  "hb": 155,
+                  "type": "Hot Worked"
+                }
               ]
             },
             {
@@ -2765,6 +3375,18 @@
                 "Magnetic",
                 "Good Formability",
                 "Decorative"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 155,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 185,
+                  "type": "Cold Worked"
+                }
               ]
             },
             {
@@ -2790,11 +3412,33 @@
                 "Cr": "11.5-14.5",
                 "Al": "0.10-0.30",
                 "Fe": "bal"
-              }
+              },
+              "applications": "Heat exchangers, steam nozzles, quenching racks",
+              "equivalentStandards": "1.4002 (EN), SUS405 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "A240/A276",
+                "en": "1.4002",
+                "jis": "SUS405",
+                "gb": "0Cr13Al",
+                "iso": "X6CrAl13"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 143,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Hot Worked",
+                  "hb": 160,
+                  "type": "Hot Worked"
+                }
+              ]
             },
             {
               "name": "446",
-              "density": 7.5,
+              "density": 7.65,
               "desc": "High-chromium heat-resistant grade",
               "tags": [
                 "High Temperature",
@@ -2815,7 +3459,29 @@
                 "Cr": "23-27",
                 "N": "0.25",
                 "Fe": "bal"
-              }
+              },
+              "applications": "Furnace parts, glass molds, annealing boxes",
+              "equivalentStandards": "1.4762 (EN), SUS446 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "A276",
+                "en": "1.4762",
+                "jis": "SUS446",
+                "gb": "2Cr25N",
+                "iso": "X10CrAlSi25"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 170,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Hot Worked",
+                  "hb": 190,
+                  "type": "Hot Worked"
+                }
+              ]
             }
           ],
           "standardsCategory": "Ferritic"
@@ -2858,6 +3524,23 @@
                 "Heat Treatable",
                 "Magnetic",
                 "Hardenable"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 155,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Tempered",
+                  "hb": 240,
+                  "type": "Quenched + Tempered"
+                },
+                {
+                  "name": "Hardened",
+                  "hb": 388,
+                  "type": "Hardened"
+                }
               ]
             },
             {
@@ -2895,6 +3578,18 @@
                 "Cutlery",
                 "High Hardness",
                 "Wear Resistant"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 195,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Hardened + Tempered",
+                  "hb": 500,
+                  "type": "Quenched + Tempered"
+                }
               ]
             },
             {
@@ -2928,7 +3623,21 @@
                 "jis": "SUS 440C",
                 "gb": "9Cr18Mo/11Cr17",
                 "iso": "X105CrMo17"
-              }
+              },
+              "applications": "Bearings, valve components, cutlery, surgical instruments",
+              "equivalentStandards": "1.4125 (EN), SUS440C (JIS)",
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 223,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Hardened + Tempered",
+                  "hb": 580,
+                  "type": "Quenched + Tempered"
+                }
+              ]
             }
           ],
           "standardsCategory": "Martensitic"
@@ -2973,6 +3682,18 @@
                 "High Strength",
                 "Corrosion Resistant",
                 "Oil & Gas"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 256,
+                  "type": "Solution Annealed"
+                },
+                {
+                  "name": "Hot Worked",
+                  "hb": 270,
+                  "type": "Hot Worked"
+                }
               ]
             },
             {
@@ -3011,7 +3732,19 @@
                 "jis": "SUS 329J4L",
                 "gb": "022Cr25Ni7Mo4N",
                 "iso": "X2CrNiMoN25-7-4"
-              }
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 269,
+                  "type": "Solution Annealed"
+                },
+                {
+                  "name": "Hot Worked",
+                  "hb": 290,
+                  "type": "Hot Worked"
+                }
+              ]
             }
           ],
           "standardsCategory": "Duplex"
@@ -3052,7 +3785,31 @@
                 "jis": "SUS 630",
                 "gb": "05Cr17Ni4Cu4Nb",
                 "iso": "X5CrNiCuNb16-4"
-              }
+              },
+              "applications": "Aerospace components, chemical processing, nuclear reactor",
+              "equivalentStandards": "1.4542 (EN), SUS630 (JIS)",
+              "tempers": [
+                {
+                  "name": "H900",
+                  "hb": 388,
+                  "type": "Precipitation Hardened"
+                },
+                {
+                  "name": "H1025",
+                  "hb": 341,
+                  "type": "Precipitation Hardened"
+                },
+                {
+                  "name": "H1150",
+                  "hb": 293,
+                  "type": "Precipitation Hardened"
+                },
+                {
+                  "name": "Condition A",
+                  "hb": 363,
+                  "type": "Solution Treated"
+                }
+              ]
             },
             {
               "name": "15-5 PH",
@@ -3079,7 +3836,34 @@
                 "Cu": "2.5-4.5",
                 "Nb": "0.15-0.45",
                 "Fe": "bal"
-              }
+              },
+              "applications": "Aerospace, chemical processing, food processing, nuclear waste",
+              "equivalentStandards": "1.4545 (EN), —",
+              "standards": {
+                "aa": "—",
+                "astm": "A564",
+                "en": "1.4545",
+                "jis": "—",
+                "gb": "0Cr15Ni5Cu4Nb",
+                "iso": "X5CrNiCu15-5"
+              },
+              "tempers": [
+                {
+                  "name": "H900",
+                  "hb": 388,
+                  "type": "Precipitation Hardened"
+                },
+                {
+                  "name": "H1025",
+                  "hb": 341,
+                  "type": "Precipitation Hardened"
+                },
+                {
+                  "name": "Condition A",
+                  "hb": 331,
+                  "type": "Solution Treated"
+                }
+              ]
             }
           ]
         }
@@ -3119,7 +3903,30 @@
                 "en": "CW004A",
                 "jis": "C1100",
                 "gb": "T2"
-              }
+              },
+              "desc": "Electrolytic tough pitch copper, highest electrical conductivity",
+              "tags": [
+                "High Conductivity",
+                "Electrical",
+                "Pure Copper"
+              ],
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 40,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 80,
+                  "type": "Cold Worked"
+                },
+                {
+                  "name": "H08 (Spring)",
+                  "hb": 90,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C101 (OFE)",
@@ -3140,8 +3947,31 @@
               "applications": "Electronic components, vacuum seals, waveguides",
               "composition": {
                 "Cu": "99.99 min",
-                "O": "0.0005"
-              }
+                "O": "0.0005 max",
+                "P": "—",
+                "Ag": "—"
+              },
+              "equivalentStandards": "CW009A (EN), C1011 (JIS)",
+              "standards": {
+                "aa": "C10100",
+                "astm": "B152/B187",
+                "en": "CW009A",
+                "jis": "C1011",
+                "gb": "TU1",
+                "iso": "Cu-OFE"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 40,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 82,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C110 (ETP)",
@@ -3162,8 +3992,30 @@
               "applications": "Electrical wire, busbars, roofing",
               "composition": {
                 "Cu": "99.90 min",
-                "O": "0.04"
-              }
+                "O": "0.04",
+                "P": "—"
+              },
+              "equivalentStandards": "CW004A (EN), C1100 (JIS)",
+              "standards": {
+                "aa": "C11000",
+                "astm": "B152/B187",
+                "en": "CW004A",
+                "jis": "C1100",
+                "gb": "T2",
+                "iso": "Cu-ETP"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 42,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 80,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C122 (DHP)",
@@ -3185,8 +4037,30 @@
               "applications": "Plumbing tubes, heat exchangers",
               "composition": {
                 "Cu": "99.90 min",
-                "P": "0.015-0.040"
-              }
+                "P": "0.015-0.040",
+                "O": "—"
+              },
+              "equivalentStandards": "CW024A (EN), C1220 (JIS)",
+              "standards": {
+                "aa": "C12200",
+                "astm": "B75/B88",
+                "en": "CW024A",
+                "jis": "C1220",
+                "gb": "TP2",
+                "iso": "Cu-DHP"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 40,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 77,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         },
@@ -3218,7 +4092,30 @@
                 "en": "CW101C",
                 "jis": "C1720",
                 "gb": "QBe2"
-              }
+              },
+              "desc": "High-strength beryllium copper for springs and tooling",
+              "tags": [
+                "High Strength",
+                "Springs",
+                "Non-Sparking Tools"
+              ],
+              "tempers": [
+                {
+                  "name": "A (Solution Treated)",
+                  "hb": 143,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "AT (Aged)",
+                  "hb": 360,
+                  "type": "Precipitation Hardened"
+                },
+                {
+                  "name": "HT (Hard + Aged)",
+                  "hb": 388,
+                  "type": "Cold Worked + Aged"
+                }
+              ]
             },
             {
               "name": "C172",
@@ -3242,7 +4139,28 @@
                 "Cu": "bal",
                 "Be": "1.8-2.0",
                 "Co": "0.20 min"
-              }
+              },
+              "equivalentStandards": "CW101C (EN), C1720 (JIS)",
+              "standards": {
+                "aa": "C17200",
+                "astm": "B196/B194",
+                "en": "CW101C",
+                "jis": "C1720",
+                "gb": "QBe2",
+                "iso": "CuBe2"
+              },
+              "tempers": [
+                {
+                  "name": "A",
+                  "hb": 143,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "AT",
+                  "hb": 360,
+                  "type": "Precipitation Hardened"
+                }
+              ]
             },
             {
               "name": "C175",
@@ -3265,7 +4183,28 @@
                 "Cu": "bal",
                 "Be": "0.40-0.7",
                 "Co": "1.4-2.2"
-              }
+              },
+              "equivalentStandards": "CW104C (EN), C1750 (JIS)",
+              "standards": {
+                "aa": "C17500",
+                "astm": "B534",
+                "en": "CW104C",
+                "jis": "C1750",
+                "gb": "QBe0.4Co2.5",
+                "iso": "CuCo2Be"
+              },
+              "tempers": [
+                {
+                  "name": "A",
+                  "hb": 95,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "AT",
+                  "hb": 210,
+                  "type": "Precipitation Hardened"
+                }
+              ]
             }
           ]
         },
@@ -3295,7 +4234,30 @@
                 "en": "CW505L",
                 "jis": "C2600",
                 "gb": "H68"
-              }
+              },
+              "desc": "70/30 cartridge brass, excellent cold formability",
+              "tags": [
+                "Cartridge Brass",
+                "Deep Drawing",
+                "Cold Forming"
+              ],
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 55,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 125,
+                  "type": "Cold Worked"
+                },
+                {
+                  "name": "H08 (Spring)",
+                  "hb": 155,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C36000 (Free-Cutting Brass)",
@@ -3320,7 +4282,25 @@
                 "en": "CW603N",
                 "jis": "C3604",
                 "gb": "HPb63-3"
-              }
+              },
+              "desc": "Best machinability rating (100%), leaded free-cutting brass",
+              "tags": [
+                "Free-Cutting",
+                "Screw Machine",
+                "Leaded"
+              ],
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 55,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H02 (Half Hard)",
+                  "hb": 100,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         },
@@ -3352,7 +4332,30 @@
                 "en": "CW451K",
                 "jis": "C5111",
                 "gb": "QSn4-3"
-              }
+              },
+              "desc": "Phosphor bronze with excellent fatigue resistance for springs",
+              "tags": [
+                "Springs",
+                "Electrical Contacts",
+                "Fatigue Resistant"
+              ],
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 55,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 145,
+                  "type": "Cold Worked"
+                },
+                {
+                  "name": "H08 (Spring)",
+                  "hb": 175,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C220 (Commercial Bronze)",
@@ -3372,9 +4375,32 @@
               "weldability": "Good",
               "applications": "Architectural trim, grillwork, marine hardware",
               "composition": {
-                "Cu": "89-91",
-                "Zn": "bal"
-              }
+                "Cu": "bal",
+                "Zn": "bal",
+                "Pb": "0.05",
+                "Fe": "0.05"
+              },
+              "equivalentStandards": "CW502L (EN), C2200 (JIS)",
+              "standards": {
+                "aa": "C22000",
+                "astm": "B36",
+                "en": "CW502L",
+                "jis": "C2200",
+                "gb": "H90",
+                "iso": "CuZn10"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 43,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 82,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C510 (Phosphor Bronze A)",
@@ -3397,7 +4423,28 @@
                 "Cu": "bal",
                 "Sn": "4.2-5.8",
                 "P": "0.03-0.35"
-              }
+              },
+              "equivalentStandards": "CW451K (EN), C5101 (JIS)",
+              "standards": {
+                "aa": "C51000",
+                "astm": "B103/B139",
+                "en": "CW451K",
+                "jis": "C5101",
+                "gb": "QSn6.5-0.1",
+                "iso": "CuSn6"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 55,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 145,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C544 (Phosphor Bronze B)",
@@ -3422,7 +4469,28 @@
                 "Pb": "1.0-2.5",
                 "Zn": "1.5-4.5",
                 "P": "0.01-0.50"
-              }
+              },
+              "equivalentStandards": "CW456K (EN), C5441 (JIS)",
+              "standards": {
+                "aa": "C54400",
+                "astm": "B139",
+                "en": "CW456K",
+                "jis": "C5441",
+                "gb": "QSn4-4-4",
+                "iso": "CuSn4Pb4Zn3"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 50,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 100,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C630 (Aluminum Bronze)",
@@ -3446,7 +4514,28 @@
                 "Al": "9.0-11.0",
                 "Fe": "2.0-4.0",
                 "Mn": "0.50"
-              }
+              },
+              "equivalentStandards": "CW307G (EN), C6301 (JIS)",
+              "standards": {
+                "aa": "C63000",
+                "astm": "B150/B169",
+                "en": "CW307G",
+                "jis": "C6301",
+                "gb": "QAl10-4-4",
+                "iso": "CuAl10Fe3Mn2"
+              },
+              "tempers": [
+                {
+                  "name": "M20 (As Cast)",
+                  "hb": 170,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "TQ50 (Quenched+Tempered)",
+                  "hb": 300,
+                  "type": "Quenched + Tempered"
+                }
+              ]
             },
             {
               "name": "C932 (Bearing Bronze)",
@@ -3471,7 +4560,28 @@
                 "Sn": "6.3-7.5",
                 "Pb": "6.0-8.0",
                 "Zn": "1.0-4.0"
-              }
+              },
+              "equivalentStandards": "CC480K (EN), CAC406 (JIS)",
+              "standards": {
+                "aa": "C93200",
+                "astm": "B584",
+                "en": "CC480K",
+                "jis": "CAC406",
+                "gb": "ZCuSn10Pb5",
+                "iso": "CuSn10Pb10"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 65,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "—",
+                  "hb": 65,
+                  "type": "Cast Only"
+                }
+              ]
             }
           ]
         },
@@ -3502,7 +4612,25 @@
                 "en": "CW354H",
                 "jis": "C7150",
                 "gb": "BFe30-1-1"
-              }
+              },
+              "desc": "70/30 copper-nickel alloy for marine and seawater applications",
+              "tags": [
+                "Marine",
+                "Seawater Resistant",
+                "Heat Exchanger"
+              ],
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 70,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 140,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         }
@@ -3536,7 +4664,33 @@
                 "H": "0.015",
                 "N": "0.03",
                 "O": "0.18"
-              }
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.1",
+                "en": "3.7025",
+                "jis": "TP270C",
+                "gb": "TA1",
+                "iso": "—"
+              },
+              "desc": "CP titanium Grade 1, softest and most ductile",
+              "tags": [
+                "Pure Titanium",
+                "Medical",
+                "Corrosion Resistant"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 120,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 200,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Grade 2 (CP)",
@@ -3558,7 +4712,33 @@
                 "H": "0.015",
                 "N": "0.03",
                 "O": "0.25"
-              }
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.2",
+                "en": "3.7035",
+                "jis": "TP340C",
+                "gb": "TA2",
+                "iso": "—"
+              },
+              "desc": "Most common CP titanium, good strength-to-weight ratio",
+              "tags": [
+                "Pure Titanium",
+                "General Purpose",
+                "Chemical Processing"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 250,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Grade 1",
@@ -3585,7 +4765,28 @@
                 "H": "0.015",
                 "N": "0.03",
                 "O": "0.18"
-              }
+              },
+              "equivalentStandards": "3.7025 (EN), TP270C (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.1",
+                "en": "3.7025",
+                "jis": "TP270C",
+                "gb": "TA1",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 120,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 200,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Grade 2",
@@ -3612,7 +4813,28 @@
                 "H": "0.015",
                 "N": "0.03",
                 "O": "0.25"
-              }
+              },
+              "equivalentStandards": "3.7035 (EN), TP340C (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.2",
+                "en": "3.7035",
+                "jis": "TP340C",
+                "gb": "TA2",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 250,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Grade 3",
@@ -3637,7 +4859,29 @@
                 "H": "0.015",
                 "N": "0.05",
                 "O": "0.35"
-              }
+              },
+              "applications": "Airframe components, chemical processing, marine hardware",
+              "equivalentStandards": "3.7055 (EN), TP480C (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.3",
+                "en": "3.7055",
+                "jis": "TP480C",
+                "gb": "TA3",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 200,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 300,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Grade 4",
@@ -3662,7 +4906,29 @@
                 "H": "0.015",
                 "N": "0.05",
                 "O": "0.40"
-              }
+              },
+              "applications": "Surgical implants, marine hardware, aerospace fasteners",
+              "equivalentStandards": "3.7065 (EN), TP550C (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.4",
+                "en": "3.7065",
+                "jis": "TP550C",
+                "gb": "TA4",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 253,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 350,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         },
@@ -3691,7 +4957,33 @@
                 "H": "0.015",
                 "N": "0.05",
                 "O": "0.20"
-              }
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.5",
+                "en": "3.7164",
+                "jis": "TAB6400",
+                "gb": "TC4",
+                "iso": "—"
+              },
+              "desc": "Most widely used titanium alloy, excellent strength-to-weight",
+              "tags": [
+                "Aerospace",
+                "Medical Implants",
+                "High Strength"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 334,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "STA",
+                  "hb": 379,
+                  "type": "Solution Treated + Aged"
+                }
+              ]
             },
             {
               "name": "Grade 23 (Ti-6Al-4V ELI)",
@@ -3715,7 +5007,33 @@
                 "H": "0.0125",
                 "N": "0.03",
                 "O": "0.13"
-              }
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.23",
+                "en": "3.7165",
+                "jis": "TAB6400ELI",
+                "gb": "TC4ELI",
+                "iso": "—"
+              },
+              "desc": "Extra-low interstitial Ti-6Al-4V for medical implants",
+              "tags": [
+                "Medical",
+                "Biocompatible",
+                "Surgical"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 311,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "STA",
+                  "hb": 360,
+                  "type": "Solution Treated + Aged"
+                }
+              ]
             },
             {
               "name": "Ti-5Al-2.5Sn (Grade 6)",
@@ -3741,11 +5059,33 @@
                 "Fe": "0.50",
                 "C": "0.08",
                 "O": "0.20"
-              }
+              },
+              "applications": "Gas turbine engines, airframe components, chemical processing",
+              "equivalentStandards": "3.7115 (EN), —",
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.6",
+                "en": "3.7115",
+                "jis": "—",
+                "gb": "TA7",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 310,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Stress Relieved",
+                  "hb": 320,
+                  "type": "Stress Relieved"
+                }
+              ]
             },
             {
               "name": "Ti-8Al-1Mo-1V",
-              "density": 4.37,
+              "density": 4.43,
               "desc": "High modulus alloy for jet engine components",
               "tags": [
                 "Jet Engine",
@@ -3765,7 +5105,29 @@
                 "Mo": "0.75-1.25",
                 "V": "0.75-1.25",
                 "Fe": "0.30"
-              }
+              },
+              "applications": "Jet engine compressor blades, airframe skins",
+              "equivalentStandards": "—",
+              "standards": {
+                "aa": "—",
+                "astm": "B381",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Duplex Annealed",
+                  "hb": 321,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "STA",
+                  "hb": 350,
+                  "type": "Solution Treated + Aged"
+                }
+              ]
             },
             {
               "name": "Ti-6Al-4V (Grade 5)",
@@ -3792,7 +5154,28 @@
                 "C": "0.08",
                 "Fe": "0.40",
                 "O": "0.20"
-              }
+              },
+              "equivalentStandards": "3.7164 (EN), TAB6400 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.5",
+                "en": "3.7164",
+                "jis": "TAB6400",
+                "gb": "TC4",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 334,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "STA",
+                  "hb": 379,
+                  "type": "Solution Treated + Aged"
+                }
+              ]
             },
             {
               "name": "Ti-6Al-4V ELI (Grade 23)",
@@ -3819,7 +5202,28 @@
                 "C": "0.08",
                 "Fe": "0.25",
                 "O": "0.13"
-              }
+              },
+              "equivalentStandards": "3.7165 (EN), TAB6400ELI (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.23",
+                "en": "3.7165",
+                "jis": "TAB6400ELI",
+                "gb": "TC4ELI",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 311,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "STA",
+                  "hb": 360,
+                  "type": "Solution Treated + Aged"
+                }
+              ]
             },
             {
               "name": "Ti-6Al-2Sn-4Zr-2Mo",
@@ -3844,7 +5248,29 @@
                 "Sn": "1.75-2.25",
                 "Zr": "3.5-4.5",
                 "Mo": "1.75-2.25"
-              }
+              },
+              "applications": "Jet engine components, airframe structures, compressor discs",
+              "equivalentStandards": "3.7145 (EN), —",
+              "standards": {
+                "aa": "—",
+                "astm": "B381",
+                "en": "3.7145",
+                "jis": "—",
+                "gb": "TC8",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 330,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "STA",
+                  "hb": 370,
+                  "type": "Solution Treated + Aged"
+                }
+              ]
             },
             {
               "name": "Ti-3Al-8V-6Cr-4Mo-4Zr (Beta C)",
@@ -3870,7 +5296,29 @@
                 "Cr": "5.5-6.5",
                 "Mo": "3.5-4.5",
                 "Zr": "3.5-4.5"
-              }
+              },
+              "applications": "Springs, fasteners, aerospace structures",
+              "equivalentStandards": "—",
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "STA",
+                  "hb": 375,
+                  "type": "Solution Treated + Aged"
+                },
+                {
+                  "name": "Annealed",
+                  "hb": 300,
+                  "type": "Annealed"
+                }
+              ]
             },
             {
               "name": "Ti-15V-3Cr-3Al-3Sn",
@@ -3895,7 +5343,29 @@
                 "Cr": "2.5-3.5",
                 "Al": "2.5-3.5",
                 "Sn": "2.5-3.5"
-              }
+              },
+              "applications": "Aerospace hydraulic tubing, springs, clips",
+              "equivalentStandards": "—",
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 270,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "STA",
+                  "hb": 410,
+                  "type": "Solution Treated + Aged"
+                }
+              ]
             }
           ]
         },
@@ -3923,7 +5393,33 @@
                 "H": "0.015",
                 "N": "0.03",
                 "O": "0.25"
-              }
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "B265 Gr.7",
+                "en": "3.7235",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "desc": "Pd-stabilized titanium for enhanced corrosion resistance",
+              "tags": [
+                "Chemical Processing",
+                "Corrosion Resistant",
+                "Palladium"
+              ],
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 250,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         }
@@ -3960,7 +5456,33 @@
                 "Ni": "0.5",
                 "Sn": "0.3",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "383",
+                "astm": "A383",
+                "en": "EN AC-46000",
+                "jis": "ADC12",
+                "gb": "YL113",
+                "iso": "AlSi10Cu2Fe"
+              },
+              "desc": "Most popular die casting alloy, excellent castability and strength",
+              "tags": [
+                "Die Casting",
+                "General Purpose",
+                "High Volume"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 80,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5",
+                  "hb": 85,
+                  "type": "Artificially Aged"
+                }
+              ]
             },
             {
               "name": "ADC10 / A380",
@@ -3985,7 +5507,33 @@
                 "Ni": "0.5",
                 "Sn": "0.3",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "380",
+                "astm": "A380",
+                "en": "EN AC-46000",
+                "jis": "ADC10",
+                "gb": "YL104",
+                "iso": "AlSi8Cu3"
+              },
+              "desc": "Versatile die casting alloy with good mechanical properties",
+              "tags": [
+                "Die Casting",
+                "Automotive",
+                "Versatile"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 80,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5",
+                  "hb": 85,
+                  "type": "Artificially Aged"
+                }
+              ]
             },
             {
               "name": "A384",
@@ -4010,7 +5558,33 @@
                 "Ni": "0.5",
                 "Sn": "0.35",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "384",
+                "astm": "A384",
+                "en": "EN AC-46200",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlSi11Cu3"
+              },
+              "desc": "High-silicon die casting alloy for thin-walled parts",
+              "tags": [
+                "Die Casting",
+                "Thin Wall",
+                "Pressure Tight"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 85,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5",
+                  "hb": 90,
+                  "type": "Artificially Aged"
+                }
+              ]
             },
             {
               "name": "A319",
@@ -4036,7 +5610,33 @@
                 "Sn": "0.25",
                 "Ti": "0.25",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "319",
+                "astm": "A319",
+                "en": "EN AC-46200",
+                "jis": "AC4B",
+                "gb": "ZL108",
+                "iso": "AlSi6Cu3"
+              },
+              "desc": "Sand/permanent mold casting alloy for engine components",
+              "tags": [
+                "Sand Casting",
+                "Engine Blocks",
+                "Automotive"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 70,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T6",
+                  "hb": 95,
+                  "type": "Solution Heat Treated + Aged"
+                }
+              ]
             },
             {
               "name": "ADC14 / A390",
@@ -4061,7 +5661,33 @@
                 "Ni": "—",
                 "Ti": "0.20",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "390",
+                "astm": "A390",
+                "en": "EN AC-48000",
+                "jis": "ADC14",
+                "gb": "YL117",
+                "iso": "AlSi17Cu4Mg"
+              },
+              "desc": "Hypereutectic high-silicon alloy for wear-resistant applications",
+              "tags": [
+                "Wear Resistant",
+                "High Silicon",
+                "Engine Components"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 120,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5",
+                  "hb": 130,
+                  "type": "Artificially Aged"
+                }
+              ]
             }
           ]
         },
@@ -4091,7 +5717,33 @@
                 "Ni": "0.5",
                 "Sn": "0.1",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "413",
+                "astm": "A413",
+                "en": "EN AC-44100",
+                "jis": "ADC1",
+                "gb": "YL102",
+                "iso": "AlSi12"
+              },
+              "desc": "Eutectic Al-Si alloy with excellent fluidity for complex castings",
+              "tags": [
+                "Eutectic",
+                "Complex Shapes",
+                "Pressure Tight"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 70,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Annealed",
+                  "hb": 55,
+                  "type": "Annealed"
+                }
+              ]
             },
             {
               "name": "ADC3 / A360",
@@ -4116,7 +5768,33 @@
                 "Ni": "0.5",
                 "Sn": "0.15",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "360",
+                "astm": "A360",
+                "en": "EN AC-43400",
+                "jis": "ADC3",
+                "gb": "YL105",
+                "iso": "AlSi10Mg"
+              },
+              "desc": "High ductility die casting alloy with good corrosion resistance",
+              "tags": [
+                "Ductile",
+                "Corrosion Resistant",
+                "Marine"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 75,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5",
+                  "hb": 80,
+                  "type": "Artificially Aged"
+                }
+              ]
             },
             {
               "name": "A444",
@@ -4140,7 +5818,33 @@
                 "Zn": "0.05",
                 "Ti": "0.20",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "444",
+                "astm": "A444",
+                "en": "EN AC-44200",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlSi9"
+              },
+              "desc": "High elongation casting alloy for impact-resistant applications",
+              "tags": [
+                "High Elongation",
+                "Impact Resistant",
+                "Ductile"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 45,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T4",
+                  "hb": 50,
+                  "type": "Solution Heat Treated"
+                }
+              ]
             }
           ]
         },
@@ -4170,7 +5874,33 @@
                 "Ni": "0.1",
                 "Sn": "0.1",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "EN AC-51300",
+                "jis": "ADC5",
+                "gb": "YL302",
+                "iso": "AlMg5Si1"
+              },
+              "desc": "Magnesium-rich die casting alloy with excellent corrosion resistance",
+              "tags": [
+                "Corrosion Resistant",
+                "Marine",
+                "Decorative"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 60,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T4",
+                  "hb": 65,
+                  "type": "Solution Heat Treated"
+                }
+              ]
             },
             {
               "name": "ADC6",
@@ -4195,7 +5925,33 @@
                 "Ni": "0.1",
                 "Sn": "0.1",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "518",
+                "astm": "A518",
+                "en": "EN AC-51100",
+                "jis": "ADC6",
+                "gb": "—",
+                "iso": "AlMg8"
+              },
+              "desc": "High-magnesium die casting alloy for maximum corrosion resistance",
+              "tags": [
+                "High Mg",
+                "Corrosion Resistant",
+                "Marine"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 65,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "—",
+                  "hb": 65,
+                  "type": "Cast Only"
+                }
+              ]
             }
           ]
         },
@@ -4224,7 +5980,38 @@
                 "Zn": "0.1",
                 "Ti": "0.2",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "356",
+                "astm": "A356",
+                "en": "EN AC-42100",
+                "jis": "AC4C",
+                "gb": "ZL101",
+                "iso": "AlSi7Mg"
+              },
+              "desc": "Premium casting alloy with excellent strength after T6 heat treatment",
+              "tags": [
+                "T6 Heat Treat",
+                "Aerospace",
+                "Premium Casting"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 55,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T6",
+                  "hb": 90,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "T71",
+                  "hb": 70,
+                  "type": "Overaged"
+                }
+              ]
             },
             {
               "name": "A357 (T6)",
@@ -4249,7 +6036,33 @@
                 "Ti": "0.04-0.20",
                 "Be": "0.04-0.07",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "357",
+                "astm": "A357",
+                "en": "EN AC-42200",
+                "jis": "—",
+                "gb": "ZL101A",
+                "iso": "AlSi7Mg0.6"
+              },
+              "desc": "High-strength variant of A356 with added Be for fluidity",
+              "tags": [
+                "High Strength",
+                "Aerospace",
+                "Premium"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 60,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T6",
+                  "hb": 100,
+                  "type": "Solution Heat Treated + Aged"
+                }
+              ]
             }
           ]
         },
@@ -4278,7 +6091,33 @@
                 "Ti": "0.15-0.35",
                 "Ag": "0.40-1.0",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "201",
+                "astm": "A201",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlCu4.5MgTi"
+              },
+              "desc": "Highest strength aluminum casting alloy for aerospace",
+              "tags": [
+                "Highest Strength",
+                "Aerospace",
+                "Premium"
+              ],
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 130,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "T7",
+                  "hb": 115,
+                  "type": "Overaged + Stabilized"
+                }
+              ]
             },
             {
               "name": "A242",
@@ -4303,7 +6142,33 @@
                 "Zn": "0.35",
                 "Ti": "0.25",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "242",
+                "astm": "A242",
+                "en": "EN AC-21100",
+                "jis": "AC1B",
+                "gb": "ZL105",
+                "iso": "AlCu4Ni2Mg"
+              },
+              "desc": "Heat-resistant casting alloy for pistons and cylinder heads",
+              "tags": [
+                "Heat Resistant",
+                "Pistons",
+                "High Temperature"
+              ],
+              "tempers": [
+                {
+                  "name": "T571",
+                  "hb": 100,
+                  "type": "Solution Treated + Artificially Aged"
+                },
+                {
+                  "name": "T77",
+                  "hb": 90,
+                  "type": "Overaged"
+                }
+              ]
             },
             {
               "name": "A535",
@@ -4311,7 +6176,7 @@
               "yieldStrength": "125-165",
               "elongation": 9,
               "hardness": 65,
-              "density": 2.54,
+              "density": 2.62,
               "meltingRange": "549-638",
               "thermalConductivity": 96,
               "corrosionResistance": "Excellent",
@@ -4328,7 +6193,33 @@
                 "Ti": "0.10-0.25",
                 "Be": "0.003-0.007",
                 "Al": "bal"
-              }
+              },
+              "standards": {
+                "aa": "535",
+                "astm": "A535",
+                "en": "EN AC-51400",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlMg7"
+              },
+              "desc": "Non-heat-treatable high-Mg casting alloy, excellent machinability",
+              "tags": [
+                "Non-Heat-Treatable",
+                "Machinability",
+                "Marine"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 60,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "—",
+                  "hb": 60,
+                  "type": "Cast Only"
+                }
+              ]
             }
           ]
         }
@@ -4344,7 +6235,7 @@
           "alloys": [
             {
               "name": "C210 (Gilding Metal)",
-              "density": 8.86,
+              "density": 8.8,
               "desc": "95/5 copper-zinc with red-gold color",
               "tags": [
                 "Decorative",
@@ -4360,9 +6251,33 @@
               "corrosionResistance": "Good",
               "weldability": "Good",
               "composition": {
-                "Cu": "94-96",
-                "Zn": "bal"
-              }
+                "Cu": "bal",
+                "Zn": "bal",
+                "Fe": "0.05",
+                "Pb": "0.05"
+              },
+              "applications": "Coins, medals, emblems, bullet jackets",
+              "equivalentStandards": "CW501L (EN), C2100 (JIS)",
+              "standards": {
+                "aa": "C21000",
+                "astm": "B36",
+                "en": "CW501L",
+                "jis": "C2100",
+                "gb": "H96",
+                "iso": "CuZn5"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 52,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 96,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C220 (Commercial Bronze)",
@@ -4381,9 +6296,33 @@
               "corrosionResistance": "Good",
               "weldability": "Good",
               "composition": {
-                "Cu": "89-91",
-                "Zn": "bal"
-              }
+                "Cu": "bal",
+                "Zn": "bal",
+                "Fe": "0.05",
+                "Pb": "0.05"
+              },
+              "applications": "Architectural trim, screen cloth, rivets, screws",
+              "equivalentStandards": "CW502L (EN), C2200 (JIS)",
+              "standards": {
+                "aa": "C22000",
+                "astm": "B36",
+                "en": "CW502L",
+                "jis": "C2200",
+                "gb": "H90",
+                "iso": "CuZn10"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 44,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 84,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C230 (Red Brass)",
@@ -4402,9 +6341,33 @@
               "corrosionResistance": "Good",
               "weldability": "Good",
               "composition": {
-                "Cu": "84-86",
-                "Zn": "bal"
-              }
+                "Cu": "bal",
+                "Zn": "bal",
+                "Fe": "0.05",
+                "Pb": "0.05"
+              },
+              "applications": "Plumbing, condenser tubes, heat exchangers",
+              "equivalentStandards": "CW503L (EN), C2300 (JIS)",
+              "standards": {
+                "aa": "C23000",
+                "astm": "B43",
+                "en": "CW503L",
+                "jis": "C2300",
+                "gb": "H85",
+                "iso": "CuZn15"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 49,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 100,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C260 (Cartridge Brass)",
@@ -4424,11 +6387,38 @@
               "corrosionResistance": "Fair",
               "weldability": "Good",
               "composition": {
-                "Cu": "68.5-71.5",
+                "Cu": "bal",
                 "Zn": "bal",
                 "Fe": "0.05",
                 "Pb": "0.07"
-              }
+              },
+              "applications": "Ammunition casings, radiator cores, lamp fittings, pins",
+              "equivalentStandards": "CW505L (EN), C2600 (JIS)",
+              "standards": {
+                "aa": "C26000",
+                "astm": "B36/B134",
+                "en": "CW505L",
+                "jis": "C2600",
+                "gb": "H70",
+                "iso": "CuZn30"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 55,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 128,
+                  "type": "Cold Worked"
+                },
+                {
+                  "name": "H08 (Spring)",
+                  "hb": 160,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C270 (Yellow Brass)",
@@ -4447,9 +6437,33 @@
               "corrosionResistance": "Fair",
               "weldability": "Fair",
               "composition": {
-                "Cu": "63-68.5",
-                "Zn": "bal"
-              }
+                "Cu": "bal",
+                "Zn": "bal",
+                "Fe": "0.05",
+                "Pb": "0.07"
+              },
+              "applications": "Architectural hardware, fasteners, connectors",
+              "equivalentStandards": "CW506L (EN), C2700 (JIS)",
+              "standards": {
+                "aa": "C27000",
+                "astm": "B36",
+                "en": "CW506L",
+                "jis": "C2700",
+                "gb": "H65",
+                "iso": "CuZn35"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 55,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H04 (Hard)",
+                  "hb": 130,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         },
@@ -4474,9 +6488,33 @@
               "corrosionResistance": "Fair",
               "weldability": "Fair",
               "composition": {
-                "Cu": "59-63",
-                "Zn": "bal"
-              }
+                "Cu": "bal",
+                "Zn": "bal",
+                "Fe": "0.07",
+                "Pb": "0.07"
+              },
+              "applications": "Condenser plates, architectural panels, boat hardware",
+              "equivalentStandards": "CW509L (EN), C2800 (JIS)",
+              "standards": {
+                "aa": "C28000",
+                "astm": "B111/B171",
+                "en": "CW509L",
+                "jis": "C2800",
+                "gb": "H62",
+                "iso": "CuZn40"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 54,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H02 (Half Hard)",
+                  "hb": 100,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C360 (Free-Cutting Brass)",
@@ -4499,7 +6537,29 @@
                 "Pb": "2.5-3.7",
                 "Fe": "0.35",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Screw machine products, gears, valve stems, fittings",
+              "equivalentStandards": "CW603N (EN), C3601 (JIS)",
+              "standards": {
+                "aa": "C36000",
+                "astm": "B16",
+                "en": "CW603N",
+                "jis": "C3601",
+                "gb": "HPb63-3",
+                "iso": "CuZn36Pb3"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 55,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H02 (Half Hard)",
+                  "hb": 120,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "C385 (Architectural Bronze)",
@@ -4522,7 +6582,29 @@
                 "Cu": "55-59",
                 "Pb": "1.5-2.5",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Architectural extrusions, decorative hardware, hinges",
+              "equivalentStandards": "CW612N (EN), C3851 (JIS)",
+              "standards": {
+                "aa": "C38500",
+                "astm": "B455",
+                "en": "CW612N",
+                "jis": "C3851",
+                "gb": "HPb59-1",
+                "iso": "CuZn39Pb2"
+              },
+              "tempers": [
+                {
+                  "name": "M20 (As Extruded)",
+                  "hb": 75,
+                  "type": "As Extruded"
+                },
+                {
+                  "name": "H02 (Half Hard)",
+                  "hb": 100,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         },
@@ -4550,7 +6632,29 @@
                 "Sn": "0.5-1.0",
                 "Pb": "0.20",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Marine hardware, valve stems, condenser plates, boat shafts",
+              "equivalentStandards": "CW712R (EN), C4641 (JIS)",
+              "standards": {
+                "aa": "C46400",
+                "astm": "B21/B171",
+                "en": "CW712R",
+                "jis": "C4641",
+                "gb": "HSn62-1",
+                "iso": "CuZn38Sn1"
+              },
+              "tempers": [
+                {
+                  "name": "O (Annealed)",
+                  "hb": 65,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H02 (Half Hard)",
+                  "hb": 115,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         }
@@ -4581,8 +6685,33 @@
               "corrosionResistance": "Good",
               "weldability": "Fair",
               "composition": {
-                "Zn": "99.99 min"
-              }
+                "Zn": "99.99 min",
+                "Pb": "0.003",
+                "Cd": "0.003",
+                "Fe": "0.003"
+              },
+              "applications": "Galvanizing, batteries, die casting feedstock",
+              "equivalentStandards": "SHG Zinc (LME), Zn 99.995 (ASTM)",
+              "standards": {
+                "aa": "—",
+                "astm": "B6",
+                "en": "EN 1179 Z1",
+                "jis": "H2107 Type 1",
+                "gb": "GB/T 470 Zn99.995",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 30,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Rolled",
+                  "hb": 40,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         },
@@ -4611,7 +6740,29 @@
                 "Cu": "2.6-3.3",
                 "Mg": "0.02-0.06",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Bearings, bushings, heavy-duty die castings",
+              "equivalentStandards": "Z35541 (ASTM), ZnAl4Cu3 (EN)",
+              "standards": {
+                "aa": "—",
+                "astm": "B86",
+                "en": "EN 12844 ZP8",
+                "jis": "ZDC1",
+                "gb": "ZA4-3",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 100,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 110,
+                  "type": "Naturally Aged"
+                }
+              ]
             },
             {
               "name": "Zamak 3 (ZA-3)",
@@ -4635,7 +6786,29 @@
                 "Cu": "0.03 max",
                 "Mg": "0.03-0.06",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Automotive parts, toys, electrical housings, hardware",
+              "equivalentStandards": "Z33521 (ASTM), ZnAl4 (EN)",
+              "standards": {
+                "aa": "—",
+                "astm": "B86",
+                "en": "EN 12844 ZP3",
+                "jis": "ZDC2",
+                "gb": "ZA4-1",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 82,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 91,
+                  "type": "Naturally Aged"
+                }
+              ]
             },
             {
               "name": "Zamak 5 (ZA-5)",
@@ -4659,7 +6832,29 @@
                 "Cu": "0.7-1.1",
                 "Mg": "0.03-0.06",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Automotive components, household hardware, industrial castings",
+              "equivalentStandards": "Z35531 (ASTM), ZnAl4Cu1 (EN)",
+              "standards": {
+                "aa": "—",
+                "astm": "B86",
+                "en": "EN 12844 ZP5",
+                "jis": "ZDC2",
+                "gb": "ZA4-1-1",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 91,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 100,
+                  "type": "Naturally Aged"
+                }
+              ]
             },
             {
               "name": "Zamak 7 (ZA-7)",
@@ -4684,7 +6879,29 @@
                 "Mg": "0.005-0.02",
                 "Ni": "0.005-0.02",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Precision die castings, electronic enclosures, thin-wall parts",
+              "equivalentStandards": "Z33523 (ASTM), ZnAl4 (EN)",
+              "standards": {
+                "aa": "—",
+                "astm": "B86",
+                "en": "EN 12844 ZP2",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 80,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 85,
+                  "type": "Naturally Aged"
+                }
+              ]
             }
           ]
         },
@@ -4712,7 +6929,29 @@
                 "Cu": "0.8-1.3",
                 "Mg": "0.015-0.03",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Bearings, bushings, decorative hardware, gravity castings",
+              "equivalentStandards": "Z35636 (ASTM), ZnAl8Cu1 (EN)",
+              "standards": {
+                "aa": "—",
+                "astm": "B669/B86",
+                "en": "EN 1774 ZP8",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 100,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 105,
+                  "type": "Naturally Aged"
+                }
+              ]
             },
             {
               "name": "ZA-12",
@@ -4735,7 +6974,29 @@
                 "Cu": "0.5-1.2",
                 "Mg": "0.015-0.03",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Bearings, gears, bushings, structural castings",
+              "equivalentStandards": "Z35631 (ASTM), ZnAl11Cu1 (EN)",
+              "standards": {
+                "aa": "—",
+                "astm": "B669/B86",
+                "en": "EN 1774 ZP12",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 105,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 110,
+                  "type": "Naturally Aged"
+                }
+              ]
             },
             {
               "name": "ZA-27",
@@ -4759,7 +7020,29 @@
                 "Cu": "2.0-2.5",
                 "Mg": "0.01-0.02",
                 "Zn": "bal"
-              }
+              },
+              "applications": "Heavy-duty bearings, structural components, wear plates",
+              "equivalentStandards": "Z35841 (ASTM), ZnAl27Cu2 (EN)",
+              "standards": {
+                "aa": "—",
+                "astm": "B669/B86",
+                "en": "EN 1774 ZP27",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "As Cast",
+                  "hb": 119,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 125,
+                  "type": "Naturally Aged"
+                }
+              ]
             }
           ]
         }
@@ -4798,7 +7081,29 @@
                 "Si": "0.35",
                 "Cu": "0.25",
                 "S": "0.01"
-              }
+              },
+              "applications": "Chemical processing, food processing, caustic handling",
+              "equivalentStandards": "2.4066 (EN), NW2200 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B160/B162",
+                "en": "2.4066",
+                "jis": "NW2200",
+                "gb": "N6",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 100,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 200,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Nickel 201",
@@ -4824,7 +7129,29 @@
                 "Si": "0.35",
                 "Cu": "0.25",
                 "S": "0.01"
-              }
+              },
+              "applications": "Caustic evaporators, electronic parts, food processing",
+              "equivalentStandards": "2.4068 (EN), NW2201 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B160/B162",
+                "en": "2.4068",
+                "jis": "NW2201",
+                "gb": "LC-Ni99",
+                "iso": "—"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 90,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 175,
+                  "type": "Cold Worked"
+                }
+              ]
             }
           ]
         },
@@ -4855,7 +7182,29 @@
                 "Mn": "1.0",
                 "Si": "0.5",
                 "Cu": "0.5"
-              }
+              },
+              "applications": "Furnace components, chemical processing, nuclear engineering",
+              "equivalentStandards": "2.4816 (EN), NCF600 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B166/B168",
+                "en": "2.4816",
+                "jis": "NCF600",
+                "gb": "NS312",
+                "iso": "NiCr15Fe"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 150,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Hot Worked",
+                  "hb": 180,
+                  "type": "Hot Worked"
+                }
+              ]
             },
             {
               "name": "Inconel 625",
@@ -4881,7 +7230,29 @@
                 "Nb": "3.15-4.15",
                 "Fe": "5",
                 "C": "0.1"
-              }
+              },
+              "applications": "Aerospace, marine, chemical processing, nuclear",
+              "equivalentStandards": "2.4856 (EN), NCF625 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B443/B446",
+                "en": "2.4856",
+                "jis": "NCF625",
+                "gb": "NS336",
+                "iso": "NiCr22Mo9Nb"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 175,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Solution Treated",
+                  "hb": 190,
+                  "type": "Solution Treated"
+                }
+              ]
             },
             {
               "name": "Inconel 718",
@@ -4908,7 +7279,29 @@
                 "Nb": "4.75-5.5",
                 "Ti": "0.65-1.15",
                 "Al": "0.2-0.8"
-              }
+              },
+              "applications": "Jet engines, gas turbines, nuclear reactors, cryogenic tanks",
+              "equivalentStandards": "2.4668 (EN), NCF718 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B637",
+                "en": "2.4668",
+                "jis": "NCF718",
+                "gb": "GH4169",
+                "iso": "NiCr19Fe19Nb5Mo3"
+              },
+              "tempers": [
+                {
+                  "name": "Solution Treated",
+                  "hb": 250,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "Precipitation Hardened",
+                  "hb": 388,
+                  "type": "Precipitation Hardened"
+                }
+              ]
             },
             {
               "name": "Inconel X-750",
@@ -4934,7 +7327,29 @@
                 "Ti": "2.25-2.75",
                 "Al": "0.4-1.0",
                 "Nb": "0.7-1.2"
-              }
+              },
+              "applications": "Gas turbine springs, bolts, rocket engines",
+              "equivalentStandards": "2.4669 (EN), NCF750 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B637",
+                "en": "2.4669",
+                "jis": "NCF750",
+                "gb": "GH4145",
+                "iso": "NiCr15Fe7TiAl"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 170,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 320,
+                  "type": "Precipitation Hardened"
+                }
+              ]
             }
           ]
         },
@@ -4966,7 +7381,29 @@
                 "C": "0.3",
                 "Si": "0.5",
                 "S": "0.024"
-              }
+              },
+              "applications": "Marine engineering, chemical processing, oil & gas",
+              "equivalentStandards": "2.4360 (EN), NW4400 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B127/B164",
+                "en": "2.4360",
+                "jis": "NW4400",
+                "gb": "NCu30",
+                "iso": "NiCu30Fe"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 120,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 200,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Monel K-500",
@@ -4991,7 +7428,29 @@
                 "Al": "2.3-3.15",
                 "Ti": "0.35-0.85",
                 "Fe": "2.0"
-              }
+              },
+              "applications": "Pump shafts, valve trim, doctor blades, springs",
+              "equivalentStandards": "2.4375 (EN), NW5500 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B865",
+                "en": "2.4375",
+                "jis": "NW5500",
+                "gb": "NCu30-2.5-1.5",
+                "iso": "NiCu30Al"
+              },
+              "tempers": [
+                {
+                  "name": "Annealed",
+                  "hb": 160,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "Age Hardened",
+                  "hb": 300,
+                  "type": "Precipitation Hardened"
+                }
+              ]
             }
           ]
         },
@@ -5022,11 +7481,33 @@
                 "Fe": "4-7",
                 "W": "3-4.5",
                 "Co": "2.5"
-              }
+              },
+              "applications": "Chemical processing, flue gas desulfurization, pollution control",
+              "equivalentStandards": "2.4819 (EN), NW0276 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B574/B575",
+                "en": "2.4819",
+                "jis": "NW0276",
+                "gb": "NS334",
+                "iso": "NiMo16Cr15W"
+              },
+              "tempers": [
+                {
+                  "name": "Solution Treated",
+                  "hb": 194,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 250,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Hastelloy B-2",
-              "density": 9.22,
+              "density": 9.2,
               "desc": "Excellent resistance to hydrochloric acid",
               "tags": [
                 "HCl Resistant",
@@ -5047,7 +7528,29 @@
                 "Cr": "1.0",
                 "Co": "1.0",
                 "Mn": "1.0"
-              }
+              },
+              "applications": "HCl acid handling, chemical processing",
+              "equivalentStandards": "2.4617 (EN), NW0665 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B333/B335",
+                "en": "2.4617",
+                "jis": "NW0665",
+                "gb": "NS321",
+                "iso": "NiMo28"
+              },
+              "tempers": [
+                {
+                  "name": "Solution Treated",
+                  "hb": 190,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "Cold Worked",
+                  "hb": 240,
+                  "type": "Cold Worked"
+                }
+              ]
             },
             {
               "name": "Hastelloy X",
@@ -5073,7 +7576,29 @@
                 "Mo": "8-10",
                 "Co": "0.5-2.5",
                 "W": "0.2-1.0"
-              }
+              },
+              "applications": "Gas turbine combustion chambers, afterburners, furnace hardware",
+              "equivalentStandards": "2.4665 (EN), NCF-X (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B435/B572",
+                "en": "2.4665",
+                "jis": "—",
+                "gb": "GH3536",
+                "iso": "NiCr22Fe18Mo"
+              },
+              "tempers": [
+                {
+                  "name": "Solution Treated",
+                  "hb": 185,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "Aged",
+                  "hb": 250,
+                  "type": "Aged"
+                }
+              ]
             }
           ]
         }
@@ -5109,7 +7634,34 @@
                 "Zn": "0.6-1.4",
                 "Mn": "0.2 min",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Automotive panels, bicycle frames, electronic housings, aerospace",
+              "equivalentStandards": "MgAl3Zn1 (EN), MB2 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B90/B107",
+                "en": "EN-MB10110",
+                "jis": "MB2",
+                "gb": "MB2",
+                "iso": "MgAl3Zn1"
+              },
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 49,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H24",
+                  "hb": 73,
+                  "type": "Strain Hardened + Partially Annealed"
+                },
+                {
+                  "name": "F",
+                  "hb": 56,
+                  "type": "As Fabricated"
+                }
+              ]
             },
             {
               "name": "AZ61A",
@@ -5132,7 +7684,29 @@
                 "Zn": "0.4-1.5",
                 "Mn": "0.15 min",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Extrusions, forgings, structural components",
+              "equivalentStandards": "MgAl6Zn1 (EN), MB5 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B107",
+                "en": "—",
+                "jis": "MB5",
+                "gb": "MB5",
+                "iso": "MgAl6Zn1"
+              },
+              "tempers": [
+                {
+                  "name": "F",
+                  "hb": 60,
+                  "type": "As Fabricated"
+                },
+                {
+                  "name": "T5",
+                  "hb": 72,
+                  "type": "Artificially Aged"
+                }
+              ]
             },
             {
               "name": "AZ80A",
@@ -5155,7 +7729,29 @@
                 "Zn": "0.2-0.8",
                 "Mn": "0.12 min",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Forgings, aerospace, high-strength structural parts",
+              "equivalentStandards": "MgAl8Zn (EN), MB7 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B91",
+                "en": "—",
+                "jis": "MB7",
+                "gb": "MB7",
+                "iso": "MgAl8Zn"
+              },
+              "tempers": [
+                {
+                  "name": "F",
+                  "hb": 62,
+                  "type": "As Fabricated"
+                },
+                {
+                  "name": "T5",
+                  "hb": 82,
+                  "type": "Artificially Aged"
+                }
+              ]
             },
             {
               "name": "ZK60A",
@@ -5178,7 +7774,29 @@
                 "Zn": "4.8-6.2",
                 "Zr": "0.45 min",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Aerospace forgings, bicycle components, high-strength parts",
+              "equivalentStandards": "MgZn6Zr (EN), — (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B91",
+                "en": "—",
+                "jis": "—",
+                "gb": "MB15",
+                "iso": "MgZn6Zr"
+              },
+              "tempers": [
+                {
+                  "name": "F",
+                  "hb": 65,
+                  "type": "As Fabricated"
+                },
+                {
+                  "name": "T5",
+                  "hb": 88,
+                  "type": "Artificially Aged"
+                }
+              ]
             },
             {
               "name": "M1A",
@@ -5198,9 +7816,37 @@
               "corrosionResistance": "Good",
               "weldability": "Good",
               "composition": {
-                "Mn": "1.2 min",
+                "Mn": "1.20-2.00",
+                "Al": "—",
+                "Zn": "—",
+                "Si": "—",
+                "Cu": "0.05",
+                "Ni": "0.005",
+                "Fe": "0.03",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Forgings, structural shapes, general-purpose",
+              "equivalentStandards": "MgMn2 (EN), — (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B90",
+                "en": "—",
+                "jis": "—",
+                "gb": "MB1",
+                "iso": "MgMn2"
+              },
+              "tempers": [
+                {
+                  "name": "F",
+                  "hb": 40,
+                  "type": "As Fabricated"
+                },
+                {
+                  "name": "O",
+                  "hb": 35,
+                  "type": "Annealed"
+                }
+              ]
             }
           ]
         },
@@ -5229,7 +7875,29 @@
                 "Zn": "0.35-1.0",
                 "Mn": "0.13 min",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Die cast housings, automotive, power tools, laptops",
+              "equivalentStandards": "MgAl9Zn1 (EN), MC2 (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B94",
+                "en": "EN-MC21120",
+                "jis": "MC2",
+                "gb": "YMg9Al",
+                "iso": "MgAl9Zn1"
+              },
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 63,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T6",
+                  "hb": 70,
+                  "type": "Solution Treated + Aged"
+                }
+              ]
             },
             {
               "name": "AM60B",
@@ -5253,7 +7921,29 @@
                 "Mn": "0.24 min",
                 "Zn": "0.22 max",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Automotive steering wheels, seat frames, instrument panels",
+              "equivalentStandards": "MgAl6Mn (EN), MDC1D (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B94",
+                "en": "EN-MC21230",
+                "jis": "MDC1D",
+                "gb": "YMg6Al",
+                "iso": "MgAl6Mn"
+              },
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 57,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "—",
+                  "hb": 57,
+                  "type": "Cast Only"
+                }
+              ]
             },
             {
               "name": "AM50A",
@@ -5277,7 +7967,29 @@
                 "Mn": "0.26 min",
                 "Zn": "0.22 max",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Automotive door inners, instrument panel beams",
+              "equivalentStandards": "MgAl5Mn (EN), — (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B94",
+                "en": "EN-MC21220",
+                "jis": "—",
+                "gb": "YMg5Al",
+                "iso": "MgAl5Mn"
+              },
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 52,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "—",
+                  "hb": 52,
+                  "type": "Cast Only"
+                }
+              ]
             },
             {
               "name": "AE44",
@@ -5301,7 +8013,29 @@
                 "RE": "2.0-3.0",
                 "Mn": "0.1-0.5",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Automotive powertrain, high-temperature structural castings",
+              "equivalentStandards": "—",
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "MgAl4RE4"
+              },
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 62,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5",
+                  "hb": 68,
+                  "type": "Artificially Aged"
+                }
+              ]
             },
             {
               "name": "EZ33A",
@@ -5325,7 +8059,29 @@
                 "Zr": "0.4-1.0",
                 "RE": "2.5-4.0",
                 "Mg": "bal"
-              }
+              },
+              "applications": "Aerospace castings, nuclear applications, elevated temperature use",
+              "equivalentStandards": "MgZn3RE3 (EN), — (JIS)",
+              "standards": {
+                "aa": "—",
+                "astm": "B80",
+                "en": "—",
+                "jis": "—",
+                "gb": "ZM3",
+                "iso": "MgZn3RE3Zr"
+              },
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 50,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5",
+                  "hb": 60,
+                  "type": "Artificially Aged"
+                }
+              ]
             }
           ]
         }

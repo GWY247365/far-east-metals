@@ -272,6 +272,126 @@
                   "type": "Strain Hardened"
                 }
               ]
+            },
+            {
+              "name": "1145",
+              "tensileStrength": "70-140",
+              "yieldStrength": "28-125",
+              "elongation": 15,
+              "hardness": 24,
+              "density": 2.7,
+              "meltingRange": "646-657",
+              "thermalConductivity": 230,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Foil stock, packaging, capacitors, heat exchangers",
+              "equivalentStandards": "EN AW-1145, A1145 (JIS)",
+              "composition": {
+                "Si": "0.55 (Si+Fe)",
+                "Fe": "—",
+                "Cu": "0.05",
+                "Mn": "0.05",
+                "Mg": "0.05",
+                "Zn": "0.05",
+                "Ti": "0.03",
+                "Al": "99.45 min"
+              },
+              "standards": {
+                "aa": "1145",
+                "astm": "B209 / B373",
+                "en": "EN AW-1145",
+                "jis": "A1145",
+                "gb": "1145",
+                "iso": "Al 99.45"
+              },
+              "desc": "High-purity aluminum foil alloy for packaging and electronic applications",
+              "tags": [
+                "Foil Alloy",
+                "Packaging",
+                "High Conductivity"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 18,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 30,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H18",
+                  "hb": 40,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H19",
+                  "hb": 45,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "1235",
+              "tensileStrength": "60-125",
+              "yieldStrength": "20-110",
+              "elongation": 10,
+              "hardness": 22,
+              "density": 2.71,
+              "meltingRange": "646-657",
+              "thermalConductivity": 228,
+              "corrosionResistance": "Excellent",
+              "weldability": "Excellent",
+              "applications": "Capacitor foil, cable wrapping, flexible packaging, electrode foil",
+              "equivalentStandards": "EN AW-1235, A1235 (JIS)",
+              "composition": {
+                "Si": "0.65 (Si+Fe)",
+                "Fe": "—",
+                "Cu": "0.05",
+                "Mn": "0.05",
+                "Mg": "0.05",
+                "Zn": "0.10",
+                "Ti": "0.06",
+                "Al": "99.35 min"
+              },
+              "standards": {
+                "aa": "1235",
+                "astm": "B209 / B373",
+                "en": "EN AW-1235",
+                "jis": "A1235",
+                "gb": "1235",
+                "iso": "Al 99.35"
+              },
+              "desc": "Ultra-high purity foil alloy for capacitor electrodes and electronic applications",
+              "tags": [
+                "Capacitor Foil",
+                "Electronics",
+                "Ultra-thin Foil"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 17,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 28,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H18",
+                  "hb": 38,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H19",
+                  "hb": 42,
+                  "type": "Strain Hardened"
+                }
+              ]
             }
           ],
           "standardsCategory": "1xxx Pure"
@@ -642,6 +762,118 @@
                   "type": "Aged"
                 }
               ]
+            },
+            {
+              "name": "2A12",
+              "tensileStrength": "185-490",
+              "yieldStrength": "75-440",
+              "elongation": 10,
+              "hardness": 120,
+              "density": 2.78,
+              "meltingRange": "502-638",
+              "thermalConductivity": 121,
+              "corrosionResistance": "Poor",
+              "weldability": "Poor",
+              "applications": "Aircraft structures, rivets, truck wheels, screw elements, aerospace structural parts",
+              "equivalentStandards": "Similar to AA 2024 (not identical), LY12 (old Chinese designation)",
+              "composition": {
+                "Si": "0.50",
+                "Fe": "0.50",
+                "Cu": "3.8-4.9",
+                "Mn": "0.30-0.9",
+                "Mg": "1.2-1.8",
+                "Cr": "—",
+                "Zn": "0.30",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "GB/T 3190 2A12",
+                "iso": "—"
+              },
+              "desc": "Chinese high-strength Al-Cu-Mg alloy widely used in aerospace, equivalent to 2024",
+              "tags": [
+                "Chinese Standard",
+                "High Strength",
+                "Aerospace",
+                "Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "T3",
+                  "hb": 120,
+                  "type": "Solution Treated"
+                },
+                {
+                  "name": "T4",
+                  "hb": 120,
+                  "type": "Naturally Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 135,
+                  "type": "Artificially Aged"
+                }
+              ]
+            },
+            {
+              "name": "2195",
+              "tensileStrength": "540-660",
+              "yieldStrength": "490-620",
+              "elongation": 7,
+              "hardness": 150,
+              "density": 2.63,
+              "meltingRange": "540-643",
+              "thermalConductivity": 100,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Launch vehicle fuel tanks, Space Shuttle external tank, SpaceX Falcon 9, cryogenic structures",
+              "equivalentStandards": "UNS A92195",
+              "composition": {
+                "Si": "0.12",
+                "Fe": "0.15",
+                "Cu": "3.7-4.3",
+                "Mn": "0.25",
+                "Mg": "0.25-0.8",
+                "Li": "0.8-1.2",
+                "Ag": "0.25-0.6",
+                "Zr": "0.08-0.16",
+                "Zn": "0.25",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "2195",
+                "astm": "B209",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "—"
+              },
+              "desc": "Third-generation Al-Li alloy for lightweight cryogenic aerospace structures with 5% lower density than 2219",
+              "tags": [
+                "Al-Li Alloy",
+                "Aerospace",
+                "Cryogenic",
+                "Lightweight",
+                "Space Launch"
+              ],
+              "tempers": [
+                {
+                  "name": "T8",
+                  "hb": 150,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T8R78",
+                  "hb": 145,
+                  "type": "Artificially Aged"
+                }
+              ]
             }
           ],
           "standardsCategory": "2xxx Cu"
@@ -908,6 +1140,62 @@
                 {
                   "name": "H19",
                   "hb": 65,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "3A21",
+              "tensileStrength": "100-185",
+              "yieldStrength": "35-160",
+              "elongation": 14,
+              "hardness": 40,
+              "density": 2.73,
+              "meltingRange": "643-654",
+              "thermalConductivity": 163,
+              "corrosionResistance": "Good",
+              "weldability": "Excellent",
+              "applications": "Tanks, pressure vessels, piping, building panels, vehicle body panels",
+              "equivalentStandards": "Similar to AA 3003, LF21 (old Chinese designation)",
+              "composition": {
+                "Si": "0.60",
+                "Fe": "0.70",
+                "Cu": "0.20",
+                "Mn": "1.0-1.6",
+                "Mg": "0.05",
+                "Zn": "0.10",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "GB/T 3190 3A21",
+                "iso": "—"
+              },
+              "desc": "Chinese Al-Mn alloy widely used for general structural and pressure vessel applications",
+              "tags": [
+                "Chinese Standard",
+                "Good Formability",
+                "Corrosion Resistant",
+                "Non-Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 28,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 40,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H18",
+                  "hb": 55,
                   "type": "Strain Hardened"
                 }
               ]
@@ -1706,6 +1994,125 @@
                   "type": "Strain Hardened"
                 }
               ]
+            },
+            {
+              "name": "5A06",
+              "tensileStrength": "315-385",
+              "yieldStrength": "145-275",
+              "elongation": 14,
+              "hardness": 85,
+              "density": 2.64,
+              "meltingRange": "571-638",
+              "thermalConductivity": 117,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Ship hulls, marine structures, aircraft fuel tanks, pressure vessels, cryogenic tanks",
+              "equivalentStandards": "LF6 (old Chinese designation), similar to AA 5456",
+              "composition": {
+                "Si": "0.40",
+                "Fe": "0.40",
+                "Cu": "0.10",
+                "Mn": "0.50-0.8",
+                "Mg": "5.8-6.8",
+                "Zn": "0.20",
+                "Ti": "0.02-0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "GB/T 3190 5A06",
+                "iso": "—"
+              },
+              "desc": "High-magnesium Chinese alloy for marine and aerospace with excellent seawater corrosion resistance",
+              "tags": [
+                "Chinese Standard",
+                "Marine Grade",
+                "High Strength",
+                "Non-Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 65,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H112",
+                  "hb": 80,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H32",
+                  "hb": 85,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "5059",
+              "tensileStrength": "330-400",
+              "yieldStrength": "160-310",
+              "elongation": 10,
+              "hardness": 95,
+              "density": 2.66,
+              "meltingRange": "570-638",
+              "thermalConductivity": 120,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Ship hulls, keels, structural frames, naval vessels, high-speed ferries, offshore platforms",
+              "equivalentStandards": "EN AW-5059, UNS A95059",
+              "composition": {
+                "Si": "0.45",
+                "Fe": "0.50",
+                "Cu": "0.25",
+                "Mn": "0.6-1.2",
+                "Mg": "5.0-6.0",
+                "Cr": "0.25",
+                "Zn": "0.40-0.9",
+                "Zr": "0.05-0.25",
+                "Ti": "0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "5059",
+                "astm": "B928",
+                "en": "EN AW-5059",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlMg5.5MnZnZr"
+              },
+              "desc": "Highest-strength non-heat-treatable aluminum alloy, developed for advanced marine and naval structures",
+              "tags": [
+                "Marine Grade",
+                "Highest 5xxx Strength",
+                "Shipbuilding",
+                "Non-Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 70,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H111",
+                  "hb": 80,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H116",
+                  "hb": 95,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H321",
+                  "hb": 95,
+                  "type": "Stabilized"
+                }
+              ]
             }
           ],
           "standardsCategory": "5xxx Mg"
@@ -2295,6 +2702,109 @@
                   "type": "Solution Treated + Cold Worked + Aged"
                 }
               ]
+            },
+            {
+              "name": "6N01",
+              "tensileStrength": "245-310",
+              "yieldStrength": "205-275",
+              "elongation": 10,
+              "hardness": 85,
+              "density": 2.7,
+              "meltingRange": "575-650",
+              "thermalConductivity": 180,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Shinkansen bullet train body, railway rolling stock, vehicle frames, large thin-wall hollow profiles",
+              "equivalentStandards": "JIS A6N01, similar to AA 6005A",
+              "composition": {
+                "Si": "0.40-0.9",
+                "Fe": "0.35",
+                "Cu": "0.35",
+                "Mn": "0.50",
+                "Mg": "0.40-0.8",
+                "Cr": "0.30",
+                "Zn": "0.25",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "A6N01",
+                "gb": "—",
+                "iso": "—"
+              },
+              "desc": "Japanese Al-Mg-Si extrusion alloy developed for Shinkansen high-speed train structures",
+              "tags": [
+                "Japanese Standard",
+                "Rail Transport",
+                "Shinkansen",
+                "Extrudable"
+              ],
+              "tempers": [
+                {
+                  "name": "T5",
+                  "hb": 75,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 85,
+                  "type": "Artificially Aged"
+                }
+              ]
+            },
+            {
+              "name": "6A02",
+              "tensileStrength": "295-380",
+              "yieldStrength": "205-320",
+              "elongation": 12,
+              "hardness": 95,
+              "density": 2.73,
+              "meltingRange": "575-650",
+              "thermalConductivity": 172,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Aircraft engine parts, complex forgings, die forgings, structural components",
+              "equivalentStandards": "LD2 (old Chinese designation), similar to AA 6151",
+              "composition": {
+                "Si": "0.65-1.0",
+                "Fe": "0.25",
+                "Cu": "0.35-0.5",
+                "Mn": "0.20-0.3",
+                "Mg": "0.60-0.75",
+                "Zn": "0.15",
+                "Ti": "0.15",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "GB/T 3190 6A02",
+                "iso": "—"
+              },
+              "desc": "Chinese medium-strength Al-Mg-Si-Cu alloy for forgings and structural applications",
+              "tags": [
+                "Chinese Standard",
+                "Forging Alloy",
+                "Medium Strength",
+                "Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "T4",
+                  "hb": 75,
+                  "type": "Naturally Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 95,
+                  "type": "Artificially Aged"
+                }
+              ]
             }
           ],
           "standardsCategory": "6xxx Mg-Si"
@@ -2729,9 +3239,339 @@
                   "type": "Overaged"
                 }
               ]
+            },
+            {
+              "name": "7A04",
+              "tensileStrength": "500-610",
+              "yieldStrength": "430-550",
+              "elongation": 8,
+              "hardness": 150,
+              "density": 2.82,
+              "meltingRange": "477-638",
+              "thermalConductivity": 130,
+              "corrosionResistance": "Poor",
+              "weldability": "Poor",
+              "applications": "Aircraft structural parts, high-load components, landing gear, fuselage frames",
+              "equivalentStandards": "LC4 (old Chinese designation), similar to AA 7075",
+              "composition": {
+                "Si": "0.50",
+                "Fe": "0.50",
+                "Cu": "1.4-2.0",
+                "Mn": "0.20-0.6",
+                "Mg": "1.8-2.8",
+                "Cr": "0.10-0.25",
+                "Zn": "5.0-7.0",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "GB/T 3190 7A04",
+                "iso": "—"
+              },
+              "desc": "Chinese high-strength Al-Zn-Mg-Cu aerospace alloy with excellent creep and fatigue resistance",
+              "tags": [
+                "Chinese Standard",
+                "High Strength",
+                "Aerospace",
+                "Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 150,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T73",
+                  "hb": 135,
+                  "type": "Over-Aged"
+                }
+              ]
+            },
+            {
+              "name": "7A09",
+              "tensileStrength": "490-575",
+              "yieldStrength": "420-505",
+              "elongation": 8,
+              "hardness": 150,
+              "density": 2.81,
+              "meltingRange": "477-635",
+              "thermalConductivity": 130,
+              "corrosionResistance": "Poor",
+              "weldability": "Poor",
+              "applications": "Fighter aircraft structures, fuselage beams, landing gear, hydraulic system parts",
+              "equivalentStandards": "LC9 (old Chinese designation), equivalent to AA 7075 per GB/T 3190",
+              "composition": {
+                "Si": "0.50",
+                "Fe": "0.50",
+                "Cu": "1.2-2.0",
+                "Mn": "0.15",
+                "Mg": "2.0-3.0",
+                "Cr": "0.16-0.30",
+                "Zn": "5.1-6.1",
+                "Ti": "0.10",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "—",
+                "astm": "—",
+                "en": "—",
+                "jis": "—",
+                "gb": "GB/T 3190 7A09",
+                "iso": "—"
+              },
+              "desc": "Chinese equivalent of 7075, primary high-strength alloy for military aircraft structures",
+              "tags": [
+                "Chinese Standard",
+                "High Strength",
+                "Military Aerospace",
+                "Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 150,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T73",
+                  "hb": 130,
+                  "type": "Over-Aged"
+                }
+              ]
+            },
+            {
+              "name": "7055",
+              "tensileStrength": "593-680",
+              "yieldStrength": "545-640",
+              "elongation": 9,
+              "hardness": 175,
+              "density": 2.82,
+              "meltingRange": "477-630",
+              "thermalConductivity": 135,
+              "corrosionResistance": "Fair",
+              "weldability": "Poor",
+              "applications": "Boeing 777 upper wing skin, fuselage stringers, horizontal stabilizers, keel beams",
+              "equivalentStandards": "UNS A97055, EN AW-7055",
+              "composition": {
+                "Si": "0.10",
+                "Fe": "0.15",
+                "Cu": "2.0-2.6",
+                "Mn": "0.05",
+                "Mg": "1.8-2.3",
+                "Zn": "7.6-8.4",
+                "Zr": "0.08-0.25",
+                "Ti": "0.06",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7055",
+                "astm": "B209",
+                "en": "EN AW-7055",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlZn8CuMg"
+              },
+              "desc": "Highest-strength commercial 7xxx alloy, developed by Alcoa for Boeing 777 upper wing skins",
+              "tags": [
+                "Ultra-High Strength",
+                "Aerospace",
+                "Boeing 777",
+                "Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "T77",
+                  "hb": 170,
+                  "type": "Peak/Over-Aged"
+                },
+                {
+                  "name": "T7751",
+                  "hb": 175,
+                  "type": "Peak/Over-Aged"
+                },
+                {
+                  "name": "T77511",
+                  "hb": 170,
+                  "type": "Peak/Over-Aged"
+                }
+              ]
+            },
+            {
+              "name": "7085",
+              "tensileStrength": "483-538",
+              "yieldStrength": "421-496",
+              "elongation": 8,
+              "hardness": 155,
+              "density": 2.82,
+              "meltingRange": "477-635",
+              "thermalConductivity": 135,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Airbus A380 wing spars, thick-plate structural forgings, bulkheads, rib structures",
+              "equivalentStandards": "UNS A97085, EN AW-7085",
+              "composition": {
+                "Si": "0.06",
+                "Fe": "0.08",
+                "Cu": "1.3-2.0",
+                "Mn": "0.04",
+                "Mg": "1.2-1.8",
+                "Zn": "7.0-8.0",
+                "Zr": "0.08-0.15",
+                "Ti": "0.06",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "7085",
+                "astm": "B209",
+                "en": "EN AW-7085",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlZn7.5CuMg"
+              },
+              "desc": "Low quench-sensitivity thick-plate alloy for large aerospace forgings, developed for Airbus A380",
+              "tags": [
+                "Aerospace",
+                "Thick Plate",
+                "Airbus A380",
+                "Low Quench Sensitivity"
+              ],
+              "tempers": [
+                {
+                  "name": "T7651",
+                  "hb": 150,
+                  "type": "Over-Aged"
+                },
+                {
+                  "name": "T7452",
+                  "hb": 155,
+                  "type": "Over-Aged"
+                }
+              ]
             }
           ],
           "standardsCategory": "7xxx Zn"
+        },
+        {
+          "name": "8xxx - Other Elements",
+          "alloys": [
+            {
+              "name": "8011",
+              "tensileStrength": "110-200",
+              "yieldStrength": "35-160",
+              "elongation": 8,
+              "hardness": 42,
+              "density": 2.71,
+              "meltingRange": "575-650",
+              "thermalConductivity": 225,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Food packaging foil, pharmaceutical blister foil, bottle caps, container lids, heat exchangers",
+              "equivalentStandards": "EN AW-8011A, UNS A98011",
+              "composition": {
+                "Si": "0.50-0.9",
+                "Fe": "0.6-1.0",
+                "Cu": "0.10",
+                "Mn": "0.20",
+                "Mg": "0.05",
+                "Zn": "0.10",
+                "Ti": "0.08",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "8011",
+                "astm": "B209",
+                "en": "EN AW-8011A",
+                "jis": "—",
+                "gb": "8011",
+                "iso": "AlFeSi(A)"
+              },
+              "desc": "Primary aluminum foil alloy for food and pharmaceutical packaging with excellent barrier properties",
+              "tags": [
+                "Foil Alloy",
+                "Food Packaging",
+                "Pharmaceutical",
+                "Non-Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 25,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 40,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H18",
+                  "hb": 55,
+                  "type": "Strain Hardened"
+                }
+              ]
+            },
+            {
+              "name": "8079",
+              "tensileStrength": "80-165",
+              "yieldStrength": "30-140",
+              "elongation": 10,
+              "hardness": 35,
+              "density": 2.71,
+              "meltingRange": "575-650",
+              "thermalConductivity": 220,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Household foil, flexible packaging laminates, cable shielding, insulation foil",
+              "equivalentStandards": "EN AW-8079, UNS A98079",
+              "composition": {
+                "Si": "0.05-0.30",
+                "Fe": "0.7-1.3",
+                "Cu": "0.05",
+                "Mn": "0.05",
+                "Mg": "0.05",
+                "Zn": "0.10",
+                "Ti": "0.08",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "8079",
+                "astm": "B209",
+                "en": "EN AW-8079",
+                "jis": "—",
+                "gb": "8079",
+                "iso": "AlFe1Si"
+              },
+              "desc": "High-elongation aluminum foil alloy for household and flexible packaging applications",
+              "tags": [
+                "Foil Alloy",
+                "Household Foil",
+                "Flexible Packaging",
+                "Non-Heat Treatable"
+              ],
+              "tempers": [
+                {
+                  "name": "O",
+                  "hb": 20,
+                  "type": "Annealed"
+                },
+                {
+                  "name": "H14",
+                  "hb": 35,
+                  "type": "Strain Hardened"
+                },
+                {
+                  "name": "H18",
+                  "hb": 48,
+                  "type": "Strain Hardened"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -5688,6 +6528,108 @@
                   "type": "Artificially Aged"
                 }
               ]
+            },
+            {
+              "name": "A332",
+              "tensileStrength": "240-275",
+              "yieldStrength": "195-215",
+              "elongation": 1,
+              "hardness": 105,
+              "density": 2.77,
+              "meltingRange": "507-571",
+              "thermalConductivity": 109,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Automotive pistons, cylinder liners, high-temperature engine components",
+              "equivalentStandards": "ASTM B26 332.0, EN AC-48000, formerly A332.0",
+              "composition": {
+                "Si": "8.5-10.5",
+                "Fe": "1.2",
+                "Cu": "2.0-4.0",
+                "Mn": "0.50",
+                "Mg": "0.50-1.50",
+                "Zn": "1.0",
+                "Ni": "0.50",
+                "Sn": "0.25",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "332",
+                "astm": "A332",
+                "en": "EN AC-48000",
+                "jis": "AC8A",
+                "gb": "ZL108",
+                "iso": "AlSi9Cu3Mg"
+              },
+              "desc": "Piston alloy with high Si, Cu, and Mg for excellent high-temperature strength and low thermal expansion",
+              "tags": [
+                "Piston Alloy",
+                "High Temperature",
+                "Automotive"
+              ],
+              "tempers": [
+                {
+                  "name": "T5",
+                  "hb": 105,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T6",
+                  "hb": 115,
+                  "type": "Solution Heat Treated + Aged"
+                }
+              ]
+            },
+            {
+              "name": "ADC7 / A336",
+              "tensileStrength": "215-250",
+              "yieldStrength": "175-200",
+              "elongation": 1,
+              "hardness": 100,
+              "density": 2.72,
+              "meltingRange": "507-571",
+              "thermalConductivity": 117,
+              "corrosionResistance": "Good",
+              "weldability": "Fair",
+              "applications": "Pistons for diesel and gasoline engines, compressor components, high-temperature castings",
+              "equivalentStandards": "JIS H5302 ADC7, ASTM B26 336.0, formerly A332.0 variant",
+              "composition": {
+                "Si": "11.0-13.0",
+                "Fe": "1.2",
+                "Cu": "0.50-1.50",
+                "Mn": "0.35",
+                "Mg": "0.70-1.30",
+                "Zn": "0.35",
+                "Ni": "2.0-3.0",
+                "Ti": "0.25",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "336",
+                "astm": "A336",
+                "en": "EN AC-48100",
+                "jis": "ADC7",
+                "gb": "ZL109",
+                "iso": "AlSi12CuMgNi"
+              },
+              "desc": "High-silicon piston alloy with nickel for superior elevated temperature performance",
+              "tags": [
+                "Piston Alloy",
+                "Nickel Bearing",
+                "High Temperature"
+              ],
+              "tempers": [
+                {
+                  "name": "T5",
+                  "hb": 100,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T551",
+                  "hb": 110,
+                  "type": "Artificially Aged"
+                }
+              ]
             }
           ]
         },
@@ -5845,6 +6787,107 @@
                   "type": "Solution Heat Treated"
                 }
               ]
+            },
+            {
+              "name": "B390",
+              "tensileStrength": "275-320",
+              "yieldStrength": "250-290",
+              "elongation": 1,
+              "hardness": 120,
+              "density": 2.71,
+              "meltingRange": "507-649",
+              "thermalConductivity": 134,
+              "corrosionResistance": "Good",
+              "weldability": "Poor",
+              "applications": "Sleeveless engine blocks, compressor pistons, cylinder liners, wear-resistant components",
+              "equivalentStandards": "ASTM B85 B390.0, UNS A03901",
+              "composition": {
+                "Si": "16.0-18.0",
+                "Fe": "1.3",
+                "Cu": "4.0-5.0",
+                "Mn": "0.10",
+                "Mg": "0.45-0.65",
+                "Zn": "0.10",
+                "Sn": "0.10",
+                "Ti": "0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "B390",
+                "astm": "B390",
+                "en": "EN AC-48000",
+                "jis": "—",
+                "gb": "YL117",
+                "iso": "AlSi17Cu4Mg"
+              },
+              "desc": "Hypereutectic 17% Si alloy with outstanding wear resistance and low thermal expansion for die casting",
+              "tags": [
+                "Hypereutectic",
+                "Wear Resistant",
+                "Compressor"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 120,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5",
+                  "hb": 130,
+                  "type": "Artificially Aged"
+                }
+              ]
+            },
+            {
+              "name": "A443",
+              "tensileStrength": "130-160",
+              "yieldStrength": "55-70",
+              "elongation": 8,
+              "hardness": 40,
+              "density": 2.69,
+              "meltingRange": "574-632",
+              "thermalConductivity": 150,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "General-purpose sand castings, cooking utensils, pipe fittings, decorative parts",
+              "equivalentStandards": "ASTM B26 A443.0, UNS A24430",
+              "composition": {
+                "Si": "4.5-6.0",
+                "Fe": "0.8",
+                "Cu": "0.6",
+                "Mn": "0.50",
+                "Mg": "0.05",
+                "Zn": "0.50",
+                "Ti": "0.25",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "A443",
+                "astm": "A443",
+                "en": "EN AC-44000",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlSi5"
+              },
+              "desc": "General-purpose sand casting alloy with excellent fluidity and low porosity",
+              "tags": [
+                "Sand Casting",
+                "General Purpose",
+                "Good Fluidity"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 40,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "Annealed",
+                  "hb": 35,
+                  "type": "Annealed"
+                }
+              ]
             }
           ]
         },
@@ -5950,6 +6993,106 @@
                   "name": "—",
                   "hb": 65,
                   "type": "Cast Only"
+                }
+              ]
+            },
+            {
+              "name": "A514 / B514",
+              "tensileStrength": "170-205",
+              "yieldStrength": "85-120",
+              "elongation": 6,
+              "hardness": 50,
+              "density": 2.65,
+              "meltingRange": "593-638",
+              "thermalConductivity": 138,
+              "corrosionResistance": "Excellent",
+              "weldability": "Good",
+              "applications": "Marine fittings, ship hardware, chemical processing, food handling equipment",
+              "equivalentStandards": "ASTM B26 514.0 / B514.0, BS LM5, UNS A05140",
+              "composition": {
+                "Si": "0.35",
+                "Fe": "0.50",
+                "Cu": "0.15",
+                "Mn": "0.35",
+                "Mg": "3.5-4.5",
+                "Zn": "0.15",
+                "Ti": "0.25",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "514",
+                "astm": "B514",
+                "en": "EN AC-51300",
+                "jis": "—",
+                "gb": "ZL301",
+                "iso": "AlMg4"
+              },
+              "desc": "Non-heat-treatable high-Mg sand casting alloy with excellent marine corrosion resistance",
+              "tags": [
+                "Marine",
+                "Sand Casting",
+                "Corrosion Resistant"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 50,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "—",
+                  "hb": 50,
+                  "type": "Cast Only"
+                }
+              ]
+            },
+            {
+              "name": "A520",
+              "tensileStrength": "330-380",
+              "yieldStrength": "180-215",
+              "elongation": 12,
+              "hardness": 75,
+              "density": 2.57,
+              "meltingRange": "449-599",
+              "thermalConductivity": 87,
+              "corrosionResistance": "Excellent",
+              "weldability": "Fair",
+              "applications": "Aerospace structural castings, marine components, cryogenic equipment, architectural panels",
+              "equivalentStandards": "ASTM B26 520.0 (T4), BS LM10, UNS A05200",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "0.30",
+                "Cu": "0.25",
+                "Mn": "0.15",
+                "Mg": "9.5-10.6",
+                "Zn": "0.15",
+                "Ti": "0.25",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "520",
+                "astm": "A520",
+                "en": "—",
+                "jis": "—",
+                "gb": "ZL303",
+                "iso": "AlMg10"
+              },
+              "desc": "Highest strength Al-Mg casting alloy requiring careful sand casting technique, T4 temper only",
+              "tags": [
+                "Highest Strength Al-Mg",
+                "Sand Casting",
+                "Aerospace"
+              ],
+              "tempers": [
+                {
+                  "name": "T4",
+                  "hb": 75,
+                  "type": "Solution Heat Treated"
+                },
+                {
+                  "name": "F (As Cast)",
+                  "hb": 60,
+                  "type": "As Cast"
                 }
               ]
             }
@@ -6061,6 +7204,111 @@
                   "name": "T6",
                   "hb": 100,
                   "type": "Solution Heat Treated + Aged"
+                }
+              ]
+            },
+            {
+              "name": "A355",
+              "tensileStrength": "220-270",
+              "yieldStrength": "160-205",
+              "elongation": 3,
+              "hardness": 80,
+              "density": 2.71,
+              "meltingRange": "549-621",
+              "thermalConductivity": 151,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Structural castings, pump housings, air compressor pistons, aircraft fittings",
+              "equivalentStandards": "ASTM B26 A355.0, BS LM16, EN AC-45300 (AlSi5Cu1Mg)",
+              "composition": {
+                "Si": "4.5-5.5",
+                "Fe": "0.09",
+                "Cu": "1.0-1.5",
+                "Mn": "0.05",
+                "Mg": "0.45-0.60",
+                "Zn": "0.05",
+                "Ti": "0.04-0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "A355",
+                "astm": "A355",
+                "en": "EN AC-45300",
+                "jis": "—",
+                "gb": "ZL105",
+                "iso": "AlSi5Cu1Mg"
+              },
+              "desc": "Moderate-strength heat-treatable casting alloy for structural and general engineering applications",
+              "tags": [
+                "Structural",
+                "Heat Treatable",
+                "Sand Casting"
+              ],
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 90,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "T51",
+                  "hb": 70,
+                  "type": "Artificially Aged"
+                },
+                {
+                  "name": "T71",
+                  "hb": 75,
+                  "type": "Overaged"
+                }
+              ]
+            },
+            {
+              "name": "A359",
+              "tensileStrength": "235-290",
+              "yieldStrength": "170-220",
+              "elongation": 4,
+              "hardness": 85,
+              "density": 2.68,
+              "meltingRange": "557-613",
+              "thermalConductivity": 151,
+              "corrosionResistance": "Good",
+              "weldability": "Good",
+              "applications": "Metal matrix composite (MMC) matrix alloy, brake rotors, connecting rods, missile fins",
+              "equivalentStandards": "ASTM B26 A359.0, UNS A03590",
+              "composition": {
+                "Si": "8.5-9.5",
+                "Fe": "0.20",
+                "Cu": "0.20",
+                "Mn": "0.10",
+                "Mg": "0.50-0.70",
+                "Zn": "0.10",
+                "Ti": "0.20",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "359",
+                "astm": "A359",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlSi9Mg"
+              },
+              "desc": "SiC-reinforced matrix alloy for metal matrix composites with enhanced stiffness and wear resistance",
+              "tags": [
+                "MMC Matrix",
+                "SiC Reinforced",
+                "High Stiffness"
+              ],
+              "tempers": [
+                {
+                  "name": "T6",
+                  "hb": 90,
+                  "type": "Solution Heat Treated + Aged"
+                },
+                {
+                  "name": "F (As Cast)",
+                  "hb": 65,
+                  "type": "As Cast"
                 }
               ]
             }
@@ -6218,6 +7466,106 @@
                   "name": "—",
                   "hb": 60,
                   "type": "Cast Only"
+                }
+              ]
+            },
+            {
+              "name": "A206",
+              "tensileStrength": "345-430",
+              "yieldStrength": "250-345",
+              "elongation": 6,
+              "hardness": 120,
+              "density": 2.8,
+              "meltingRange": "521-635",
+              "thermalConductivity": 121,
+              "corrosionResistance": "Fair",
+              "weldability": "Poor",
+              "applications": "Aerospace structural castings, military armor, helicopter rotor hubs, high-strength gear housings",
+              "equivalentStandards": "ASTM B26 A206.0, UNS A02060, MIL-A-21180",
+              "composition": {
+                "Si": "0.05",
+                "Fe": "0.10",
+                "Cu": "4.2-5.0",
+                "Mn": "0.20-0.50",
+                "Mg": "0.15-0.35",
+                "Ti": "0.15-0.30",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "206",
+                "astm": "A206",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlCu4.5MnTi"
+              },
+              "desc": "High-strength Al-Cu casting alloy for aerospace with excellent fatigue life and toughness",
+              "tags": [
+                "High Strength",
+                "Aerospace",
+                "Military"
+              ],
+              "tempers": [
+                {
+                  "name": "T4",
+                  "hb": 100,
+                  "type": "Solution Heat Treated"
+                },
+                {
+                  "name": "T7",
+                  "hb": 120,
+                  "type": "Overaged + Stabilized"
+                }
+              ]
+            },
+            {
+              "name": "A713",
+              "tensileStrength": "210-255",
+              "yieldStrength": "150-175",
+              "elongation": 3,
+              "hardness": 70,
+              "density": 2.81,
+              "meltingRange": "596-643",
+              "thermalConductivity": 146,
+              "corrosionResistance": "Fair",
+              "weldability": "Fair",
+              "applications": "Bearing housings, instrument cases, furniture hardware, general-purpose castings requiring dimensional stability",
+              "equivalentStandards": "ASTM B26 713.0, UNS A07130",
+              "composition": {
+                "Si": "0.25",
+                "Fe": "1.1",
+                "Cu": "0.7",
+                "Mn": "0.6",
+                "Mg": "0.25-0.50",
+                "Zn": "7.0-8.0",
+                "Cr": "0.35",
+                "Ti": "0.25",
+                "Al": "bal"
+              },
+              "standards": {
+                "aa": "713",
+                "astm": "A713",
+                "en": "—",
+                "jis": "—",
+                "gb": "—",
+                "iso": "AlZn8"
+              },
+              "desc": "Al-Zn casting alloy with good dimensional stability, self-aging at room temperature",
+              "tags": [
+                "Al-Zn",
+                "Dimensional Stability",
+                "Self-Aging"
+              ],
+              "tempers": [
+                {
+                  "name": "F (As Cast)",
+                  "hb": 60,
+                  "type": "As Cast"
+                },
+                {
+                  "name": "T5 (Natural Aged)",
+                  "hb": 70,
+                  "type": "Naturally Aged"
                 }
               ]
             }

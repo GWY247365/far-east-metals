@@ -739,13 +739,28 @@
       "corrections": []
     },
     "stainless/321": {
-      "status": "unverified",
-      "confidence": 0.8,
-      "lastVerified": null,
-      "verifiedBy": null,
-      "sources": [],
+      "status": "verified",
+      "confidence": 0.88,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
       "discrepancies": [],
-      "corrections": []
+      "corrections": [
+        {
+          "field": "density",
+          "old": 8,
+          "new": 7.8,
+          "source": "makeitfrom"
+        },
+        {
+          "field": "hardness",
+          "old": 217,
+          "new": 170,
+          "source": "makeitfrom"
+        }
+      ]
     },
     "stainless/304L": {
       "status": "unverified",
@@ -829,13 +844,22 @@
       "corrections": []
     },
     "stainless/430": {
-      "status": "unverified",
-      "confidence": 0.8,
-      "lastVerified": null,
-      "verifiedBy": null,
-      "sources": [],
+      "status": "verified",
+      "confidence": 0.88,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
       "discrepancies": [],
-      "corrections": []
+      "corrections": [
+        {
+          "field": "hardness",
+          "old": 183,
+          "new": 160,
+          "source": "makeitfrom"
+        }
+      ]
     },
     "stainless/405": {
       "status": "unverified",
@@ -856,13 +880,28 @@
       "corrections": []
     },
     "stainless/410": {
-      "status": "unverified",
-      "confidence": 0.8,
-      "lastVerified": null,
-      "verifiedBy": null,
-      "sources": [],
+      "status": "verified",
+      "confidence": 0.88,
+      "lastVerified": "2026-03-23",
+      "verifiedBy": "makeitfrom-crosscheck",
+      "sources": [
+        "makeitfrom.com"
+      ],
       "discrepancies": [],
-      "corrections": []
+      "corrections": [
+        {
+          "field": "thermalConductivity",
+          "old": 24.9,
+          "new": 30,
+          "source": "makeitfrom"
+        },
+        {
+          "field": "hardness",
+          "old": 217,
+          "new": 190,
+          "source": "makeitfrom"
+        }
+      ]
     },
     "stainless/420": {
       "status": "unverified",
